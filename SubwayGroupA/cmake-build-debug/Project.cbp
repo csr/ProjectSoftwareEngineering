@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/DesignByContract.h">
+			<Option target="Project"/>
+		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Station.cpp">
 			<Option target="Project"/>
 		</Unit>

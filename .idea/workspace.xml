@@ -12,26 +12,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9607390-9ee2-4090-ac23-7cc375004b8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/Tram.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/Tram.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/DesignByContract.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/Station.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/Station.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/Station.h" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/Station.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/Tram.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/Tram.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/Tram.h" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/Tram.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +45,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SubwayGroupA" />
       <recent name="$PROJECT_DIR$/SubwayGroupA/TinyXML" />
     </key>
   </component>
@@ -107,5 +98,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/SubwayGroupA/main.cpp</url>
+          <line>3</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

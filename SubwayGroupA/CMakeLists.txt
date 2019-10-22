@@ -11,6 +11,6 @@ set(CMAKE_CXX_STANDARD 14)
 set(TINYXML_FILES TinyXML/tinystr.cpp TinyXML/tinyxml.cpp TinyXML/tinyxmlerror.cpp TinyXML/tinyxmlparser.cpp TinyXML/tinystr.h TinyXML/tinyxml.h)
 
 # We're declaring the source files here to keep everything organized.
-set(SOURCE_FILES main.cpp main.cpp Station.cpp Station.h Tram.cpp Tram.h)
+set(SOURCE_FILES main.cpp main.cpp Station.cpp Station.h Tram.cpp Tram.h DesignByContract.h)
 
 add_executable(Project ${SOURCE_FILES} ${TINYXML_FILES})
