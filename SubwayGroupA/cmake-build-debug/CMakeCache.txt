@@ -151,7 +151,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=module
+CMAKE_PROJECT_NAME:STATIC=Project
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
@@ -214,6 +214,12 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
+
+//Value Computed by CMake
+Project_BINARY_DIR:STATIC=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug
+
+//Value Computed by CMake
+Project_SOURCE_DIR:STATIC=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA
 
 //Value Computed by CMake
 module_BINARY_DIR:STATIC=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug

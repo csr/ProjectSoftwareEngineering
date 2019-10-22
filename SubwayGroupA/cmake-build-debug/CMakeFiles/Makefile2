@@ -53,12 +53,12 @@ CMAKE_BINARY_DIR = /Users/cesaredecal/workspace/ProjectSoftwareEngineering/Subwa
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/module.dir/all
+all: CMakeFiles/Project.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
-clean: CMakeFiles/module.dir/clean
+clean: CMakeFiles/Project.dir/clean
 
 .PHONY : clean
 
@@ -68,31 +68,31 @@ preinstall:
 .PHONY : preinstall
 
 #=============================================================================
-# Target rules for target CMakeFiles/module.dir
+# Target rules for target CMakeFiles/Project.dir
 
 # All Build rule for target.
-CMakeFiles/module.dir/all:
-	$(MAKE) -f CMakeFiles/module.dir/build.make CMakeFiles/module.dir/depend
-	$(MAKE) -f CMakeFiles/module.dir/build.make CMakeFiles/module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target module"
-.PHONY : CMakeFiles/module.dir/all
+CMakeFiles/Project.dir/all:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/depend
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Project"
+.PHONY : CMakeFiles/Project.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/module.dir/rule: cmake_check_build_system
+CMakeFiles/Project.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles 7
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/module.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Project.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/module.dir/rule
+.PHONY : CMakeFiles/Project.dir/rule
 
 # Convenience name for target.
-module: CMakeFiles/module.dir/rule
+Project: CMakeFiles/Project.dir/rule
 
-.PHONY : module
+.PHONY : Project
 
 # clean rule for target.
-CMakeFiles/module.dir/clean:
-	$(MAKE) -f CMakeFiles/module.dir/build.make CMakeFiles/module.dir/clean
-.PHONY : CMakeFiles/module.dir/clean
+CMakeFiles/Project.dir/clean:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/clean
+.PHONY : CMakeFiles/Project.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
