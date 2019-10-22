@@ -7,5 +7,8 @@
 //============================================================================
 
 class Station {
-
+ public:
+  string name;
+  Station previous;
+  Station next;
 };
