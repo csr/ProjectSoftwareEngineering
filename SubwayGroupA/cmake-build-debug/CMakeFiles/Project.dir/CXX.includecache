@@ -6,3 +6,35 @@
 
 #IncludeRegexTransform: 
 
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinystr.h
+assert.h
+-
+string.h
+-
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxml.h
+ctype.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+assert.h
+-
+string
+-
+iostream
+-
+sstream
+-
+tinystr.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinystr.h
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/main.cpp
+iostream
+-
+TinyXML/tinyxml.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxml.h
+

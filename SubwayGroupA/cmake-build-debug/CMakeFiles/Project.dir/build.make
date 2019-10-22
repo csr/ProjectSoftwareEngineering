@@ -83,9 +83,22 @@ CMakeFiles/Project.dir/Station.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Station.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Station.cpp -o CMakeFiles/Project.dir/Station.cpp.s
 
+CMakeFiles/Project.dir/Tram.cpp.o: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/Tram.cpp.o: ../Tram.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project.dir/Tram.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project.dir/Tram.cpp.o -c /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Tram.cpp
+
+CMakeFiles/Project.dir/Tram.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/Tram.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Tram.cpp > CMakeFiles/Project.dir/Tram.cpp.i
+
+CMakeFiles/Project.dir/Tram.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Tram.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Tram.cpp -o CMakeFiles/Project.dir/Tram.cpp.s
+
 CMakeFiles/Project.dir/TinyXML/tinystr.cpp.o: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/TinyXML/tinystr.cpp.o: ../TinyXML/tinystr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project.dir/TinyXML/tinystr.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project.dir/TinyXML/tinystr.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project.dir/TinyXML/tinystr.cpp.o -c /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinystr.cpp
 
 CMakeFiles/Project.dir/TinyXML/tinystr.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/Project.dir/TinyXML/tinystr.cpp.s: cmake_force
 
 CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.o: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.o: ../TinyXML/tinyxml.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.o -c /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxml.cpp
 
 CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.s: cmake_force
 
 CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.o: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.o: ../TinyXML/tinyxmlerror.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.o -c /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxmlerror.cpp
 
 CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.s: cmake_force
 
 CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o: ../TinyXML/tinyxmlparser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o -c /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxmlparser.cpp
 
 CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.i: cmake_force
@@ -139,6 +152,7 @@ CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.s: cmake_force
 Project_OBJECTS = \
 "CMakeFiles/Project.dir/main.cpp.o" \
 "CMakeFiles/Project.dir/Station.cpp.o" \
+"CMakeFiles/Project.dir/Tram.cpp.o" \
 "CMakeFiles/Project.dir/TinyXML/tinystr.cpp.o" \
 "CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.o" \
 "CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.o" \
@@ -149,13 +163,14 @@ Project_EXTERNAL_OBJECTS =
 
 Project: CMakeFiles/Project.dir/main.cpp.o
 Project: CMakeFiles/Project.dir/Station.cpp.o
+Project: CMakeFiles/Project.dir/Tram.cpp.o
 Project: CMakeFiles/Project.dir/TinyXML/tinystr.cpp.o
 Project: CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.o
 Project: CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.o
 Project: CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o
 Project: CMakeFiles/Project.dir/build.make
 Project: CMakeFiles/Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

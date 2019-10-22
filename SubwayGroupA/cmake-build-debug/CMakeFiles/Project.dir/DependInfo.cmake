@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxml.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.o"
   "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxmlerror.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.o"
   "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxmlparser.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o"
+  "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Tram.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/Tram.cpp.o"
   "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/main.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

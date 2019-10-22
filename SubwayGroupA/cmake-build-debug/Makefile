@@ -258,6 +258,33 @@ TinyXML/tinyxmlparser.cpp.s:
 	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.s
 .PHONY : TinyXML/tinyxmlparser.cpp.s
 
+Tram.o: Tram.cpp.o
+
+.PHONY : Tram.o
+
+# target to build an object file
+Tram.cpp.o:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/Tram.cpp.o
+.PHONY : Tram.cpp.o
+
+Tram.i: Tram.cpp.i
+
+.PHONY : Tram.i
+
+# target to preprocess a source file
+Tram.cpp.i:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/Tram.cpp.i
+.PHONY : Tram.cpp.i
+
+Tram.s: Tram.cpp.s
+
+.PHONY : Tram.s
+
+# target to generate assembly for a file
+Tram.cpp.s:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/Tram.cpp.s
+.PHONY : Tram.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -309,6 +336,9 @@ help:
 	@echo "... TinyXML/tinyxmlparser.o"
 	@echo "... TinyXML/tinyxmlparser.i"
 	@echo "... TinyXML/tinyxmlparser.s"
+	@echo "... Tram.o"
+	@echo "... Tram.i"
+	@echo "... Tram.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

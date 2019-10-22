@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.o"
   "CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.o"
   "CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o"
+  "CMakeFiles/Project.dir/Tram.cpp.o"
   "CMakeFiles/Project.dir/main.cpp.o"
   "Project"
   "Project.pdb"

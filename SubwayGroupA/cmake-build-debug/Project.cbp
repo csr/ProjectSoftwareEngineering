@@ -104,6 +104,12 @@
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxmlparser.cpp">
 			<Option target="Project"/>
 		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Tram.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Tram.h">
+			<Option target="Project"/>
+		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/main.cpp">
 			<Option target="Project"/>
 		</Unit>
