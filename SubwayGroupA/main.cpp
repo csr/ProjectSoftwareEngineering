@@ -22,7 +22,13 @@ void parseXMLFile() {
   }
 }
 
+// This is just to test initializing trams and stations
+void testInitializationStationTram() {
+  Station firstStation = Station();
+}
+
 int main() {
     parseXMLFile();
+    testInitializationStationTram();
     return 0;
 }

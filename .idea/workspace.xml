@@ -14,6 +14,8 @@
     <list default="true" id="b9607390-9ee2-4090-ac23-7cc375004b8f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/Station.h" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/Station.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +74,7 @@
       <updated>1571758680602</updated>
       <workItem from="1571758682157" duration="417000" />
       <workItem from="1571760542207" duration="376000" />
+      <workItem from="1571765889221" duration="444000" />
     </task>
     <servers />
   </component>

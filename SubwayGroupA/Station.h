@@ -6,9 +6,14 @@
 // Description : This file holds the header for the Station class.
 //============================================================================
 
+#include <string>
+
+using namespace std;
+
 class Station {
  public:
   string name;
-  Station previous;
-  Station next;
+  int track;
+  Station *previous;
+  Station *next;
 };
