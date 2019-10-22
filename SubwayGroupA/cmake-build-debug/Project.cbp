@@ -86,25 +86,25 @@
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Station.h">
 			<Option target="Project"/>
 		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinystr.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinystr.h">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxml.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxml.h">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxmlerror.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxmlparser.cpp">
+			<Option target="Project"/>
+		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/main.cpp">
-			<Option target="Project"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinystr.cpp">
-			<Option target="Project"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinystr.h">
-			<Option target="Project"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinyxml.cpp">
-			<Option target="Project"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinyxml.h">
-			<Option target="Project"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinyxmlerror.cpp">
-			<Option target="Project"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinyxmlparser.cpp">
 			<Option target="Project"/>
 		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/CMakeLists.txt">

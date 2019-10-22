@@ -7,6 +7,10 @@ project(Project)
 # We're using C++ version 14.
 set(CMAKE_CXX_STANDARD 14)
 
-set(SOURCE_FILES main.cpp main.cpp tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp tinystr.h tinyxml.h Station.cpp Station.h)
+# Importing TinyXML files. Let's create a library instead? -22/10/19 (@cdecal)
+set(TINYXML_FILES TinyXML/tinystr.cpp TinyXML/tinyxml.cpp TinyXML/tinyxmlerror.cpp TinyXML/tinyxmlparser.cpp TinyXML/tinystr.h TinyXML/tinyxml.h)
 
-add_executable(Project ${SOURCE_FILES})
+# We're declaring the source files here to keep everything organized.
+set(SOURCE_FILES main.cpp main.cpp Station.cpp Station.h)
+
+add_executable(Project ${SOURCE_FILES} ${TINYXML_FILES})

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
+    <generated>
+      <config projectName="Project" targetName="Project" />
+    </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
@@ -12,12 +14,28 @@
     <list default="true" id="b9607390-9ee2-4090-ac23-7cc375004b8f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/tinystr.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/tinyxml.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/tinyxmlerror.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/tinyxmlparser.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/tinystr.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/TinyXML/tinystr.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/tinystr.h" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/TinyXML/tinystr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/tinyxml.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/TinyXML/tinyxml.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/tinyxml.h" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/TinyXML/tinyxml.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/tinyxmlerror.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/TinyXML/tinyxmlerror.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/tinyxmlparser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/TinyXML/tinyxmlparser.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +46,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -37,6 +56,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SubwayGroupA/TinyXML" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

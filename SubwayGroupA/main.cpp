@@ -1,5 +1,5 @@
 #include <iostream>
-#include "tinyxml.h"
+#include "TinyXML/tinyxml.h"
 
 using std::string;
 

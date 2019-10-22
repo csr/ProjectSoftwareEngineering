@@ -4,22 +4,22 @@
 CMakeFiles/Project.dir/Station.cpp.o
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Station.cpp
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Station.h
+CMakeFiles/Project.dir/TinyXML/tinystr.cpp.o
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinystr.cpp
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinystr.h
+CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.o
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinystr.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxml.cpp
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxml.h
+CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.o
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinystr.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxml.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxmlerror.cpp
+CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinystr.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxml.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxmlparser.cpp
 CMakeFiles/Project.dir/main.cpp.o
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinystr.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxml.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/main.cpp
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinystr.h
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinyxml.h
-CMakeFiles/Project.dir/tinystr.cpp.o
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinystr.cpp
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinystr.h
-CMakeFiles/Project.dir/tinyxml.cpp.o
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinystr.h
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinyxml.cpp
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinyxml.h
-CMakeFiles/Project.dir/tinyxmlerror.cpp.o
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinystr.h
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinyxml.h
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinyxmlerror.cpp
-CMakeFiles/Project.dir/tinyxmlparser.cpp.o
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinystr.h
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinyxml.h
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/tinyxmlparser.cpp

@@ -4,22 +4,22 @@
 CMakeFiles/Project.dir/Station.cpp.o: ../Station.cpp
 CMakeFiles/Project.dir/Station.cpp.o: ../Station.h
 
+CMakeFiles/Project.dir/TinyXML/tinystr.cpp.o: ../TinyXML/tinystr.cpp
+CMakeFiles/Project.dir/TinyXML/tinystr.cpp.o: ../TinyXML/tinystr.h
+
+CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.o: ../TinyXML/tinystr.h
+CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.o: ../TinyXML/tinyxml.cpp
+CMakeFiles/Project.dir/TinyXML/tinyxml.cpp.o: ../TinyXML/tinyxml.h
+
+CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.o: ../TinyXML/tinystr.h
+CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.o: ../TinyXML/tinyxml.h
+CMakeFiles/Project.dir/TinyXML/tinyxmlerror.cpp.o: ../TinyXML/tinyxmlerror.cpp
+
+CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o: ../TinyXML/tinystr.h
+CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o: ../TinyXML/tinyxml.h
+CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o: ../TinyXML/tinyxmlparser.cpp
+
+CMakeFiles/Project.dir/main.cpp.o: ../TinyXML/tinystr.h
+CMakeFiles/Project.dir/main.cpp.o: ../TinyXML/tinyxml.h
 CMakeFiles/Project.dir/main.cpp.o: ../main.cpp
-CMakeFiles/Project.dir/main.cpp.o: ../tinystr.h
-CMakeFiles/Project.dir/main.cpp.o: ../tinyxml.h
-
-CMakeFiles/Project.dir/tinystr.cpp.o: ../tinystr.cpp
-CMakeFiles/Project.dir/tinystr.cpp.o: ../tinystr.h
-
-CMakeFiles/Project.dir/tinyxml.cpp.o: ../tinystr.h
-CMakeFiles/Project.dir/tinyxml.cpp.o: ../tinyxml.cpp
-CMakeFiles/Project.dir/tinyxml.cpp.o: ../tinyxml.h
-
-CMakeFiles/Project.dir/tinyxmlerror.cpp.o: ../tinystr.h
-CMakeFiles/Project.dir/tinyxmlerror.cpp.o: ../tinyxml.h
-CMakeFiles/Project.dir/tinyxmlerror.cpp.o: ../tinyxmlerror.cpp
-
-CMakeFiles/Project.dir/tinyxmlparser.cpp.o: ../tinystr.h
-CMakeFiles/Project.dir/tinyxmlparser.cpp.o: ../tinyxml.h
-CMakeFiles/Project.dir/tinyxmlparser.cpp.o: ../tinyxmlparser.cpp
 
