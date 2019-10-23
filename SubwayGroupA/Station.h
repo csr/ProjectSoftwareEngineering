@@ -6,8 +6,8 @@
 // Description : This file holds the header for the Station class.
 //============================================================================
 
+#pragma once
 #include <string>
-
 using namespace std;
 
 class Station {

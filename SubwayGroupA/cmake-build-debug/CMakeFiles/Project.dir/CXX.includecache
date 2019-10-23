@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Station.cpp
+Station.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Station.h
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Station.h
+string
+-
+
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinystr.h
 assert.h
 -
@@ -32,9 +40,21 @@ sstream
 tinystr.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinystr.h
 
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Tram.cpp
+Tram.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Tram.h
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Tram.h
+Station.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Station.h
+
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/main.cpp
 iostream
 -
 TinyXML/tinyxml.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinyxml.h
+Station.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Station.h
+Tram.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Tram.h
 

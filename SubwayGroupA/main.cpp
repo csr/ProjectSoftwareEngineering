@@ -1,12 +1,14 @@
 #include <iostream>
 #include "TinyXML/tinyxml.h"
+#include "Station.h"
+#include "Tram.h"
 
 using std::string;
 
 void parseXMLFile() {
   TiXmlDocument doc;
-  if (! doc.LoadFile ("example.xml")) {
-    std :: cerr << doc.ErrorDesc () << std :: endl;
+  if (!doc.LoadFile ("../testInput/example.xml")) {
+    std :: cerr << doc.ErrorDesc () << std::endl;
   } else {
     std::cout << "Ok, file found!" << std::endl;
   }
@@ -24,7 +26,8 @@ void parseXMLFile() {
 
 // This is just to test initializing trams and stations
 void testInitializationStationTram() {
-  Station firstStation = Station();
+  Station *firstStation = new Station;
+  firstStation->name = "A";
 }
 
 int main() {

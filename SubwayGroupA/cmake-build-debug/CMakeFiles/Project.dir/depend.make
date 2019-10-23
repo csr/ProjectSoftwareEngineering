@@ -19,10 +19,13 @@ CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o: ../TinyXML/tinystr.h
 CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o: ../TinyXML/tinyxml.h
 CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o: ../TinyXML/tinyxmlparser.cpp
 
+CMakeFiles/Project.dir/Tram.cpp.o: ../Station.h
 CMakeFiles/Project.dir/Tram.cpp.o: ../Tram.cpp
 CMakeFiles/Project.dir/Tram.cpp.o: ../Tram.h
 
+CMakeFiles/Project.dir/main.cpp.o: ../Station.h
 CMakeFiles/Project.dir/main.cpp.o: ../TinyXML/tinystr.h
 CMakeFiles/Project.dir/main.cpp.o: ../TinyXML/tinyxml.h
+CMakeFiles/Project.dir/main.cpp.o: ../Tram.h
 CMakeFiles/Project.dir/main.cpp.o: ../main.cpp
 

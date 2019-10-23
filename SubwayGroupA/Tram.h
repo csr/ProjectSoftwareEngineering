@@ -6,6 +6,12 @@
 // Description : This file holds the header for the Tram class.
 //============================================================================
 
-class Tram {
+#include "Station.h"
 
+class Tram {
+ public:
+  int capacity;
+  int line;
+  Station *startStation;
+  double speed;
 };
