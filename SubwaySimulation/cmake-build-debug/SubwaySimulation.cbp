@@ -24,7 +24,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/../gtest/include"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
@@ -46,7 +46,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/../gtest/include"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
@@ -88,7 +88,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/../gtest/include"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
@@ -110,7 +110,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/../gtest/include"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
@@ -135,6 +135,21 @@
 			<Option target="release"/>
 		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationDomainTests.cpp">
+			<Option target="debug"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h">
 			<Option target="debug"/>
 			<Option target="release"/>
 		</Unit>

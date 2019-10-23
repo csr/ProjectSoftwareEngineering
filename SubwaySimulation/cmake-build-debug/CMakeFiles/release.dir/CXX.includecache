@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/DesignByContract.h
+assert.h
+-
+
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
 string
 -
@@ -19,6 +23,26 @@ Station.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
 Tram.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
+Subway.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
+DesignByContract.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/DesignByContract.h
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp
+SubwaySimulationImporter.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
+DesignByContract.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/DesignByContract.h
+tinyxml.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
+iostream
+-
+Subway.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
 
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
 Station.h

@@ -151,6 +151,32 @@ CMakeFiles/debug.dir/Tram.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/debug.dir/Tram.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.cpp -o CMakeFiles/debug.dir/Tram.cpp.s
 
+CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: CMakeFiles/debug.dir/flags.make
+CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../SubwaySimulationDomainTests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o -c /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationDomainTests.cpp
+
+CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationDomainTests.cpp > CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.i
+
+CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationDomainTests.cpp -o CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.s
+
+CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: CMakeFiles/debug.dir/flags.make
+CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../SubwaySimulationImporter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o -c /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp
+
+CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp > CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.i
+
+CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp -o CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.s
+
 # Object files for target debug
 debug_OBJECTS = \
 "CMakeFiles/debug.dir/tinystr.cpp.o" \
@@ -159,7 +185,9 @@ debug_OBJECTS = \
 "CMakeFiles/debug.dir/tinyxmlparser.cpp.o" \
 "CMakeFiles/debug.dir/Subway.cpp.o" \
 "CMakeFiles/debug.dir/Station.cpp.o" \
-"CMakeFiles/debug.dir/Tram.cpp.o"
+"CMakeFiles/debug.dir/Tram.cpp.o" \
+"CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o" \
+"CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o"
 
 # External object files for target debug
 debug_EXTERNAL_OBJECTS =
@@ -171,9 +199,11 @@ debug: CMakeFiles/debug.dir/tinyxmlparser.cpp.o
 debug: CMakeFiles/debug.dir/Subway.cpp.o
 debug: CMakeFiles/debug.dir/Station.cpp.o
 debug: CMakeFiles/debug.dir/Tram.cpp.o
+debug: CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o
+debug: CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o
 debug: CMakeFiles/debug.dir/build.make
 debug: CMakeFiles/debug.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable debug"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable debug"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/debug.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

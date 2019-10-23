@@ -9,16 +9,16 @@ set(CMAKE_CXX_FLAGS "-Wall -Werror -O2")
 set(CMAKE_EXE_LINKER_FLAGS -pthread)
 
 # Set include dir
-include_directories(../gtest/include)
+include_directories(gtest/include)
 
 # Set Library dir
 link_directories(gtest/lib)
 
 # Set source files for RELEASE target
-set(RELEASE_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Station.cpp Station.h Tram.cpp Tram.h)
+set(RELEASE_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Subway.h Station.cpp Station.h Tram.cpp Tram.h Subway.h SubwaySimulationImporter.cpp SubwaySimulationImporter.h)
 
 # Set source files for DEBUG target
-set(DEBUG_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Station.cpp Station.h Tram.cpp Tram.h)
+set(DEBUG_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Subway.h Station.cpp Station.h Tram.cpp Tram.h SubwaySimulationDomainTests.cpp Subway.h SubwaySimulationImporter.cpp SubwaySimulationImporter.h)
 
 # Create RELEASE target
 add_executable(release ${RELEASE_SOURCE_FILES})

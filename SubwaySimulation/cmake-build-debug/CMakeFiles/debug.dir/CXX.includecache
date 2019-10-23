@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.cpp
-Station.h
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/DesignByContract.h
+assert.h
+-
 
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
 string
@@ -23,10 +23,12 @@ Station.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
 Tram.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
+Subway.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
+DesignByContract.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/DesignByContract.h
 
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.cpp
-Tram.h
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
 
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
 Station.h

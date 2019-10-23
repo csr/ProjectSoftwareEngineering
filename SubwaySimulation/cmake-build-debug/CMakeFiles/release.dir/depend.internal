@@ -5,9 +5,18 @@ CMakeFiles/release.dir/Station.cpp.o
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.cpp
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
 CMakeFiles/release.dir/Subway.cpp.o
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/DesignByContract.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.cpp
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
+CMakeFiles/release.dir/SubwaySimulationImporter.cpp.o
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/DesignByContract.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
 CMakeFiles/release.dir/Tram.cpp.o
