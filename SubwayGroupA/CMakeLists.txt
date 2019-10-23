@@ -11,12 +11,13 @@ set(CMAKE_CXX_STANDARD 14)
 set(TINYXML_FILES TinyXML/tinystr.cpp TinyXML/tinyxml.cpp TinyXML/tinyxmlerror.cpp TinyXML/tinyxmlparser.cpp TinyXML/tinystr.h TinyXML/tinyxml.h)
 
 # We're declaring the source files here to keep everything organized.
-set(SOURCE_FILES main.cpp main.cpp Station.cpp Station.h Tram.cpp Tram.h DesignByContract.h)
+set(SOURCE_FILES Subway.cpp Subway.cpp Station.cpp Station.h Tram.cpp Tram.h DesignByContract.h)
 
-# Set include dir
+# Setting up Google Test: https://ansymore.uantwerpen.be/inleiding-software-engineering-1e-bac/studiemateriaal/se1bac-laad-tictactoe-clion
 include_directories(gtest/include)
-
-# Set Library dir
 link_directories(gtest/lib)
 
 add_executable(Project ${SOURCE_FILES} ${TINYXML_FILES})
+
+file(COPY testOutput DESTINATION .)
+file(COPY testInput DESTINATION .)

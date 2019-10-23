@@ -1,14 +1,22 @@
+//============================================================================
+// Name        : Subway.cpp
+// Author      : Cesare De Cal, Marco Natali, Veronica Orsanigo
+// Version     :
+// Copyright   : Cesare De Cal, Marco Natali, Veronica Orsanigo
+// Description : Subway simulation in C++
+//============================================================================
+
 #include <iostream>
+#include <gtest/gtest.h>
 #include "TinyXML/tinyxml.h"
 #include "Station.h"
 #include "Tram.h"
-#include <gtest/gtest.h>
 
 using std::string;
 
 void parseXMLFile() {
   TiXmlDocument doc;
-  if (!doc.LoadFile ("../testInput/example.xml")) {
+  if (!doc.LoadFile ("testInput/example.xml")) {
     std :: cerr << doc.ErrorDesc () << std::endl;
   } else {
     std::cout << "Ok, file found!" << std::endl;

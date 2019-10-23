@@ -12,44 +12,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9607390-9ee2-4090-ac23-7cc375004b8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-death-test.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-message.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-param-test.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-param-test.h.pump" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-printers.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-spi.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-test-part.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-typed-test.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest_pred_impl.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest_prod.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-death-test-internal.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-filepath.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-internal.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-linked_ptr.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-param-util-generated.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-param-util-generated.h.pump" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-param-util.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-port.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-string.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-tuple.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-tuple.h.pump" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-type-util.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-type-util.h.pump" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/lib/libgtest.a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/lib/libgtest_main.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/main.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/Subway.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +91,7 @@
       <workItem from="1571760542207" duration="376000" />
       <workItem from="1571765889221" duration="1223000" />
       <workItem from="1571843541413" duration="149000" />
-      <workItem from="1571843713477" duration="2300000" />
+      <workItem from="1571843713477" duration="2682000" />
     </task>
     <servers />
   </component>

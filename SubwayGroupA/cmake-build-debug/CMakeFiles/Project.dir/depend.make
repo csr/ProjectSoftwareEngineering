@@ -4,6 +4,31 @@
 CMakeFiles/Project.dir/Station.cpp.o: ../Station.cpp
 CMakeFiles/Project.dir/Station.cpp.o: ../Station.h
 
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/gtest-death-test.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/gtest-message.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/gtest-param-test.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/gtest-printers.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/gtest-test-part.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/gtest-typed-test.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/gtest.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/gtest_pred_impl.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/gtest_prod.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/internal/gtest-death-test-internal.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/internal/gtest-filepath.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/internal/gtest-internal.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/internal/gtest-linked_ptr.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/internal/gtest-param-util-generated.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/internal/gtest-param-util.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/internal/gtest-port.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/internal/gtest-string.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/internal/gtest-tuple.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../gtest/include/gtest/internal/gtest-type-util.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../Station.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../Subway.cpp
+CMakeFiles/Project.dir/Subway.cpp.o: ../TinyXML/tinystr.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../TinyXML/tinyxml.h
+CMakeFiles/Project.dir/Subway.cpp.o: ../Tram.h
+
 CMakeFiles/Project.dir/TinyXML/tinystr.cpp.o: ../TinyXML/tinystr.cpp
 CMakeFiles/Project.dir/TinyXML/tinystr.cpp.o: ../TinyXML/tinystr.h
 
@@ -22,10 +47,4 @@ CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.o: ../TinyXML/tinyxmlparser.cpp
 CMakeFiles/Project.dir/Tram.cpp.o: ../Station.h
 CMakeFiles/Project.dir/Tram.cpp.o: ../Tram.cpp
 CMakeFiles/Project.dir/Tram.cpp.o: ../Tram.h
-
-CMakeFiles/Project.dir/main.cpp.o: ../Station.h
-CMakeFiles/Project.dir/main.cpp.o: ../TinyXML/tinystr.h
-CMakeFiles/Project.dir/main.cpp.o: ../TinyXML/tinyxml.h
-CMakeFiles/Project.dir/main.cpp.o: ../Tram.h
-CMakeFiles/Project.dir/main.cpp.o: ../main.cpp
 

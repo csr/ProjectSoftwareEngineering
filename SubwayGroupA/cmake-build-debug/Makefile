@@ -150,6 +150,33 @@ Station.cpp.s:
 	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/Station.cpp.s
 .PHONY : Station.cpp.s
 
+Subway.o: Subway.cpp.o
+
+.PHONY : Subway.o
+
+# target to build an object file
+Subway.cpp.o:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/Subway.cpp.o
+.PHONY : Subway.cpp.o
+
+Subway.i: Subway.cpp.i
+
+.PHONY : Subway.i
+
+# target to preprocess a source file
+Subway.cpp.i:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/Subway.cpp.i
+.PHONY : Subway.cpp.i
+
+Subway.s: Subway.cpp.s
+
+.PHONY : Subway.s
+
+# target to generate assembly for a file
+Subway.cpp.s:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/Subway.cpp.s
+.PHONY : Subway.cpp.s
+
 TinyXML/tinystr.o: TinyXML/tinystr.cpp.o
 
 .PHONY : TinyXML/tinystr.o
@@ -285,33 +312,6 @@ Tram.cpp.s:
 	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/Tram.cpp.s
 .PHONY : Tram.cpp.s
 
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/main.cpp.s
-.PHONY : main.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -324,6 +324,9 @@ help:
 	@echo "... Station.o"
 	@echo "... Station.i"
 	@echo "... Station.s"
+	@echo "... Subway.o"
+	@echo "... Subway.i"
+	@echo "... Subway.s"
 	@echo "... TinyXML/tinystr.o"
 	@echo "... TinyXML/tinystr.i"
 	@echo "... TinyXML/tinystr.s"
@@ -339,9 +342,6 @@ help:
 	@echo "... Tram.o"
 	@echo "... Tram.i"
 	@echo "... Tram.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 .PHONY : help
 
 

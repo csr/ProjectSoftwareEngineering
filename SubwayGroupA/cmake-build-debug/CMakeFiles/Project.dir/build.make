@@ -57,18 +57,18 @@ include CMakeFiles/Project.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Project.dir/flags.make
 
-CMakeFiles/Project.dir/main.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Project.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project.dir/main.cpp.o -c /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/main.cpp
+CMakeFiles/Project.dir/Subway.cpp.o: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/Subway.cpp.o: ../Subway.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Project.dir/Subway.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project.dir/Subway.cpp.o -c /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Subway.cpp
 
-CMakeFiles/Project.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/main.cpp > CMakeFiles/Project.dir/main.cpp.i
+CMakeFiles/Project.dir/Subway.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/Subway.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Subway.cpp > CMakeFiles/Project.dir/Subway.cpp.i
 
-CMakeFiles/Project.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/main.cpp -o CMakeFiles/Project.dir/main.cpp.s
+CMakeFiles/Project.dir/Subway.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Subway.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Subway.cpp -o CMakeFiles/Project.dir/Subway.cpp.s
 
 CMakeFiles/Project.dir/Station.cpp.o: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/Station.cpp.o: ../Station.cpp
@@ -150,7 +150,7 @@ CMakeFiles/Project.dir/TinyXML/tinyxmlparser.cpp.s: cmake_force
 
 # Object files for target Project
 Project_OBJECTS = \
-"CMakeFiles/Project.dir/main.cpp.o" \
+"CMakeFiles/Project.dir/Subway.cpp.o" \
 "CMakeFiles/Project.dir/Station.cpp.o" \
 "CMakeFiles/Project.dir/Tram.cpp.o" \
 "CMakeFiles/Project.dir/TinyXML/tinystr.cpp.o" \
@@ -161,7 +161,7 @@ Project_OBJECTS = \
 # External object files for target Project
 Project_EXTERNAL_OBJECTS =
 
-Project: CMakeFiles/Project.dir/main.cpp.o
+Project: CMakeFiles/Project.dir/Subway.cpp.o
 Project: CMakeFiles/Project.dir/Station.cpp.o
 Project: CMakeFiles/Project.dir/Tram.cpp.o
 Project: CMakeFiles/Project.dir/TinyXML/tinystr.cpp.o

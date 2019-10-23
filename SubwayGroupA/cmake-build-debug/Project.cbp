@@ -91,6 +91,9 @@
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Station.h">
 			<Option target="Project"/>
 		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Subway.cpp">
+			<Option target="Project"/>
+		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/TinyXML/tinystr.cpp">
 			<Option target="Project"/>
 		</Unit>
@@ -113,9 +116,6 @@
 			<Option target="Project"/>
 		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/Tram.h">
-			<Option target="Project"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/main.cpp">
 			<Option target="Project"/>
 		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwayGroupA/CMakeLists.txt">
