@@ -2,6 +2,7 @@
 #include "TinyXML/tinyxml.h"
 #include "Station.h"
 #include "Tram.h"
+#include <gtest/gtest.h>
 
 using std::string;
 

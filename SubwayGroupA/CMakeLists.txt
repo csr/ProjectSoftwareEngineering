@@ -13,4 +13,10 @@ set(TINYXML_FILES TinyXML/tinystr.cpp TinyXML/tinyxml.cpp TinyXML/tinyxmlerror.c
 # We're declaring the source files here to keep everything organized.
 set(SOURCE_FILES main.cpp main.cpp Station.cpp Station.h Tram.cpp Tram.h DesignByContract.h)
 
+# Set include dir
+include_directories(gtest/include)
+
+# Set Library dir
+link_directories(gtest/lib)
+
 add_executable(Project ${SOURCE_FILES} ${TINYXML_FILES})

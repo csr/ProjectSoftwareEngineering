@@ -12,18 +12,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9607390-9ee2-4090-ac23-7cc375004b8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SubwayGroupA/testInput/example.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-death-test.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-message.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-param-test.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-param-test.h.pump" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-printers.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-spi.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-test-part.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest-typed-test.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest_pred_impl.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/gtest_prod.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-death-test-internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-filepath.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-linked_ptr.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-param-util-generated.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-param-util-generated.h.pump" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-param-util.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-port.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-string.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-tuple.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-tuple.h.pump" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-type-util.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/include/gtest/internal/gtest-type-util.h.pump" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/lib/libgtest.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SubwayGroupA/gtest/lib/libgtest_main.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/Station.h" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/Station.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/Tram.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/Tram.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/Tram.h" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/Tram.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/example.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/CMakeFiles/Project.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubwayGroupA/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SubwayGroupA/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +65,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1SZ6HFkk9JSvloY1ViVDhAojLxI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -86,7 +115,7 @@
       <workItem from="1571760542207" duration="376000" />
       <workItem from="1571765889221" duration="1223000" />
       <workItem from="1571843541413" duration="149000" />
-      <workItem from="1571843713477" duration="810000" />
+      <workItem from="1571843713477" duration="2300000" />
     </task>
     <servers />
   </component>
@@ -105,5 +134,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
