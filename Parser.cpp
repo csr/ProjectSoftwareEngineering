@@ -47,7 +47,7 @@ int findRoot(TiXmlDocument doc){
 							// check if the value is correct for the type of attribute
 							int i = 0;
 							boolean is_ok = true;
-							if(elemName == "name" || elemName == "previous" || elemName == "next" || elemName == "startStation"){
+							if(elemName == "name" || elemName == "previous" || elemName == "next"){
 								while(is_ok and i < attributeValue.length()){
 									if (!((attributeValue.at(i) >= "a" && attributeValue.at(i) <= "z") || (attributeValue.at(i) >= "A" && attributeValue.at(i) <= "Z"))){
 										is_letter = false;
@@ -55,7 +55,7 @@ int findRoot(TiXmlDocument doc){
 									i++;
 								}
 							}
-							else if(elemName == "track" || elemName == "line" || elemName == "capacity" || elemName == "speed"){
+							else if(elemName == "track"){
 								while(is_ok and i < attributeValue.length()){
 									if (!(attributeValue.at(i) >= "0" && attributeValue.at(i) <= "9")){
 										is_boolean = false;
