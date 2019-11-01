@@ -9,9 +9,14 @@
 #include "Station.h"
 
 class Tram {
- public:
+ private:
   int capacity;
   int line;
   Station *startStation;
   double speed;
+
+ public:
+  Tram(int capacity, int numLine, Station& startStation, double speed);
+  std::string toString();
+
 };

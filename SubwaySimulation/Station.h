@@ -11,9 +11,15 @@
 using namespace std;
 
 class Station {
- public:
+ private:
   string name;
   int track;
   Station *previous;
   Station *next;
+
+ public:
+  Station(string name, int track, Station previous, Station next);
+  
+  string toString();
+
 };
