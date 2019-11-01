@@ -7,12 +7,24 @@
 
 #include <iostream>
 #include "Subway.h"
+#include "tinyxml.h"
+#include "Station.h"
 
 enum SuccessEnum {ImportAborted, PartialImport, Success};
 
 class TicTacToeImporter {
- public:
 
+ public:
+  TiXmlDocument doc;
+
+  // 2 vectors to contain things from parsing -> NB: controllare cosa bisogna importare e dichiarazioni !!!!!!!!!!
+  std::vector<Station> stations;
+  std::vector<Tram> trams;
+
+  int openFile(string fileName);
+  int findRoot(TiXmlDocument doc);
+  void findChild(TiXmlElement* root, string rootName);
+  void findValues(TiXmlElement* elem);
 /**
 // Read an XML description of a Subway from inStream and add it to the simulation.
 // If errors occur, report them on errStream.

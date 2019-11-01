@@ -8,8 +8,6 @@
 
 #include <iostream>
 #include "tinyxml.h"
-#include "Station.h"
-#include "Tram.h"
 
 #include "Subway.h"
 #include "DesignByContract.h"

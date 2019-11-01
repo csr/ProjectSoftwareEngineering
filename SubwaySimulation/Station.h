@@ -8,17 +8,19 @@
 
 #pragma once
 #include <string>
+#include "Station.h"
+
 using namespace std;
 
 class Station {
  private:
   string name;
   int track;
-  Station *previous;
-  Station *next;
+  string previous;
+  string next;
 
  public:
-  Station(string name, int track, Station previous, Station next);
+  Station(string name, int track, string previous, string next);
   
   string toString();
 

@@ -31,13 +31,17 @@ CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../gtest/include/gtest/i
 CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../gtest/include/gtest/internal/gtest-string.h
 CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../gtest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../gtest/include/gtest/internal/gtest-type-util.h
+CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../Station.h
 CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../Subway.h
 CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../SubwaySimulationDomainTests.cpp
+CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../Tram.h
 
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../DesignByContract.h
+CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../Station.h
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../Subway.h
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../SubwaySimulationImporter.cpp
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../SubwaySimulationImporter.h
+CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../Tram.h
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../tinystr.h
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../tinyxml.h
 

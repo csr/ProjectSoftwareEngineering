@@ -10,7 +10,12 @@
 // Prevents from loading the same .h file multiple times
 #ifndef SubwaySimulation_H
 #define SubwaySimulation_H
+
 #include <vector>
+#include "Station.h"
+#include "Tram.h"
+
+using namespace std;
 
 class Subway {
 	private:
@@ -21,9 +26,9 @@ class Subway {
 		Subway(){}
 		void addStation(Station station);
 		void addTram(Tram tram);
-		Station& getStations();
-		Tram& getTram();
-		toString();
+		Station getStations();
+		Tram getTram();
+		string toString();
 };
 
 // Closing of the ``header guard''.
