@@ -23,21 +23,6 @@
 #define FILE "example.txt" // metterci il nome del file XML che gli si passera' per testare
 using namespace std;
 
-
-// CONTROLLARE GET SET COSTRUTTORE, MAGARI TOGLIERLI A TIXMLDOCUMENT
-
-// from an element to its attribute as string
-/*string parser::fetch_text(TiXmlNode *elem){
-    TiXmlNode *e = elem->FirstChild();
-    if (e == NULL)
-        return "null1";
-    TiXmlText* text = elem->ToText();
-    if(text == NULL)
-        return "null2";
-    cout << "attr" << text->Value();
-    return text->Value();
-}*/
-
 string parser::fetch_text(TiXmlNode *elem){
     TiXmlNode *e = elem->FirstChild();
     if (e == NULL)
@@ -172,8 +157,11 @@ int parser::parsing() {
         } else if (rootName == "STATION") { // AGGIUNGERE LA STAZIONE CREATA ALLA MAP
             cout << "Root station: " << rootName << endl;
             Station* station = new Station(); // putatore a ogg di tipo station che sta in heap
+            // children of root
             TiXmlNode *elem_name, *elem_previous, *elem_next, *elem_track;
+            // children of root -> string
             string name_string, previous_string, next_string, track_string;
+            // attribute of children of root -> string
             string name, previous, next, track; // they contain the value of the attribute as String
             // check if there are name, previous, next, track
             elem_name = root->FirstChild("name");
@@ -181,17 +169,12 @@ int parser::parsing() {
             elem_previous = root->FirstChild("previous");
             elem_next = root->FirstChild("next");
             elem_track = root->FirstChild("track");
-            // get the elements above as String
-            name_string = elem_name->Value();
-            previous_string = elem_previous->Value();
-            next_string = elem_next->Value();
-            track_string = elem_track->Value();
-
             if (elem_name == NULL) {
                 cout << "UNRECOGNIZED ELEMENT: Expected <name> ... </name>." << endl;
                 endResult = 1;
                 name = "";
             } else {
+                name_string = elem_name->Value();
                 name = fetch_text(elem_name); // string del valore dell'attributo name
                 cout << "El name: " << name_string << endl;
                 cout << "Attr name: " << name << endl;
@@ -213,6 +196,7 @@ int parser::parsing() {
                 endResult = 1;
                 previous = "";
             } else {
+                previous_string = elem_previous->Value();
                 previous = fetch_text(elem_previous); // string del valore dell'attributo name
                 cout << "El previous: " << previous_string << endl;
                 cout << "Attr previous: " << previous << endl;
@@ -233,6 +217,7 @@ int parser::parsing() {
                 endResult = 1;
                 next = "";
             } else {
+                next_string = elem_next->Value();
                 next = fetch_text(elem_next); // string del valore dell'attributo name
                 cout << "El next: " << next_string << endl;
                 cout << "Attr next: " << next << endl;
@@ -253,6 +238,7 @@ int parser::parsing() {
                 endResult = 1;
                 track = "";
             } else {
+                track_string = elem_track->Value();
                 track = fetch_text(elem_track); // string del valore dell'attributo name
                 cout << "El track: " << track_string << endl;
                 cout << "Attr track: " << track << endl;
@@ -288,29 +274,26 @@ int parser::parsing() {
                               << it->second->getTrack()
                               << std::endl ;
                 }
-
             }
         } else if (rootName == "TRAM") { // AGGIUNGERE IL TRAM CREATO ALLA MAP
             Tram* tram = new Tram();
+            // children of root
             TiXmlNode *elem_line, *elem_capacity, *elem_speed, *elem_startStation;
+            // children of root -> string
             string line_string, capacity_string, speed_string, startStation_string;
+            // attribute of children of root -> string
             string line, capacity, speed, startStation; // they contain the value of the attribute as String
             // check if there are name, previous, next, track
             elem_line = root->FirstChild("line");
             elem_capacity = root->FirstChild("capacity");
             elem_speed = root->FirstChild("speed");
             elem_startStation = root->FirstChild("startStation");
-            // get the elements above as String
-            line_string = elem_line->Value();
-            capacity_string = elem_capacity->Value();
-            speed_string = elem_speed->Value();
-            startStation_string = elem_startStation->Value();
-
             if (elem_line == NULL) {
                 cout << "UNRECOGNIZED ELEMENT: Expected <line> ... </line>." << endl;
                 endResult = 1;
                 line = "";
             } else {
+                line_string = elem_line->Value();
                 line = fetch_text(elem_line); // string del valore dell'attributo name
                 cout << "El line: " << line_string << endl;
                 cout << "Attr line: " << line << endl;
@@ -331,6 +314,7 @@ int parser::parsing() {
                 endResult = 1;
                 capacity = "";
             } else {
+                capacity_string = elem_capacity->Value();
                 capacity = fetch_text(elem_capacity); // string del valore dell'attributo name
                 cout << "El capacity: " << capacity_string << endl;
                 cout << "Attr capacity: " << capacity << endl;
@@ -351,6 +335,7 @@ int parser::parsing() {
                 endResult = 1;
                 speed = "";
             } else {
+                speed_string = elem_speed->Value();
                 speed = fetch_text(elem_speed); // string del valore dell'attributo name
                 cout << "El speed: " << speed_string << endl;
                 cout << "Attr speed: " << speed << endl;
@@ -371,6 +356,7 @@ int parser::parsing() {
                 endResult = 1;
                 startStation = "";
             } else {
+                startStation_string = elem_startStation->Value();
                 startStation = fetch_text(elem_startStation); // string del valore dell'attributo name
                 cout << "El startStation: " << startStation_string << endl;
                 cout << "Attr startStation: " << startStation << endl;
@@ -409,132 +395,7 @@ int parser::parsing() {
             }
         }
     }
-    //doc.Close();
+    doc.Clear();
     cout << "result: " << endResult << endl;
     return endResult;
 }
-
-// PARTE VECCHIA NON DA GUARDARE !!
-
-            /*int numChildren = 0; // to check that the el STATION has 4 children at the end
-            for (TiXmlElement *elem = root->FirstChildElement(); elem != NULL; elem = elem->NextSiblingElement()) {
-                string elemName = elem->Value(); // find child (es: if root == station -> elem = next)
-                //std::cout << elemName << std::endl;
-                if (elemName == "name" || elemName == "previous" || elemName == "next" || elemName == "track") {
-                    TiXmlNode *e = elem->FirstChild(); // recupera l'attributo (es: if elem == "next" -> e = NOMESTAZIONE)
-                    if (e != NULL) {
-                        TiXmlText *text = e->ToText(); // recupera l'eattributo come puntatore a string
-                        string attributeValue = "";
-                        //if (text == NULL)
-                        //  continuous;
-                        //string t = text->Value();
-                        //std::cout << t << std::endl;
-                        if (text != NULL){ // elem non ha attributi -> puo' essere solo next previous
-                            attributeValue = text->Value();
-                            // check if the value is correct for the type of attribute
-                            if(attributeValue != "")
-                                check_digits_letters_station(elemName, attributeValue);
-                            else {
-                                // error: attributeValue is string ""
-                            }
-                        }
-                        else {
-                            // error: text == NULL -> attribute does not exist
-                        }
-                    }
-                    else {
-                        // error: attribute == NULL
-                    }
-                }
-                else {
-                    //error !! element not ok -> != next previous, name track
-                }
-                numChildren++;
-            }
-            if (numChildren != 4) {
-                //errore !! la stazione manca di qualche elemento
-            } else {
-                stations.pushback(station); // DA FARE ALLA FINE, SE SI RISPATTANO LE REGOOLE DELLA GRAMMATICA
-            }
-            return 0; // COSì SI FA ??
-
-        } else if (rootName == "TRAM") {
-            TokenTram tram = new TokenTram();
-            int numChildren = 0; // to check that the el STATION has 4 children at the end
-            for (TiXmlElement *elem = root->FirstChildElement(); elem != NULL; elem = elem->NextSiblingElement()) {
-                string elemName = elem->Value(); // find child (es: if root == station -> elem = next)
-                //std::cout << elemName << std::endl;
-                if (elemName == "line" || elemName == "capacity" || elemName == "speed" || elemName == "startStation") {
-                    TiXmlNode *e = elem->FirstChild(); // recupera l'attributo (es: if elem == "next" -> e = NOMESTAZIONE)
-                    if (e != NULL) {
-                        TiXmlText *text = e->ToText(); // recupera l'eattributo come puntatore a string
-                        string attributeValue = "";
-                        //if (text == NULL)
-                        //  continuous;
-                        //string t = text->Value();
-                        //std::cout << t << std::endl;
-                        if (text != NULL) {// elem non ha attributi -> puo' essere solo next previous
-                            attributeValue = text->Value();
-                            // check if the value is correct for the type of attribute
-                            check_digits_letters_tram(elemName, attributeValue);
-                        } else {
-                            //errore !! zero argomenti dove dovrebbe essercene -> NULL insieme a track / name
-                        }
-                    } else {
-                        //exceptin: value not ok, sono NULL
-                    }
-                } else { //error !! element not ok -> != line capacity speed startStation
-                }
-                numChildren++;
-            }
-            if (numChildren != 4) {
-                //errore !! la stazione manca di qualche elemento
-            } else {
-                tram.spushback(tram); // DA FARE ALLA FINE, SE SI RISPATTANO LE REGOOLE DELLA GRAMMATICA
-            }
-            return 0; // COSì SI FA ??
-        }
-    }
-}*/
-
-
-
-// USEFUL FUNCTION TO CONTROL IF SYSTEM IS CONSISTENT
-
-// consistent ? point 1 - 2
-
-/*
-check_track_close_station(std::vector<Station> stations){
-for(int i = 0; i < stations.length() - 1; i++){
-for(int j = 1; j < stations.lengh(); j++){ // aggiorna in automatico la lunghezza ??
-if (stations[i].getName() == stations[j].getName()){
-if(stations[i].getNext() == stations[j].getNext() && stations[i].getPrevious() == stations[j].getPrevious() && stations[i].getTrack() == stations[j].getTrack())
-stations.erase(stations.begin() + j); // if there are 2 stations that are the same (same attributes), we cancel one
-else
-// errore !! stazioni hanno uguale nome, ma attributi differenti
-}
-else if(stations[i].getNextName() == stations[j].getName()) // if the station has a next == another station name
-stations[i].setNext(&stations[j]); //giusto il deferenziamento ??
-else if(stations[i].getPreviousName() == stations[j].getName()) // if the station has a previous == another station name
-stations[i].setPrevious(&stations[j]);
-}
-}
-*/
-
-/*
-void parser::setStations(const map<string, &stations) {
-    parser::stations = stations;
-}
-
-const map<string, &parser::getStations() const {
-    return stations;
-}
-
-const map<string, &parser::getTrams() const {
-    return trams;
-}
-
-void parser::setTrams(const map<string, &trams) {
-    parser::trams = trams;
-}*/
-
