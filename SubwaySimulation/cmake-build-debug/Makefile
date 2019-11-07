@@ -263,7 +263,6 @@ SubwaySimulationInputTests.o: SubwaySimulationInputTests.cpp.o
 # target to build an object file
 SubwaySimulationInputTests.cpp.o:
 	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o
-	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/SubwaySimulationInputTests.cpp.o
 .PHONY : SubwaySimulationInputTests.cpp.o
 
 SubwaySimulationInputTests.i: SubwaySimulationInputTests.cpp.i
@@ -273,7 +272,6 @@ SubwaySimulationInputTests.i: SubwaySimulationInputTests.cpp.i
 # target to preprocess a source file
 SubwaySimulationInputTests.cpp.i:
 	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.i
-	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/SubwaySimulationInputTests.cpp.i
 .PHONY : SubwaySimulationInputTests.cpp.i
 
 SubwaySimulationInputTests.s: SubwaySimulationInputTests.cpp.s
@@ -283,8 +281,61 @@ SubwaySimulationInputTests.s: SubwaySimulationInputTests.cpp.s
 # target to generate assembly for a file
 SubwaySimulationInputTests.cpp.s:
 	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.s
-	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/SubwaySimulationInputTests.cpp.s
 .PHONY : SubwaySimulationInputTests.cpp.s
+
+SubwaySimulationMain.o: SubwaySimulationMain.cpp.o
+
+.PHONY : SubwaySimulationMain.o
+
+# target to build an object file
+SubwaySimulationMain.cpp.o:
+	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/SubwaySimulationMain.cpp.o
+.PHONY : SubwaySimulationMain.cpp.o
+
+SubwaySimulationMain.i: SubwaySimulationMain.cpp.i
+
+.PHONY : SubwaySimulationMain.i
+
+# target to preprocess a source file
+SubwaySimulationMain.cpp.i:
+	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/SubwaySimulationMain.cpp.i
+.PHONY : SubwaySimulationMain.cpp.i
+
+SubwaySimulationMain.s: SubwaySimulationMain.cpp.s
+
+.PHONY : SubwaySimulationMain.s
+
+# target to generate assembly for a file
+SubwaySimulationMain.cpp.s:
+	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/SubwaySimulationMain.cpp.s
+.PHONY : SubwaySimulationMain.cpp.s
+
+SubwaySimulationTests.o: SubwaySimulationTests.cpp.o
+
+.PHONY : SubwaySimulationTests.o
+
+# target to build an object file
+SubwaySimulationTests.cpp.o:
+	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/SubwaySimulationTests.cpp.o
+.PHONY : SubwaySimulationTests.cpp.o
+
+SubwaySimulationTests.i: SubwaySimulationTests.cpp.i
+
+.PHONY : SubwaySimulationTests.i
+
+# target to preprocess a source file
+SubwaySimulationTests.cpp.i:
+	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/SubwaySimulationTests.cpp.i
+.PHONY : SubwaySimulationTests.cpp.i
+
+SubwaySimulationTests.s: SubwaySimulationTests.cpp.s
+
+.PHONY : SubwaySimulationTests.s
+
+# target to generate assembly for a file
+SubwaySimulationTests.cpp.s:
+	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/SubwaySimulationTests.cpp.s
+.PHONY : SubwaySimulationTests.cpp.s
 
 Tram.o: Tram.cpp.o
 
@@ -461,6 +512,12 @@ help:
 	@echo "... SubwaySimulationInputTests.o"
 	@echo "... SubwaySimulationInputTests.i"
 	@echo "... SubwaySimulationInputTests.s"
+	@echo "... SubwaySimulationMain.o"
+	@echo "... SubwaySimulationMain.i"
+	@echo "... SubwaySimulationMain.s"
+	@echo "... SubwaySimulationTests.o"
+	@echo "... SubwaySimulationTests.i"
+	@echo "... SubwaySimulationTests.s"
 	@echo "... Tram.o"
 	@echo "... Tram.i"
 	@echo "... Tram.s"

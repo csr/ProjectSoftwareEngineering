@@ -39,8 +39,3 @@ void simulation(int time){
 //    currentTime++;
 //  }
 }
-
-int main() {
-  std::cout << "Hello world. Start parsing?";
-  return 0;
-}
