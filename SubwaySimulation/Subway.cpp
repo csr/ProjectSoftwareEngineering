@@ -18,26 +18,26 @@ using std::string;
 
 string toString(){
   string response;
-  for (auto elem : Subway::stations){
-    response += elem.toString();
-  }
+//  for (auto elem : Subway::stations){
+//    response += elem.toString();
+//  }
   return response;
 }
 
 void movingTram(){
-  for (elem : Subway::trams){
-    for (auto station : Subway::stations){
-      if (station == elem.currentStation)
-        elem.setCurrentStation(station.next);
-    }
-  }
+//  for (elem : Subway::trams){
+//    for (auto station : Subway::stations){
+//      if (station == elem.currentStation)
+//        elem.setCurrentStation(station.next);
+//    }
+//  }
 }
 
 void simulation(int time){
-  while(currentTime <= time){
-    this.movingTram();
-    currentTime++;
-  }
+//  while(currentTime <= time){
+//    this.movingTram();
+//    currentTime++;
+//  }
 }
 
 int main() {

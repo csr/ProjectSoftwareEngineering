@@ -13,11 +13,16 @@
 using namespace std;
 #include "Station.h"
 #include "Tram.h"
+#include <map>
 
 class Subway {
  private:
-  vector<Station> stations;
-  vector<Tram> trams;
+//  vector<Station> stations;
+//  vector<Tram> trams;
+
+  map<string, Station*> stations;
+  map<string, Tram*> trams;
+
  public:
   Subway(){}
   string toString();
@@ -25,8 +30,6 @@ class Subway {
   void addTram(Tram elem);
   void movingTram();
   void simulation(int time);
-
-
 };
 
 // Closing of the ``header guard''.

@@ -1,0 +1,12 @@
+//
+// Created by Cesare de Cal on 11/7/19.
+//
+
+#ifndef SUBWAYSIMULATION__SUBWAYSIMULATIONIMPORTER_H_
+#define SUBWAYSIMULATION__SUBWAYSIMULATIONIMPORTER_H_
+
+class SubwaySimulationImporter {
+
+};
+
+#endif //SUBWAYSIMULATION__SUBWAYSIMULATIONIMPORTER_H_
