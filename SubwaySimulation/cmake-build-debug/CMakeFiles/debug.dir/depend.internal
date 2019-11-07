@@ -38,6 +38,7 @@ CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
@@ -67,7 +68,7 @@ CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationInputTests.cpp
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationInputTests.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
@@ -92,6 +93,8 @@ CMakeFiles/debug.dir/SubwaySimulationTests.cpp.o
  ../gtest/include/gtest/internal/gtest-tuple.h
  ../gtest/include/gtest/internal/gtest-type-util.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationTests.cpp
+CMakeFiles/debug.dir/SubwaySimulationUtils.cpp.o
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.cpp
 CMakeFiles/debug.dir/Tram.cpp.o
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.cpp

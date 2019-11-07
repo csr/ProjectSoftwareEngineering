@@ -258,16 +258,6 @@ Tram.h
 map
 -
 
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp
-SubwaySimulationImporter.h
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
-map
--
-iostream
--
-tinyxml.h
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
-
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
 vector
 -
@@ -277,14 +267,10 @@ tinyxml.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
 Tram.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
-Station.h
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
+Subway.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
 
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationInputTests.cpp
-SubwaySimulationInputTests.h
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationInputTests.h
-
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationInputTests.h
 iostream
 -
 fstream
@@ -295,8 +281,22 @@ gtest/gtest.h
 -
 Subway.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
+SubwaySimulationUtils.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.h
 SubwaySimulationImporter.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.h
+iostream
+-
+fstream
+-
+sys/stat.h
+-
+cstdio
+-
+string
+-
 
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
 string

@@ -18,16 +18,6 @@ Tram.h
 map
 -
 
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp
-SubwaySimulationImporter.h
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
-map
--
-iostream
--
-tinyxml.h
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
-
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
 vector
 -
@@ -39,6 +29,14 @@ Tram.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
 Subway.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationMain.cpp
+iostream
+-
+Subway.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
+SubwaySimulationImporter.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
 
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
 string

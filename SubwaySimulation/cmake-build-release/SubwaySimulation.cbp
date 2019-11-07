@@ -155,14 +155,19 @@
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationInputTests.cpp">
 			<Option target="debug"/>
 		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationInputTests.h">
-			<Option target="debug"/>
-		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationMain.cpp">
 			<Option target="release"/>
 		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationTests.cpp">
 			<Option target="debug"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.h">
+			<Option target="debug"/>
+			<Option target="release"/>
 		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.cpp">
 			<Option target="debug"/>
