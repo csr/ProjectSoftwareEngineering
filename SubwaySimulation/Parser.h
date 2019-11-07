@@ -6,22 +6,20 @@
 // Description : Subway simulation in C++
 //============================================================================
 
-#pragma once
-#include "tinyxml.h"
-#include "Tram.h"
-#include "Station.h"
-
-using namespace std;
-
-#include <vector>
-
 #ifndef UNTITLED_PARSER_H
 #define UNTITLED_PARSER_H
-#include "Station.h"
-#include "Tram.h"
-#include "tinyxml.h"
+
+#include <vector>
 #include <map>
+
+#include "tinyxml.h"
+#include "Tram.h"
+#include "Station.h"
+
 using namespace std;
+
+// Goals: parsing the schedule of the subway network: the different stations, how they are connected to each other,
+// and the different trams.
 
 class Parser {
  public:

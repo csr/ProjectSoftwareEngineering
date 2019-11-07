@@ -142,7 +142,7 @@ bool Parser::check_digits_letters_tram(string elemName, string attributeValue, T
 
 int Parser::parsing() {
 
-    //parser* p = new parser(); UTILE SOLO SE SI DEVE USARE UN METODO NON STATIC DELLA CLASSE parser (DEFINITA IN parser.h)
+    //parser* p = new parser(); UTILE SOLO SE SI DEVE USARE UN METODO NON STATIC DELLA CLASSE parser (DEFINITA IN Parser.h)
 
     TiXmlDocument doc;
     int endResult = 0;

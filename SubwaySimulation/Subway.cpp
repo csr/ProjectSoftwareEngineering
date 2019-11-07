@@ -14,7 +14,7 @@
 #include "Subway.h"
 #include "DesignByContract.h"
 
-using std::string;
+using namespace std;
 
 string toString(){
   string response;

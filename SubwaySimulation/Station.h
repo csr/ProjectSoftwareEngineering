@@ -8,22 +8,14 @@
 using namespace std;
 
 class Station {
-
  public:
   const string &getName() const;
-
   const string &getNext() const;
-
   const string &getPrevious() const;
-
   int getTrack() const;
-
   void setName(const string &name);
-
   void setNext(const string &next);
-
   void setPrevious(const string &previous);
-
   void setTrack(int track);
 
  private:
@@ -31,8 +23,6 @@ class Station {
   string next;
   string previous;
   int track;
-
 };
-
 
 #endif //UNTITLED_STATION_H
