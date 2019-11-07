@@ -8,13 +8,39 @@
 
 #include <iostream>
 #include "tinyxml.h"
+#include "Station.h"
+#include "Tram.h"
 
 #include "Subway.h"
 #include "DesignByContract.h"
 
 using std::string;
 
+string toString(){
+  string response;
+  for (auto elem : Subway::stations){
+    response += elem.toString();
+  }
+  return response;
+}
+
+void movingTram(){
+  for (elem : Subway::trams){
+    for (auto station : Subway::stations){
+      if (station == elem.currentStation)
+        elem.setCurrentStation(station.next);
+    }
+  }
+}
+
+void simulation(int time){
+  while(currentTime <= time){
+    this.movingTram();
+    currentTime++;
+  }
+}
+
 int main() {
-    std::cout << "Hello World";
-    return 0;
+  std::cout << "Hello World";
+  return 0;
 }

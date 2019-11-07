@@ -15,10 +15,10 @@ include_directories(gtest/include)
 link_directories(gtest/lib)
 
 # Set source files for RELEASE target
-set(RELEASE_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Subway.h Station.cpp Station.h Tram.cpp Tram.h Subway.h SubwaySimulationImporter.cpp SubwaySimulationImporter.h)
+set(RELEASE_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Subway.h Station.cpp Station.h Tram.cpp Tram.h Subway.h Parser.h Parser.cpp)
 
 # Set source files for DEBUG target
-set(DEBUG_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Subway.h Station.cpp Station.h Tram.cpp Tram.h SubwaySimulationDomainTests.cpp Subway.h SubwaySimulationImporter.cpp SubwaySimulationImporter.h)
+set(DEBUG_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Subway.h Station.cpp Station.h Tram.cpp Tram.h SubwaySimulationDomainTests.cpp Subway.h Parser.h Parser.cpp)
 
 # Create RELEASE target
 add_executable(release ${RELEASE_SOURCE_FILES})
@@ -30,4 +30,4 @@ add_executable(debug ${DEBUG_SOURCE_FILES})
 target_link_libraries(debug gtest)
 
 file(COPY testOutput DESTINATION .)
-file(COPY testInput DESTINATION .)
+#file(COPY testInput DESTINATION .)

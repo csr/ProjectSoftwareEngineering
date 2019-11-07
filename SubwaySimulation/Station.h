@@ -1,27 +1,38 @@
-//============================================================================
-// Name        : Station.h
-// Author      : Cesare De Cal, Marco Natali, Veronica Orsanigo
-// Version     :
-// Copyright   : Cesare De Cal, Marco Natali, Veronica Orsanigo
-// Description : This file holds the header for the Station class.
-//============================================================================
+//
+// Created by veror on 03/11/2019.
+//
 
-#pragma once
+#ifndef UNTITLED_STATION_H
+#define UNTITLED_STATION_H
 #include <string>
-#include "Station.h"
-
 using namespace std;
 
 class Station {
- private:
-  string name;
-  int track;
-  string previous;
-  string next;
 
  public:
-  Station(string name, int track, string previous, string next);
-  
-  string toString();
+  const string &getName() const;
+
+  const string &getNext() const;
+
+  const string &getPrevious() const;
+
+  int getTrack() const;
+
+  void setName(const string &name);
+
+  void setNext(const string &next);
+
+  void setPrevious(const string &previous);
+
+  void setTrack(int track);
+
+ private:
+  string name;
+  string next;
+  string previous;
+  int track;
 
 };
+
+
+#endif //UNTITLED_STATION_H

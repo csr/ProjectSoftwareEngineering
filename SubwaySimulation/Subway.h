@@ -10,25 +10,23 @@
 // Prevents from loading the same .h file multiple times
 #ifndef SubwaySimulation_H
 #define SubwaySimulation_H
-
-#include <vector>
+using namespace std;
 #include "Station.h"
 #include "Tram.h"
 
-using namespace std;
-
 class Subway {
-	private:
-		std::vector<Station> stations;
-		std::vector<Tram> trams;
-	
-	public:
-		Subway(){}
-		void addStation(Station station);
-		void addTram(Tram tram);
-		Station getStations();
-		Tram getTram();
-		string toString();
+ private:
+  vector<Station> stations;
+  vector<Tram> trams;
+ public:
+  Subway(){}
+  string toString();
+  void addStation(Station elem);
+  void addTram(Tram elem);
+  void movingTram();
+  void simulation(int time);
+
+
 };
 
 // Closing of the ``header guard''.
