@@ -36,14 +36,40 @@ CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../Subway.h
 CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../SubwaySimulationDomainTests.cpp
 CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../Tram.h
 
-CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../DesignByContract.h
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../Station.h
-CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../Subway.h
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../SubwaySimulationImporter.cpp
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../SubwaySimulationImporter.h
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../Tram.h
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../tinystr.h
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../tinyxml.h
+
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/gtest-death-test.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/gtest-message.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/gtest-param-test.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/gtest-printers.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/gtest-test-part.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/gtest-typed-test.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/gtest.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/gtest_pred_impl.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/gtest_prod.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/internal/gtest-death-test-internal.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/internal/gtest-filepath.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/internal/gtest-internal.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/internal/gtest-linked_ptr.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/internal/gtest-param-util-generated.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/internal/gtest-param-util.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/internal/gtest-port.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/internal/gtest-string.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/internal/gtest-tuple.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../gtest/include/gtest/internal/gtest-type-util.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../Station.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../Subway.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../SubwaySimulationImporter.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../SubwaySimulationInputTests.cpp
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../SubwaySimulationInputTests.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../Tram.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../tinystr.h
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../tinyxml.h
 
 CMakeFiles/debug.dir/Tram.cpp.o: ../Station.h
 CMakeFiles/debug.dir/Tram.cpp.o: ../Tram.cpp

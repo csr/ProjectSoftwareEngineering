@@ -153,6 +153,14 @@
 			<Option target="debug"/>
 			<Option target="release"/>
 		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationInputTests.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationInputTests.h">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.cpp">
 			<Option target="debug"/>
 			<Option target="release"/>

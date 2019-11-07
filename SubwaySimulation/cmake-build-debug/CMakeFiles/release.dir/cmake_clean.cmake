@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/release.dir/Station.cpp.o"
   "CMakeFiles/release.dir/Subway.cpp.o"
   "CMakeFiles/release.dir/SubwaySimulationImporter.cpp.o"
+  "CMakeFiles/release.dir/SubwaySimulationInputTests.cpp.o"
   "CMakeFiles/release.dir/Tram.cpp.o"
   "CMakeFiles/release.dir/tinystr.cpp.o"
   "CMakeFiles/release.dir/tinyxml.cpp.o"
