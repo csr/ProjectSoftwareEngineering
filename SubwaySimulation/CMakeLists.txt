@@ -15,7 +15,7 @@ include_directories(gtest/include)
 link_directories(gtest/lib)
 
 # Set source files for RELEASE target
-set(RELEASE_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Subway.h Station.cpp Station.h Tram.cpp Tram.h Subway.h SubwaySimulationImporter.cpp SubwaySimulationImporter.h SubwaySimulationInputTests.cpp SubwaySimulationInputTests.h)
+set(RELEASE_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Subway.h Station.cpp Station.h Tram.cpp Tram.h Subway.h SubwaySimulationImporter.cpp SubwaySimulationImporter.h SubwaySimulationInputTests.cpp SubwaySimulationInputTests.h SubwaySimulationTests.cpp)
 
 # Set source files for DEBUG target
 set(DEBUG_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Subway.h Station.cpp Station.h Tram.cpp Tram.h SubwaySimulationDomainTests.cpp Subway.h SubwaySimulationImporter.cpp SubwaySimulationImporter.h SubwaySimulationInputTests.cpp SubwaySimulationInputTests.h)
