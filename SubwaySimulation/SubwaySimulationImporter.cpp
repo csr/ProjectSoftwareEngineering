@@ -6,39 +6,26 @@
 // Description : Subway simulation in C++
 //============================================================================
 
-// !!!!!!!!!!!!!!!!!!!!!!!!
-// SISTEMARE PER STATION E TRAM (CLASSI) ED ECCEZIONI ERRSTREA
-// !!!!!!!!!!!!!!!!!!!!!!!!!
-
-// !!!!!!!!!!!!!!!!!!!!!!
-// GESTIRE DOC.CLOSE()
-// !!!!!!!!!!!!!!!!!!!!!!
-
-// NB QUANDO SI USA UN OGGETTO (DI TIPO PUNTATORE) PER CHIAMARE UN METODO SI USA ->
 #include "SubwaySimulationImporter.h"
-//#include "Station.h" NON INCLUDERE PERCHE' E' GIA' INCLUSO NELL'HEADER
-//#include "Tram.h"
-//#include <string>
-//include cose di TiXML
-//#include <vector>
 #include <map>
 #include <iostream>
 #include "tinyxml.h"
-#define FILE "example.txt" // metterci il nome del file XML che gli si passera' per testare
 using namespace std;
 
-string SubwaySimulationImporter::fetch_text(TiXmlNode *elem){
-  TiXmlNode *e = elem->FirstChild();
-  if (e == NULL)
-    return "";
-  string attribute = e->Value();
-  if(attribute == "")
-    return "";
-  return attribute;
+//Auxiliary function for internal use only
+
+const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
+  if (pElement == NULL) return "";
+
+  TiXmlNode *elemNode = pElement->FirstChild();
+  if (elemNode == NULL) return "";
+  TiXmlText* text = elemNode->ToText();
+  if(text == NULL) return "";
+  return text->Value();
 }
 
 // check if a string is composed by only digits -> it gives true if only digit / ""
-bool SubwaySimulationImporter::check_digit(string s, int i, bool is_ok){
+bool check_digit(string s, int i, bool is_ok){
   while(is_ok and i < s.length()){
     if (!(isdigit(s.at(i)))){
       is_ok = false;
@@ -49,7 +36,7 @@ bool SubwaySimulationImporter::check_digit(string s, int i, bool is_ok){
 }
 
 // check if a string is composed by only letters
-bool SubwaySimulationImporter::check_letter(string s, int i, bool is_ok) {
+bool check_letter(string s, int i, bool is_ok) {
   while (is_ok and i < s.length()) {
     if (!(isalpha(s.at(i)))) {
       is_ok = false;
@@ -60,7 +47,7 @@ bool SubwaySimulationImporter::check_letter(string s, int i, bool is_ok) {
 }
 
 // set the attribute of the station
-void SubwaySimulationImporter::set_values_station(string elemName, Station* station, string attributeValue){
+void set_values_station(string elemName, Station* station, string attributeValue) {
   if(elemName == "track")
     station->setTrack(std::stoi(attributeValue)); //bisogna aggiungere i set a classi Station e Tram
   else if(elemName == "name")
@@ -74,7 +61,7 @@ void SubwaySimulationImporter::set_values_station(string elemName, Station* stat
 }
 
 // check that the attribute is right for grammatic and if it is, it sets the value of the attribute to the station
-bool SubwaySimulationImporter::check_digits_letters_station(string elemName, string attributeValue, Station* station){
+bool check_digits_letters_station(string elemName, string attributeValue, Station* station){
   int i = 0;
   bool is_ok = true;
   if(elemName == "name"){
@@ -102,7 +89,7 @@ bool SubwaySimulationImporter::check_digits_letters_station(string elemName, str
 }
 
 // set the attribute of the tram
-void SubwaySimulationImporter::set_values_tram(string elemName, Tram* tram, string attributeValue){
+void set_values_tram(string elemName, Tram* tram, string attributeValue){
   if(elemName == "line")
     tram->setLine(std::stoi(attributeValue)); //bisogna aggiungere i set a classi Station e Tram
   else if(elemName == "capacity")
@@ -113,8 +100,8 @@ void SubwaySimulationImporter::set_values_tram(string elemName, Tram* tram, stri
     tram->setStartStation(attributeValue);
 }
 
-// check that the attribute is right for grammatic and if it is, it sets the value of the attribute to the tram
-bool SubwaySimulationImporter::check_digits_letters_tram(string elemName, string attributeValue, Tram* tram){
+// check that the attribute is right for the grammar and if it is, it sets the value of the attribute to the tram
+bool check_digits_letters_tram(string elemName, string attributeValue, Tram* tram) {
   int i = 0;
   bool is_ok = true;
   if (elemName == "line" || elemName == "speed" || elemName == "capacity")
@@ -130,25 +117,21 @@ bool SubwaySimulationImporter::check_digits_letters_tram(string elemName, string
   return is_ok;
 }
 
-
-// ////////////////////////////////////////////
-// CONTROLLARE SE PASSARE FILE COME ATTRIBUTO ALLA FZ PARSING
-// USARE OGGETTO PARSER PER CHIAMARE METODI E ATTRIBUTI
-
-int SubwaySimulationImporter::parsing() {
-
-  //parser* p = new parser(); UTILE SOLO SE SI DEVE USARE UN METODO NON STATIC DELLA CLASSE parser (DEFINITA IN Parser.h)
-
+SuccessEnum SubwaySimulationImporter::importSubway(
+    const char *inputFileName, std::ostream& errStream, Subway& subway) {
   TiXmlDocument doc;
-  int endResult = 0;
+  SuccessEnum endResult = Success;
 
-  if (!doc.LoadFile(FILE)) {
+  if (!doc.LoadFile(inputFileName)) {
     cerr << doc.ErrorDesc() << endl;
-    return 1;
+    return InvalidFileName;
   }
 
+  // These maps will contain objects parsed with the Parsing class
+  map<string, Station*> stations;
+  map<string, Tram*> trams;
+
   for (TiXmlElement *root = doc.FirstChildElement(); root != NULL; root = root->NextSiblingElement()) {
-    endResult = 0;
     string rootName = root->Value();
     if (rootName != "STATION" && rootName != "TRAM") {
       cout << "UNRECOGNIZED ELEMENT: Expected <STATION> ... </STATION> or <TRAM> ... </TRAM> and got <"
@@ -170,11 +153,11 @@ int SubwaySimulationImporter::parsing() {
       elem_track = root->FirstChild("track");
       if (elem_name == NULL) {
         cout << "UNRECOGNIZED ELEMENT: Expected <name> ... </name>." << endl;
-        endResult = 1;
+        endResult = InvalidData;
         name = "";
       } else {
         name_string = elem_name->Value();
-        name = fetch_text(elem_name); // string del valore dell'attributo name
+        name = fetch_text(elem_name, errStream); // string del valore dell'attributo name
         cout << "El name: " << name_string << endl;
         cout << "Attr name: " << name << endl;
         if (name != "") {
@@ -182,75 +165,75 @@ int SubwaySimulationImporter::parsing() {
           //cout << "NAME " << station->getName() << endl;
           if (data_ok == false) {
             cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = 1;
+            endResult = InvalidData;
           }
         }
         else {
           cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = 1;
+          endResult = InvalidData;
         }
       }
       if (elem_previous == NULL) {
         cout << "UNRECOGNIZED ELEMENT: Expected <previous> ... </previous>." << endl;
-        endResult = 1;
+        endResult = InvalidData;
         previous = "";
       } else {
         previous_string = elem_previous->Value();
-        previous = fetch_text(elem_previous); // string del valore dell'attributo name
+        previous = fetch_text(elem_previous, errStream); // string del valore dell'attributo name
         cout << "El previous: " << previous_string << endl;
         cout << "Attr previous: " << previous << endl;
         if (previous != ""){
           bool data_ok = check_digits_letters_station(previous_string, previous, station);
           if (data_ok == false) {
             cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = 1;
+            endResult = InvalidData;
           }
         }
         else {
           cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = 1;
+          endResult = InvalidData;
         }
       }
       if (elem_next == NULL) {
         cout << "UNRECOGNIZED ELEMENT: Expected <next> ... </next>." << endl;
-        endResult = 1;
+        endResult = InvalidData;
         next = "";
       } else {
         next_string = elem_next->Value();
-        next = fetch_text(elem_next); // string del valore dell'attributo name
+        next = fetch_text(elem_next, errStream); // string del valore dell'attributo name
         cout << "El next: " << next_string << endl;
         cout << "Attr next: " << next << endl;
         if (next != "") {
           bool data_ok = check_digits_letters_station(next_string, next, station);
           if (data_ok == false) {
             cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = 1;
+            endResult = InvalidData;
           }
         }
         else {
           cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = 1;
+          endResult = InvalidData;
         }
       }
       if (elem_track == NULL) {
         cout << "UNRECOGNIZED ELEMENT: Expected <track> ... </track>." << endl;
-        endResult = 1;
+        endResult = InvalidData;
         track = "";
       } else {
         track_string = elem_track->Value();
-        track = fetch_text(elem_track); // string del valore dell'attributo name
+        track = fetch_text(elem_track, errStream); // string del valore dell'attributo name
         cout << "El track: " << track_string << endl;
         cout << "Attr track: " << track << endl;
         if (track != "") {
           bool data_ok = check_digits_letters_station(track_string, track, station);
           if (data_ok == false) {
             cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = 1;
+            endResult = InvalidData;
           }
         }
         else {
           cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = 1;
+          endResult = InvalidData;
         }
       }
       cout << "ENDRESULT station " << endResult << endl;
@@ -289,86 +272,86 @@ int SubwaySimulationImporter::parsing() {
       elem_startStation = root->FirstChild("startStation");
       if (elem_line == NULL) {
         cout << "UNRECOGNIZED ELEMENT: Expected <line> ... </line>." << endl;
-        endResult = 1;
+        endResult = InvalidData;
         line = "";
       } else {
         line_string = elem_line->Value();
-        line = fetch_text(elem_line); // string del valore dell'attributo name
+        line = fetch_text(elem_line, errStream); // string del valore dell'attributo name
         cout << "El line: " << line_string << endl;
         cout << "Attr line: " << line << endl;
         if (line != "") {
           bool data_ok = check_digits_letters_tram(line_string, line, tram);
           if (data_ok == false) {
             cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = 1;
+            endResult = InvalidData;
           }
         }
         else {
           cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = 1;
+          endResult = InvalidData;
         }
       }
       if (elem_capacity == NULL) {
         cout << "UNRECOGNIZED ELEMENT: Expected <capacity> ... </capacity>." << endl;
-        endResult = 1;
+        endResult = InvalidData;
         capacity = "";
       } else {
         capacity_string = elem_capacity->Value();
-        capacity = fetch_text(elem_capacity); // string del valore dell'attributo name
+        capacity = fetch_text(elem_capacity, errStream); // string del valore dell'attributo name
         cout << "El capacity: " << capacity_string << endl;
         cout << "Attr capacity: " << capacity << endl;
         if (capacity != "") {
           bool data_ok = check_digits_letters_tram(capacity_string, capacity, tram);
           if (data_ok == false) {
             cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = 1;
+            endResult = InvalidData;
           }
         }
         else {
           cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = 1;
+          endResult = InvalidData;
         }
       }
       if (elem_speed == NULL) {
         cout << "UNRECOGNIZED ELEMENT: Expected <speed> ... </speed>." << endl;
-        endResult = 1;
+        endResult = InvalidData;
         speed = "";
       } else {
         speed_string = elem_speed->Value();
-        speed = fetch_text(elem_speed); // string del valore dell'attributo name
+        speed = fetch_text(elem_speed, errStream); // string del valore dell'attributo name
         cout << "El speed: " << speed_string << endl;
         cout << "Attr speed: " << speed << endl;
         if (speed != "") {
           bool data_ok = check_digits_letters_tram(speed_string, speed, tram);
           if (data_ok == false) {
             cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = 1;
+            endResult = InvalidData;
           }
         }
         else {
           cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = 1;
+          endResult = InvalidData;
         }
       }
       if (elem_startStation == NULL) {
         cout << "UNRECOGNIZED ELEMENT: Expected <startStation> ... </startStation>." << endl;
-        endResult = 1;
+        endResult = InvalidData;
         startStation = "";
       } else {
         startStation_string = elem_startStation->Value();
-        startStation = fetch_text(elem_startStation); // string del valore dell'attributo name
+        startStation = fetch_text(elem_startStation, errStream); // string del valore dell'attributo name
         cout << "El startStation: " << startStation_string << endl;
         cout << "Attr startStation: " << startStation << endl;
         if (startStation != "") {
           bool data_ok = check_digits_letters_tram(startStation_string, startStation, tram);
           if (data_ok == false) {
             cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = 1;
+            endResult = InvalidData;
           }
         }
         else {
           cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = 1;
+          endResult = InvalidData;
         }
       }
       cout << "ENDRESULT tram " << endResult << endl;
@@ -394,7 +377,8 @@ int SubwaySimulationImporter::parsing() {
       }
     }
   }
-  doc.Clear();
   cout << "result: " << endResult << endl;
+
+  doc.Clear();
   return endResult;
 }

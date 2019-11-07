@@ -13,6 +13,7 @@ CMakeFiles/release.dir/Subway.cpp.o: ../tinystr.h
 CMakeFiles/release.dir/Subway.cpp.o: ../tinyxml.h
 
 CMakeFiles/release.dir/SubwaySimulationImporter.cpp.o: ../Station.h
+CMakeFiles/release.dir/SubwaySimulationImporter.cpp.o: ../Subway.h
 CMakeFiles/release.dir/SubwaySimulationImporter.cpp.o: ../SubwaySimulationImporter.cpp
 CMakeFiles/release.dir/SubwaySimulationImporter.cpp.o: ../SubwaySimulationImporter.h
 CMakeFiles/release.dir/SubwaySimulationImporter.cpp.o: ../Tram.h
@@ -21,8 +22,11 @@ CMakeFiles/release.dir/SubwaySimulationImporter.cpp.o: ../tinyxml.h
 
 CMakeFiles/release.dir/SubwaySimulationMain.cpp.o: ../Station.h
 CMakeFiles/release.dir/SubwaySimulationMain.cpp.o: ../Subway.h
+CMakeFiles/release.dir/SubwaySimulationMain.cpp.o: ../SubwaySimulationImporter.h
 CMakeFiles/release.dir/SubwaySimulationMain.cpp.o: ../SubwaySimulationMain.cpp
 CMakeFiles/release.dir/SubwaySimulationMain.cpp.o: ../Tram.h
+CMakeFiles/release.dir/SubwaySimulationMain.cpp.o: ../tinystr.h
+CMakeFiles/release.dir/SubwaySimulationMain.cpp.o: ../tinyxml.h
 
 CMakeFiles/release.dir/Tram.cpp.o: ../Tram.cpp
 CMakeFiles/release.dir/Tram.cpp.o: ../Tram.h

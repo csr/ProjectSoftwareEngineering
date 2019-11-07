@@ -8,21 +8,20 @@
 
 #include <iostream>
 #include "Subway.h"
+#include "SubwaySimulationImporter.h"
 
 using namespace std;
 
 int main(int argc, char **argv) {
-  Subway subway;
-//  TicTacToeHTMLTablesIconExporter exporter;
+  cout << "Welcome to the Subway Simulation! Running on release target.\n";
+  cout << "Enter file name of the schedule of the subway network: ";
 
-  printf("Hello world! You have selected the release target.\n");
-//  exporter.documentStart(cout);
-//  ttt.setMoves("a1c1b2a3c3", "b1a2c2b3");
-//
-//  while (ttt.notDone()) {
-//    ttt.doMove();
-//    cout << endl << endl;
-//    exporter.exportOn(cout, ttt);
-//  };
-//  exporter.documentEnd(cout);
+  string inputFileName;
+  cin >> inputFileName;
+
+  // Handle file names with or without ending ".xml"?
+  cout << "Parsing file with name: " << inputFileName;
+
+  Subway subway;
+
 }
