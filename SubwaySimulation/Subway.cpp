@@ -41,6 +41,6 @@ void simulation(int time){
 }
 
 int main() {
-  std::cout << "Hello World";
+  std::cout << "Hello world. Start parsing?";
   return 0;
 }
