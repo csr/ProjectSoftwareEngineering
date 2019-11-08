@@ -31,18 +31,25 @@ class SubwaySimulationInputTests: public ::testing::Test {
 };
 
 /**
-Tests Input From File given by Professor
+Tests testInput folder exists in project.
+*/
+TEST_F(SubwaySimulationInputTests, InputDirectoryExists) {
+  ASSERT_TRUE(DirectoryExists("testInput"));
+}
+
+/**
+Tests if example XML file given by Professor exists in project.
+*/
+TEST_F(SubwaySimulationInputTests, ExampleFileExists) {
+  ASSERT_TRUE(DirectoryExists("testInput/example.xml"));
+}
+
+/**
+Tests import of example file given by Professor.
 */
 TEST_F(SubwaySimulationInputTests, BasicImport) {
-  ASSERT_TRUE(DirectoryExists("testInput"));
-
   ofstream myfile;
   SuccessEnum importResult;
-
-  myfile.open("testInput/example.xml");
   importResult = SubwaySimulationImporter::importSubway("testInput/example.xml", myfile, ttt_);
-  myfile.close();
-  cout << "Import Result" << importResult;
-
-  EXPECT_TRUE(importResult != InvalidFileName);
+  EXPECT_TRUE(importResult == Success);
 }

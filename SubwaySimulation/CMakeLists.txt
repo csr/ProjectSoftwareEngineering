@@ -29,5 +29,5 @@ add_executable(debug ${DEBUG_SOURCE_FILES})
 # Link library
 target_link_libraries(debug gtest)
 
+file(COPY testInput DESTINATION .)
 file(COPY testOutput DESTINATION .)
-#file(COPY testInput DESTINATION .)

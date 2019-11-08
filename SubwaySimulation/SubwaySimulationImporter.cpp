@@ -122,263 +122,267 @@ SuccessEnum SubwaySimulationImporter::importSubway(
   TiXmlDocument doc;
   SuccessEnum endResult = Success;
 
+  cout << "Trying to load file with name: " << inputFileName << "\n";
+
   if (!doc.LoadFile(inputFileName)) {
     cerr << doc.ErrorDesc() << endl;
     return InvalidFileName;
   }
 
-  // These maps will contain objects parsed with the Parsing class
-  map<string, Station*> stations;
-  map<string, Tram*> trams;
-
-  for (TiXmlElement *root = doc.FirstChildElement(); root != NULL; root = root->NextSiblingElement()) {
-    string rootName = root->Value();
-    if (rootName != "STATION" && rootName != "TRAM") {
-      cout << "UNRECOGNIZED ELEMENT: Expected <STATION> ... </STATION> or <TRAM> ... </TRAM> and got <"
-           << rootName << "> ... </" << rootName << ">." << endl;
-    } else if (rootName == "STATION") { // AGGIUNGERE LA STAZIONE CREATA ALLA MAP
-      cout << "Root station: " << rootName << endl;
-      Station* station = new Station(); // putatore a ogg di tipo station che sta in heap
-      // children of root
-      TiXmlNode *elem_name, *elem_previous, *elem_next, *elem_track;
-      // children of root -> string
-      string name_string, previous_string, next_string, track_string;
-      // attribute of children of root -> string
-      string name, previous, next, track; // they contain the value of the attribute as String
-      // check if there are name, previous, next, track
-      elem_name = root->FirstChild("name");
-      // cout << "???? " << elem_name << endl;
-      elem_previous = root->FirstChild("previous");
-      elem_next = root->FirstChild("next");
-      elem_track = root->FirstChild("track");
-      if (elem_name == NULL) {
-        cout << "UNRECOGNIZED ELEMENT: Expected <name> ... </name>." << endl;
-        endResult = InvalidData;
-        name = "";
-      } else {
-        name_string = elem_name->Value();
-        name = fetch_text(elem_name, errStream); // string del valore dell'attributo name
-        cout << "El name: " << name_string << endl;
-        cout << "Attr name: " << name << endl;
-        if (name != "") {
-          bool data_ok = check_digits_letters_station(name_string, name, station); // station e' un puntatore
-          //cout << "NAME " << station->getName() << endl;
-          if (data_ok == false) {
-            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = InvalidData;
-          }
-        }
-        else {
-          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = InvalidData;
-        }
-      }
-      if (elem_previous == NULL) {
-        cout << "UNRECOGNIZED ELEMENT: Expected <previous> ... </previous>." << endl;
-        endResult = InvalidData;
-        previous = "";
-      } else {
-        previous_string = elem_previous->Value();
-        previous = fetch_text(elem_previous, errStream); // string del valore dell'attributo name
-        cout << "El previous: " << previous_string << endl;
-        cout << "Attr previous: " << previous << endl;
-        if (previous != ""){
-          bool data_ok = check_digits_letters_station(previous_string, previous, station);
-          if (data_ok == false) {
-            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = InvalidData;
-          }
-        }
-        else {
-          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = InvalidData;
-        }
-      }
-      if (elem_next == NULL) {
-        cout << "UNRECOGNIZED ELEMENT: Expected <next> ... </next>." << endl;
-        endResult = InvalidData;
-        next = "";
-      } else {
-        next_string = elem_next->Value();
-        next = fetch_text(elem_next, errStream); // string del valore dell'attributo name
-        cout << "El next: " << next_string << endl;
-        cout << "Attr next: " << next << endl;
-        if (next != "") {
-          bool data_ok = check_digits_letters_station(next_string, next, station);
-          if (data_ok == false) {
-            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = InvalidData;
-          }
-        }
-        else {
-          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = InvalidData;
-        }
-      }
-      if (elem_track == NULL) {
-        cout << "UNRECOGNIZED ELEMENT: Expected <track> ... </track>." << endl;
-        endResult = InvalidData;
-        track = "";
-      } else {
-        track_string = elem_track->Value();
-        track = fetch_text(elem_track, errStream); // string del valore dell'attributo name
-        cout << "El track: " << track_string << endl;
-        cout << "Attr track: " << track << endl;
-        if (track != "") {
-          bool data_ok = check_digits_letters_station(track_string, track, station);
-          if (data_ok == false) {
-            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = InvalidData;
-          }
-        }
-        else {
-          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = InvalidData;
-        }
-      }
-      cout << "ENDRESULT station " << endResult << endl;
-      if (endResult == 0){
-        stations[name] = station;
-
-        // for debugging
-        map<string, Station*>::iterator it;
-        std::cout <<"STATIONS:" << endl;
-        for ( it = stations.begin(); it != stations.end(); it++ )
-        {
-          std::cout << it->first  // string (key)
-                    << ':'
-                    << it->second->getName()   // string's value
-                    << "  "
-                    << it->second->getPrevious()
-                    << "  "
-                    << it->second->getNext()
-                    << "  "
-                    << it->second->getTrack()
-                    << std::endl ;
-        }
-      }
-    } else if (rootName == "TRAM") { // AGGIUNGERE IL TRAM CREATO ALLA MAP
-      Tram* tram = new Tram();
-      // children of root
-      TiXmlNode *elem_line, *elem_capacity, *elem_speed, *elem_startStation;
-      // children of root -> string
-      string line_string, capacity_string, speed_string, startStation_string;
-      // attribute of children of root -> string
-      string line, capacity, speed, startStation; // they contain the value of the attribute as String
-      // check if there are name, previous, next, track
-      elem_line = root->FirstChild("line");
-      elem_capacity = root->FirstChild("capacity");
-      elem_speed = root->FirstChild("speed");
-      elem_startStation = root->FirstChild("startStation");
-      if (elem_line == NULL) {
-        cout << "UNRECOGNIZED ELEMENT: Expected <line> ... </line>." << endl;
-        endResult = InvalidData;
-        line = "";
-      } else {
-        line_string = elem_line->Value();
-        line = fetch_text(elem_line, errStream); // string del valore dell'attributo name
-        cout << "El line: " << line_string << endl;
-        cout << "Attr line: " << line << endl;
-        if (line != "") {
-          bool data_ok = check_digits_letters_tram(line_string, line, tram);
-          if (data_ok == false) {
-            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = InvalidData;
-          }
-        }
-        else {
-          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = InvalidData;
-        }
-      }
-      if (elem_capacity == NULL) {
-        cout << "UNRECOGNIZED ELEMENT: Expected <capacity> ... </capacity>." << endl;
-        endResult = InvalidData;
-        capacity = "";
-      } else {
-        capacity_string = elem_capacity->Value();
-        capacity = fetch_text(elem_capacity, errStream); // string del valore dell'attributo name
-        cout << "El capacity: " << capacity_string << endl;
-        cout << "Attr capacity: " << capacity << endl;
-        if (capacity != "") {
-          bool data_ok = check_digits_letters_tram(capacity_string, capacity, tram);
-          if (data_ok == false) {
-            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = InvalidData;
-          }
-        }
-        else {
-          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = InvalidData;
-        }
-      }
-      if (elem_speed == NULL) {
-        cout << "UNRECOGNIZED ELEMENT: Expected <speed> ... </speed>." << endl;
-        endResult = InvalidData;
-        speed = "";
-      } else {
-        speed_string = elem_speed->Value();
-        speed = fetch_text(elem_speed, errStream); // string del valore dell'attributo name
-        cout << "El speed: " << speed_string << endl;
-        cout << "Attr speed: " << speed << endl;
-        if (speed != "") {
-          bool data_ok = check_digits_letters_tram(speed_string, speed, tram);
-          if (data_ok == false) {
-            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = InvalidData;
-          }
-        }
-        else {
-          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = InvalidData;
-        }
-      }
-      if (elem_startStation == NULL) {
-        cout << "UNRECOGNIZED ELEMENT: Expected <startStation> ... </startStation>." << endl;
-        endResult = InvalidData;
-        startStation = "";
-      } else {
-        startStation_string = elem_startStation->Value();
-        startStation = fetch_text(elem_startStation, errStream); // string del valore dell'attributo name
-        cout << "El startStation: " << startStation_string << endl;
-        cout << "Attr startStation: " << startStation << endl;
-        if (startStation != "") {
-          bool data_ok = check_digits_letters_tram(startStation_string, startStation, tram);
-          if (data_ok == false) {
-            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-            endResult = InvalidData;
-          }
-        }
-        else {
-          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
-          endResult = InvalidData;
-        }
-      }
-      cout << "ENDRESULT tram " << endResult << endl;
-      if (endResult == 0){
-        trams[line] = tram;
-
-        // for debugging
-        map<string, Tram*>::iterator it;
-        std::cout <<"TRAM:" << endl;
-        for ( it = trams.begin(); it != trams.end(); it++ )
-        {
-          std::cout << it->first  // string (key)
-                    << ':'
-                    << it->second->getLine()   // string's value
-                    << "  "
-                    << it->second->getCapacity()
-                    << "  "
-                    << it->second->getSpeed()
-                    << "  "
-                    << it->second->getStartStation()
-                    << std::endl ;
-        }
-      }
-    }
-  }
-  cout << "result: " << endResult << endl;
-
-  doc.Clear();
   return endResult;
+
+  // These maps will contain objects parsed with the Parsing class
+//  map<string, Station*> stations;
+//  map<string, Tram*> trams;
+//
+//  for (TiXmlElement *root = doc.FirstChildElement(); root != NULL; root = root->NextSiblingElement()) {
+//    string rootName = root->Value();
+//    if (rootName != "STATION" && rootName != "TRAM") {
+//      cout << "UNRECOGNIZED ELEMENT: Expected <STATION> ... </STATION> or <TRAM> ... </TRAM> and got <"
+//           << rootName << "> ... </" << rootName << ">." << endl;
+//    } else if (rootName == "STATION") { // AGGIUNGERE LA STAZIONE CREATA ALLA MAP
+//      cout << "Root station: " << rootName << endl;
+//      Station* station = new Station(); // putatore a ogg di tipo station che sta in heap
+//      // children of root
+//      TiXmlNode *elem_name, *elem_previous, *elem_next, *elem_track;
+//      // children of root -> string
+//      string name_string, previous_string, next_string, track_string;
+//      // attribute of children of root -> string
+//      string name, previous, next, track; // they contain the value of the attribute as String
+//      // check if there are name, previous, next, track
+//      elem_name = root->FirstChild("name");
+//      // cout << "???? " << elem_name << endl;
+//      elem_previous = root->FirstChild("previous");
+//      elem_next = root->FirstChild("next");
+//      elem_track = root->FirstChild("track");
+//      if (elem_name == NULL) {
+//        cout << "UNRECOGNIZED ELEMENT: Expected <name> ... </name>." << endl;
+//        endResult = InvalidData;
+//        name = "";
+//      } else {
+//        name_string = elem_name->Value();
+//        name = fetch_text(elem_name, errStream); // string del valore dell'attributo name
+//        cout << "El name: " << name_string << endl;
+//        cout << "Attr name: " << name << endl;
+//        if (name != "") {
+//          bool data_ok = check_digits_letters_station(name_string, name, station); // station e' un puntatore
+//          //cout << "NAME " << station->getName() << endl;
+//          if (data_ok == false) {
+//            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//            endResult = InvalidData;
+//          }
+//        }
+//        else {
+//          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//          endResult = InvalidData;
+//        }
+//      }
+//      if (elem_previous == NULL) {
+//        cout << "UNRECOGNIZED ELEMENT: Expected <previous> ... </previous>." << endl;
+//        endResult = InvalidData;
+//        previous = "";
+//      } else {
+//        previous_string = elem_previous->Value();
+//        previous = fetch_text(elem_previous, errStream); // string del valore dell'attributo name
+//        cout << "El previous: " << previous_string << endl;
+//        cout << "Attr previous: " << previous << endl;
+//        if (previous != ""){
+//          bool data_ok = check_digits_letters_station(previous_string, previous, station);
+//          if (data_ok == false) {
+//            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//            endResult = InvalidData;
+//          }
+//        }
+//        else {
+//          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//          endResult = InvalidData;
+//        }
+//      }
+//      if (elem_next == NULL) {
+//        cout << "UNRECOGNIZED ELEMENT: Expected <next> ... </next>." << endl;
+//        endResult = InvalidData;
+//        next = "";
+//      } else {
+//        next_string = elem_next->Value();
+//        next = fetch_text(elem_next, errStream); // string del valore dell'attributo name
+//        cout << "El next: " << next_string << endl;
+//        cout << "Attr next: " << next << endl;
+//        if (next != "") {
+//          bool data_ok = check_digits_letters_station(next_string, next, station);
+//          if (data_ok == false) {
+//            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//            endResult = InvalidData;
+//          }
+//        }
+//        else {
+//          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//          endResult = InvalidData;
+//        }
+//      }
+//      if (elem_track == NULL) {
+//        cout << "UNRECOGNIZED ELEMENT: Expected <track> ... </track>." << endl;
+//        endResult = InvalidData;
+//        track = "";
+//      } else {
+//        track_string = elem_track->Value();
+//        track = fetch_text(elem_track, errStream); // string del valore dell'attributo name
+//        cout << "El track: " << track_string << endl;
+//        cout << "Attr track: " << track << endl;
+//        if (track != "") {
+//          bool data_ok = check_digits_letters_station(track_string, track, station);
+//          if (data_ok == false) {
+//            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//            endResult = InvalidData;
+//          }
+//        }
+//        else {
+//          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//          endResult = InvalidData;
+//        }
+//      }
+//      cout << "ENDRESULT station " << endResult << endl;
+//      if (endResult == 0){
+//        stations[name] = station;
+//
+//        // for debugging
+//        map<string, Station*>::iterator it;
+//        std::cout <<"STATIONS:" << endl;
+//        for ( it = stations.begin(); it != stations.end(); it++ )
+//        {
+//          std::cout << it->first  // string (key)
+//                    << ':'
+//                    << it->second->getName()   // string's value
+//                    << "  "
+//                    << it->second->getPrevious()
+//                    << "  "
+//                    << it->second->getNext()
+//                    << "  "
+//                    << it->second->getTrack()
+//                    << std::endl ;
+//        }
+//      }
+//    } else if (rootName == "TRAM") { // AGGIUNGERE IL TRAM CREATO ALLA MAP
+//      Tram* tram = new Tram();
+//      // children of root
+//      TiXmlNode *elem_line, *elem_capacity, *elem_speed, *elem_startStation;
+//      // children of root -> string
+//      string line_string, capacity_string, speed_string, startStation_string;
+//      // attribute of children of root -> string
+//      string line, capacity, speed, startStation; // they contain the value of the attribute as String
+//      // check if there are name, previous, next, track
+//      elem_line = root->FirstChild("line");
+//      elem_capacity = root->FirstChild("capacity");
+//      elem_speed = root->FirstChild("speed");
+//      elem_startStation = root->FirstChild("startStation");
+//      if (elem_line == NULL) {
+//        cout << "UNRECOGNIZED ELEMENT: Expected <line> ... </line>." << endl;
+//        endResult = InvalidData;
+//        line = "";
+//      } else {
+//        line_string = elem_line->Value();
+//        line = fetch_text(elem_line, errStream); // string del valore dell'attributo name
+//        cout << "El line: " << line_string << endl;
+//        cout << "Attr line: " << line << endl;
+//        if (line != "") {
+//          bool data_ok = check_digits_letters_tram(line_string, line, tram);
+//          if (data_ok == false) {
+//            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//            endResult = InvalidData;
+//          }
+//        }
+//        else {
+//          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//          endResult = InvalidData;
+//        }
+//      }
+//      if (elem_capacity == NULL) {
+//        cout << "UNRECOGNIZED ELEMENT: Expected <capacity> ... </capacity>." << endl;
+//        endResult = InvalidData;
+//        capacity = "";
+//      } else {
+//        capacity_string = elem_capacity->Value();
+//        capacity = fetch_text(elem_capacity, errStream); // string del valore dell'attributo name
+//        cout << "El capacity: " << capacity_string << endl;
+//        cout << "Attr capacity: " << capacity << endl;
+//        if (capacity != "") {
+//          bool data_ok = check_digits_letters_tram(capacity_string, capacity, tram);
+//          if (data_ok == false) {
+//            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//            endResult = InvalidData;
+//          }
+//        }
+//        else {
+//          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//          endResult = InvalidData;
+//        }
+//      }
+//      if (elem_speed == NULL) {
+//        cout << "UNRECOGNIZED ELEMENT: Expected <speed> ... </speed>." << endl;
+//        endResult = InvalidData;
+//        speed = "";
+//      } else {
+//        speed_string = elem_speed->Value();
+//        speed = fetch_text(elem_speed, errStream); // string del valore dell'attributo name
+//        cout << "El speed: " << speed_string << endl;
+//        cout << "Attr speed: " << speed << endl;
+//        if (speed != "") {
+//          bool data_ok = check_digits_letters_tram(speed_string, speed, tram);
+//          if (data_ok == false) {
+//            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//            endResult = InvalidData;
+//          }
+//        }
+//        else {
+//          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//          endResult = InvalidData;
+//        }
+//      }
+//      if (elem_startStation == NULL) {
+//        cout << "UNRECOGNIZED ELEMENT: Expected <startStation> ... </startStation>." << endl;
+//        endResult = InvalidData;
+//        startStation = "";
+//      } else {
+//        startStation_string = elem_startStation->Value();
+//        startStation = fetch_text(elem_startStation, errStream); // string del valore dell'attributo name
+//        cout << "El startStation: " << startStation_string << endl;
+//        cout << "Attr startStation: " << startStation << endl;
+//        if (startStation != "") {
+//          bool data_ok = check_digits_letters_tram(startStation_string, startStation, tram);
+//          if (data_ok == false) {
+//            cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//            endResult = InvalidData;
+//          }
+//        }
+//        else {
+//          cout << "INVALID DATA FOR ATTRIBUTE" << endl;
+//          endResult = InvalidData;
+//        }
+//      }
+//      cout << "ENDRESULT tram " << endResult << endl;
+//      if (endResult == 0){
+//        trams[line] = tram;
+//
+//        // for debugging
+//        map<string, Tram*>::iterator it;
+//        std::cout <<"TRAM:" << endl;
+//        for ( it = trams.begin(); it != trams.end(); it++ )
+//        {
+//          std::cout << it->first  // string (key)
+//                    << ':'
+//                    << it->second->getLine()   // string's value
+//                    << "  "
+//                    << it->second->getCapacity()
+//                    << "  "
+//                    << it->second->getSpeed()
+//                    << "  "
+//                    << it->second->getStartStation()
+//                    << std::endl ;
+//        }
+//      }
+//    }
+//  }
+//  cout << "result: " << endResult << endl;
+//
+//  doc.Clear();
+//  return endResult;
 }
