@@ -134,6 +134,11 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
   elem_next = root->FirstChild("next");
   elem_track = root->FirstChild("track");
 
+  if (elem_name == NULL || elem_previous == NULL || elem_next == NULL) {
+    // Invalid format, return
+    return NULL;
+  }
+
   station->setName(fetch_text(elem_name, errStream));
   station->setPrevious(fetch_text(elem_previous, errStream));
   station->setNext(fetch_text(elem_next, errStream));
@@ -163,6 +168,11 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
   elem_startStation = root->FirstChild("startStation");
 
   string capacityStr, lineStr, speedStr;
+
+  if (elem_startStation == NULL) {
+    return NULL;
+  }
+
   tram->setStartStation(fetch_text(elem_startStation, errStream));
   capacityStr = fetch_text(elem_capacity, errStream);
   lineStr = fetch_text(elem_line, errStream);
@@ -213,7 +223,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
 
   // These maps will contain objects parsed with the Parsing class
   map<string, Station*> stations;
-  map<string, Tram*> trams;
+  map<int, Tram*> trams;
 
   // Iterate through the file
   for (TiXmlElement *root = doc.FirstChildElement(); root != NULL; root = root->NextSiblingElement()) {
@@ -228,7 +238,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
         // This station doesn't have the correct data, so we'll skip to the next root and print an error message
         if (station == NULL) {
           // Skip to next element
-          cout << "Station with name " << station->getName() << "is invalid." << endl;
+          cout << "Error: Invalid station found." << endl;
           endResult = SuccessWithInvalidData;
         } else {
           // Add this to our model
@@ -239,7 +249,17 @@ SuccessEnum SubwaySimulationImporter::importSubway(
         break;
       }
       case TramType: {
-        // Parse Tram data
+        // Create new Tram object to hold the parsed data
+        Tram *tram = parseTram(root, errStream);
+        if (tram == NULL) {
+          cout << "Error: Invalid tram found." << endl;
+          endResult = SuccessWithInvalidData;
+        } else {
+          // Add this to our model
+          cout << "I've successfully parsed tram with line: " << tram->getLine() << endl;
+          trams[tram->getLine()] = tram;
+        }
+
         break;
       }
       case InvalidType: {
