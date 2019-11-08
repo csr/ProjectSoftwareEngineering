@@ -117,7 +117,13 @@ bool check_digits_letters_tram(string elemName, string attributeValue, Tram* tra
   return is_ok;
 }
 
-Station *parseStation(TiXmlElement *root) {
+// Check if a given string is a number
+bool is_number(const std::string &s) {
+  return !s.empty() && std::all_of(s.begin(), s.end(), ::isdigit);
+}
+
+// Parse station given its root element
+Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
   // Create new Station object to hold the parsed data
   Station *station = new Station();
 
@@ -128,7 +134,69 @@ Station *parseStation(TiXmlElement *root) {
   elem_next = root->FirstChild("next");
   elem_track = root->FirstChild("track");
 
-  return station;
+  if (elem_name == NULL || elem_previous == NULL || elem_next == NULL) {
+    // Invalid format, return
+    return NULL;
+  }
+
+  station->setName(fetch_text(elem_name, errStream));
+  station->setPrevious(fetch_text(elem_previous, errStream));
+  station->setNext(fetch_text(elem_next, errStream));
+
+  string trackStr = fetch_text(elem_track, errStream);
+  // If the track is a number, then return station
+  if (is_number(trackStr)) {
+    station->setTrack(stoi(trackStr));
+    return station;
+  } else {
+    // Otherwise skip
+    return NULL;
+  }
+}
+
+// Parse station given its root element
+Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
+  // Create new Station object to hold the parsed data
+  Tram *tram = new Tram();
+
+  // The attributes of a tram are line, capacity, speed and start station
+  TiXmlNode *elem_startStation, *elem_line, *elem_capacity, *elem_speed;
+
+  elem_line = root->FirstChild("line");
+  elem_capacity = root->FirstChild("capacity");
+  elem_speed = root->FirstChild("speed");
+  elem_startStation = root->FirstChild("startStation");
+
+  string capacityStr, lineStr, speedStr;
+
+  if (elem_startStation == NULL) {
+    return NULL;
+  }
+
+  tram->setStartStation(fetch_text(elem_startStation, errStream));
+  capacityStr = fetch_text(elem_capacity, errStream);
+  lineStr = fetch_text(elem_line, errStream);
+  speedStr = fetch_text(elem_speed, errStream);
+
+  if (is_number(capacityStr)) {
+    tram->setCapacity(stoi(capacityStr));
+  } else {
+    return NULL;
+  }
+
+  if (is_number(lineStr)) {
+    tram->setLine(stoi(lineStr));
+  } else {
+    return NULL;
+  }
+
+  if (is_number(speedStr)) {
+    tram->setSpeed(stoi(speedStr));
+  } else {
+    return NULL;
+  }
+
+  return tram;
 }
 
 // A type can be either Station, Tram, or Invalid
@@ -150,12 +218,12 @@ SuccessEnum SubwaySimulationImporter::importSubway(
 
   if (!doc.LoadFile(inputFileName)) {
     cerr << doc.ErrorDesc() << endl;
-    return InvalidFileName;
+    return FailedWithInvalidFileName;
   }
 
   // These maps will contain objects parsed with the Parsing class
   map<string, Station*> stations;
-  map<string, Tram*> trams;
+  map<int, Tram*> trams;
 
   // Iterate through the file
   for (TiXmlElement *root = doc.FirstChildElement(); root != NULL; root = root->NextSiblingElement()) {
@@ -166,17 +234,39 @@ SuccessEnum SubwaySimulationImporter::importSubway(
     switch (rootElementType) {
       case StationType: {
         // Create new Station object to hold the parsed data
-        Station *station = parseStation(root);
-        cout << "Should have parsed station with name: " << station->getName();
+        Station *station = parseStation(root, errStream);
+        // This station doesn't have the correct data, so we'll skip to the next root and print an error message
+        if (station == NULL) {
+          // Skip to next element
+          cout << "Error: Invalid station found." << endl;
+          endResult = SuccessWithInvalidData;
+        } else {
+          // Add this to our model
+          cout << "I've successfully parsed station with name: " << station->getName() << endl;
+          stations[station->getName()] = station;
+        }
+
         break;
       }
       case TramType: {
-        // Parse Tram data
+        // Create new Tram object to hold the parsed data
+        Tram *tram = parseTram(root, errStream);
+        if (tram == NULL) {
+          cout << "Error: Invalid tram found." << endl;
+          endResult = SuccessWithInvalidData;
+        } else {
+          // Add this to our model
+          cout << "I've successfully parsed tram with line: " << tram->getLine() << endl;
+          trams[tram->getLine()] = tram;
+        }
+
         break;
       }
       case InvalidType: {
-        // Exit early - if the data is invalid then there's no need to keep parsing anymore
-        return InvalidData;
+        // Exit early - if the root element has an unrecognized name then skip to next root element
+        endResult = SuccessWithInvalidData;
+        cout << "UNRECOGNIZED ELEMENT with name " << rootName << ". Expected <previous> ... </previous>." << endl;
+        break;
       }
       default:
         break;
@@ -184,21 +274,6 @@ SuccessEnum SubwaySimulationImporter::importSubway(
   }
 
 
-//    } else if (rootName == "STATION") { // AGGIUNGERE LA STAZIONE CREATA ALLA MAP
-//      cout << "Root station: " << rootName << endl;
-//      Station* station = new Station(); // putatore a ogg di tipo station che sta in heap
-//      // children of root
-//      TiXmlNode *elem_name, *elem_previous, *elem_next, *elem_track;
-//      // children of root -> string
-//      string name_string, previous_string, next_string, track_string;
-//      // attribute of children of root -> string
-//      string name, previous, next, track; // they contain the value of the attribute as String
-//      // check if there are name, previous, next, track
-//      elem_name = root->FirstChild("name");
-//      // cout << "???? " << elem_name << endl;
-//      elem_previous = root->FirstChild("previous");
-//      elem_next = root->FirstChild("next");
-//      elem_track = root->FirstChild("track");
 //      } else {
 //        name_string = elem_name->Value();
 //        name = fetch_text(elem_name, errStream); // string del valore dell'attributo name

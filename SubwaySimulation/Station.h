@@ -18,7 +18,7 @@ class Station {
   void setPrevious(const string &previous);
   void setTrack(int track);
 
- private:
+ protected:
   string name;
   string next;
   string previous;

@@ -24,7 +24,7 @@ class Subway {
   void movingTram();
   void simulation(int time);
 
- private:
+ protected:
 //  vector<Station> stations;
 //  vector<Tram> trams;
   map<string, Station*> stations;

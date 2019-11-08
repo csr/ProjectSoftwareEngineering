@@ -27,7 +27,7 @@ class SubwaySimulationInputTests: public ::testing::Test {
   virtual void TearDown() {
   }
 
-  Subway ttt_;
+  Subway subway_;
 };
 
 /**
@@ -50,6 +50,46 @@ Tests import of example file given by Professor.
 TEST_F(SubwaySimulationInputTests, BasicImport) {
   ofstream myfile;
   SuccessEnum importResult;
-  importResult = SubwaySimulationImporter::importSubway("testInput/example.xml", myfile, ttt_);
-  EXPECT_TRUE(importResult == InvalidFileName);
+  importResult = SubwaySimulationImporter::importSubway("testInput/example.xml", myfile, subway_);
+  EXPECT_TRUE(importResult == Success);
+}
+
+/**
+Tests import of a file with an invalid root.
+*/
+TEST_F(SubwaySimulationInputTests, ImportWithInvalidRoot) {
+  ofstream myfile;
+  SuccessEnum importResult;
+  importResult = SubwaySimulationImporter::importSubway("../testInput/invalidRoot.xml", myfile, subway_);
+  EXPECT_TRUE(importResult == SuccessWithInvalidData);
+}
+
+/**
+Tests import of file with a station missing its name.
+*/
+TEST_F(SubwaySimulationInputTests, ImportWithInvalidStation) {
+  ofstream myfile;
+  SuccessEnum importResult;
+  importResult = SubwaySimulationImporter::importSubway("../testInput/invalidStationMissingName.xml", myfile, subway_);
+  EXPECT_TRUE(importResult == SuccessWithInvalidData);
+}
+
+/**
+Tests import of a station with an invalid track.
+*/
+TEST_F(SubwaySimulationInputTests, ImportStationWithInvalidTrack) {
+  ofstream myfile;
+  SuccessEnum importResult;
+  importResult = SubwaySimulationImporter::importSubway("../testInput/invalidStationTrack.xml", myfile, subway_);
+  EXPECT_TRUE(importResult == SuccessWithInvalidData);
+}
+
+/**
+Tests import of an empty file.
+*/
+TEST_F(SubwaySimulationInputTests, ImportEmptyFile) {
+  ofstream myfile;
+  SuccessEnum importResult;
+  importResult = SubwaySimulationImporter::importSubway("../testInput/empty.xml", myfile, subway_);
+  EXPECT_TRUE(importResult == Success);
 }
