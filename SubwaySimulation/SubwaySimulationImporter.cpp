@@ -9,12 +9,10 @@
 #include "SubwaySimulationImporter.h"
 #include <map>
 #include <iostream>
-#include <locale>
 #include "tinyxml.h"
 using namespace std;
 
-//Auxiliary function for internal use only
-
+// Auxiliary function for internal use only
 const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
   if (pElement == NULL) return "";
 
@@ -106,7 +104,13 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
     return NULL;
   }
 
-  tram->setStartStation(fetch_text(elem_startStation, errStream));
+  string startStation = fetch_text(elem_startStation, errStream);
+
+  if (!is_letters_only(startStation)) {
+    return NULL;
+  }
+
+  tram->setStartStation(startStation);
   capacityStr = fetch_text(elem_capacity, errStream);
   lineStr = fetch_text(elem_line, errStream);
   speedStr = fetch_text(elem_speed, errStream);
