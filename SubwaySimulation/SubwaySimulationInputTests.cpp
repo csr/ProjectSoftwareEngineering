@@ -93,3 +93,13 @@ TEST_F(SubwaySimulationInputTests, ImportEmptyFile) {
   importResult = SubwaySimulationImporter::importSubway("../testInput/empty.xml", myfile, subway_);
   EXPECT_TRUE(importResult == Success);
 }
+
+/**
+Tests strings of stations and trams (must not contain numbers, whitespaces or special characters).
+*/
+TEST_F(SubwaySimulationInputTests, ImportStationTramWithInvalidStrings) {
+  ofstream myfile;
+  SuccessEnum importResult;
+  importResult = SubwaySimulationImporter::importSubway("../testInput/invalidStationTramStrings.xml", myfile, subway_);
+  EXPECT_TRUE(importResult == SuccessWithInvalidData);
+}
