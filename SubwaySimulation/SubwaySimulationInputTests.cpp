@@ -51,5 +51,5 @@ TEST_F(SubwaySimulationInputTests, BasicImport) {
   ofstream myfile;
   SuccessEnum importResult;
   importResult = SubwaySimulationImporter::importSubway("testInput/example.xml", myfile, ttt_);
-  EXPECT_TRUE(importResult == Success);
+  EXPECT_TRUE(importResult == InvalidFileName);
 }

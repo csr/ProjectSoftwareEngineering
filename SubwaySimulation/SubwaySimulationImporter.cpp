@@ -117,29 +117,73 @@ bool check_digits_letters_tram(string elemName, string attributeValue, Tram* tra
   return is_ok;
 }
 
+Station *parseStation(TiXmlElement *root) {
+  // Create new Station object to hold the parsed data
+  Station *station = new Station();
+
+  // The attributes of a station are name, previous, next, track
+  TiXmlNode *elem_name, *elem_previous, *elem_next, *elem_track;
+  elem_name = root->FirstChild("name");
+  elem_previous = root->FirstChild("previous");
+  elem_next = root->FirstChild("next");
+  elem_track = root->FirstChild("track");
+
+  return station;
+}
+
+// A type can be either Station, Tram, or Invalid
+RootElementType determineRootElementType(string rootName) {
+  cout << "Root name: " << rootName << endl;
+  if (rootName == "STATION") {
+    return StationType;
+  } else if (rootName == "TRAM") {
+    return TramType;
+  } else {
+    return InvalidType;
+  }
+}
+
 SuccessEnum SubwaySimulationImporter::importSubway(
     const char *inputFileName, std::ostream& errStream, Subway& subway) {
   TiXmlDocument doc;
   SuccessEnum endResult = Success;
-
-  cout << "Trying to load file with name: " << inputFileName << "\n";
 
   if (!doc.LoadFile(inputFileName)) {
     cerr << doc.ErrorDesc() << endl;
     return InvalidFileName;
   }
 
-  return endResult;
-
   // These maps will contain objects parsed with the Parsing class
-//  map<string, Station*> stations;
-//  map<string, Tram*> trams;
-//
-//  for (TiXmlElement *root = doc.FirstChildElement(); root != NULL; root = root->NextSiblingElement()) {
-//    string rootName = root->Value();
-//    if (rootName != "STATION" && rootName != "TRAM") {
-//      cout << "UNRECOGNIZED ELEMENT: Expected <STATION> ... </STATION> or <TRAM> ... </TRAM> and got <"
-//           << rootName << "> ... </" << rootName << ">." << endl;
+  map<string, Station*> stations;
+  map<string, Tram*> trams;
+
+  // Iterate through the file
+  for (TiXmlElement *root = doc.FirstChildElement(); root != NULL; root = root->NextSiblingElement()) {
+    // Root name must be either station or tram. Other values should be considered invalid.
+    string rootName = root->Value();
+    RootElementType rootElementType = determineRootElementType(rootName);
+
+    switch (rootElementType) {
+      case StationType: {
+        // Create new Station object to hold the parsed data
+        Station *station = parseStation(root);
+        cout << "Should have parsed station with name: " << station->getName();
+        break;
+      }
+      case TramType: {
+        // Parse Tram data
+        break;
+      }
+      case InvalidType: {
+        // Exit early - if the data is invalid then there's no need to keep parsing anymore
+        return InvalidData;
+      }
+      default:
+        break;
+    }
+  }
+
+
 //    } else if (rootName == "STATION") { // AGGIUNGERE LA STAZIONE CREATA ALLA MAP
 //      cout << "Root station: " << rootName << endl;
 //      Station* station = new Station(); // putatore a ogg di tipo station che sta in heap
@@ -155,10 +199,6 @@ SuccessEnum SubwaySimulationImporter::importSubway(
 //      elem_previous = root->FirstChild("previous");
 //      elem_next = root->FirstChild("next");
 //      elem_track = root->FirstChild("track");
-//      if (elem_name == NULL) {
-//        cout << "UNRECOGNIZED ELEMENT: Expected <name> ... </name>." << endl;
-//        endResult = InvalidData;
-//        name = "";
 //      } else {
 //        name_string = elem_name->Value();
 //        name = fetch_text(elem_name, errStream); // string del valore dell'attributo name
@@ -383,6 +423,6 @@ SuccessEnum SubwaySimulationImporter::importSubway(
 //  }
 //  cout << "result: " << endResult << endl;
 //
-//  doc.Clear();
-//  return endResult;
+  doc.Clear();
+  return endResult;
 }

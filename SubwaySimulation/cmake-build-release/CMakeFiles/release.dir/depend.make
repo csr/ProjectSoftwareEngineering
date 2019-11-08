@@ -28,6 +28,8 @@ CMakeFiles/release.dir/SubwaySimulationMain.cpp.o: ../Tram.h
 CMakeFiles/release.dir/SubwaySimulationMain.cpp.o: ../tinystr.h
 CMakeFiles/release.dir/SubwaySimulationMain.cpp.o: ../tinyxml.h
 
+CMakeFiles/release.dir/SubwaySimulationUtils.cpp.o: ../SubwaySimulationUtils.cpp
+
 CMakeFiles/release.dir/Tram.cpp.o: ../Tram.cpp
 CMakeFiles/release.dir/Tram.cpp.o: ../Tram.h
 
