@@ -149,6 +149,46 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
   }
 }
 
+// Parse station given its root element
+Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
+  // Create new Station object to hold the parsed data
+  Tram *tram = new Tram();
+
+  // The attributes of a tram are line, capacity, speed and start station
+  TiXmlNode *elem_startStation, *elem_line, *elem_capacity, *elem_speed;
+
+  elem_line = root->FirstChild("line");
+  elem_capacity = root->FirstChild("capacity");
+  elem_speed = root->FirstChild("speed");
+  elem_startStation = root->FirstChild("startStation");
+
+  string capacityStr, lineStr, speedStr;
+  tram->setStartStation(fetch_text(elem_startStation, errStream));
+  capacityStr = fetch_text(elem_capacity, errStream);
+  lineStr = fetch_text(elem_line, errStream);
+  speedStr = fetch_text(elem_speed, errStream);
+
+  if (is_number(capacityStr)) {
+    tram->setCapacity(stoi(capacityStr));
+  } else {
+    return NULL;
+  }
+
+  if (is_number(lineStr)) {
+    tram->setLine(stoi(lineStr));
+  } else {
+    return NULL;
+  }
+
+  if (is_number(speedStr)) {
+    tram->setSpeed(stoi(speedStr));
+  } else {
+    return NULL;
+  }
+
+  return tram;
+}
+
 // A type can be either Station, Tram, or Invalid
 RootElementType determineRootElementType(string rootName) {
   cout << "Root name: " << rootName << endl;

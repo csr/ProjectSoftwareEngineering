@@ -55,11 +55,31 @@ TEST_F(SubwaySimulationInputTests, BasicImport) {
 }
 
 /**
-Tests import of example file given by Professor.
+Tests import of a file with an invalid root.
+*/
+TEST_F(SubwaySimulationInputTests, ImportWithInvalidStation) {
+  ofstream myfile;
+  SuccessEnum importResult;
+  importResult = SubwaySimulationImporter::importSubway("../testInput/invalidRoot.xml", myfile, ttt_);
+  EXPECT_TRUE(importResult == SuccessWithInvalidData);
+}
+
+/**
+Tests import of file with invalid station.
 */
 TEST_F(SubwaySimulationInputTests, ImportWithInvalidRoot) {
   ofstream myfile;
   SuccessEnum importResult;
-  importResult = SubwaySimulationImporter::importSubway("testInput/invalidElement.xml", myfile, ttt_);
-  EXPECT_TRUE(importResult == FailedWithInvalidFileName);
+  importResult = SubwaySimulationImporter::importSubway("../testInput/invalidStation.xml", myfile, ttt_);
+  EXPECT_TRUE(importResult == SuccessWithInvalidData);
+}
+
+/**
+Tests import of an empty file.
+*/
+TEST_F(SubwaySimulationInputTests, ImportEmptyFile) {
+  ofstream myfile;
+  SuccessEnum importResult;
+  importResult = SubwaySimulationImporter::importSubway("../testInput/empty.xml", myfile, ttt_);
+  EXPECT_TRUE(importResult == Success);
 }
