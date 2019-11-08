@@ -1,4 +1,8 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release
+CMake Error at CMakeLists.txt:33 (file):
+  file COPY cannot find
+  "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput".
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/CMakeFiles/CMakeOutput.log".

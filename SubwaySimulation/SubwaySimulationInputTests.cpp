@@ -51,5 +51,15 @@ TEST_F(SubwaySimulationInputTests, BasicImport) {
   ofstream myfile;
   SuccessEnum importResult;
   importResult = SubwaySimulationImporter::importSubway("testInput/example.xml", myfile, ttt_);
-  EXPECT_TRUE(importResult == InvalidFileName);
+  EXPECT_TRUE(importResult == Success);
+}
+
+/**
+Tests import of example file given by Professor.
+*/
+TEST_F(SubwaySimulationInputTests, ImportWithInvalidRoot) {
+  ofstream myfile;
+  SuccessEnum importResult;
+  importResult = SubwaySimulationImporter::importSubway("testInput/invalidElement.xml", myfile, ttt_);
+  EXPECT_TRUE(importResult == FailedWithInvalidFileName);
 }
