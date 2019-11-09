@@ -1,4 +1,4 @@
-<!--The next tag is repeated twice-->
+<!--Valid station-->
 <STATION>
     <name>Antwerpen</name>
     <next>B</next>

@@ -199,8 +199,8 @@ SuccessEnum SubwaySimulationImporter::importSubway(
   SuccessEnum endResult = Success;
 
   if (!doc.LoadFile(inputFileName)) {
-    cerr << doc.ErrorDesc() << endl;
-    return FailedWithInvalidFileName;
+    errStream << "XML IMPORT ABORTED: " << doc.ErrorDesc() << endl;
+    return ImportAborted;
   }
 
   // These maps will contain objects parsed with the Parsing class
@@ -220,7 +220,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
         // This station doesn't have the correct data, so we'll skip to the next root and print an error message
         if (station == NULL) {
           errStream << "Error: Invalid station found." << endl;
-          endResult = SuccessWithInvalidData;
+          endResult = PartialImport;
         } else {
           // Add this to our model
           stations[station->getName()] = station;
@@ -232,7 +232,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
         Tram *tram = parseTram(root, errStream);
         if (tram == NULL) {
           errStream << "Error: Invalid tram found." << endl;
-          endResult = SuccessWithInvalidData;
+          endResult = PartialImport;
         } else {
           // Add this to our model
           trams[tram->getLine()] = tram;
@@ -241,7 +241,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
       }
       case InvalidType: {
         // If the root element has an unrecognized name then skip to next root element
-        endResult = SuccessWithInvalidData;
+        endResult = PartialImport;
         errStream << "UNRECOGNIZED ELEMENT with name " << rootName << ". Expected <previous> ... </previous>." << endl;
         break;
       }

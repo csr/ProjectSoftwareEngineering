@@ -20,24 +20,23 @@ Subway::Subway() {
 
 }
 
-void Subway::addTram(Tram tram) {
-
+void Subway::addStation(Station station) {
+  stations[station.getName()] = station;
 }
 
-void Subway::addStation(Station station) {
-
+void Subway::addTram(Tram tram) {
+  trams[tram.getLine()] = tram;
 }
 
 int Subway::getTramsCount() {
- return 0;
+ return trams.size();
 }
 
 int Subway::getStationsCount() {
-  return 0;
+  return stations.size();
 }
 
 // Simulation
 void Subway::computeSimulation(int steps) {
-
 }
 

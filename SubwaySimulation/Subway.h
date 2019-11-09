@@ -27,7 +27,7 @@ class Subway {
   int getTramsCount();
 
  protected:
-  map<string, Station*> stations;
-  map<int, Tram*> trams;
+  map<string, Station> stations;
+  map<int, Tram> trams;
 };
 #endif

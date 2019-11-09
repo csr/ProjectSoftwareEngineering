@@ -19,12 +19,7 @@
 using namespace std;
 
 enum RootElementType {StationType, TramType, InvalidType};
-
-// Success: import completed with no errors
-// SuccessWithInvalidData: import completed with one or more syntax errors
-// FailedWithInconsistentData: failed to import due to consistency reasons
-// FailedWithInvalidFileName: failed to import due to invalid input file name
-enum SuccessEnum {Success, SuccessWithInvalidData, FailedWithInconsistentData, FailedWithInvalidFileName};
+enum SuccessEnum {Success, PartialImport, ImportAborted};
 
 // Goals: parsing the schedule of the subway network: the different stations, how they are connected to each other,
 // and the different trams.
