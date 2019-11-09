@@ -24,8 +24,9 @@ const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
 }
 
 // Check if this string is made up of letters ONLY
-bool is_letters_only(string s) {
-  for (char const &c: s) {
+bool is_letters_only(string string) {
+  for (int i = 0; i < string.size(); i++) {
+    char c = string[i];
     if (!isalpha(c) || isdigit(c) || isspace(c)) {
       return false;
     }

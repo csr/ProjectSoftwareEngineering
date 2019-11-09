@@ -103,3 +103,43 @@ TEST_F(SubwaySimulationInputTests, ImportStationTramWithInvalidStrings) {
   importResult = SubwaySimulationImporter::importSubway("../testInput/invalidStationTramStrings.xml", myfile, subway_);
   EXPECT_TRUE(importResult == SuccessWithInvalidData);
 }
+
+/**
+Tests a file containing a station with a duplicate tag.
+*/
+TEST_F(SubwaySimulationInputTests, ImportStationWithDuplicateTags) {
+  ofstream myfile;
+  SuccessEnum importResult;
+  importResult = SubwaySimulationImporter::importSubway("../testInput/invalidStationWithDuplicateTags.xml", myfile, subway_);
+  EXPECT_TRUE(importResult == SuccessWithInvalidData);
+}
+
+/**
+Tests a file containing a valid station.
+*/
+TEST_F(SubwaySimulationInputTests, ImportValidStation) {
+  ofstream myfile;
+  SuccessEnum importResult;
+  importResult = SubwaySimulationImporter::importSubway("../testInput/validStation.xml", myfile, subway_);
+  EXPECT_TRUE(importResult == Success);
+}
+
+/**
+Tests a file containing a valid tram.
+*/
+TEST_F(SubwaySimulationInputTests, ImportValidTram) {
+  ofstream myfile;
+  SuccessEnum importResult;
+  importResult = SubwaySimulationImporter::importSubway("../testInput/validTram.xml", myfile, subway_);
+  EXPECT_TRUE(importResult == Success);
+}
+
+/**
+Tests a file containing a station with a whitespace in its name.
+*/
+TEST_F(SubwaySimulationInputTests, ImportInvalidStationWithWhitespace) {
+  ofstream myfile;
+  SuccessEnum importResult;
+  importResult = SubwaySimulationImporter::importSubway("../testInput/invalidStationWithWhitespace.xml", myfile, subway_);
+  EXPECT_TRUE(importResult == SuccessWithInvalidData);
+}
