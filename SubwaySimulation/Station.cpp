@@ -6,7 +6,10 @@
 // Description : This class is the blueprint for the Station object.
 //============================================================================
 
+#include <iostream>
 #include "Station.h"
+
+using namespace std;
 
 const string &Station::getName() const {
   return name;
@@ -38,4 +41,11 @@ void Station::setPrevious(const string &previous) {
 
 void Station::setTrack(int track) {
   Station::track = track;
+}
+
+string toString() {
+//  cout << "Station " << Station::name << endl;
+//  cout << "<- " << "Station " << previous << endl;
+//  cout << "-> " << "Station" << next << endl;
+  return "Hello";
 }

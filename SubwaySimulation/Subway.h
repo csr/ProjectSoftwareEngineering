@@ -10,6 +10,7 @@
 // Prevents from loading the same .h file multiple times
 #ifndef SubwaySimulation_H
 #define SubwaySimulation_H
+
 using namespace std;
 #include "Station.h"
 #include "Tram.h"
@@ -17,17 +18,16 @@ using namespace std;
 
 class Subway {
  public:
-  Subway(){}
+  Subway();
   string toString();
-  void addStation(Station elem);
-  void addTram(Tram elem);
-  void movingTram();
-  void simulation(int time);
+  void addStation(Station station);
+  void addTram(Tram tram);
+  void computeSimulation(int steps);
+  int getStationsCount();
+  int getTramsCount();
 
  protected:
-//  vector<Station> stations;
-//  vector<Tram> trams;
   map<string, Station*> stations;
-  map<string, Tram*> trams;
+  map<int, Tram*> trams;
 };
 #endif

@@ -9,10 +9,15 @@ using namespace std;
 
 class Station {
  public:
+  string toString();
+
+  // Getters
   const string &getName() const;
   const string &getNext() const;
   const string &getPrevious() const;
   int getTrack() const;
+
+  // Setters
   void setName(const string &name);
   void setNext(const string &next);
   void setPrevious(const string &previous);

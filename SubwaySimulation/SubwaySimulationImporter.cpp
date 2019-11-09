@@ -177,6 +177,22 @@ RootElementType determineRootElementType(string rootName) {
   }
 }
 
+void printParsedObjects(map<string, Station*> stations, map<int, Tram*> trams) {
+  cout << "------------------------------" << endl;
+  // for debugging
+  map<string, Station*>::iterator it;
+  for (it = stations.begin(); it != stations.end(); it++) {
+    cout << "Station "
+              << it->first  // string (key)
+              << endl
+              << "<- Station " << it->second->getPrevious()
+              << endl
+              << "-> Station " << it->second->getNext() << endl
+              << "Track " << it->second->getTrack() << endl << endl;
+  }
+  cout << "-------------------------------" << endl;
+}
+
 SuccessEnum SubwaySimulationImporter::importSubway(
     const char *inputFileName, std::ostream& errStream, Subway& subway) {
   TiXmlDocument doc;
@@ -231,6 +247,9 @@ SuccessEnum SubwaySimulationImporter::importSubway(
       }
     }
   }
+
+  // Print what's been parsed
+  printParsedObjects(stations, trams);
 
   doc.Clear();
   return endResult;
