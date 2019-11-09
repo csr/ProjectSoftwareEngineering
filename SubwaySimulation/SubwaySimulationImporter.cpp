@@ -40,6 +40,11 @@ bool is_number(const std::string &s) {
 
 // Parse station given its root element
 Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
+  // Edge case: if the station is empty return null
+  if (root->NoChildren()) {
+    return NULL;
+  }
+
   // Create new Station object to hold the parsed data
   Station *station = new Station();
 
@@ -49,6 +54,15 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
   elem_previous = root->FirstChild("previous");
   elem_next = root->FirstChild("next");
   elem_track = root->FirstChild("track");
+
+  int childrenCount = 0;
+  for (const TiXmlNode* node = root->FirstChild(); node; node = node->NextSibling()) {
+    childrenCount++;
+  }
+
+  if (childrenCount != 4) {
+    return NULL;
+  }
 
   if (elem_name == NULL || elem_previous == NULL || elem_next == NULL) {
     // Invalid format, return
@@ -87,8 +101,23 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
 
 // Parse station given its root element
 Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
+  // Edge case: if the tram is empty return null
+  if (root->NoChildren()) {
+    return NULL;
+  }
+
   // Create new Station object to hold the parsed data
   Tram *tram = new Tram();
+
+  // Check that the number of children is 4
+  int childrenCount = 0;
+  for (const TiXmlNode* node = root->FirstChild(); node; node = node->NextSibling()) {
+    childrenCount++;
+  }
+
+  if (childrenCount != 4) {
+    return NULL;
+  }
 
   // The attributes of a tram are line, capacity, speed and start station
   TiXmlNode *elem_startStation, *elem_line, *elem_capacity, *elem_speed;
@@ -177,7 +206,6 @@ SuccessEnum SubwaySimulationImporter::importSubway(
           endResult = SuccessWithInvalidData;
         } else {
           // Add this to our model
-          cout << "Parsed station with name: " << station->getName() << endl;
           stations[station->getName()] = station;
         }
         break;
