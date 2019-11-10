@@ -178,7 +178,7 @@ RootElementType determineRootElementType(string rootName) {
 }
 
 // TODO: should be move to Output class or Subway toString() method
-void printParsedObjects(map<string, Station*> stations, map<string, Tram*> trams) {
+void printParsedObjects(map<string, Station*> stations, map<int, Tram*> trams) {
   cout << "------------------------------" << endl;
   // for debugging
   map<string, Station*>::iterator it;
@@ -192,8 +192,8 @@ void printParsedObjects(map<string, Station*> stations, map<string, Tram*> trams
               << "-> Station " << station->getNext() << endl
               << "Track " << station->getTrack();
     // If there's a tram associated to the track, print capacity
-    if (trams.count(station->getName())) {
-      Tram *tram = trams[station->getName()];
+    if (trams.count(station->getTrack())) {
+      Tram *tram = trams[station->getTrack()];
       cout << ": Tram with ";
       cout << tram->getCapacity() << " seats" << endl << endl;
     } else {
@@ -215,7 +215,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
 
   // These maps will contain objects parsed with the Parsing class
   map<string, Station*> stations; // station name - station
-  map<string, Tram*> trams; // tram startStation - tram
+  map<int, Tram*> trams; // tram startStation - tram
 
   // Iterate through the file
   for (TiXmlElement *root = doc.FirstChildElement(); root != NULL; root = root->NextSiblingElement()) {
@@ -248,17 +248,17 @@ SuccessEnum SubwaySimulationImporter::importSubway(
         // Create new Tram object to hold the parsed data
         Tram *tram = parseTram(root, errStream);
         if (tram == NULL) {
-          errStream << "Error: Invalid tram found." << endl;
+          errStream << "XML PARTIAL IMPORT: invalid tram found" << endl;
           endResult = PartialImport;
         } else {
           // Check if there aren't trams already parsed with the same line to avoid duplicates
           // The count would be 1 if the element is indeed present in the map.
-          if (trams.count(tram->getStartStation())) {
+          if (trams.count(tram->getLine())) {
             // We found a duplicate. Exit early.
             return ImportAborted;
           } else {
             // First time we're seeing a tram with this line. Add this to our map.
-            trams[tram->getStartStation()] = tram;
+            trams[tram->getLine()] = tram;
           }
         }
         break;
