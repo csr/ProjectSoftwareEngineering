@@ -25,6 +25,8 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
@@ -47,6 +49,8 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
@@ -89,6 +93,8 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
@@ -111,6 +117,8 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
