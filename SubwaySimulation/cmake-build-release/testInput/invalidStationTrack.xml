@@ -1,0 +1,7 @@
+<!--This station is has a word instead of a number as its track-->
+<STATION>
+    <name>A</name>
+    <next>B</next>
+    <previous>C</previous>
+    <track>hello</track>
+</STATION>

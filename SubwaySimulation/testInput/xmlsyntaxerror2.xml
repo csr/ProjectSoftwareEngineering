@@ -1,0 +1,8 @@
+<!-- The closing tag STATION is missing a '\' -->
+<?xml version="1.0" ?>
+<STATION>
+    <name>Antwerpen</name>
+    <next>B</next>
+    <previous>C</previous>
+    <track>12</track>
+<STATION>

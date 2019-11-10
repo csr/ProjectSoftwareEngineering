@@ -16,26 +16,27 @@
 
 using namespace std;
 
-string toString(){
-  string response;
-//  for (auto elem : Subway::stations){
-//    response += elem.toString();
-//  }
-  return response;
+Subway::Subway() {
+
 }
 
-void movingTram(){
-//  for (elem : Subway::trams){
-//    for (auto station : Subway::stations){
-//      if (station == elem.currentStation)
-//        elem.setCurrentStation(station.next);
-//    }
-//  }
+void Subway::addStation(Station station) {
+  stations[station.getName()] = station;
 }
 
-void simulation(int time){
-//  while(currentTime <= time){
-//    this.movingTram();
-//    currentTime++;
-//  }
+void Subway::addTram(Tram tram) {
+  trams[tram.getLine()] = tram;
 }
+
+int Subway::getTramsCount() {
+ return trams.size();
+}
+
+int Subway::getStationsCount() {
+  return stations.size();
+}
+
+// Simulation
+void Subway::computeSimulation(int steps) {
+}
+

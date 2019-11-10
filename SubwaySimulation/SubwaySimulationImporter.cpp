@@ -24,8 +24,9 @@ const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
 }
 
 // Check if this string is made up of letters ONLY
-bool is_letters_only(string s) {
-  for (char const &c: s) {
+bool is_letters_only(string string) {
+  for (int i = 0; i < string.size(); i++) {
+    char c = string[i];
     if (!isalpha(c) || isdigit(c) || isspace(c)) {
       return false;
     }
@@ -40,6 +41,11 @@ bool is_number(const std::string &s) {
 
 // Parse station given its root element
 Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
+  // Edge case: if the station is empty return null
+  if (root->NoChildren()) {
+    return NULL;
+  }
+
   // Create new Station object to hold the parsed data
   Station *station = new Station();
 
@@ -49,6 +55,15 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
   elem_previous = root->FirstChild("previous");
   elem_next = root->FirstChild("next");
   elem_track = root->FirstChild("track");
+
+  int childrenCount = 0;
+  for (const TiXmlNode* node = root->FirstChild(); node; node = node->NextSibling()) {
+    childrenCount++;
+  }
+
+  if (childrenCount != 4) {
+    return NULL;
+  }
 
   if (elem_name == NULL || elem_previous == NULL || elem_next == NULL) {
     // Invalid format, return
@@ -87,8 +102,23 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
 
 // Parse station given its root element
 Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
+  // Edge case: if the tram is empty return null
+  if (root->NoChildren()) {
+    return NULL;
+  }
+
   // Create new Station object to hold the parsed data
   Tram *tram = new Tram();
+
+  // Check that the number of children is 4
+  int childrenCount = 0;
+  for (const TiXmlNode* node = root->FirstChild(); node; node = node->NextSibling()) {
+    childrenCount++;
+  }
+
+  if (childrenCount != 4) {
+    return NULL;
+  }
 
   // The attributes of a tram are line, capacity, speed and start station
   TiXmlNode *elem_startStation, *elem_line, *elem_capacity, *elem_speed;
@@ -147,14 +177,30 @@ RootElementType determineRootElementType(string rootName) {
   }
 }
 
+void printParsedObjects(map<string, Station*> stations, map<int, Tram*> trams) {
+  cout << "------------------------------" << endl;
+  // for debugging
+  map<string, Station*>::iterator it;
+  for (it = stations.begin(); it != stations.end(); it++) {
+    cout << "Station "
+              << it->first  // string (key)
+              << endl
+              << "<- Station " << it->second->getPrevious()
+              << endl
+              << "-> Station " << it->second->getNext() << endl
+              << "Track " << it->second->getTrack() << endl << endl;
+  }
+  cout << "-------------------------------" << endl;
+}
+
 SuccessEnum SubwaySimulationImporter::importSubway(
     const char *inputFileName, std::ostream& errStream, Subway& subway) {
   TiXmlDocument doc;
   SuccessEnum endResult = Success;
 
   if (!doc.LoadFile(inputFileName)) {
-    cerr << doc.ErrorDesc() << endl;
-    return FailedWithInvalidFileName;
+    errStream << "XML IMPORT ABORTED: " << doc.ErrorDesc() << endl;
+    return ImportAborted;
   }
 
   // These maps will contain objects parsed with the Parsing class
@@ -174,10 +220,9 @@ SuccessEnum SubwaySimulationImporter::importSubway(
         // This station doesn't have the correct data, so we'll skip to the next root and print an error message
         if (station == NULL) {
           errStream << "Error: Invalid station found." << endl;
-          endResult = SuccessWithInvalidData;
+          endResult = PartialImport;
         } else {
           // Add this to our model
-          cout << "Parsed station with name: " << station->getName() << endl;
           stations[station->getName()] = station;
         }
         break;
@@ -187,7 +232,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
         Tram *tram = parseTram(root, errStream);
         if (tram == NULL) {
           errStream << "Error: Invalid tram found." << endl;
-          endResult = SuccessWithInvalidData;
+          endResult = PartialImport;
         } else {
           // Add this to our model
           trams[tram->getLine()] = tram;
@@ -196,12 +241,15 @@ SuccessEnum SubwaySimulationImporter::importSubway(
       }
       case InvalidType: {
         // If the root element has an unrecognized name then skip to next root element
-        endResult = SuccessWithInvalidData;
+        endResult = PartialImport;
         errStream << "UNRECOGNIZED ELEMENT with name " << rootName << ". Expected <previous> ... </previous>." << endl;
         break;
       }
     }
   }
+
+  // Print what's been parsed
+  printParsedObjects(stations, trams);
 
   doc.Clear();
   return endResult;
