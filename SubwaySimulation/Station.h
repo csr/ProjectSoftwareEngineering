@@ -1,6 +1,11 @@
-//
-// Created by veror on 03/11/2019.
-//
+//============================================================================
+// Name        : Station.h
+// Author      : Cesare De Cal, Marco Natali, Veronica Orsanigo
+// Version     :
+// Copyright   : Cesare De Cal, Marco Natali, Veronica Orsanigo
+// Description : Subway simulation in C++
+//============================================================================
+
 
 #ifndef UNTITLED_STATION_H
 #define UNTITLED_STATION_H

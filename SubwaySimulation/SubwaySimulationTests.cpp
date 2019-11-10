@@ -1,3 +1,12 @@
+//============================================================================
+// Name        : SubwaySimulationTests.cpp
+// Author      : Cesare De Cal, Marco Natali, Veronica Orsanigo
+// Version     :
+// Copyright   : Cesare De Cal, Marco Natali, Veronica Orsanigo
+// Description : Subway simulation in C++
+//============================================================================
+
+
 #include <gtest/gtest.h>
 
 using namespace std;

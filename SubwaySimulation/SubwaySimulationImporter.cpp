@@ -81,13 +81,7 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
   string previous = fetch_text(elem_previous, errStream);
   string next = fetch_text(elem_next, errStream);
 
-  if (!is_letters_only(name)) {
-    return NULL;
-  }
-  if (!is_letters_only(previous)) {
-    return NULL;
-  }
-  if (!is_letters_only(next)) {
+  if (!is_letters_only(name) || !is_letters_only(previous) || !is_letters_only(next)) {
     return NULL;
   }
 
@@ -186,8 +180,7 @@ RootElementType determineRootElementType(string rootName) {
 void printParsedObjects(vector<Station*> stations, unordered_map<int, Tram*> trams) {
   for (auto & station : stations) {
     cout << "Station " << station->getName() << endl
-         << "<- Station " << station->getPrevious()
-         << endl
+         << "<- Station " << station->getPrevious() << endl
          << "-> Station " << station->getNext() << endl
          << "Track " << station->getTrack();
     // If there's a tram associated to the track, print capacity
@@ -272,7 +265,6 @@ SuccessEnum SubwaySimulationImporter::importSubway(
     }
   }
 
-  // Print what's been parsed
   printParsedObjects(stationsArray, trams);
 
   doc.Clear();

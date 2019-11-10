@@ -36,6 +36,10 @@ CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationDomainTests.cpp
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
+CMakeFiles/debug.dir/SubwaySimulationExporter.cpp.o
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/DesignByContract.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationExporter.cpp
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationExporter.h
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
