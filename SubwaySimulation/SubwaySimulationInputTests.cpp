@@ -36,7 +36,7 @@ TEST_F(SubwaySimulationInputTests, InputLegalSubways) {
   ofstream myfile;
   SuccessEnum importResult;
   int fileCounter = 1;
-  string fileName = "testInput/legalGame" + ToString(fileCounter) + ".xml";
+  string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
 
   while (FileExists (fileName)) {
     myfile.open("testInput/zzzError.txt");
@@ -46,7 +46,7 @@ TEST_F(SubwaySimulationInputTests, InputLegalSubways) {
     EXPECT_TRUE(FileIsEmpty("testInput/zzzError.txt"));
 
     fileCounter = fileCounter + 1;
-    fileName = "testInput/legalGame" + ToString(fileCounter) + ".xml";
+    fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
   };
 }
 
