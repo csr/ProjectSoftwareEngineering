@@ -6,13 +6,16 @@
 // Description : Subway simulation in C++
 //============================================================================
 
-#include "SubwaySimulationImporter.h"
+#include <vector>
+#include <unordered_map>
 #include <map>
 #include <iostream>
-#include "tinyxml.h"
-using namespace std;
 #include <regex>
 
+#include "SubwaySimulationImporter.h"
+#include "tinyxml.h"
+
+using namespace std;
 
 // Auxiliary function for internal use only
 const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
@@ -37,10 +40,10 @@ bool is_letters_only(string string) {
 }
 
 // Check if a given string is a number
-bool is_number(std::string x){
+bool is_number(std::string string) {
     std::regex e ("^-?\\d+");
-    if (std::regex_match (x,e)) return true;
-    else return false;}
+    return std::regex_match(string, e);
+}
 
 // Parse station given its root element
 Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
@@ -180,20 +183,13 @@ RootElementType determineRootElementType(string rootName) {
   }
 }
 
-// TODO: should be move to Output class or Subway toString() method
-void printParsedObjects(map<string, Station*> stations, map<int, Tram*> trams) {
-  cout << "------------------------------" << endl;
-  // for debugging
-  map<string, Station*>::iterator it;
-  for (it = stations.begin(); it != stations.end(); it++) {
-    Station *station = it->second;
-    cout << "Station "
-              << it->first  // string (key)
-              << endl
-              << "<- Station " << station->getPrevious()
-              << endl
-              << "-> Station " << station->getNext() << endl
-              << "Track " << station->getTrack();
+void printParsedObjects(vector<Station*> stations, unordered_map<int, Tram*> trams) {
+  for (auto & station : stations) {
+    cout << "Station " << station->getName() << endl
+         << "<- Station " << station->getPrevious()
+         << endl
+         << "-> Station " << station->getNext() << endl
+         << "Track " << station->getTrack();
     // If there's a tram associated to the track, print capacity
     if (trams.count(station->getTrack())) {
       Tram *tram = trams[station->getTrack()];
@@ -203,7 +199,6 @@ void printParsedObjects(map<string, Station*> stations, map<int, Tram*> trams) {
       cout << endl << endl;
     }
   }
-  cout << "-------------------------------" << endl;
 }
 
 SuccessEnum SubwaySimulationImporter::importSubway(
@@ -217,8 +212,9 @@ SuccessEnum SubwaySimulationImporter::importSubway(
   }
 
   // These maps will contain objects parsed with the Parsing class
-  map<string, Station*> stations; // station name - station
-  map<int, Tram*> trams; // tram startStation - tram
+  vector<Station*> stationsArray;
+  unordered_map<string, Station*> stations; // station name - station
+  unordered_map<int, Tram*> trams; // tram startStation - tram
 
   // Iterate through the file
   for (TiXmlElement *root = doc.FirstChildElement(); root != NULL; root = root->NextSiblingElement()) {
@@ -243,6 +239,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
           } else {
             // First time we're seeing a station with this name. Add this to our map.
             stations[station->getName()] = station;
+            stationsArray.push_back(station);
           }
         }
         break;
@@ -276,7 +273,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
   }
 
   // Print what's been parsed
-  printParsedObjects(stations, trams);
+  printParsedObjects(stationsArray, trams);
 
   doc.Clear();
   return endResult;

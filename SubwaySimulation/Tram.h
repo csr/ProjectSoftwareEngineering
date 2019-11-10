@@ -34,7 +34,7 @@ class Tram {
   int capacity;
   int speed;
   string startStation;
-
+  string currentStation;
 };
 
 

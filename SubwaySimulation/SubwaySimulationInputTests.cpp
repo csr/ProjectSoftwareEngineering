@@ -42,7 +42,7 @@ TEST_F(SubwaySimulationInputTests, InputLegalSubways) {
     myfile.open("testInput/zzzError.txt");
     importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
     myfile.close();
-    EXPECT_TRUE((importResult == Success) || (importResult == PartialImport));
+    EXPECT_TRUE((importResult == Success));
     EXPECT_TRUE(FileIsEmpty("testInput/zzzError.txt"));
 
     fileCounter = fileCounter + 1;
