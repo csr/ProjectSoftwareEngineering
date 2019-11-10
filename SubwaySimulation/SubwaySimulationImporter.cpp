@@ -195,7 +195,7 @@ void printParsedObjects(map<string, Station*> stations, map<string, Tram*> trams
     if (trams.count(station->getName())) {
       Tram *tram = trams[station->getName()];
       cout << ": Tram with ";
-      cout << tram->getCapacity() << " seats." << endl << endl;
+      cout << tram->getCapacity() << " seats" << endl << endl;
     } else {
       cout << endl << endl;
     }
@@ -229,7 +229,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
         Station *station = parseStation(root, errStream);
         // This station doesn't have the correct data, so we'll skip to the next root and print an error message
         if (station == NULL) {
-          errStream << "Error: Invalid station found." << endl;
+          errStream << "XML PARTIAL IMPORT: invalid station found" << endl;
           endResult = PartialImport;
         } else {
           // Check if there aren't stations already parsed with the same name to avoid duplicates
