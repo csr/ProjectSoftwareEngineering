@@ -246,9 +246,33 @@ cxxabi.h
 acxx_demangle.h
 -
 
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/DesignByContract.h
+assert.h
+-
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.cpp
+iostream
+-
+Station.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
+
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
 string
 -
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.cpp
+iostream
+-
+tinyxml.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
+Station.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
+Tram.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
+Subway.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
+DesignByContract.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/DesignByContract.h
 
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
 Station.h
@@ -257,6 +281,28 @@ Tram.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
 map
 -
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationDomainTests.cpp
+iostream
+-
+fstream
+-
+sys/stat.h
+-
+gtest/gtest.h
+-
+Subway.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp
+SubwaySimulationImporter.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
+map
+-
+iostream
+-
+tinyxml.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
 
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
 vector
@@ -286,6 +332,14 @@ SubwaySimulationUtils.h
 SubwaySimulationImporter.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
 
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationTests.cpp
+gtest/gtest.h
+-
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.cpp
+iostream
+-
+
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.h
 iostream
 -
@@ -306,15 +360,33 @@ string
 algorithm
 -
 
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.cpp
+Tram.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
+
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
 string
 -
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.cpp
+tinystr.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.h
 
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.h
 assert.h
 -
 string.h
 -
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.cpp
+ctype.h
+-
+sstream
+-
+iostream
+-
+tinyxml.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
 
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
 ctype.h
@@ -335,4 +407,18 @@ sstream
 -
 tinystr.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.h
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxmlerror.cpp
+tinyxml.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxmlparser.cpp
+ctype.h
+-
+stddef.h
+-
+tinyxml.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
+windows.h
+-
 

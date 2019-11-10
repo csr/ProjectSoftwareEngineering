@@ -50,53 +50,35 @@ bool FileIsEmpty(const std::string filename) {
 }
 
 bool FileCompare(const std::string leftFileName, const std::string rightFileName) {
-  std::ifstream f1(leftFileName, std::ifstream::binary|std::ifstream::ate);
-  std::ifstream f2(rightFileName, std::ifstream::binary|std::ifstream::ate);
+  ifstream leftFile, rightFile;
+  char leftRead, rightRead;
+  bool result;
 
-  if (f1.fail() || f2.fail()) {
-    return false; //file problem
-  }
-
-  if (f1.tellg() != f2.tellg()) {
+  // Open the two files.
+  leftFile.open(leftFileName.c_str());
+  if (!leftFile.is_open()) {
     return false;
-  }
+  };
+  rightFile.open(rightFileName.c_str());
+  if (!rightFile.is_open()) {
+    leftFile.close();
+    return false;
+  };
 
-  //seek back to beginning and use std::equal to compare contents
-  f1.seekg(0, std::ifstream::beg);
-  f2.seekg(0, std::ifstream::beg);
-  return std::equal(std::istreambuf_iterator<char>(f1.rdbuf()),
-                    std::istreambuf_iterator<char>(),
-                    std::istreambuf_iterator<char>(f2.rdbuf()));
+  result = true; // files exist and are open; assume equality unless a counterexamples shows up.
+  while (result && leftFile.good() && rightFile.good()) {
+    leftFile.get(leftRead);
+    rightFile.get(rightRead);
+    result = (leftRead == rightRead);
+  };
+  if (result) {
+    // last read was still equal; are we at the end of both files ?
+    result = (!leftFile.good()) && (!rightFile.good());
+  };
 
-//  ifstream leftFile, rightFile;
-//  char leftRead, rightRead;
-//  bool result;
-//
-//  // Open the two files.
-//  leftFile.open(leftFileName.c_str());
-//  if (!leftFile.is_open()) {
-//    return false;
-//  };
-//  rightFile.open(rightFileName.c_str());
-//  if (!rightFile.is_open()) {
-//    leftFile.close();
-//    return false;
-//  };
-//
-//  result = true; // files exist and are open; assume equality unless a counterexamples shows up.
-//  while (result && leftFile.good() && rightFile.good()) {
-//    leftFile.get(leftRead);
-//    rightFile.get(rightRead);
-//    result = (leftRead == rightRead);
-//  };
-//  if (result) {
-//    // last read was still equal; are we at the end of both files ?
-//    result = (!leftFile.good()) && (!rightFile.good());
-//  };
-//
-//  leftFile.close();
-//  rightFile.close();
-//  return result;
+  leftFile.close();
+  rightFile.close();
+  return result;
 }
 
 string ToString( int x ) {

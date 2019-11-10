@@ -6,5 +6,5 @@ CXX_FLAGS = -Wall -Werror -O2 -O3 -DNDEBUG -isysroot /Library/Developer/CommandL
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include 
+CXX_INCLUDES = -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput 
 

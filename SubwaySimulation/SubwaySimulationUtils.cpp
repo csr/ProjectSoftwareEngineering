@@ -11,7 +11,6 @@
 #ifndef SubwaySimulationUtils_H
 #define SubwaySimulationUtils_H
 
-
 #include <iostream>
 
 bool DirectoryExists(const std::string dirname);
