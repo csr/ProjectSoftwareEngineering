@@ -11,6 +11,8 @@
 #include <iostream>
 #include "tinyxml.h"
 using namespace std;
+#include <regex>
+
 
 // Auxiliary function for internal use only
 const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
@@ -25,7 +27,7 @@ const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
 
 // Check if this string is made up of letters ONLY
 bool is_letters_only(string string) {
-  for (int i = 0; i < string.size(); i++) {
+  for (unsigned int i = 0; i < string.size(); i++) {
     char c = string[i];
     if (!isalpha(c) || isdigit(c) || isspace(c)) {
       return false;
@@ -35,9 +37,10 @@ bool is_letters_only(string string) {
 }
 
 // Check if a given string is a number
-bool is_number(const std::string &s) {
-  return !s.empty() && std::all_of(s.begin(), s.end(), ::isdigit);
-}
+bool is_number(std::string x){
+    std::regex e ("^-?\\d+");
+    if (std::regex_match (x,e)) return true;
+    else return false;}
 
 // Parse station given its root element
 Station *parseStation(TiXmlElement *root, std::ostream& errStream) {

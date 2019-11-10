@@ -4,15 +4,21 @@ project(SubwaySimulation)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
-set(CMAKE_CXX_STANDARD 98)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "-Wall -Werror -O2")
 set(CMAKE_EXE_LINKER_FLAGS -pthread)
 
-# Set include dir
-include_directories(gtest/include)
-
-# Set Library dir
-link_directories(gtest/lib)
+if(WIN32)
+    # Set include dir
+    include_directories(gtest-windows/include)
+    # Set Library dir
+    link_directories(gtest-windows/lib)
+else()
+    # Set include dir
+    include_directories(gtest/include)
+    # Set Library dir
+    link_directories(gtest/lib)
+endif()
 
 # Set source files for RELEASE target
 set(RELEASE_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Station.cpp Tram.cpp SubwaySimulationImporter.cpp SubwaySimulationMain.cpp SubwaySimulationUtils.cpp SubwaySimulationUtils.h)

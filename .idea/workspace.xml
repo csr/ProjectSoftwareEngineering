@@ -161,7 +161,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SubwaySimulation" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
   </component>
   <component name="RecentsManager">
@@ -214,6 +214,7 @@
       <workItem from="1571765889221" duration="1223000" />
       <workItem from="1571843541413" duration="149000" />
       <workItem from="1571843713477" duration="3273000" />
+      <workItem from="1573401762923" duration="96000" />
     </task>
     <servers />
   </component>

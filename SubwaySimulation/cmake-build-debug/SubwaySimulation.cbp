@@ -8,208 +8,212 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug"/>
+				<Option working_dir="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="debug">
-				<Option output="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/debug" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 debug"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="debug/fast">
-				<Option output="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/debug" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 debug/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="release">
-				<Option output="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/release" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug"/>
+				<Option output="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/release.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/gtest-windows/include"/>
+					<Add directory="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
+					<Add directory="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 release"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 release"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="release/fast">
-				<Option output="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/release" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug"/>
+				<Option output="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/release.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
-					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/gtest-windows/include"/>
+					<Add directory="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
+					<Add directory="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 release/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 release/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="debug">
+				<Option output="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/debug.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/gtest-windows/include"/>
+					<Add directory="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
+					<Add directory="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 debug"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="debug/fast">
+				<Option output="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/debug.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/gtest-windows/include"/>
+					<Add directory="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
+					<Add directory="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 debug/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.cpp">
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/Station.cpp">
+			<Option target="release"/>
 			<Option target="debug"/>
+		</Unit>
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/Station.h">
+			<Option target="release"/>
+			<Option target="debug"/>
+		</Unit>
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/Subway.cpp">
+			<Option target="release"/>
+			<Option target="debug"/>
+		</Unit>
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/Subway.h">
+			<Option target="release"/>
+			<Option target="debug"/>
+		</Unit>
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationDomainTests.cpp">
+			<Option target="debug"/>
+		</Unit>
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp">
+			<Option target="release"/>
+			<Option target="debug"/>
+		</Unit>
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h">
+			<Option target="debug"/>
+		</Unit>
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationInputTests.cpp">
+			<Option target="debug"/>
+		</Unit>
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationMain.cpp">
 			<Option target="release"/>
 		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h">
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationTests.cpp">
 			<Option target="debug"/>
+		</Unit>
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.cpp">
 			<Option target="release"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.cpp">
 			<Option target="debug"/>
+		</Unit>
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.h">
 			<Option target="release"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h">
 			<Option target="debug"/>
+		</Unit>
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/Tram.cpp">
 			<Option target="release"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationDomainTests.cpp">
 			<Option target="debug"/>
 		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp">
-			<Option target="debug"/>
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/Tram.h">
 			<Option target="release"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h">
 			<Option target="debug"/>
 		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationInputTests.cpp">
-			<Option target="debug"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationMain.cpp">
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/tinystr.cpp">
 			<Option target="release"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationTests.cpp">
 			<Option target="debug"/>
 		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.cpp">
-			<Option target="debug"/>
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/tinystr.h">
 			<Option target="release"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.h">
 			<Option target="debug"/>
-			<Option target="release"/>
 		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.cpp">
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.cpp">
+			<Option target="release"/>
 			<Option target="debug"/>
-			<Option target="release"/>
 		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h">
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h">
+			<Option target="release"/>
 			<Option target="debug"/>
-			<Option target="release"/>
 		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.cpp">
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/tinyxmlerror.cpp">
+			<Option target="release"/>
 			<Option target="debug"/>
-			<Option target="release"/>
 		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.h">
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/tinyxmlparser.cpp">
+			<Option target="release"/>
 			<Option target="debug"/>
-			<Option target="release"/>
 		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.cpp">
-			<Option target="debug"/>
-			<Option target="release"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h">
-			<Option target="debug"/>
-			<Option target="release"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxmlerror.cpp">
-			<Option target="debug"/>
-			<Option target="release"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxmlparser.cpp">
-			<Option target="debug"/>
-			<Option target="release"/>
-		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/CMakeLists.txt">
+		<Unit filename="C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

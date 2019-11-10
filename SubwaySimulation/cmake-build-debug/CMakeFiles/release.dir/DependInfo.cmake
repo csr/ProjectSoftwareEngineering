@@ -4,22 +4,22 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/Station.cpp.o"
-  "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/Subway.cpp.o"
-  "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/SubwaySimulationImporter.cpp.o"
-  "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationMain.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/SubwaySimulationMain.cpp.o"
-  "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/SubwaySimulationUtils.cpp.o"
-  "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/Tram.cpp.o"
-  "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/tinystr.cpp.o"
-  "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/tinyxml.cpp.o"
-  "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxmlerror.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/tinyxmlerror.cpp.o"
-  "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxmlparser.cpp" "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/tinyxmlparser.cpp.o"
+  "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/Station.cpp" "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/Station.cpp.obj"
+  "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/Subway.cpp" "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/Subway.cpp.obj"
+  "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp" "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/SubwaySimulationImporter.cpp.obj"
+  "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationMain.cpp" "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/SubwaySimulationMain.cpp.obj"
+  "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.cpp" "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/SubwaySimulationUtils.cpp.obj"
+  "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/Tram.cpp" "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/Tram.cpp.obj"
+  "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/tinystr.cpp" "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/tinystr.cpp.obj"
+  "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.cpp" "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/tinyxml.cpp.obj"
+  "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/tinyxmlerror.cpp" "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/tinyxmlerror.cpp.obj"
+  "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/tinyxmlparser.cpp" "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-debug/CMakeFiles/release.dir/tinyxmlparser.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../gtest/include"
+  "../gtest-windows/include"
   "../testInput"
   "../testOutput"
   )
