@@ -193,11 +193,11 @@ void printParsedObjects(vector<Station*> stations, unordered_map<int, Tram*> tra
     // If there's a tram associated to the track, print capacity
     if (trams.count(station->getTrack())) {
       Tram *tram = trams[station->getTrack()];
-      cout << ": Tram with ";
-      cout << tram->getCapacity() << " seats" << endl << endl;
-    } else {
-      cout << endl << endl;
+      if (tram->getStartStation() == station->getName()) {
+        cout << ": Tram with " << tram->getCapacity() << " seats";
+      }
     }
+    cout << endl << endl;
   }
 }
 
