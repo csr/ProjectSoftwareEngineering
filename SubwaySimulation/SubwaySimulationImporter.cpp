@@ -294,7 +294,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
   SuccessEnum endResult = Success;
 
   if (!doc.LoadFile(inputFileName)) {
-    errStream << "XML IMPORT ABORTED: " << doc.ErrorDesc() << endl;
+    errStream << "XML IMPORT ABORTED: " << doc.ErrorDesc();
     return ImportAborted;
   }
 
