@@ -1,4 +1,24 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release
+"C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - MinGW Makefiles" "C:\Users\veror\Desktop\Uni\Terzo anno\Project Software Engineering\ProjectSoftwareEngineering\SubwaySimulation"
+-- The C compiler identification is GNU 6.3.0
+-- The CXX compiler identification is GNU 6.3.0
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: C:/MinGW/bin/g++.exe
+-- Check for working CXX compiler: C:/MinGW/bin/g++.exe -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Error at CMakeLists.txt:33 (file):
+  file COPY cannot find "C:/Users/veror/Desktop/Uni/Terzo anno/Project
+  Software
+  Engineering/ProjectSoftwareEngineering/SubwaySimulation/testOutput".
+
+
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/CMakeFiles/CMakeOutput.log".
+Cannot read project file C:\Users\veror\Desktop\Uni\Terzo anno\Project Software Engineering\ProjectSoftwareEngineering\SubwaySimulation\cmake-build-release\SubwaySimulation.cbp

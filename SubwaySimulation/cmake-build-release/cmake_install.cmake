@@ -1,8 +1,8 @@
-# Install script for directory: /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation
+# Install script for directory: C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/SubwaySimulation")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/veror/Desktop/Uni/Terzo anno/Project Software Engineering/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
