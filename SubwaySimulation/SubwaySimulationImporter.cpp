@@ -322,6 +322,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
           // The count would be 1 if the element is indeed present in the map.
           if (stations.count(station->getName())) {
             // We found a duplicate. Exit early.
+            errStream << "XML IMPORT ABORTED: found duplicate station with name " << station->getName() << endl;
             return ImportAborted;
           } else {
             // First time we're seeing a station with this name. Add this to our map.
@@ -342,6 +343,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
           // The count would be 1 if the element is indeed present in the map.
           if (trams.count(tram->getLine())) {
             // We found a duplicate. Exit early.
+            errStream << "XML IMPORT ABORTED: found duplicate tram with line " << tram->getLine() << endl;
             return ImportAborted;
           } else {
             // First time we're seeing a tram with this line. Add this to our map.
@@ -359,19 +361,24 @@ SuccessEnum SubwaySimulationImporter::importSubway(
     }
   }
 
+  if (stationsArray.size() == 0 || trams.size() == 0) {
+    errStream << "XML IMPORT ABORTED: found empty file";
+    return ImportAborted;
+  }
+
   // Consistency
 
   // Check points 2 - 4 of consistency
   bool prev_next_track_tram = check_prev_next_track_tram(stations, trams);
   if (!prev_next_track_tram) {
-    errStream << "XML IMPORT ABORTED: Some stations don't have a next and/or right station";
+    errStream << "XML IMPORT ABORTED: Some stations don't have a next and/or right station" << endl;
     return ImportAborted;
   }
 
   // Check points 3 - 5 of consistency
   bool line_track = check_line_track(trams, stations);
   if (!line_track) {
-    errStream << "XML IMPORT ABORTED: the lines don't correspond to the tracks";
+    errStream << "XML IMPORT ABORTED: the lines don't correspond to the tracks" << endl;
     return ImportAborted;
   }
 
