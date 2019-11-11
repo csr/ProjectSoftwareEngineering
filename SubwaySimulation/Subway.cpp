@@ -19,6 +19,8 @@ using namespace std;
 Subway::Subway() {
 }
 
+}
+
 void Subway::addStation(Station station) {
   stations[station.getName()] = station;
 }
