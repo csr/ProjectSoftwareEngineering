@@ -1,7 +1,24 @@
-<!--Valid station-->
 <STATION>
-    <name>Antwerpen</name>
+    <name>A</name>
     <next>B</next>
     <previous>C</previous>
     <track>12</track>
 </STATION>
+<STATION>
+    <name>B</name>
+    <next>C</next>
+    <previous>A</previous>
+    <track>12</track>
+</STATION>
+<STATION>
+    <name>C</name>
+    <next>A</next>
+    <previous>B</previous>
+    <track>12</track>
+</STATION>
+<TRAM>
+    <line>12</line>
+    <capacity>32</capacity>
+    <speed>60</speed>
+    <startStation>A</startStation>
+</TRAM>

@@ -1,7 +1,0 @@
-<!--Valid station-->
-<STATION>
-    <name>Antwerpen</name>
-    <next>B</next>
-    <previous>C</previous>
-    <track>12</track>
-</STATION>

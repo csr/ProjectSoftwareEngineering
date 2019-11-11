@@ -363,15 +363,15 @@ SuccessEnum SubwaySimulationImporter::importSubway(
 
   // Check points 2 - 4 of consistency
   bool prev_next_track_tram = check_prev_next_track_tram(stations, trams);
-  errStream << "Exists prev next [0 = false, 1 = true]: " << prev_next_track_tram << endl;
   if (!prev_next_track_tram) {
+    errStream << "XML IMPORT ABORTED: Some stations don't have a next and/or right station";
     return ImportAborted;
   }
 
   // Check points 3 - 5 of consistency
   bool line_track = check_line_track(trams, stations);
-  errStream << "Lines correspond to tracks [0 = false, 1 = true]: " << line_track << endl;
-  if (line_track) {
+  if (!line_track) {
+    errStream << "XML IMPORT ABORTED: the lines don't correspond to the tracks";
     return ImportAborted;
   }
 

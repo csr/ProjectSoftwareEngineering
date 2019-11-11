@@ -1,3 +1,0 @@
-<!--Even though this file contains an invalid root, the import should still succeed.-->
-<HELLO>
-</HELLO>
