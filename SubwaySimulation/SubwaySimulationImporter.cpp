@@ -177,6 +177,100 @@ RootElementType determineRootElementType(string rootName) {
   }
 }
 
+int find_track(unordered_map<string, Station*> stations, unordered_map<string, Station*>::iterator it) {
+  // Check if element exists in map or not
+  /*for debug
+  Element with key 'hat' found
+  cout << "Found" << std::endl;
+  Access the Key from iterator
+  string key = it->first;
+  cout << "NEXT " << key << endl;*/
+  // Access the next/previous station from iterator
+  Station* station = it->second;
+  // Access the track of next/previous station
+  int track = station->getTrack();
+  // print for debug
+  //cout << "key = " << key << " track = " << track << std::endl;
+  return track;
+}
+
+// Check if each station has a next and previous with same track and if each track has exactly one tram
+// point 2 - 4 of consistency
+bool check_prev_next_track_tram(unordered_map<string, Station*> stations, unordered_map<int, Tram *> trams){
+  bool is_ok = true;
+  unordered_map<string, Station*>::iterator it;
+  for (it = stations.begin(); it != stations.end() && is_ok; it++) {
+    Station *station = it->second;
+    string next = station->getNext();
+    string prev = station->getPrevious();
+    int track = station->getTrack();
+
+    // check if each track has exactly one tram: it counts how many trams have line == track
+    // point 4 of consistency
+    if(trams.count(track) != 1)
+      is_ok = false;
+
+    // for debug
+    /*cout << "NAME " << station->getName() << endl;
+    cout << "NEXT " << station->getNext() << endl;
+    cout << "PREV " << station->getPrevious() << endl;
+    cout << "TRACK " << station->getTrack() << endl;*/
+    // iterator for next
+    unordered_map<string, Station*>::iterator it1;
+    // Find next station
+    it1 = stations.find(next);
+    // iterator for previous
+    unordered_map<string, Station*>::iterator it2;
+    // Find previous station
+    it2 = stations.find(prev);
+    // for debug
+    /*unordered_map<string, Station*>::iterator it3;
+    for (it3 = stations.begin(); it3 != stations.end(); ++it3)
+        cout << it3->first << " = "
+             << it3->second << '\n';*/
+    // Check if element exists in map or not
+    if(it1 != stations.end() && it2 != stations.end()){
+      int next_track = find_track(stations, it1);
+      int prev_track = find_track(stations, it2);
+      if(track == next_track && next_track == prev_track)
+        is_ok =  true;
+      else
+        is_ok = false;
+    }
+    else
+      is_ok = false;
+  }
+  return is_ok;
+}
+
+// Check if each tram has its startStation in the subway and its line corresponds to track of its startStation
+// point 3-5 of consistency
+bool check_line_track(unordered_map<int, Tram *> trams, unordered_map<string, Station*> stations) {
+  bool is_ok = true;
+  unordered_map<int, Tram*>::iterator it;
+  for (it = trams.begin(); it != trams.end() && is_ok; it++) {
+    Tram* tram = it->second;
+    int line = tram->getLine();
+    // for debug
+    // cout << "Line " << line << endl;
+    string startStation = tram->getStartStation();
+    // for debug
+    // cout << "StartStation " << startStation << endl;
+    unordered_map<string, Station*>::iterator it1;
+    it1 = stations.find(startStation);
+    // for debug
+    // cout << "Ok " << (it1 != stations.end()) << endl;
+    if(it1 != stations.end()) {
+      Station* station = it1->second;
+      if(station->getTrack() != line)
+        is_ok = false; // if line != track, point 3 of consistency
+    }
+    else // if startStation of a tram is not in the subway, point 5 of consistency
+      is_ok = false;
+  }
+  return is_ok;
+}
+
 void printParsedObjects(vector<Station*> stations, unordered_map<int, Tram*> trams) {
   for (auto & station : stations) {
     cout << "Station " << station->getName() << endl
@@ -263,6 +357,22 @@ SuccessEnum SubwaySimulationImporter::importSubway(
         break;
       }
     }
+  }
+
+  // Consistency
+
+  // Check points 2 - 4 of consistency
+  bool prev_next_track_tram = check_prev_next_track_tram(stations, trams);
+  errStream << "Exists prev next [0 = false, 1 = true]: " << prev_next_track_tram << endl;
+  if (!prev_next_track_tram) {
+    return ImportAborted;
+  }
+
+  // Check points 3 - 5 of consistency
+  bool line_track = check_line_track(trams, stations);
+  errStream << "Lines correspond to tracks [0 = false, 1 = true]: " << line_track << endl;
+  if (line_track) {
+    return ImportAborted;
   }
 
   printParsedObjects(stationsArray, trams);
