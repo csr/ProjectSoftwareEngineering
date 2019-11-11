@@ -7,6 +7,8 @@
 //============================================================================
 
 #include <iostream>
+#include <unordered_map>
+
 #include "tinyxml.h"
 #include "Station.h"
 #include "Tram.h"
@@ -19,6 +21,9 @@ using namespace std;
 Subway::Subway() {
 }
 
+void Subway::addStationsTrams(unordered_map<string, Station> stations, unordered_map<int, Tram> trams) {
+  this->stations = stations;
+  this->trams = trams;
 }
 
 void Subway::addStation(Station station) {
@@ -40,4 +45,3 @@ int Subway::getStationsCount() {
 // Simulation
 void Subway::computeSimulation(int steps) {
 }
-
