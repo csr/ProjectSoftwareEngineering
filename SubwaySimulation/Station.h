@@ -14,6 +14,8 @@ using namespace std;
 
 class Station {
  public:
+  Station();
+  Station(string name, string nextStation, string previousStation, int track);
   string toString();
 
   // Getters

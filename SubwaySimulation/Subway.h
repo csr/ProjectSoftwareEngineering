@@ -15,12 +15,14 @@ using namespace std;
 #include "Station.h"
 #include "Tram.h"
 #include <unordered_map>
+#include <vector>
 
 class Subway {
  public:
   Subway();
   string toString();
   void addStationsTrams(unordered_map<string, Station> stations, unordered_map<int, Tram> trams);
+  void addStations(vector<Station> stations);
   void addStation(Station station);
   void addTram(Tram tram);
   void computeSimulation(int steps);
@@ -28,6 +30,7 @@ class Subway {
   int getTramsCount();
 
  protected:
+  vector<Station> stationsArray;
   unordered_map<string, Station> stations;
   unordered_map<int, Tram> trams;
 };

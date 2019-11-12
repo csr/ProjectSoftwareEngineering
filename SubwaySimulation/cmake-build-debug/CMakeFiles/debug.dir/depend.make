@@ -37,8 +37,11 @@ CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../SubwaySimulationDomai
 CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../Tram.h
 
 CMakeFiles/debug.dir/SubwaySimulationExporter.cpp.o: ../DesignByContract.h
+CMakeFiles/debug.dir/SubwaySimulationExporter.cpp.o: ../Station.h
+CMakeFiles/debug.dir/SubwaySimulationExporter.cpp.o: ../Subway.h
 CMakeFiles/debug.dir/SubwaySimulationExporter.cpp.o: ../SubwaySimulationExporter.cpp
 CMakeFiles/debug.dir/SubwaySimulationExporter.cpp.o: ../SubwaySimulationExporter.h
+CMakeFiles/debug.dir/SubwaySimulationExporter.cpp.o: ../Tram.h
 
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../Station.h
 CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o: ../Subway.h

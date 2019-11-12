@@ -26,6 +26,10 @@ void Subway::addStationsTrams(unordered_map<string, Station> stations, unordered
   this->trams = trams;
 }
 
+void Subway::addStations(vector<Station> stations) {
+  this->stationsArray = stations;
+}
+
 void Subway::addStation(Station station) {
   stations[station.getName()] = station;
 }

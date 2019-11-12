@@ -10,9 +10,13 @@
 #ifndef SUBWAYSIMULATION__SUBWAYSIMULATIONEXPORTER_H_
 #define SUBWAYSIMULATION__SUBWAYSIMULATIONEXPORTER_H_
 
+#include "Subway.h"
+
+enum SuccessEnum {Success, ExportError};
+
 class SubwaySimulationExporter {
  public:
-  SubwaySimulationExporter();
+  SubwaySimulationExporter(Subway& subway, const char * outputFileName);
   bool properlyInitialized();
 
  private:

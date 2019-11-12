@@ -246,6 +246,10 @@ cxxabi.h
 acxx_demangle.h
 -
 
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/DesignByContract.h
+assert.h
+-
+
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
 string
 -
@@ -257,8 +261,20 @@ Tram.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
 unordered_map
 -
+vector
+-
+
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationExporter.cpp
+iostream
+-
+SubwaySimulationExporter.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationExporter.h
+DesignByContract.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/DesignByContract.h
 
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationExporter.h
+Subway.h
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
 
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationOutputTests.cpp
 iostream

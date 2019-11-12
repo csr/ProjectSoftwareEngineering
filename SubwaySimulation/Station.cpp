@@ -11,6 +11,17 @@
 
 using namespace std;
 
+Station::Station() {
+}
+
+Station::Station(string name, string nextStation, string previousStation, int track) {
+  // TODO: properly initialized?
+  setName(name);
+  setNext(nextStation);
+  setPrevious(previousStation);
+  setTrack(track);
+}
+
 const string &Station::getName() const {
   return name;
 }
