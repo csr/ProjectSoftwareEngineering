@@ -374,7 +374,6 @@ SubwaySimulationUtils.o: SubwaySimulationUtils.cpp.o
 # target to build an object file
 SubwaySimulationUtils.cpp.o:
 	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/SubwaySimulationUtils.cpp.o
-	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/SubwaySimulationUtils.cpp.o
 .PHONY : SubwaySimulationUtils.cpp.o
 
 SubwaySimulationUtils.i: SubwaySimulationUtils.cpp.i
@@ -384,7 +383,6 @@ SubwaySimulationUtils.i: SubwaySimulationUtils.cpp.i
 # target to preprocess a source file
 SubwaySimulationUtils.cpp.i:
 	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/SubwaySimulationUtils.cpp.i
-	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/SubwaySimulationUtils.cpp.i
 .PHONY : SubwaySimulationUtils.cpp.i
 
 SubwaySimulationUtils.s: SubwaySimulationUtils.cpp.s
@@ -394,7 +392,6 @@ SubwaySimulationUtils.s: SubwaySimulationUtils.cpp.s
 # target to generate assembly for a file
 SubwaySimulationUtils.cpp.s:
 	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/SubwaySimulationUtils.cpp.s
-	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/SubwaySimulationUtils.cpp.s
 .PHONY : SubwaySimulationUtils.cpp.s
 
 Tram.o: Tram.cpp.o

@@ -4,7 +4,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/release.dir/SubwaySimulationExporter.cpp.o"
   "CMakeFiles/release.dir/SubwaySimulationImporter.cpp.o"
   "CMakeFiles/release.dir/SubwaySimulationMain.cpp.o"
-  "CMakeFiles/release.dir/SubwaySimulationUtils.cpp.o"
   "CMakeFiles/release.dir/Tram.cpp.o"
   "CMakeFiles/release.dir/tinystr.cpp.o"
   "CMakeFiles/release.dir/tinyxml.cpp.o"

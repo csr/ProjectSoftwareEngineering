@@ -179,11 +179,9 @@
 		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.cpp">
 			<Option target="debug"/>
-			<Option target="release"/>
 		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.h">
 			<Option target="debug"/>
-			<Option target="release"/>
 		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.cpp">
 			<Option target="debug"/>
