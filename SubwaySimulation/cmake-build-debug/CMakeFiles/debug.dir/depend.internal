@@ -76,6 +76,32 @@ CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
+CMakeFiles/debug.dir/SubwaySimulationOutputTests.cpp.o
+ ../gtest/include/gtest/gtest-death-test.h
+ ../gtest/include/gtest/gtest-message.h
+ ../gtest/include/gtest/gtest-param-test.h
+ ../gtest/include/gtest/gtest-printers.h
+ ../gtest/include/gtest/gtest-test-part.h
+ ../gtest/include/gtest/gtest-typed-test.h
+ ../gtest/include/gtest/gtest.h
+ ../gtest/include/gtest/gtest_pred_impl.h
+ ../gtest/include/gtest/gtest_prod.h
+ ../gtest/include/gtest/internal/gtest-death-test-internal.h
+ ../gtest/include/gtest/internal/gtest-filepath.h
+ ../gtest/include/gtest/internal/gtest-internal.h
+ ../gtest/include/gtest/internal/gtest-linked_ptr.h
+ ../gtest/include/gtest/internal/gtest-param-util-generated.h
+ ../gtest/include/gtest/internal/gtest-param-util.h
+ ../gtest/include/gtest/internal/gtest-port.h
+ ../gtest/include/gtest/internal/gtest-string.h
+ ../gtest/include/gtest/internal/gtest-tuple.h
+ ../gtest/include/gtest/internal/gtest-type-util.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationExporter.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationOutputTests.cpp
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
 CMakeFiles/debug.dir/SubwaySimulationTests.cpp.o
  ../gtest/include/gtest/gtest-death-test.h
  ../gtest/include/gtest/gtest-message.h
