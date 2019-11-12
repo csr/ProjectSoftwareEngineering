@@ -71,6 +71,7 @@ CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../Station.h
 CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../Subway.h
 CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../SubwaySimulationImporter.h
 CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../SubwaySimulationInputTests.cpp
+CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../SubwaySimulationUtils.h
 CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../Tram.h
 CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../tinystr.h
 CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o: ../tinyxml.h

@@ -167,6 +167,7 @@
 		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h">
 			<Option target="debug"/>
+			<Option target="release"/>
 		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationInputTests.cpp">
 			<Option target="debug"/>
