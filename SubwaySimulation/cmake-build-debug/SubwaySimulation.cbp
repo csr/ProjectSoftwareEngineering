@@ -178,9 +178,6 @@
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationOutputTests.cpp">
 			<Option target="debug"/>
 		</Unit>
-		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationOutputTests.h">
-			<Option target="debug"/>
-		</Unit>
 		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationTests.cpp">
 			<Option target="debug"/>
 		</Unit>

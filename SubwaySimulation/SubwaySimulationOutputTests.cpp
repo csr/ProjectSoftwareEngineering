@@ -44,11 +44,9 @@ TEST_F(SubwaySimulationOutputTests, ExampleOutputTest) {
 
   ofstream myfile;
   myfile.open("testOutput/temporaryOutput.txt");
-
+  myfile << subway_.toString();
   myfile.close();
-//  SubwaySimulationExporter exporter = SubwaySimulationExporter(subway_, "testOutput/temporaryOutput.txt");
-//  exporter.export();
-//  EXPECT_TRUE(FileCompare("testOutput/temporaryOutput.txt", "testOutput/expectedOutput1.txt"));
+  EXPECT_TRUE(FileCompare("testOutput/temporaryOutput.txt", "testOutput/expectedOutput1.txt"));
 }
 
 
