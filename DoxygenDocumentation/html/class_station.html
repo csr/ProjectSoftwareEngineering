@@ -9,9 +9,22 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +39,21 @@
    </div>
    <div id="projectbrief">Subway simulation in C++</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +65,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('class_station.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,7 +96,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -70,31 +104,52 @@ $(function() {
 <div class="title">Station Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_station_8h_source.html">Station.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a73d335726aad1d844d81cda6d9fd74e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a73d335726aad1d844d81cda6d9fd74e6">Station</a> ()</td></tr>
+<tr class="memdesc:a73d335726aad1d844d81cda6d9fd74e6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ ENSURE(<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "constructor must end in properlyInitialized state");  <a href="class_station.html#a73d335726aad1d844d81cda6d9fd74e6">More...</a><br /></td></tr>
 <tr class="separator:a73d335726aad1d844d81cda6d9fd74e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cd76667fd24aaec8f01f139d5364249"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a4cd76667fd24aaec8f01f139d5364249">Station</a> (string name, string nextStation, string previousStation, int track)</td></tr>
+<tr class="memdesc:a4cd76667fd24aaec8f01f139d5364249"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ ENSURE(<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "constructor must end in properlyInitialized state");  <a href="class_station.html#a4cd76667fd24aaec8f01f139d5364249">More...</a><br /></td></tr>
 <tr class="separator:a4cd76667fd24aaec8f01f139d5364249"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab182a50a2992afe0df4412f7de4b73d"><td class="memItemLeft" align="right" valign="top"><a id="aab182a50a2992afe0df4412f7de4b73d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</b> ()</td></tr>
+<tr class="memitem:aab182a50a2992afe0df4412f7de4b73d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized</a> ()</td></tr>
 <tr class="separator:aab182a50a2992afe0df4412f7de4b73d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2863c0eebeedd65a7be47004dc729465"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a2863c0eebeedd65a7be47004dc729465">getName</a> ()</td></tr>
+<tr class="memdesc:a2863c0eebeedd65a7be47004dc729465"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getName");  <a href="class_station.html#a2863c0eebeedd65a7be47004dc729465">More...</a><br /></td></tr>
 <tr class="separator:a2863c0eebeedd65a7be47004dc729465"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43f08fc7fd06633c227837c0ef506c93"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a43f08fc7fd06633c227837c0ef506c93">getNext</a> ()</td></tr>
+<tr class="memdesc:a43f08fc7fd06633c227837c0ef506c93"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getNext");  <a href="class_station.html#a43f08fc7fd06633c227837c0ef506c93">More...</a><br /></td></tr>
 <tr class="separator:a43f08fc7fd06633c227837c0ef506c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae18b26db1d3ba92531d0b2d6331b332a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#ae18b26db1d3ba92531d0b2d6331b332a">getPrevious</a> ()</td></tr>
+<tr class="memdesc:ae18b26db1d3ba92531d0b2d6331b332a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getPrevious");  <a href="class_station.html#ae18b26db1d3ba92531d0b2d6331b332a">More...</a><br /></td></tr>
 <tr class="separator:ae18b26db1d3ba92531d0b2d6331b332a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16f9d4cebc49e77ab5a1c4f63e8fcd5a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a16f9d4cebc49e77ab5a1c4f63e8fcd5a">getTrack</a> ()</td></tr>
+<tr class="memdesc:a16f9d4cebc49e77ab5a1c4f63e8fcd5a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getTrack");  <a href="class_station.html#a16f9d4cebc49e77ab5a1c4f63e8fcd5a">More...</a><br /></td></tr>
 <tr class="separator:a16f9d4cebc49e77ab5a1c4f63e8fcd5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e41c9f0a2a6f702d2323fd9a7a8acdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a6e41c9f0a2a6f702d2323fd9a7a8acdf">setName</a> (string name)</td></tr>
+<tr class="memdesc:a6e41c9f0a2a6f702d2323fd9a7a8acdf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling setName");  <a href="class_station.html#a6e41c9f0a2a6f702d2323fd9a7a8acdf">More...</a><br /></td></tr>
 <tr class="separator:a6e41c9f0a2a6f702d2323fd9a7a8acdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5bfa2ad277d59830ab2746ef2681efe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#ae5bfa2ad277d59830ab2746ef2681efe">setNext</a> (string next)</td></tr>
+<tr class="memdesc:ae5bfa2ad277d59830ab2746ef2681efe"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling setNext");  <a href="class_station.html#ae5bfa2ad277d59830ab2746ef2681efe">More...</a><br /></td></tr>
 <tr class="separator:ae5bfa2ad277d59830ab2746ef2681efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeea52808750672bf2b7747b3c6397737"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#aeea52808750672bf2b7747b3c6397737">setPrevious</a> (string previous)</td></tr>
+<tr class="memdesc:aeea52808750672bf2b7747b3c6397737"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling setPrevious");  <a href="class_station.html#aeea52808750672bf2b7747b3c6397737">More...</a><br /></td></tr>
 <tr class="separator:aeea52808750672bf2b7747b3c6397737"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43508576183f6344e882a2a545725887"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a43508576183f6344e882a2a545725887">setTrack</a> (int track)</td></tr>
+<tr class="memdesc:a43508576183f6344e882a2a545725887"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling setTrack");  <a href="class_station.html#a43508576183f6344e882a2a545725887">More...</a><br /></td></tr>
 <tr class="separator:a43508576183f6344e882a2a545725887"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -112,8 +167,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p><br  />
- ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state"); </p>
+ ENSURE(<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "constructor must end in properlyInitialized state"); </p>
 
 </div>
 </div>
@@ -154,8 +210,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p><br  />
- ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state"); </p>
+ ENSURE(<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "constructor must end in properlyInitialized state"); </p>
 
 </div>
 </div>
@@ -174,8 +231,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p><br  />
- REQUIRE(this-&gt;properlyInitialized(), "Station wasn't initialized when calling getName"); </p>
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getName"); </p>
 
 </div>
 </div>
@@ -193,8 +251,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p><br  />
- REQUIRE(this-&gt;properlyInitialized(), "Station wasn't initialized when calling getNext"); </p>
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getNext"); </p>
 
 </div>
 </div>
@@ -212,8 +271,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p><br  />
- REQUIRE(this-&gt;properlyInitialized(), "Station wasn't initialized when calling getPrevious"); </p>
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getPrevious"); </p>
 
 </div>
 </div>
@@ -231,8 +291,26 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p><br  />
- REQUIRE(this-&gt;properlyInitialized(), "Station wasn't initialized when calling getTrack"); </p>
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getTrack"); </p>
+
+</div>
+</div>
+<a id="aab182a50a2992afe0df4412f7de4b73d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab182a50a2992afe0df4412f7de4b73d">&#9670;&nbsp;</a></span>properlyInitialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Station::properlyInitialized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -251,8 +329,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p><br  />
- REQUIRE(this-&gt;properlyInitialized(), "Station wasn't initialized when calling setName"); </p>
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling setName"); </p>
 
 </div>
 </div>
@@ -271,8 +350,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p><br  />
- REQUIRE(this-&gt;properlyInitialized(), "Station wasn't initialized when calling setNext"); </p>
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling setNext"); </p>
 
 </div>
 </div>
@@ -291,8 +371,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p><br  />
- REQUIRE(this-&gt;properlyInitialized(), "Station wasn't initialized when calling setPrevious"); </p>
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling setPrevious"); </p>
 
 </div>
 </div>
@@ -311,21 +392,22 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p><br  />
- REQUIRE(this-&gt;properlyInitialized(), "Station wasn't initialized when calling setTrack"); </p>
+ REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling setTrack"); </p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>SubwaySimulation/<a class="el" href="_station_8h_source.html">Station.h</a></li>
-<li>SubwaySimulation/Station.cpp</li>
-</ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.16
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_station.html">Station</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
 </body>
 </html>

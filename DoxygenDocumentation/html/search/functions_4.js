@@ -1,6 +1,12 @@
 var searchData=
 [
-  ['firstattribute_183',['FirstAttribute',['../class_ti_xml_element.html#a003131b1bbf0b8054b11571c1b9a4d3a',1,'TiXmlElement']]],
-  ['firstchild_184',['FirstChild',['../class_ti_xml_node.html#aa66bceae19707c90c1db12d7c98894a4',1,'TiXmlNode::FirstChild() const'],['../class_ti_xml_node.html#ae98c367f664890c4b5a5183481ec128a',1,'TiXmlNode::FirstChild(const char *value) const'],['../class_ti_xml_node.html#abc8bf32be6419ec453a731868de19554',1,'TiXmlNode::FirstChild(const char *_value)'],['../class_ti_xml_handle.html#afb1b4c0eda970b320dfd262304cc1d04',1,'TiXmlHandle::FirstChild() const'],['../class_ti_xml_handle.html#a586ebaca4a4d0909db65a765d95d5e59',1,'TiXmlHandle::FirstChild(const char *value) const']]],
-  ['firstchildelement_185',['FirstChildElement',['../class_ti_xml_node.html#a12c973e1da9e90a178924b8ea5a5f4d1',1,'TiXmlNode::FirstChildElement() const'],['../class_ti_xml_node.html#aab23fca4c2455c1d926c35d85a663842',1,'TiXmlNode::FirstChildElement(const char *_value) const'],['../class_ti_xml_handle.html#af0643f8683f3f2b779b8c9d78c67b2c0',1,'TiXmlHandle::FirstChildElement() const'],['../class_ti_xml_handle.html#a3eaf2d2d4c087cd8a48da261042e75bc',1,'TiXmlHandle::FirstChildElement(const char *value) const']]]
+  ['element_385',['Element',['../class_ti_xml_handle.html#ae9b22d71bf5f69ee5fda28f5ad21f19c',1,'TiXmlHandle']]],
+  ['empty_386',['empty',['../class_ti_xml_string.html#a3139aafb0f0a8e26d1a4ed58a50f3678',1,'TiXmlString']]],
+  ['encodestring_387',['EncodeString',['../class_ti_xml_base.html#a32ed202562b58de64c7d799ca3c9db98',1,'TiXmlBase']]],
+  ['encoding_388',['Encoding',['../class_ti_xml_declaration.html#a8d3d1b5b226daa8353276d719497be80',1,'TiXmlDeclaration']]],
+  ['error_389',['Error',['../class_ti_xml_document.html#a348e68faad4a3498f413c51ee9bc321a',1,'TiXmlDocument']]],
+  ['errorcol_390',['ErrorCol',['../class_ti_xml_document.html#adea69de889449a2587afb8ee043f43f5',1,'TiXmlDocument']]],
+  ['errordesc_391',['ErrorDesc',['../class_ti_xml_document.html#aab511be262e84a003e3bb86f0215c8c2',1,'TiXmlDocument']]],
+  ['errorid_392',['ErrorId',['../class_ti_xml_document.html#abd928b49a646c8ed53e0453c555d96a2',1,'TiXmlDocument']]],
+  ['errorrow_393',['ErrorRow',['../class_ti_xml_document.html#a062e5257128a7da31b0b2e38cd524600',1,'TiXmlDocument']]]
 ];

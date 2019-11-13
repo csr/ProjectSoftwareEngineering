@@ -9,9 +9,22 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +39,21 @@
    </div>
    <div id="projectbrief">Subway simulation in C++</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,17 +65,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
-</div><!-- top -->
+$(document).ready(function(){initNavTree('functions_func_s.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,11 +115,17 @@ $(function() {
 <li>SetCondenseWhiteSpace()
 : <a class="el" href="class_ti_xml_base.html#a0f799ec645bfb8d8a969e83478f379c1">TiXmlBase</a>
 </li>
+<li>SetDocument()
+: <a class="el" href="class_ti_xml_attribute.html#ac12a94d4548302afb12f488ba101f7d1">TiXmlAttribute</a>
+</li>
 <li>SetDoubleAttribute()
 : <a class="el" href="class_ti_xml_element.html#a0d1dd975d75496778177e35abfe0ec0b">TiXmlElement</a>
 </li>
 <li>SetDoubleValue()
 : <a class="el" href="class_ti_xml_attribute.html#a0316da31373496c4368ad549bf711394">TiXmlAttribute</a>
+</li>
+<li>SetError()
+: <a class="el" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">TiXmlDocument</a>
 </li>
 <li>SetIndent()
 : <a class="el" href="class_ti_xml_printer.html#a213377a4070c7e625bae59716b089e5e">TiXmlPrinter</a>
@@ -126,6 +166,10 @@ $(function() {
 <li>setTrack()
 : <a class="el" href="class_station.html#a43508576183f6344e882a2a545725887">Station</a>
 </li>
+<li>SetUp()
+: <a class="el" href="class_subway_simulation_input_tests.html#aa17261e54816b105ac066d4bc9b00d49">SubwaySimulationInputTests</a>
+, <a class="el" href="class_subway_simulation_output_tests.html#a7c3ac5a2bdf65691173af42696cad658">SubwaySimulationOutputTests</a>
+</li>
 <li>SetUserData()
 : <a class="el" href="class_ti_xml_base.html#ac6b3e0f790930d4970ec30764e937b5d">TiXmlBase</a>
 </li>
@@ -136,22 +180,43 @@ $(function() {
 <li>Size()
 : <a class="el" href="class_ti_xml_printer.html#ad01375ae9199bd2f48252eaddce3039d">TiXmlPrinter</a>
 </li>
+<li>size()
+: <a class="el" href="class_ti_xml_string.html#a483d85103d2a3ba8c0831e205c832f33">TiXmlString</a>
+</li>
+<li>SkipWhiteSpace()
+: <a class="el" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">TiXmlBase</a>
+</li>
+<li>Stamp()
+: <a class="el" href="class_ti_xml_parsing_data.html#a65cee8ab77a36c605db08c84b4c30a7d">TiXmlParsingData</a>
+</li>
 <li>Standalone()
 : <a class="el" href="class_ti_xml_declaration.html#a1f2f8a741593d15a61e491e5024cacef">TiXmlDeclaration</a>
 </li>
 <li>Station()
 : <a class="el" href="class_station.html#a4cd76667fd24aaec8f01f139d5364249">Station</a>
 </li>
+<li>StringEqual()
+: <a class="el" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">TiXmlBase</a>
+</li>
 <li>Subway()
 : <a class="el" href="class_subway.html#a7f21687833f52266591b9ffec9c28ff3">Subway</a>
 </li>
+<li>SubwaySimulationExporter()
+: <a class="el" href="class_subway_simulation_exporter.html#aef708845bca553dab97eb3114d104bfa">SubwaySimulationExporter</a>
+</li>
+<li>swap()
+: <a class="el" href="class_ti_xml_string.html#aa392cbc180752a79f007f4f9280c7762">TiXmlString</a>
+</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.16
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
 </body>
 </html>

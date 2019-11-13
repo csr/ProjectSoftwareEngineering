@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['element_175',['Element',['../class_ti_xml_handle.html#ae9b22d71bf5f69ee5fda28f5ad21f19c',1,'TiXmlHandle']]],
-  ['encodestring_176',['EncodeString',['../class_ti_xml_base.html#a32ed202562b58de64c7d799ca3c9db98',1,'TiXmlBase']]],
-  ['encoding_177',['Encoding',['../class_ti_xml_declaration.html#a8d3d1b5b226daa8353276d719497be80',1,'TiXmlDeclaration']]],
-  ['error_178',['Error',['../class_ti_xml_document.html#a348e68faad4a3498f413c51ee9bc321a',1,'TiXmlDocument']]],
-  ['errorcol_179',['ErrorCol',['../class_ti_xml_document.html#adea69de889449a2587afb8ee043f43f5',1,'TiXmlDocument']]],
-  ['errordesc_180',['ErrorDesc',['../class_ti_xml_document.html#aab511be262e84a003e3bb86f0215c8c2',1,'TiXmlDocument']]],
-  ['errorid_181',['ErrorId',['../class_ti_xml_document.html#abd928b49a646c8ed53e0453c555d96a2',1,'TiXmlDocument']]],
-  ['errorrow_182',['ErrorRow',['../class_ti_xml_document.html#a062e5257128a7da31b0b2e38cd524600',1,'TiXmlDocument']]]
+  ['data_381',['data',['../class_ti_xml_string.html#a0e010e1737cfc3ee885b42875171b88e',1,'TiXmlString']]],
+  ['determinerootelementtype_382',['determineRootElementType',['../_subway_simulation_importer_8cpp.html#a47145768e134d59a19227e498974e114',1,'SubwaySimulationImporter.cpp']]],
+  ['directoryexists_383',['DirectoryExists',['../_subway_simulation_utils_8cpp.html#a20aa51a3c6e35cb8af1d6d45efd6c71b',1,'DirectoryExists(const std::string dirname):&#160;SubwaySimulationUtils.cpp'],['../_subway_simulation_utils_8h.html#a20aa51a3c6e35cb8af1d6d45efd6c71b',1,'DirectoryExists(const std::string dirname):&#160;SubwaySimulationUtils.cpp']]],
+  ['doublevalue_384',['DoubleValue',['../class_ti_xml_attribute.html#a8cca240fb2a7130c87b0fc6156e8b34f',1,'TiXmlAttribute']]]
 ];

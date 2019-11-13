@@ -9,9 +9,22 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +39,21 @@
    </div>
    <div id="projectbrief">Subway simulation in C++</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,17 +65,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
-</div><!-- top -->
+$(document).ready(function(){initNavTree('functions_c.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -63,9 +97,15 @@ $(function() {
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
+<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_c"></a>- c -</h3><ul>
+<li>c_str()
+: <a class="el" href="class_ti_xml_string.html#ae2bd36349215612ebcc3cb221c30bd3d">TiXmlString</a>
+</li>
+<li>capacity()
+: <a class="el" href="class_ti_xml_string.html#a0ca248f026e698f79b8aa4c9ab8e1571">TiXmlString</a>
+</li>
 <li>CDATA()
 : <a class="el" href="class_ti_xml_text.html#aac1f4764d220ed6bf809b16dfcb6b45a">TiXmlText</a>
 </li>
@@ -76,10 +116,17 @@ $(function() {
 : <a class="el" href="class_ti_xml_handle.html#afccc59d8a0daa8c5d78474fbed430ddb">TiXmlHandle</a>
 </li>
 <li>Clear()
-: <a class="el" href="class_ti_xml_node.html#a708e7f953df61d4d2d12f73171550a4b">TiXmlNode</a>
+: <a class="el" href="struct_ti_xml_cursor.html#a1e6fa622b59dafb71b6efe595105dcdd">TiXmlCursor</a>
+, <a class="el" href="class_ti_xml_node.html#a708e7f953df61d4d2d12f73171550a4b">TiXmlNode</a>
+</li>
+<li>clear()
+: <a class="el" href="class_ti_xml_string.html#ab20e06e4c666abf3bdbfb3a1191d4888">TiXmlString</a>
 </li>
 <li>ClearError()
 : <a class="el" href="class_ti_xml_document.html#ac66b8c28db86363315712a3574e87c35">TiXmlDocument</a>
+</li>
+<li>ClearThis()
+: <a class="el" href="class_ti_xml_element.html#a5670933ec2d7d9763b9891acc05d7f7d">TiXmlElement</a>
 </li>
 <li>Clone()
 : <a class="el" href="class_ti_xml_comment.html#a1f9f06e2ed3f77875093436193b16c16">TiXmlComment</a>
@@ -90,22 +137,42 @@ $(function() {
 , <a class="el" href="class_ti_xml_text.html#a98a20d7a4f1c1478e25e34921be24bfe">TiXmlText</a>
 , <a class="el" href="class_ti_xml_unknown.html#a3dea7689de5b1931fd6657992948fde0">TiXmlUnknown</a>
 </li>
+<li>col
+: <a class="el" href="struct_ti_xml_cursor.html#a5694d7ed2c4d20109d350c14c417969d">TiXmlCursor</a>
+</li>
 <li>Column()
 : <a class="el" href="class_ti_xml_base.html#ad283b95d9858d5d78c334f4a61b07bb4">TiXmlBase</a>
 </li>
 <li>computeSimulation()
 : <a class="el" href="class_subway.html#ab81df034ee84ae51da7a5d1ba950fc76">Subway</a>
 </li>
+<li>ConvertUTF32ToUTF8()
+: <a class="el" href="class_ti_xml_base.html#a07c765e3a7f979d343e646ea797b180b">TiXmlBase</a>
+</li>
+<li>CopyTo()
+: <a class="el" href="class_ti_xml_comment.html#aaeb8a0b2d503f603879a2d04ceb54295">TiXmlComment</a>
+, <a class="el" href="class_ti_xml_declaration.html#a189de17b3e04d4e5b1c385336f214af1">TiXmlDeclaration</a>
+, <a class="el" href="class_ti_xml_element.html#ab931f2208ed76ba03465d8a1f86b5935">TiXmlElement</a>
+, <a class="el" href="class_ti_xml_node.html#aaadd5bb9c94f84c4472b649b95de4a0b">TiXmlNode</a>
+, <a class="el" href="class_ti_xml_text.html#a480b8e0ad6b7833a73ecf2191195c9b5">TiXmlText</a>
+, <a class="el" href="class_ti_xml_unknown.html#afeb334446bcbe13ce15131e1629712be">TiXmlUnknown</a>
+</li>
 <li>CStr()
 : <a class="el" href="class_ti_xml_printer.html#a859eede9597d3e0355b77757be48735e">TiXmlPrinter</a>
 </li>
+<li>Cursor()
+: <a class="el" href="class_ti_xml_parsing_data.html#a02ba4903fd3b70b43524ad60a4eece7c">TiXmlParsingData</a>
+</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.16
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
 </body>
 </html>

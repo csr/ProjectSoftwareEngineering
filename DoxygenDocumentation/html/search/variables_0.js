@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['userdata_283',['userData',['../class_ti_xml_base.html#ab242c01590191f644569fa89a080d97c',1,'TiXmlBase']]]
+  ['col_567',['col',['../struct_ti_xml_cursor.html#a5694d7ed2c4d20109d350c14c417969d',1,'TiXmlCursor']]]
 ];

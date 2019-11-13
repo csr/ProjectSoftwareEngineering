@@ -9,9 +9,22 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +39,21 @@
    </div>
    <div id="projectbrief">Subway simulation in C++</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +65,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('_subway_simulation_importer_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,17 +96,12 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_94791bb97db3344b88941441ffb48b3b.html">SubwaySimulation</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">SubwaySimulationImporter.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//============================================================================</span></div>
+<a href="_subway_simulation_importer_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//============================================================================</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Name        : SubwaySimulationImporter.h</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Author      : Cesare De Cal, Marco Natali, Veronica Orsanigo</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Version     :</span></div>
@@ -85,32 +115,47 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;tinyxml.h&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;Tram.h&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;Subway.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tinyxml_8h.html">tinyxml.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_tram_8h.html">Tram.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_subway_8h.html">Subway.h</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">enum</span> RootElementType {StationType, TramType, InvalidType};</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">enum</span> SuccessEnum {Success, PartialImport, ImportAborted};</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cbaa118efb098eebf9f2e6fded4a900d565c">   21</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cba">RootElementType</a> {<a class="code" href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cbaaa53ad66b0263cff21d3fbb405ef61ba1">StationType</a>, <a class="code" href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cbaa118efb098eebf9f2e6fded4a900d565c">TramType</a>, <a class="code" href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cbaa791c6b5c1e5f30ce6c7b0937e93adbbb">InvalidType</a>};</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4d">   22</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_subway_simulation_exporter_8h.html#ae69e1bf070c1c339170236b3fef70a4d">SuccessEnum</a> {<a class="code" href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4dafdfbdf3247bd36a1f17270d5cec74c9c">Success</a>, <a class="code" href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4da21205c22fde3e4f49e0e131a4377491a">PartialImport</a>, <a class="code" href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4da0fde0ebd442167df89d810c5e3a4f9de">ImportAborted</a>};</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Goals: parsing the schedule of the subway network: the different stations, how they are connected to each other,</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// and the different trams.</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_subway_simulation_importer.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_subway_simulation_importer.html">SubwaySimulationImporter</a> {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">static</span> SuccessEnum importSubway(<span class="keyword">const</span> <span class="keywordtype">char</span> * inputFileName, std::ostream&amp; errStream, <a class="code" href="class_subway.html">Subway</a>&amp; subway);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">static</span> <a class="code" href="_subway_simulation_exporter_8h.html#ae69e1bf070c1c339170236b3fef70a4d">SuccessEnum</a> importSubway(<span class="keyword">const</span> <span class="keywordtype">char</span> * inputFileName, std::ostream&amp; errStream, <a class="code" href="class_subway.html">Subway</a>&amp; subway);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="a_subway_simulation_importer_8h_html_a2cfde3216b45305b4f68727e981d2cbaa118efb098eebf9f2e6fded4a900d565c"><div class="ttname"><a href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cbaa118efb098eebf9f2e6fded4a900d565c">TramType</a></div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:21</div></div>
+<div class="ttc" id="a_subway_simulation_importer_8h_html_ae69e1bf070c1c339170236b3fef70a4da21205c22fde3e4f49e0e131a4377491a"><div class="ttname"><a href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4da21205c22fde3e4f49e0e131a4377491a">PartialImport</a></div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:22</div></div>
+<div class="ttc" id="a_subway_simulation_importer_8h_html_ae69e1bf070c1c339170236b3fef70a4da0fde0ebd442167df89d810c5e3a4f9de"><div class="ttname"><a href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4da0fde0ebd442167df89d810c5e3a4f9de">ImportAborted</a></div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:22</div></div>
+<div class="ttc" id="atinyxml_8h_html"><div class="ttname"><a href="tinyxml_8h.html">tinyxml.h</a></div></div>
+<div class="ttc" id="a_subway_simulation_importer_8h_html_a2cfde3216b45305b4f68727e981d2cba"><div class="ttname"><a href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cba">RootElementType</a></div><div class="ttdeci">RootElementType</div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:21</div></div>
+<div class="ttc" id="a_tram_8h_html"><div class="ttname"><a href="_tram_8h.html">Tram.h</a></div></div>
+<div class="ttc" id="a_subway_8h_html"><div class="ttname"><a href="_subway_8h.html">Subway.h</a></div></div>
+<div class="ttc" id="a_subway_simulation_importer_8h_html_ae69e1bf070c1c339170236b3fef70a4dafdfbdf3247bd36a1f17270d5cec74c9c"><div class="ttname"><a href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4dafdfbdf3247bd36a1f17270d5cec74c9c">Success</a></div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:22</div></div>
+<div class="ttc" id="a_subway_simulation_importer_8h_html_a2cfde3216b45305b4f68727e981d2cbaa791c6b5c1e5f30ce6c7b0937e93adbbb"><div class="ttname"><a href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cbaa791c6b5c1e5f30ce6c7b0937e93adbbb">InvalidType</a></div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:21</div></div>
 <div class="ttc" id="aclass_subway_simulation_importer_html"><div class="ttname"><a href="class_subway_simulation_importer.html">SubwaySimulationImporter</a></div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:27</div></div>
 <div class="ttc" id="aclass_subway_html"><div class="ttname"><a href="class_subway.html">Subway</a></div><div class="ttdef"><b>Definition:</b> Subway.h:20</div></div>
+<div class="ttc" id="a_subway_simulation_importer_8h_html_a2cfde3216b45305b4f68727e981d2cbaaa53ad66b0263cff21d3fbb405ef61ba1"><div class="ttname"><a href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cbaaa53ad66b0263cff21d3fbb405ef61ba1">StationType</a></div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:21</div></div>
+<div class="ttc" id="a_subway_simulation_exporter_8h_html_ae69e1bf070c1c339170236b3fef70a4d"><div class="ttname"><a href="_subway_simulation_exporter_8h.html#ae69e1bf070c1c339170236b3fef70a4d">SuccessEnum</a></div><div class="ttdeci">SuccessEnum</div><div class="ttdef"><b>Definition:</b> SubwaySimulationExporter.h:15</div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.16
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_94791bb97db3344b88941441ffb48b3b.html">SubwaySimulation</a></li><li class="navelem"><a class="el" href="_subway_simulation_importer_8h.html">SubwaySimulationImporter.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
 </body>
 </html>
