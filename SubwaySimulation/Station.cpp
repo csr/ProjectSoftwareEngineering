@@ -12,11 +12,6 @@
 
 using namespace std;
 
-Station::Station() {
-  _initCheck = this;
-  ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
-}
-
 Station::Station(string name, string next, string previous, int track) {
   _initCheck = this;
   _name = name;

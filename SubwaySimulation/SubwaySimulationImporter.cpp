@@ -52,9 +52,6 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
     return NULL;
   }
 
-  // Create new Station object to hold the parsed data
-  Station *station = new Station();
-
   // The attributes of a station are name, previous, next, track
   TiXmlNode *elem_name, *elem_previous, *elem_next, *elem_track;
   elem_name = root->FirstChild("name");
@@ -80,24 +77,25 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
   string name = fetch_text(elem_name, errStream);
   string previous = fetch_text(elem_previous, errStream);
   string next = fetch_text(elem_next, errStream);
+  int track;
 
   if (!is_letters_only(name) || !is_letters_only(previous) || !is_letters_only(next)) {
     return NULL;
   }
 
-  station->setName(name);
-  station->setPrevious(previous);
-  station->setNext(next);
-
   string trackStr = fetch_text(elem_track, errStream);
   // If the track is a number, then return station
   if (is_number(trackStr)) {
-    station->setTrack(stoi(trackStr));
-    return station;
+    track = stoi(trackStr);
   } else {
     // Otherwise skip
     return NULL;
   }
+
+  // Create new Station object to hold the parsed data
+  Station *station = new Station(name, next, previous, track);
+
+  return station;
 }
 
 // Parse station given its root element

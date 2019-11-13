@@ -17,11 +17,6 @@ class Station {
   /**
 \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 */
-  Station();
-
-  /**
-\n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
-*/
   Station(string name, string nextStation, string previousStation, int track);
 
   bool properlyInitialized();

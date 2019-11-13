@@ -20,6 +20,10 @@ using namespace std;
 
 Subway::Subway() {
   _initCheck = this;
+
+  // Import empty station and tram arrays
+  importData({}, {});
+
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
