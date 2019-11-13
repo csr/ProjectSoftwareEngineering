@@ -13,7 +13,7 @@ if(WIN32)
     include_directories(gtest-windows/include)
     # Set Library dir
     link_directories(gtest-windows/lib)
-elseif(MAC)
+elseif(APPLE)
    include_directories(gtest/include)
    link_directories(gtest/lib)
 
