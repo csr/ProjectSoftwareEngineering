@@ -1,0 +1,2 @@
+XML IMPORT ABORTED: found nested attribute in a station
+
