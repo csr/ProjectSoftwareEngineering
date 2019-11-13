@@ -107,9 +107,6 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
     return NULL;
   }
 
-  // Create new Station object to hold the parsed data
-  Tram *tram = new Tram();
-
   // Check that the number of children is 4
   int childrenCount = 0;
   for (const TiXmlNode* node = root->FirstChild(); node; node = node->NextSibling()) {
@@ -128,40 +125,41 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
   elem_speed = root->FirstChild("speed");
   elem_startStation = root->FirstChild("startStation");
 
-  string capacityStr, lineStr, speedStr;
-
   if (elem_startStation == NULL) {
     return NULL;
   }
 
+  // Create new Tram object to hold the parsed data
+  int line, capacity, speed;
   string startStation = fetch_text(elem_startStation, errStream);
 
   if (!is_letters_only(startStation)) {
     return NULL;
   }
 
-  tram->setStartStation(startStation);
-  capacityStr = fetch_text(elem_capacity, errStream);
-  lineStr = fetch_text(elem_line, errStream);
-  speedStr = fetch_text(elem_speed, errStream);
+  string capacityStr = fetch_text(elem_capacity, errStream);
+  string lineStr = fetch_text(elem_line, errStream);
+  string speedStr = fetch_text(elem_speed, errStream);
 
   if (is_number(capacityStr)) {
-    tram->setCapacity(stoi(capacityStr));
+    capacity = stoi(capacityStr);
   } else {
     return NULL;
   }
 
   if (is_number(lineStr)) {
-    tram->setLine(stoi(lineStr));
+    line = stoi(lineStr);
   } else {
     return NULL;
   }
 
   if (is_number(speedStr)) {
-    tram->setSpeed(stoi(speedStr));
+    speed = stoi(speedStr);
   } else {
     return NULL;
   }
+
+  Tram *tram = new Tram(line, capacity, speed, startStation);
 
   return tram;
 }

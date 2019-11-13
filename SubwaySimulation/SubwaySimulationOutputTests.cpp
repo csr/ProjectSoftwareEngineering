@@ -10,6 +10,7 @@
 using namespace std;
 
 #include "Subway.h"
+#include "Tram.h"
 #include "SubwaySimulationUtils.h"
 #include "SubwaySimulationImporter.h"
 #include "SubwaySimulationExporter.h"
@@ -28,17 +29,15 @@ class SubwaySimulationOutputTests: public ::testing::Test {
 };
 
 TEST_F(SubwaySimulationOutputTests, ExampleOutputTest) {
-  ASSERT_TRUE(DirectoryExists("testInput"));
+  //if directory doesn't exist then no need in proceeding with the test
   ASSERT_TRUE(DirectoryExists("testOutput"));
 
+  Station stationA = Station("A", "B", "C", 12);
+  Station stationB = Station("B", "C", "A", 12);
+  Station stationC = Station("C", "A", "B", 12);
 
+  Tram tram = Tram(12, 32, 60, "A");
 
-  //if directory doesn't exist then no need in proceeding with the test
-
-//  Station stationA = Station("A", "B", "C", 12);
-//  Station stationB = Station("B", "C", "A", 12);
-//  Station stationC = Station("C", "A", "B", 12);
-//
 //  vector<Station*> stations = {stationA, stationB, stationC};
 //  subway_.addStations(stations);
 

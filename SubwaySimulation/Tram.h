@@ -16,7 +16,7 @@ class Tram {
   /**
 \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 */
-  Tram();
+  Tram(int line, int capacity, int speed, string startStation);
 
   bool properlyInitialized();
 

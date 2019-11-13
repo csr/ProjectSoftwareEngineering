@@ -9,8 +9,12 @@
 #include "Tram.h"
 #include "DesignByContract.h"
 
-Tram::Tram() {
+Tram::Tram(int line, int capacity, int speed, string startStation) {
   _initCheck = this;
+  _line = line;
+  _capacity = capacity;
+  _speed = speed;
+  _startStation = startStation;
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
