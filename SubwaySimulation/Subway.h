@@ -51,6 +51,11 @@ class Subway {
 */
   int getTramsCount();
 
+  /**
+\n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling clear");
+*/
+  void clear();
+
  private:
   Subway * _initCheck; //!use pointer to myself to verify whether I am properly initialized
 
