@@ -46,6 +46,23 @@ int Subway::getStationsCount() {
   return stations.size();
 }
 
+string Subway::toString() {
+    string out = "";
+    for (auto & station : this->stations1) {
+        out = out + "Station " + station->getName() + "\n" +
+             "<- Station " + station->getPrevious() + "\n" +
+             "-> Station " + station->getNext() + "\n" +
+             "Track " + to_string(station->getTrack()) + "\n";
+        // If there's a tram associated to the track, print capacity
+        if (this->trams.count(station->getTrack())) {
+            Tram *tram = this->trams[station->getTrack()];
+            if (tram->getStartStation() == station->getName()) {
+                out = out + ": Tram with " + to_string(tram->getCapacity()) + " seats";
+            }
+        }
+    }
+    return out;
+}
 // Simulation
 void Subway::computeSimulation(int steps) {
 }
