@@ -260,10 +260,6 @@ unordered_map
 vector
 -
 
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationExporter.h
-Subway.h
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
-
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
 vector
 -
@@ -276,7 +272,7 @@ Tram.h
 Subway.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
 
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationOutputTests.cpp
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationInputTests.cpp
 iostream
 -
 fstream
@@ -287,14 +283,10 @@ gtest/gtest.h
 -
 Subway.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
-Tram.h
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
 SubwaySimulationUtils.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.h
 SubwaySimulationImporter.h
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
-SubwaySimulationExporter.h
-/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationExporter.h
 
 /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.h
 iostream

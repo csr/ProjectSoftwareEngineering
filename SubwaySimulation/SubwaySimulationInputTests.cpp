@@ -95,5 +95,5 @@ TEST_F(SubwaySimulationInputTests, InputXMLSyntaxErrors) {
     fileCounter = fileCounter + 1;
     fileName = "testInput/xmlsyntaxerror" + ToString(fileCounter) + ".xml";
   };
-  EXPECT_TRUE(fileCounter == 5);
+  EXPECT_TRUE(fileCounter == 6);
 }
