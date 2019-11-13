@@ -13,29 +13,60 @@ using  namespace std;
 
 class Tram {
  public:
-  int getLine() const;
+  /**
+\n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+*/
+  Tram();
 
-  int getCapacity() const;
+  bool properlyInitialized();
 
-  int getSpeed() const;
+  /**
+\n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getLine");
+*/
+  int getLine();
 
-  const string &getStartStation() const;
+  /**
+\n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCapacity");
+*/
+  int getCapacity();
 
+  /**
+\n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getSpeed");
+*/
+  int getSpeed();
+
+  /**
+\n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStation");
+*/
+  string getStartStation();
+
+  /**
+\n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
+*/
   void setLine(int line);
 
+  /**
+\n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCapacity");
+*/
   void setCapacity(int capacity);
 
+  /**
+\n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
+*/
   void setSpeed(int speed);
 
-  void setStartStation(const string &startStation);
+  /**
+\n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setStartStation");
+*/
+  void setStartStation(string startStation);
 
  private:
-  int line;
-  int capacity;
-  int speed;
-  string startStation;
-  string currentStation;
-};
+  Tram * _initCheck; //!use pointer to myself to verify whether I am properly initialized
 
+  int _line;
+  int _capacity;
+  int _speed;
+  string _startStation;
+};
 
 #endif //UNTITLED_TRAM_H

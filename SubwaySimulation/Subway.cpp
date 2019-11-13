@@ -27,48 +27,37 @@ bool Subway::properlyInitialized() {
   return _initCheck == this;
 }
 
-void Subway::addStationsTrams(unordered_map<string, Station*> stations, unordered_map<int, Tram*> trams) {
-  this->stations = stations;
-  this->trams = trams;
-}
-
-void Subway::addStations(vector<Station*> stations) {
-  this->stationsArray = stations;
-}
-
-void Subway::addStation(Station *station) {
-  stations[station->getName()] = station;
-}
-
-void Subway::addTram(Tram *tram) {
-  trams[tram->getLine()] = tram;
-}
-
 int Subway::getTramsCount() {
- return trams.size();
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
+  return _trams.size();
 }
 
 int Subway::getStationsCount() {
-  return stations.size();
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
+  return _stations.size();
 }
 
 string Subway::toString() {
-    string out = "";
-    for (auto & station : this->stationsArray) {
-        out = out + "Station " + station->getName() + "\n" +
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling toString");
+
+  string outputString = "";
+    for (auto & station : this->_stationsArray) {
+      outputString = outputString + "Station " + station->getName() + "\n" +
              "<- Station " + station->getPrevious() + "\n" +
              "-> Station " + station->getNext() + "\n" +
              "Track " + to_string(station->getTrack()) + "\n";
+
         // If there's a tram associated to the track, print capacity
-        if (this->trams.count(station->getTrack())) {
-            Tram *tram = this->trams[station->getTrack()];
+        if (this->_trams.count(station->getTrack())) {
+            Tram *tram = this->_trams[station->getTrack()];
             if (tram->getStartStation() == station->getName()) {
-                out = out + ": Tram with " + to_string(tram->getCapacity()) + " seats";
+              outputString = outputString + ": Tram with " + to_string(tram->getCapacity()) + " seats";
             }
         }
     }
-    return out;
+    return outputString;
 }
-// Simulation
+
 void Subway::computeSimulation(int steps) {
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeSimulation");
 }

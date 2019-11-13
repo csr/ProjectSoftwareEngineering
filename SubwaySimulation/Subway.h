@@ -26,20 +26,31 @@ class Subway {
 
   bool properlyInitialized();
 
+  /**
+\n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling toString");
+*/
   string toString();
-  void addStationsTrams(unordered_map<string, Station*> stations, unordered_map<int, Tram*> trams);
-  void addStations(vector<Station*> stations);
-  void addStation(Station *station);
-  void addTram(Tram *tram);
+
+  /**
+\n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeSimulation");
+*/
   void computeSimulation(int steps);
+
+  /**
+\n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
+*/
   int getStationsCount();
+
+  /**
+\n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
+*/
   int getTramsCount();
 
  private:
   Subway * _initCheck; //!use pointer to myself to verify whether I am properly initialized
 
-  vector<Station*> stationsArray;
-  unordered_map<string, Station*> stations;
-  unordered_map<int, Tram*> trams;
+  vector<Station*> _stationsArray;
+  unordered_map<string, Station*> _stations;
+  unordered_map<int, Tram*> _trams;
 };
 #endif

@@ -7,35 +7,53 @@
 //============================================================================
 
 #include "Tram.h"
+#include "DesignByContract.h"
 
-int Tram::getLine() const {
-  return line;
+Tram::Tram() {
+  _initCheck = this;
+  ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
-int Tram::getCapacity() const {
-  return capacity;
+bool Tram::properlyInitialized() {
+  return _initCheck == this;
 }
 
-int Tram::getSpeed() const {
-  return speed;
+int Tram::getLine() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getLine");
+  return _line;
 }
 
-const string &Tram::getStartStation() const {
-  return startStation;
+int Tram::getCapacity() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCapacity");
+  return _capacity;
+}
+
+int Tram::getSpeed() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getSpeed");
+  return _speed;
+}
+
+string Tram::getStartStation() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStation");
+  return _startStation;
 }
 
 void Tram::setLine(int line) {
-  Tram::line = line;
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
+  _line = line;
 }
 
 void Tram::setCapacity(int capacity) {
-  Tram::capacity = capacity;
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCapacity");
+  _capacity = capacity;
 }
 
 void Tram::setSpeed(int speed) {
-  Tram::speed = speed;
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
+  _speed = speed;
 }
 
-void Tram::setStartStation(const string &startStation) {
-  Tram::startStation = startStation;
+void Tram::setStartStation(string startStation) {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setStartStation");
+  _startStation = startStation;
 }
