@@ -48,7 +48,7 @@ int Subway::getStationsCount() {
 
 string Subway::toString() {
     string out = "";
-    for (auto & station : this->stations1) {
+    for (auto & station : this->stationsArray) {
         out = out + "Station " + station->getName() + "\n" +
              "<- Station " + station->getPrevious() + "\n" +
              "-> Station " + station->getNext() + "\n" +
