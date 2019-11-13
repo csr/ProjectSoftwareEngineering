@@ -14,10 +14,22 @@ using namespace std;
 
 #include "Subway.h"
 
-class SubwaySimulationDomainTest: public ::testing::Test {
+class SubwaySimulationDomainTests: public ::testing::Test {
  protected:
   friend class Subway;
   // You should make the members protected s.t. they can be
   // accessed from sub-classes.
-  // Guardiamo il progetto del prof per capire cosa inserire qui
+
+  Subway subway_;
 };
+
+/**
+Tests the default constructor.
+*/
+TEST_F(SubwaySimulationDomainTests, DefaultConstructor) {
+  EXPECT_TRUE(subway_.properlyInitialized());
+
+  // verify post-condition
+  EXPECT_EQ(0, subway_.getStationsCount());
+  EXPECT_EQ(0, subway_.getTramsCount());
+}
