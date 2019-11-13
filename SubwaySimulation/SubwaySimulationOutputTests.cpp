@@ -32,29 +32,22 @@ TEST_F(SubwaySimulationOutputTests, ExampleOutputTest) {
   //if directory doesn't exist then no need in proceeding with the test
   ASSERT_TRUE(DirectoryExists("testOutput"));
 
-  Station stationA = Station("A", "B", "C", 12);
-  Station stationB = Station("B", "C", "A", 12);
-  Station stationC = Station("C", "A", "B", 12);
+  Station *stationA = new Station("A", "B", "C", 12);
+  Station *stationB = new Station("B", "C", "A", 12);
+  Station *stationC = new Station("C", "A", "B", 12);
 
-  Tram tram = Tram(12, 32, 60, "A");
+  Tram *tram = new Tram(12, 32, 60, "A");
 
-//  vector<Station*> stations = {stationA, stationB, stationC};
-//  subway_.addStations(stations);
+  subway_.importData({stationA, stationB, stationC}, {tram});
+  ASSERT_TRUE(subway_.getStationsCount() == 3);
+  ASSERT_TRUE(subway_.getTramsCount() == 1);
 
-//  SubwaySimulationExporter exporter = SubwaySimulationExporter(subway_, "testOutput/hello.txt");
+  ofstream myfile;
+  myfile.open("testOutput/output1.txt");
+
+//  SubwaySimulationExporter exporter = SubwaySimulationExporter(subway_, "testOutput/output.txt");
 //  exporter.export();
-
-//  ttt_.setMoves("a1c1b2a3c3", "b1a2c2b3");
-//
-//  ofstream myfile;
-//  myfile.open("testOutput/happyDayOut.txt");
-//  while (ttt_.notDone()) {
-//    ttt_.doMove();
-//    ttt_.writeOn(myfile);
-//  };
-//  myfile.close();
-//  EXPECT_TRUE(
-//      FileCompare("testOutput/happyDayExpectedOut.txt", "testOutput/happyDayOut.txt"));
+//  EXPECT_TRUE(FileCompare("testOutput/happyDayExpectedOut.txt", "testOutput/happyDayOut.txt"));
 }
 
 
