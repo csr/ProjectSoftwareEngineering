@@ -80,6 +80,28 @@ string Subway::toString() {
     return outputString;
 }
 
+void Subway::movingTrams(){
+    for (auto elem : this->_tramsArray){
+	    string position = elem->getCurrentStation();
+	    unordered_map<string, Station>::iterator currentStation = this->_stationsMap.find(position);
+	    if (currentStation == this->_stationsMap.end())
+		    cout << "Tram not found";
+	    else{
+	    	    elem->setCurrentStation(currentStation->second.getName());
+	    }
+            ENSURE(position != elem->getCurrentStation(), "Tram is not moved");
+	    cout << "Tram " << elem->getLine() << "moved from Station" << position <<
+		    "to Station" << elem->getCurrentStation() << endl;
+    }
+ }
+
+
+
 void Subway::computeSimulation(int steps) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeSimulation");
+  int current = 0;
+  for(current = 0;current <= steps;++current){
+	  this->movingTrams();
+  }
+  ENSURE(current <= steps, "Subway doesn't halted when we have finished the time");
 }

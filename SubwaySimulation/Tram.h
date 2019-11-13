@@ -41,6 +41,11 @@ class Tram {
   string getStartStation();
 
   /**
+   \n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
+   */
+  string getCurrentStation();
+
+  /**
 \n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
 */
   void setLine(int line);
@@ -60,6 +65,11 @@ class Tram {
 */
   void setStartStation(string startStation);
 
+  /**
+   \n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
+   */
+  void setCurrentStation(string station);
+
  private:
   Tram * _initCheck; //!use pointer to myself to verify whether I am properly initialized
 
@@ -67,6 +77,7 @@ class Tram {
   int _capacity;
   int _speed;
   string _startStation;
+  string _currentStation;
 };
 
 #endif //UNTITLED_TRAM_H

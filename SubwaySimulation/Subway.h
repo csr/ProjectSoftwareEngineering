@@ -42,6 +42,10 @@ class Subway {
   void computeSimulation(int steps);
 
   /**
+   \n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling movingTrams");
+   */
+  void movingTrams();
+  /**
 \n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
 */
   int getStationsCount();
