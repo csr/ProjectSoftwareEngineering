@@ -72,13 +72,11 @@ string Subway::toString() {
         if (this->_tramsMap.count(station->getTrack())) {
             Tram *tram = this->_tramsMap[station->getTrack()];
             if (tram->getStartStation() == station->getName()) {
-              outputString = outputString + ": Tram with " + to_string(tram->getCapacity()) + " seats" + "\n";
+              outputString = outputString + ": Tram with " + to_string(tram->getCapacity()) + " seats";
             }
         }
+      outputString += "\n";
     }
-
-    outputString = outputString + "\n" + "\n";
-
     return outputString;
 }
 
