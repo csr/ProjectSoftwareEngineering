@@ -96,6 +96,13 @@ void Subway::movingTrams(){
  }
 
 
+void Subway::clear() {
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling clear");
+  _stationsArray.clear();
+  _tramsArray.clear();
+  _stationsMap.clear();
+  _tramsMap.clear();
+}
 
 void Subway::computeSimulation(int steps) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeSimulation");

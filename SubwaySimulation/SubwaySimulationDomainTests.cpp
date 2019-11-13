@@ -13,6 +13,7 @@
 using namespace std;
 
 #include "Subway.h"
+#include "Station.h"
 
 class SubwaySimulationDomainTests: public ::testing::Test {
  protected:
@@ -92,4 +93,18 @@ TEST_F(SubwaySimulationDomainTests, TramConstructor) {
   EXPECT_EQ(newCapacity, tram.getCapacity());
   EXPECT_EQ(newSpeed, tram.getSpeed());
   EXPECT_EQ(newStartStation, tram.getStartStation());
+}
+
+/**
+Tests Subway reset method.
+*/
+TEST_F(SubwaySimulationDomainTests, SubwayReset) {
+  subway_.importData({new Station("A", "B", "C", 34), new Station("C", "D", "E", 334)}, {new Tram(2, 43, 3, "A")});
+  EXPECT_EQ(2, subway_.getStationsCount());
+  EXPECT_EQ(1, subway_.getTramsCount());
+
+  subway_.clear();
+
+  EXPECT_EQ(0, subway_.getStationsCount());
+  EXPECT_EQ(0, subway_.getTramsCount());
 }

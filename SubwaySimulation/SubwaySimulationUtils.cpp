@@ -26,7 +26,8 @@ bool DirectoryExists(const std::string dirname) {
 
 bool FileExists(const std::string filename) {
   struct stat st;
-  if (stat(filename.c_str(), &st) != 0) return false;
+  if (stat(filename.c_str(), &st) != 0)
+	  return false;
   ifstream f(filename.c_str());
   if (f.good()) {
     f.close();

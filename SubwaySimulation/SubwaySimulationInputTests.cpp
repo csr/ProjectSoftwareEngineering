@@ -30,26 +30,6 @@ class SubwaySimulationInputTests: public ::testing::Test {
   Subway subway_;
 };
 
-TEST_F(SubwaySimulationInputTests, InputLegalSubways) {
-  ASSERT_TRUE(DirectoryExists("testInput"));
-
-  ofstream myfile;
-  SuccessEnum importResult;
-  int fileCounter = 1;
-  string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
-
-  while (FileExists (fileName)) {
-    myfile.open("testInput/zzzError.txt");
-    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
-    myfile.close();
-    EXPECT_TRUE((importResult == Success));
-    EXPECT_TRUE(FileIsEmpty("testInput/zzzError.txt"));
-
-    fileCounter = fileCounter + 1;
-    fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
-  };
-}
-
 TEST_F(SubwaySimulationInputTests, InputIllegalSimulations) {
   ASSERT_TRUE(DirectoryExists("testInput"));
 
@@ -70,7 +50,7 @@ TEST_F(SubwaySimulationInputTests, InputIllegalSimulations) {
     fileCounter = fileCounter + 1;
     fileName = "testInput/illegalSubway" + ToString(fileCounter) + ".xml";
   };
-	EXPECT_TRUE(fileCounter == 6);
+  EXPECT_TRUE(fileCounter == 7);
 }
 
 TEST_F(SubwaySimulationInputTests, InputXMLSyntaxErrors) {
@@ -94,5 +74,26 @@ TEST_F(SubwaySimulationInputTests, InputXMLSyntaxErrors) {
     fileCounter = fileCounter + 1;
     fileName = "testInput/xmlsyntaxerror" + ToString(fileCounter) + ".xml";
   };
-  EXPECT_TRUE(fileCounter == 5);
+  EXPECT_TRUE(fileCounter == 6);
+}
+
+TEST_F(SubwaySimulationInputTests, InputLegalSubways) {
+  ASSERT_TRUE(DirectoryExists("testInput"));
+
+  ofstream myfile;
+  SuccessEnum importResult;
+  int fileCounter = 1;
+  string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+
+  while (FileExists (fileName)) {
+    myfile.open("testInput/zzzError.txt");
+    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
+    myfile.close();
+    EXPECT_TRUE((importResult == Success));
+    EXPECT_TRUE(FileIsEmpty("testInput/zzzError.txt"));
+
+    fileCounter = fileCounter + 1;
+    fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+  };
+  EXPECT_TRUE(fileCounter == 4);
 }
