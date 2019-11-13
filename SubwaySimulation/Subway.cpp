@@ -21,12 +21,12 @@ using namespace std;
 Subway::Subway() {
 }
 
-void Subway::addStationsTrams(unordered_map<string, Station> stations, unordered_map<int, Tram> trams) {
+void Subway::addStationsTrams(unordered_map<string, Station*> stations, unordered_map<int, Tram*> trams) {
   this->stations = stations;
   this->trams = trams;
 }
 
-void Subway::addStations(vector<Station> stations) {
+void Subway::addStations(vector<Station*> stations) {
   this->stationsArray = stations;
 }
 
