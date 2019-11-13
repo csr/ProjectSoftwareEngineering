@@ -19,17 +19,25 @@ using namespace std;
 
 class Subway {
  public:
+  /**
+\n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+*/
   Subway();
+
+  bool properlyInitialized();
+
   string toString();
   void addStationsTrams(unordered_map<string, Station*> stations, unordered_map<int, Tram*> trams);
   void addStations(vector<Station*> stations);
-  void addStation(Station station);
-  void addTram(Tram tram);
+  void addStation(Station *station);
+  void addTram(Tram *tram);
   void computeSimulation(int steps);
   int getStationsCount();
   int getTramsCount();
 
- protected:
+ private:
+  Subway * _initCheck; //!use pointer to myself to verify whether I am properly initialized
+
   vector<Station*> stationsArray;
   unordered_map<string, Station*> stations;
   unordered_map<int, Tram*> trams;

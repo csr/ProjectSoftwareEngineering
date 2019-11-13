@@ -19,6 +19,12 @@
 using namespace std;
 
 Subway::Subway() {
+  _initCheck = this;
+  ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+}
+
+bool Subway::properlyInitialized() {
+  return _initCheck == this;
 }
 
 void Subway::addStationsTrams(unordered_map<string, Station*> stations, unordered_map<int, Tram*> trams) {
@@ -30,12 +36,12 @@ void Subway::addStations(vector<Station*> stations) {
   this->stationsArray = stations;
 }
 
-void Subway::addStation(Station station) {
-  stations[station.getName()] = station;
+void Subway::addStation(Station *station) {
+  stations[station->getName()] = station;
 }
 
-void Subway::addTram(Tram tram) {
-  trams[tram.getLine()] = tram;
+void Subway::addTram(Tram *tram) {
+  trams[tram->getLine()] = tram;
 }
 
 int Subway::getTramsCount() {
