@@ -27,9 +27,26 @@ bool Subway::properlyInitialized() {
   return _initCheck == this;
 }
 
+void Subway::importData(vector<Station*> stations, vector<Tram*> trams) {
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling importData");
+  _stationsArray = stations;
+  _tramsArray = trams;
+
+  // Fill stations map
+  for (auto station : _stationsArray) {
+    _stationsMap[station->getName()] = station;
+  }
+
+  // Fill trams map
+  for (auto tram : _tramsArray) {
+    _tramsMap[tram->getLine()] = tram;
+  }
+}
+
+
 int Subway::getTramsCount() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
-  return _trams.size();
+  return _tramsMap.size();
 }
 
 int Subway::getStationsCount() {
@@ -48,8 +65,8 @@ string Subway::toString() {
              "Track " + to_string(station->getTrack()) + "\n";
 
         // If there's a tram associated to the track, print capacity
-        if (this->_trams.count(station->getTrack())) {
-            Tram *tram = this->_trams[station->getTrack()];
+        if (this->_tramsMap.count(station->getTrack())) {
+            Tram *tram = this->_tramsMap[station->getTrack()];
             if (tram->getStartStation() == station->getName()) {
               outputString = outputString + ": Tram with " + to_string(tram->getCapacity()) + " seats";
             }

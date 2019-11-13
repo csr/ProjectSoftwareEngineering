@@ -271,23 +271,6 @@ bool check_line_track(unordered_map<int, Tram *> trams, unordered_map<string, St
   return is_ok;
 }
 
-void printParsedObjects(vector<Station*> stations, unordered_map<int, Tram*> trams) {
-  for (auto & station : stations) {
-    cout << "Station " << station->getName() << endl
-         << "<- Station " << station->getPrevious() << endl
-         << "-> Station " << station->getNext() << endl
-         << "Track " << station->getTrack();
-    // If there's a tram associated to the track, print capacity
-    if (trams.count(station->getTrack())) {
-      Tram *tram = trams[station->getTrack()];
-      if (tram->getStartStation() == station->getName()) {
-        cout << ": Tram with " << tram->getCapacity() << " seats";
-      }
-    }
-    cout << endl << endl;
-  }
-}
-
 SuccessEnum SubwaySimulationImporter::importSubway(
     const char *inputFileName, std::ostream& errStream, Subway& subway) {
   TiXmlDocument doc;
@@ -300,6 +283,8 @@ SuccessEnum SubwaySimulationImporter::importSubway(
 
   // These maps will contain objects parsed with the Parsing class
   vector<Station*> stationsArray;
+  vector<Tram*> tramsArray;
+
   unordered_map<string, Station*> stations; // station name - station
   unordered_map<int, Tram*> trams; // tram startStation - tram
 
@@ -348,6 +333,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
           } else {
             // First time we're seeing a tram with this line. Add this to our map.
             trams[tram->getLine()] = tram;
+            tramsArray.push_back(tram);
           }
         }
         break;
@@ -382,7 +368,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
     return ImportAborted;
   }
 
-  printParsedObjects(stationsArray, trams);
+  subway.importData(stationsArray, tramsArray);
 
   doc.Clear();
   return endResult;

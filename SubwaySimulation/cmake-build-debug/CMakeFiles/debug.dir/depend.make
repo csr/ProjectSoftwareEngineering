@@ -102,9 +102,12 @@ CMakeFiles/debug.dir/SubwaySimulationOutputTests.cpp.o: ../gtest/include/gtest/i
 CMakeFiles/debug.dir/SubwaySimulationOutputTests.cpp.o: ../Station.h
 CMakeFiles/debug.dir/SubwaySimulationOutputTests.cpp.o: ../Subway.h
 CMakeFiles/debug.dir/SubwaySimulationOutputTests.cpp.o: ../SubwaySimulationExporter.h
+CMakeFiles/debug.dir/SubwaySimulationOutputTests.cpp.o: ../SubwaySimulationImporter.h
 CMakeFiles/debug.dir/SubwaySimulationOutputTests.cpp.o: ../SubwaySimulationOutputTests.cpp
 CMakeFiles/debug.dir/SubwaySimulationOutputTests.cpp.o: ../SubwaySimulationUtils.h
 CMakeFiles/debug.dir/SubwaySimulationOutputTests.cpp.o: ../Tram.h
+CMakeFiles/debug.dir/SubwaySimulationOutputTests.cpp.o: ../tinystr.h
+CMakeFiles/debug.dir/SubwaySimulationOutputTests.cpp.o: ../tinyxml.h
 
 CMakeFiles/debug.dir/SubwaySimulationTests.cpp.o: ../gtest/include/gtest/gtest-death-test.h
 CMakeFiles/debug.dir/SubwaySimulationTests.cpp.o: ../gtest/include/gtest/gtest-message.h

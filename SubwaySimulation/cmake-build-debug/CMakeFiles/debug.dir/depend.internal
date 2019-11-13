@@ -103,9 +103,12 @@ CMakeFiles/debug.dir/SubwaySimulationOutputTests.cpp.o
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationExporter.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationOutputTests.cpp
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.h
+ /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
 CMakeFiles/debug.dir/SubwaySimulationTests.cpp.o
  ../gtest/include/gtest/gtest-death-test.h
  ../gtest/include/gtest/gtest-message.h

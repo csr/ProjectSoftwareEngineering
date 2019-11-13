@@ -11,6 +11,7 @@ using namespace std;
 
 #include "Subway.h"
 #include "SubwaySimulationUtils.h"
+#include "SubwaySimulationImporter.h"
 #include "SubwaySimulationExporter.h"
 
 class SubwaySimulationOutputTests: public ::testing::Test {
@@ -27,7 +28,11 @@ class SubwaySimulationOutputTests: public ::testing::Test {
 };
 
 TEST_F(SubwaySimulationOutputTests, ExampleOutputTest) {
+  ASSERT_TRUE(DirectoryExists("testInput"));
   ASSERT_TRUE(DirectoryExists("testOutput"));
+
+
+
   //if directory doesn't exist then no need in proceeding with the test
 
 //  Station stationA = Station("A", "B", "C", 12);

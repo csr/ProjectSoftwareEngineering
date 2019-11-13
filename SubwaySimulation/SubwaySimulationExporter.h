@@ -12,8 +12,6 @@
 
 #include "Subway.h"
 
-enum SuccessEnum {Success, ExportError};
-
 class SubwaySimulationExporter {
  public:
   SubwaySimulationExporter(Subway& subway, const char * outputFileName);

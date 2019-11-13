@@ -27,6 +27,11 @@ class Subway {
   bool properlyInitialized();
 
   /**
+\n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling addData");
+*/
+  void importData(vector<Station*> stations, vector<Tram*> trams);
+
+  /**
 \n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling toString");
 */
   string toString();
@@ -50,7 +55,9 @@ class Subway {
   Subway * _initCheck; //!use pointer to myself to verify whether I am properly initialized
 
   vector<Station*> _stationsArray;
+  vector<Tram*> _tramsArray;
+
   unordered_map<string, Station*> _stationsMap;
-  unordered_map<int, Tram*> _trams;
+  unordered_map<int, Tram*> _tramsMap;
 };
 #endif
