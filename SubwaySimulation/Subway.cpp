@@ -83,11 +83,12 @@ string Subway::toString() {
 void Subway::movingTrams(){
     for (auto elem : this->_tramsArray){
 	    string position = elem->getCurrentStation();
-	    unordered_map<string, Station>::iterator currentStation = this->_stationsMap.find(position);
+	    unordered_map<string, Station*>::iterator currentStation = this->_stationsMap.find(position);
+
 	    if (currentStation == this->_stationsMap.end())
 		    cout << "Tram not found";
 	    else{
-	    	    elem->setCurrentStation(currentStation->second.getName());
+	    	    elem->setCurrentStation(currentStation->second->getName());
 	    }
             ENSURE(position != elem->getCurrentStation(), "Tram is not moved");
 	    cout << "Tram " << elem->getLine() << "moved from Station" << position <<

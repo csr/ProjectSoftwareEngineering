@@ -70,5 +70,5 @@ void Tram::setStartStation(string startStation) {
 
 void Tram::setCurrentStation(string station){
 	REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
-	_currentStation = currentStation;
+	_currentStation = station;
 }

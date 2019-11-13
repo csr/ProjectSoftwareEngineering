@@ -13,11 +13,15 @@ if(WIN32)
     include_directories(gtest-windows/include)
     # Set Library dir
     link_directories(gtest-windows/lib)
+elseif(MAC)
+   include_directories(gtest/include)
+   link_directories(gtest/lib)
+
 else()
     # Set include dir
-    include_directories(gtest/include)
+    include_directories(gtest-linux/include)
     # Set Library dir
-    link_directories(gtest/lib)
+    link_directories(gtest-linux/lib)
 endif()
 
 # Set source files for RELEASE target
