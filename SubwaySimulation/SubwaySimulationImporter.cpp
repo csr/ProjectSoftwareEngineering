@@ -92,10 +92,7 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
     return NULL;
   }
 
-  // Create new Station object to hold the parsed data
-  Station *station = new Station(name, next, previous, track);
-
-  return station;
+  return new Station(name, next, previous, track);
 }
 
 // Parse station given its root element
@@ -157,9 +154,7 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
     return NULL;
   }
 
-  Tram *tram = new Tram(line, capacity, speed, startStation);
-
-  return tram;
+  return new Tram(line, capacity, speed, startStation);
 }
 
 // A type can be either Station, Tram, or Invalid
@@ -343,7 +338,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
     }
   }
 
-  if (stationsArray.size() == 0 || trams.size() == 0) {
+  if (stationsArray.size() == 0 && trams.size() == 0) {
     errStream << "XML IMPORT ABORTED: found empty file";
     return ImportAborted;
   }
