@@ -43,11 +43,12 @@ TEST_F(SubwaySimulationOutputTests, ExampleOutputTest) {
   ASSERT_TRUE(subway_.getTramsCount() == 1);
 
   ofstream myfile;
-  myfile.open("testOutput/output1.txt");
+  myfile.open("testOutput/temporaryOutput.txt");
 
-//  SubwaySimulationExporter exporter = SubwaySimulationExporter(subway_, "testOutput/output.txt");
+  myfile.close();
+//  SubwaySimulationExporter exporter = SubwaySimulationExporter(subway_, "testOutput/temporaryOutput.txt");
 //  exporter.export();
-//  EXPECT_TRUE(FileCompare("testOutput/happyDayExpectedOut.txt", "testOutput/happyDayOut.txt"));
+//  EXPECT_TRUE(FileCompare("testOutput/temporaryOutput.txt", "testOutput/expectedOutput1.txt"));
 }
 
 
