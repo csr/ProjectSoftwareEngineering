@@ -50,7 +50,7 @@ class Subway {
   Subway * _initCheck; //!use pointer to myself to verify whether I am properly initialized
 
   vector<Station*> _stationsArray;
-  unordered_map<string, Station*> _stations;
+  unordered_map<string, Station*> _stationsMap;
   unordered_map<int, Tram*> _trams;
 };
 #endif

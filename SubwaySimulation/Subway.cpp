@@ -34,7 +34,7 @@ int Subway::getTramsCount() {
 
 int Subway::getStationsCount() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
-  return _stations.size();
+  return _stationsMap.size();
 }
 
 string Subway::toString() {
