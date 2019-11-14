@@ -9,10 +9,8 @@
 #include <iostream>
 #include <unordered_map>
 
-#include "tinyxml.h"
 #include "Station.h"
 #include "Tram.h"
-
 #include "Subway.h"
 #include "DesignByContract.h"
 
@@ -80,19 +78,21 @@ string Subway::toString() {
     return outputString;
 }
 
-void Subway::movingTrams(){
-    for (auto elem : this->_tramsArray){
-	    string position = elem->getCurrentStation();
+void Subway::movingTrams(std::ostream& outputStream) {
+    for (auto tram : this->_tramsArray) {
+	    string position = tram->getCurrentStation();
 	    unordered_map<string, Station*>::iterator currentStation = this->_stationsMap.find(position);
 
-	    if (currentStation == this->_stationsMap.end())
-		    cout << "Tram not found";
-	    else{
-	    	    elem->setCurrentStation(currentStation->second->getName());
+	    if (currentStation == this->_stationsMap.end()) {
+          outputStream << "Tram not found";
+        } else {
+          tram->setCurrentStation(currentStation->second->getName());
 	    }
-            ENSURE(position != elem->getCurrentStation(), "Tram is not moved");
-	    cout << "Tram " << elem->getLine() << "moved from Station" << position <<
-		    "to Station" << elem->getCurrentStation() << endl;
+	      // What if there's only one station in the system?
+	      // E.g. station "A" has "A" as its next and "A" as it's previous.
+//            ENSURE(position != tram->getCurrentStation(), "Tram is not moved");
+        outputStream << "Tram " << tram->getLine() << "moved from Station" << position <<
+		    "to Station" << tram->getCurrentStation() << endl;
     }
  }
 
@@ -105,11 +105,10 @@ void Subway::clear() {
   _tramsMap.clear();
 }
 
-void Subway::computeSimulation(int steps) {
+void Subway::computeSimulation(int steps, std::ostream& outputStream) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeSimulation");
-  int current = 0;
-  for(current = 0;current <= steps;++current){
-	  this->movingTrams();
+
+  for (int current = 0; current < steps; ++current){
+	  this->movingTrams(outputStream);
   }
-  ENSURE(current <= steps, "Subway doesn't halted when we have finished the time");
 }

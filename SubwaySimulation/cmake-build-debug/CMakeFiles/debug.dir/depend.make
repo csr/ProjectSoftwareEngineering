@@ -10,8 +10,6 @@ CMakeFiles/debug.dir/Subway.cpp.o: ../Station.h
 CMakeFiles/debug.dir/Subway.cpp.o: ../Subway.cpp
 CMakeFiles/debug.dir/Subway.cpp.o: ../Subway.h
 CMakeFiles/debug.dir/Subway.cpp.o: ../Tram.h
-CMakeFiles/debug.dir/Subway.cpp.o: ../tinystr.h
-CMakeFiles/debug.dir/Subway.cpp.o: ../tinyxml.h
 
 CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../gtest/include/gtest/gtest-death-test.h
 CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o: ../gtest/include/gtest/gtest-message.h

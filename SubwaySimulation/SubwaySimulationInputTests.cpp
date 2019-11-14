@@ -63,13 +63,13 @@ TEST_F(SubwaySimulationInputTests, InputXMLSyntaxErrors) {
   string errorfileName;
 
   while (FileExists(fileName)) {
-    myfile.open( "testInput/zzzError.txt");
+    myfile.open( "testInput/xmlError.txt");
 
     importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
     myfile.close();
     EXPECT_TRUE(importResult == ImportAborted);
     errorfileName = "testInput/xmlsyntaxerror" + ToString(fileCounter) + ".txt";
-    EXPECT_TRUE(FileCompare("testInput/zzzError.txt", errorfileName));
+    EXPECT_TRUE(FileCompare("testInput/xmlError.txt", errorfileName));
 
     fileCounter = fileCounter + 1;
     fileName = "testInput/xmlsyntaxerror" + ToString(fileCounter) + ".xml";

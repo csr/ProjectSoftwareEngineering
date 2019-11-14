@@ -10,8 +10,6 @@ CMakeFiles/release.dir/Subway.cpp.o: ../Station.h
 CMakeFiles/release.dir/Subway.cpp.o: ../Subway.cpp
 CMakeFiles/release.dir/Subway.cpp.o: ../Subway.h
 CMakeFiles/release.dir/Subway.cpp.o: ../Tram.h
-CMakeFiles/release.dir/Subway.cpp.o: ../tinystr.h
-CMakeFiles/release.dir/Subway.cpp.o: ../tinyxml.h
 
 CMakeFiles/release.dir/SubwaySimulationExporter.cpp.o: ../DesignByContract.h
 CMakeFiles/release.dir/SubwaySimulationExporter.cpp.o: ../Station.h
