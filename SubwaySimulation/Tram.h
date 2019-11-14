@@ -11,6 +11,8 @@
 #include <string>
 using  namespace std;
 
+enum TramDirection {Forward, Backward};
+
 class Tram {
  public:
   /**
@@ -41,9 +43,14 @@ class Tram {
   string getStartStation();
 
   /**
-   \n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
+\n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
    */
   string getCurrentStation();
+
+  /**
+\n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
+ */
+  TramDirection getDirection();
 
   /**
 \n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
@@ -70,6 +77,11 @@ class Tram {
    */
   void setCurrentStation(string station);
 
+  /**
+\n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling switchDirection");
+*/
+  void switchDirection();
+
  private:
   Tram * _initCheck; //!use pointer to myself to verify whether I am properly initialized
 
@@ -78,6 +90,7 @@ class Tram {
   int _speed;
   string _startStation;
   string _currentStation;
+  TramDirection _direction;
 };
 
 #endif //UNTITLED_TRAM_H

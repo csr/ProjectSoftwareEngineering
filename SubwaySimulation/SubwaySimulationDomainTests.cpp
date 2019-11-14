@@ -159,14 +159,15 @@ TEST_F(SubwaySimulationDomainTests, SubwayMultipleTramsSimulation) {
   Station *stationH = new Station("H", "D", "G", secondLine);
 
   Tram *tram1 = new Tram(firstLine, 32, 60, "A");
-  Tram *tram2 = new Tram(secondLine, 32, 60, "A");
+  Tram *tram2 = new Tram(secondLine, 32, 60, "D");
 
   subway_.importData({stationG, stationC, stationH, stationB, stationD, stationF, stationA, stationE}, {tram1, tram2});
 
   // Test start station and current station
   EXPECT_EQ(tram1->getStartStation(), "A");
-  EXPECT_EQ(tram2->getStartStation(), "D");
   EXPECT_EQ(tram1->getCurrentStation(), "A");
+
+  EXPECT_EQ(tram2->getStartStation(), "D");
   EXPECT_EQ(tram2->getCurrentStation(), "D");
 
   ofstream myfile;
@@ -189,4 +190,27 @@ TEST_F(SubwaySimulationDomainTests, SubwayMultipleTramsSimulation) {
   subway_.moveTramsOnce(myfile);
   EXPECT_EQ(tram1->getCurrentStation(), "B");
   EXPECT_EQ(tram2->getCurrentStation(), "G");
+}
+
+TEST_F(SubwaySimulationDomainTests, AutomaticSimulation) {
+  int line = 12;
+  Station *station1 = new Station("A", "B", "C", line);
+  Station *station2 = new Station("B", "C", "A", line);
+  Station *station3 = new Station("C", "A", "B", line);
+  Tram *tram = new Tram(line, 32, 60, "A");
+
+  subway_.importData({station1, station2, station3}, {tram});
+
+  EXPECT_EQ(tram->getStartStation(), "A");
+  EXPECT_EQ(tram->getCurrentStation(), "A");
+
+  ofstream myfile;
+  subway_.computeAutomaticSimulation(1, myfile);
+  EXPECT_EQ(tram->getCurrentStation(), "B");
+
+  subway_.computeAutomaticSimulation(3, myfile);
+  EXPECT_EQ(tram->getCurrentStation(), "A");
+
+  subway_.computeAutomaticSimulation(2, myfile);
+  EXPECT_EQ(tram->getCurrentStation(), "C");
 }

@@ -99,8 +99,22 @@ void Subway::moveTramsOnce(std::ostream& outputStream) {
     string currentStationName = tram->getCurrentStation();
     Station *currentStation = _stationsMap[currentStationName];
     string nextStationName = currentStation->getNext();
+    string previousStationName = currentStation->getPrevious();
 
-    tram->setCurrentStation(nextStationName);
+    if (nextStationName == tram->getStartStation() && tram->getDirection() == Forward) {
+      // Edge case: reaching the end of the line
+      tram->switchDirection();
+      tram->setCurrentStation(previousStationName);
+    } else if (currentStationName == tram->getStartStation() && tram->getDirection() == Backward) {
+      // Edge case: reaching the start of the line
+      tram->switchDirection();
+      tram->setCurrentStation(nextStationName);
+    } else if (tram->getDirection() == Forward) {
+      tram->setCurrentStation(nextStationName);
+    } else if (tram->getDirection() == Backward) {
+      tram->setCurrentStation(previousStationName);
+    }
+
     outputStream << "Tram " << tram->getLine() << " moved from station " << currentStationName <<
                  "to station " << nextStationName << endl;
   }

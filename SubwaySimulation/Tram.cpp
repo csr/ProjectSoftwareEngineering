@@ -16,6 +16,7 @@ Tram::Tram(int line, int capacity, int speed, string startStation) {
   _speed = speed;
   _startStation = startStation;
   _currentStation = _startStation;
+  _direction = Forward;
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
@@ -43,9 +44,14 @@ string Tram::getStartStation() {
   return _startStation;
 }
 
-string Tram::getCurrentStation(){
-	REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
-	return _currentStation;
+string Tram::getCurrentStation() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
+  return _currentStation;
+}
+
+TramDirection Tram::getDirection() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
+  return _direction;
 }
 
 void Tram::setLine(int line) {
@@ -68,7 +74,12 @@ void Tram::setStartStation(string startStation) {
   _startStation = startStation;
 }
 
-void Tram::setCurrentStation(string station){
+void Tram::setCurrentStation(string station) {
 	REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
 	_currentStation = station;
+}
+
+void Tram::switchDirection() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling switchDirection");
+  _direction = _direction == Forward ? Backward : Forward;
 }
