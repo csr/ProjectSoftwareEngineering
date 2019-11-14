@@ -30,7 +30,7 @@ class SubwaySimulationMovingTests: public ::testing::Test {
 
 
 
-  TEST_F(SubwaySimulationMovingTests, ExampleOutputTest) {
+  TEST_F(SubwaySimulationMovingTests, ExampleSimulationTest) {
   //if directory doesn't exist then no need in proceeding with the test
   ASSERT_TRUE(DirectoryExists("testSimulation"));
   
@@ -43,9 +43,9 @@ class SubwaySimulationMovingTests: public ::testing::Test {
   subway_.importData({stationA, stationB, stationC}, {tram});
   ASSERT_TRUE(subway_.getStationsCount() == 3);
   ASSERT_TRUE(subway_.getTramsCount() == 1);
-
-  currentStation = tram->getCurrentStation();
-  subway_.movingTrams();
+  
+  string currentStation = tram->getCurrentStation();
+  subway_.moveTramsOnce(&temporaryOutput);
   EXPECT_TRUE(currentStation != tram->getCurrentStation()); 
 }
 

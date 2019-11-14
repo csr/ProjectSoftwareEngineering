@@ -1,0 +1,7 @@
+Tram 12 
+Tram 12 moved from station A to station B
+Tram 12 moved from station B to station C
+Tram 12 moved from station C to station B
+Tram 12 moved from station B to station A
+Tram 12 moved from station A to station B
+Tram 12 moved from station B to station C

@@ -43,17 +43,23 @@ void Subway::importData(vector<Station*> stations, vector<Tram*> trams) {
   for (auto tram : _tramsArray) {
     _tramsMap[tram->getLine()] = tram;
   }
+  ENSURE(this->getTramsCount() >= 0, "Trams number are negative");
+  ENSURE(this->getStationsCount() >= 0, "Stations number are negative");
 }
 
 
 int Subway::getTramsCount() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
-  return _tramsMap.size();
+  int size = _tramsMap.size();
+  ENSURE(size >= 0, "Trams inside the subway are negative");
+  return size;
 }
 
 int Subway::getStationsCount() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
-  return _stationsMap.size();
+  int size = _stationsMap.size();
+  ENSURE(size >= 0, "Stations inside the subway are negative");
+  return size;
 }
 
 string Subway::toString() {
@@ -84,17 +90,22 @@ void Subway::clear() {
   _tramsArray.clear();
   _stationsMap.clear();
   _tramsMap.clear();
+  ENSURE(_stationsArray.size() == 0, "Stations array is not clean");
+  ENSURE(_tramsArray.size() == 0, "Trams array is not clean");
+  ENSURE(_stationsMap.size() == 0, "Stations map is not clean");
+  ENSURE(_tramsMap.size() == 0, "Trams map is not clean");
 }
 
-void Subway::computeAutomaticSimulation(int steps, std::ostream& outputStream) {
+void Subway::computeAutomaticSimulation(int steps, ostream& outputStream) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
-
-  for (int current = 0; current < steps; ++current) {
+  int current = 0;
+  for (current = 0; current < steps; ++current) {
     this->moveTramsOnce(outputStream);
   }
+  ENSURE(current < steps, "Subway doesn't halted the simulation when reach n steps");
 }
 
-void Subway::moveTramsOnce(std::ostream& outputStream) {
+void Subway::moveTramsOnce(ostream& outputStream) {
   for (auto tram : this->_tramsArray) {
     string currentStationName = tram->getCurrentStation();
     Station *currentStation = _stationsMap[currentStationName];
@@ -117,5 +128,7 @@ void Subway::moveTramsOnce(std::ostream& outputStream) {
 
     outputStream << "Tram " << tram->getLine() << " moved from station " << currentStationName <<
                  "to station " << nextStationName << endl;
+    ENSURE(tram->getCurrentStation() == nextStationName || tram->getCurrentStation() == previousStationName, "Tram doesn't move his position");
+    
   }
 }
