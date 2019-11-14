@@ -44,7 +44,7 @@ class Subway {
   /**
    \n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling movingTrams");
    */
-  void movingTrams(std::ostream& outputStream);
+  void moveTramsOnce(std::ostream& outputStream);
   /**
 \n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
 */

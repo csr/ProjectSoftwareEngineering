@@ -99,7 +99,11 @@ TEST_F(SubwaySimulationDomainTests, TramConstructor) {
 Tests Subway reset method.
 */
 TEST_F(SubwaySimulationDomainTests, SubwayReset) {
-  subway_.importData({new Station("A", "B", "C", 34), new Station("C", "D", "E", 334)}, {new Tram(2, 43, 3, "A")});
+  Station *station1 = new Station("A", "B", "C", 34);
+  Station *station2 = new Station("C", "D", "E", 334);
+  Tram *tram = new Tram(2, 43, 3, "A");
+
+  subway_.importData({station1, station2}, {tram});
   EXPECT_EQ(2, subway_.getStationsCount());
   EXPECT_EQ(1, subway_.getTramsCount());
 
@@ -107,4 +111,33 @@ TEST_F(SubwaySimulationDomainTests, SubwayReset) {
 
   EXPECT_EQ(0, subway_.getStationsCount());
   EXPECT_EQ(0, subway_.getTramsCount());
+}
+
+/**
+Tests Subway simulation with one step.
+*/
+TEST_F(SubwaySimulationDomainTests, SubwaySimulation) {
+  int line = 12;
+  Station *station1 = new Station("A", "B", "C", line);
+  Station *station2 = new Station("B", "C", "A", line);
+  Station *station3 = new Station("C", "A", "B", line);
+  Tram *tram = new Tram(line, 32, 60, "A");
+
+  subway_.importData({station1, station2, station3}, {tram});
+
+  ofstream myfile;
+  subway_.moveTramsOnce(myfile);
+  EXPECT_EQ(tram->getCurrentStation(), "B");
+
+  subway_.moveTramsOnce(myfile);
+  EXPECT_EQ(tram->getCurrentStation(), "C");
+
+  subway_.moveTramsOnce(myfile);
+  EXPECT_EQ(tram->getCurrentStation(), "A");
+
+  subway_.moveTramsOnce(myfile);
+  EXPECT_EQ(tram->getCurrentStation(), "B");
+
+  subway_.moveTramsOnce(myfile);
+  EXPECT_EQ(tram->getCurrentStation(), "C");
 }

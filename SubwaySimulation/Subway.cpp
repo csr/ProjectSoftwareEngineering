@@ -78,21 +78,15 @@ string Subway::toString() {
     return outputString;
 }
 
-void Subway::movingTrams(std::ostream& outputStream) {
+void Subway::moveTramsOnce(std::ostream& outputStream) {
     for (auto tram : this->_tramsArray) {
-	    string position = tram->getCurrentStation();
-	    unordered_map<string, Station*>::iterator currentStation = this->_stationsMap.find(position);
+	    string currentStationName = tram->getCurrentStation();
+	    Station *currentStation = _stationsMap[currentStationName];
+	    string nextStationName = currentStation->getNext();
 
-	    if (currentStation == this->_stationsMap.end()) {
-          outputStream << "Tram not found";
-        } else {
-          tram->setCurrentStation(currentStation->second->getName());
-	    }
-	      // What if there's only one station in the system?
-	      // E.g. station "A" has "A" as its next and "A" as it's previous.
-//            ENSURE(position != tram->getCurrentStation(), "Tram is not moved");
-        outputStream << "Tram " << tram->getLine() << "moved from Station" << position <<
-		    "to Station" << tram->getCurrentStation() << endl;
+	    tram->setCurrentStation(nextStationName);
+        outputStream << "Tram " << tram->getLine() << " moved from station " << currentStationName <<
+		    "to station " << nextStationName << endl;
     }
  }
 
@@ -109,6 +103,6 @@ void Subway::computeSimulation(int steps, std::ostream& outputStream) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeSimulation");
 
   for (int current = 0; current < steps; ++current){
-	  this->movingTrams(outputStream);
+    this->moveTramsOnce(outputStream);
   }
 }
