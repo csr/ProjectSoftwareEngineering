@@ -84,6 +84,11 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
   }
 
   string trackStr = fetch_text(elem_track, errStream);
+
+  if (name.empty() || previous.empty() || next.empty() || trackStr.empty()) {
+    return NULL;
+  }
+
   // If the track is a number, then return station
   if (is_number(trackStr)) {
     track = stoi(trackStr);
@@ -128,7 +133,7 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
   int line, capacity, speed;
   string startStation = fetch_text(elem_startStation, errStream);
 
-  if (!is_letters_only(startStation)) {
+  if (startStation.empty() || !is_letters_only(startStation)) {
     return NULL;
   }
 
@@ -201,13 +206,7 @@ bool check_prev_next_track_tram(unordered_map<string, Station*> stations, unorde
     if (trams.count(track) == 0) {
       return false;
     }
-//      is_ok = false;
 
-    // for debug
-    /*cout << "NAME " << station->getName() << endl;
-    cout << "NEXT " << station->getNext() << endl;
-    cout << "PREV " << station->getPrevious() << endl;
-    cout << "TRACK " << station->getTrack() << endl;*/
     // iterator for next
     unordered_map<string, Station*>::iterator it1;
     // Find next station
@@ -216,11 +215,7 @@ bool check_prev_next_track_tram(unordered_map<string, Station*> stations, unorde
     unordered_map<string, Station*>::iterator it2;
     // Find previous station
     it2 = stations.find(prev);
-    // for debug
-    /*unordered_map<string, Station*>::iterator it3;
-    for (it3 = stations.begin(); it3 != stations.end(); ++it3)
-        cout << it3->first << " = "
-             << it3->second << '\n';*/
+
     // Check if element exists in map or not
     if(it1 != stations.end() && it2 != stations.end()){
       int next_track = find_track(stations, it1);
@@ -350,7 +345,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
   // Check points 2 - 4 of consistency
   bool prev_next_track_tram = check_prev_next_track_tram(stations, trams);
   if (!prev_next_track_tram) {
-    errStream << "XML IMPORT ABORTED: Some stations don't have a next and/or right station" << endl;
+    errStream << "XML IMPORT ABORTED: Some stations don't have a next and/or right station or there's a missing tram" << endl;
     return ImportAborted;
   }
 

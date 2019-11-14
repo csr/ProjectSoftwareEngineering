@@ -1,4 +1,0 @@
-Station A
-<- Station A
--> Station A
-Track 10
