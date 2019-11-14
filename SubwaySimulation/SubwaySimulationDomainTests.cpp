@@ -159,14 +159,15 @@ TEST_F(SubwaySimulationDomainTests, SubwayMultipleTramsSimulation) {
   Station *stationH = new Station("H", "D", "G", secondLine);
 
   Tram *tram1 = new Tram(firstLine, 32, 60, "A");
-  Tram *tram2 = new Tram(secondLine, 32, 60, "A");
+  Tram *tram2 = new Tram(secondLine, 32, 60, "D");
 
   subway_.importData({stationG, stationC, stationH, stationB, stationD, stationF, stationA, stationE}, {tram1, tram2});
 
   // Test start station and current station
   EXPECT_EQ(tram1->getStartStation(), "A");
-  EXPECT_EQ(tram2->getStartStation(), "D");
   EXPECT_EQ(tram1->getCurrentStation(), "A");
+
+  EXPECT_EQ(tram2->getStartStation(), "D");
   EXPECT_EQ(tram2->getCurrentStation(), "D");
 
   ofstream myfile;
