@@ -78,19 +78,6 @@ string Subway::toString() {
     return outputString;
 }
 
-void Subway::moveTramsOnce(std::ostream& outputStream) {
-    for (auto tram : this->_tramsArray) {
-	    string currentStationName = tram->getCurrentStation();
-	    Station *currentStation = _stationsMap[currentStationName];
-	    string nextStationName = currentStation->getNext();
-
-	    tram->setCurrentStation(nextStationName);
-        outputStream << "Tram " << tram->getLine() << " moved from station " << currentStationName <<
-		    "to station " << nextStationName << endl;
-    }
- }
-
-
 void Subway::clear() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling clear");
   _stationsArray.clear();
@@ -99,10 +86,22 @@ void Subway::clear() {
   _tramsMap.clear();
 }
 
-void Subway::computeSimulation(int steps, std::ostream& outputStream) {
-  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeSimulation");
+void Subway::computeAutomaticSimulation(int steps, std::ostream& outputStream) {
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
 
-  for (int current = 0; current < steps; ++current){
+  for (int current = 0; current < steps; ++current) {
     this->moveTramsOnce(outputStream);
+  }
+}
+
+void Subway::moveTramsOnce(std::ostream& outputStream) {
+  for (auto tram : this->_tramsArray) {
+    string currentStationName = tram->getCurrentStation();
+    Station *currentStation = _stationsMap[currentStationName];
+    string nextStationName = currentStation->getNext();
+
+    tram->setCurrentStation(nextStationName);
+    outputStream << "Tram " << tram->getLine() << " moved from station " << currentStationName <<
+                 "to station " << nextStationName << endl;
   }
 }
