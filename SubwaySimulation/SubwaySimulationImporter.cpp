@@ -198,8 +198,10 @@ bool check_prev_next_track_tram(unordered_map<string, Station*> stations, unorde
 
     // check if each track has exactly one tram: it counts how many trams have line == track
     // point 4 of consistency
-    if(trams.count(track) != 1)
-      is_ok = false;
+    if (trams.count(track) == 0) {
+      return false;
+    }
+//      is_ok = false;
 
     // for debug
     /*cout << "NAME " << station->getName() << endl;
