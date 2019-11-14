@@ -45,6 +45,7 @@ TEST_F(SubwaySimulationInputTests, InputIllegalSimulations) {
     myfile.close();
     EXPECT_TRUE(importResult == ImportAborted);
     errorfileName = "testInput/illegalSubway" + ToString(fileCounter) + ".txt";
+    cout << errorfileName;
     EXPECT_TRUE(FileCompare("testInput/zzzError.txt", errorfileName));
 
     fileCounter = fileCounter + 1;
@@ -74,7 +75,7 @@ TEST_F(SubwaySimulationInputTests, InputXMLSyntaxErrors) {
     fileCounter = fileCounter + 1;
     fileName = "testInput/xmlsyntaxerror" + ToString(fileCounter) + ".xml";
   };
-  EXPECT_TRUE(fileCounter == 6);
+  EXPECT_TRUE(fileCounter == 7);
 }
 
 TEST_F(SubwaySimulationInputTests, InputLegalSubways) {
