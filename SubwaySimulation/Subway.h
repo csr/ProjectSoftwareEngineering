@@ -39,12 +39,12 @@ class Subway {
   /**
 \n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeSimulation");
 */
-  void computeSimulation(int steps);
+  void computeAutomaticSimulation(int steps, std::ostream& outputStream);
 
   /**
    \n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling movingTrams");
    */
-  void movingTrams();
+  void moveTramsOnce(std::ostream& outputStream);
   /**
 \n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
 */

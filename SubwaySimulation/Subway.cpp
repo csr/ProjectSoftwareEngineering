@@ -9,10 +9,8 @@
 #include <iostream>
 #include <unordered_map>
 
-#include "tinyxml.h"
 #include "Station.h"
 #include "Tram.h"
-
 #include "Subway.h"
 #include "DesignByContract.h"
 
@@ -80,23 +78,6 @@ string Subway::toString() {
     return outputString;
 }
 
-void Subway::movingTrams(){
-    for (auto elem : this->_tramsArray){
-	    string position = elem->getCurrentStation();
-	    unordered_map<string, Station*>::iterator currentStation = this->_stationsMap.find(position);
-
-	    if (currentStation == this->_stationsMap.end())
-		    cout << "Tram not found";
-	    else{
-	    	    elem->setCurrentStation(currentStation->second->getName());
-	    }
-            ENSURE(position != elem->getCurrentStation(), "Tram is not moved");
-	    cout << "Tram " << elem->getLine() << "moved from Station" << position <<
-		    "to Station" << elem->getCurrentStation() << endl;
-    }
- }
-
-
 void Subway::clear() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling clear");
   _stationsArray.clear();
@@ -105,11 +86,22 @@ void Subway::clear() {
   _tramsMap.clear();
 }
 
-void Subway::computeSimulation(int steps) {
-  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeSimulation");
-  int current = 0;
-  for(current = 0;current <= steps;++current){
-	  this->movingTrams();
+void Subway::computeAutomaticSimulation(int steps, std::ostream& outputStream) {
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
+
+  for (int current = 0; current < steps; ++current) {
+    this->moveTramsOnce(outputStream);
   }
-  ENSURE(current <= steps, "Subway doesn't halted when we have finished the time");
+}
+
+void Subway::moveTramsOnce(std::ostream& outputStream) {
+  for (auto tram : this->_tramsArray) {
+    string currentStationName = tram->getCurrentStation();
+    Station *currentStation = _stationsMap[currentStationName];
+    string nextStationName = currentStation->getNext();
+
+    tram->setCurrentStation(nextStationName);
+    outputStream << "Tram " << tram->getLine() << " moved from station " << currentStationName <<
+                 "to station " << nextStationName << endl;
+  }
 }

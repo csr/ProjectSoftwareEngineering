@@ -11,8 +11,6 @@ CMakeFiles/debug.dir/Subway.cpp.o
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.cpp
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h
  /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.h
- /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h
 CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o
  ../gtest/include/gtest/gtest-death-test.h
  ../gtest/include/gtest/gtest-message.h
