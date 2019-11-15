@@ -34,3 +34,10 @@
     <previous>D</previous>
     <track>9</track>
 </STATION>
+<TRAM>
+   <line> 9 </line>
+   <capacity> 12 </capacity>
+   <speed> 13 </speed>
+   <startStation> D </startStation>
+</TRAM>
+
