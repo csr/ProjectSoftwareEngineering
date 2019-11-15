@@ -1,0 +1,4 @@
+Station A
+<- Station A
+-> Station A
+Track 10: Tram with 30 seats
