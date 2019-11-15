@@ -5,3 +5,9 @@
     <previous>A</previous>
     <track>10</track>
 </STATION>
+<TRAM>
+    <line>10</line>
+    <speed>20</speed>
+    <capacity>30</capacity>
+    <startStation>A</startStation>
+</TRAM>

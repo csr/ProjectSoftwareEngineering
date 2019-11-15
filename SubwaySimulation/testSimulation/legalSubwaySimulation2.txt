@@ -1,16 +1,16 @@
 Tram 13
 Tram 13 moved from station C to station A
-Tram 9 moved from station D to station E
-Tram 13 moved from station A to station B
 Tram 9 moved from station E to station D
+Tram 13 moved from station A to station B
+Tram 9 moved from station D to station E
 Tram 13 moved from station B to station A
-Tram 9 moved from station D to station E
+Tram 9 moved from station E to station D
 Tram 13 moved from station A to station C
-Tram 9 moved from station E to station D
+Tram 9 moved from station D to station E
 Tram 13 moved from station C to station A
-Tram 9 moved from station D to station E
-Tram 13 moved from station A to station B
 Tram 9 moved from station E to station D
-Tram 13 moved from station B to station C
+Tram 13 moved from station A to station B
 Tram 9 moved from station D to station E
+Tram 13 moved from station B to station C
+Tram 9 moved from station E to station D
 

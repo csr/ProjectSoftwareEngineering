@@ -30,23 +30,35 @@ class SubwaySimulationMovingTests: public ::testing::Test {
 
 
 
-  TEST_F(SubwaySimulationMovingTests, ExampleSimulationTest) {
+  TEST_F(SubwaySimulationMovingTests, MovingTram) {
   //if directory doesn't exist then no need in proceeding with the test
+  ASSERT_TRUE(DirectoryExists("testInput"));
   ASSERT_TRUE(DirectoryExists("testSimulation"));
-  
-  Station *stationA = new Station("A", "B", "C", 12);
-  Station *stationB = new Station("B", "C", "A", 12);
-  Station *stationC = new Station("C", "A", "B", 12);
-  
-  Tram *tram = new Tram(12, 32, 60, "A");
-  
-  subway_.importData({stationA, stationB, stationC}, {tram});
-  ASSERT_TRUE(subway_.getStationsCount() == 3);
-  ASSERT_TRUE(subway_.getTramsCount() == 1);
-  
-  string currentStation = tram->getCurrentStation();
-  subway_.moveTramsOnce(&temporaryOutput);
-  EXPECT_TRUE(currentStation != tram->getCurrentStation()); 
+ 
+  ofstream outputContainerFile;
+  SuccessEnum importResult;
+  int fileCounter = 2; 
+  string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+
+ // while (FileExists(fileName)) {
+    string temporaryOutput = "testSimulation/temporaryOutput.txt";
+    outputContainerFile.open(temporaryOutput);
+
+    // The outputContainerFile will be passed as the "error" file to the import subway
+    // If the import result is Success, there should be NO error output (an empty error file means everything was ok)
+    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), outputContainerFile, subway_);
+
+    EXPECT_TRUE(importResult == Success);
+
+    subway_.moveTramsOnce(outputContainerFile);
+    outputContainerFile.close();
+
+    string expectedOutputFilename = "testSimulation/legalSubwayMoving" + ToString(fileCounter) + ".txt";
+    EXPECT_TRUE(FileCompare("testSimulation/temporaryOutput.txt", expectedOutputFilename));
+
+    fileCounter = fileCounter + 1;
+    fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+   // }  
 }
 
 /**

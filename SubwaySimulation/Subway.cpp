@@ -99,10 +99,11 @@ void Subway::clear() {
 void Subway::computeAutomaticSimulation(int steps, ostream& outputStream) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
   int current = 0;
-  for (current = 0; current < steps; ++current) {
-    this->moveTramsOnce(outputStream);
+  while (current < steps){
+	  this->moveTramsOnce(outputStream);
+	  current++;
   }
-  ENSURE(current < steps, "Subway doesn't halted the simulation when reach n steps");
+  ENSURE(current <= steps, "Subway doesn't halted the simulation when reach n steps");
 }
 
 void Subway::moveTramsOnce(ostream& outputStream) {
@@ -127,8 +128,7 @@ void Subway::moveTramsOnce(ostream& outputStream) {
     }
 
     outputStream << "Tram " << tram->getLine() << " moved from station " << currentStationName <<
-                 "to station " << nextStationName << endl;
+                 " to station " << nextStationName << endl;
     ENSURE(tram->getCurrentStation() == nextStationName || tram->getCurrentStation() == previousStationName, "Tram doesn't move his position");
-    
   }
 }

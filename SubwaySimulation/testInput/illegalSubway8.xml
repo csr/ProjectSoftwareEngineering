@@ -1,15 +1,9 @@
-<!-- Nested elements in a station-->
 <STATION>
     <name>A</name>
-    <next><STATION>
-    		<name>B</name>
-    		<next>C</next>
-    		<previous>A</previous>
-    		<track>12</track>
-	  </STATION>
-    </next>
+    <next>B</next>
     <previous>C</previous>
     <track>12</track>
+    <track>10</track>
 </STATION>
 <STATION>
     <name>B</name>
@@ -29,10 +23,3 @@
     <speed>60</speed>
     <startStation>A</startStation>
 </TRAM>
-<STATION>
-    <name>A</name>
-    <next>B</next>
-    <previous>C</previous>
-    <track>12</track>
-</STATION>
-

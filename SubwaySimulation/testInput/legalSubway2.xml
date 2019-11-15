@@ -37,7 +37,7 @@
 <TRAM>
    <line> 9 </line>
    <capacity> 12 </capacity>
-   <speed> 13 </speed>
-   <startStation> D </startStation>
+   <speed> 40 </speed>
+   <startStation> E </startStation>
 </TRAM>
 

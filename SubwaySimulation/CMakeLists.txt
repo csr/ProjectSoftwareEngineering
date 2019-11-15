@@ -41,6 +41,8 @@ target_link_libraries(debug gtest)
 
 include_directories(testInput)
 include_directories(testOutput)
+include_directories(testSimulation)
 
 file(COPY testOutput DESTINATION .)
 file(COPY testInput DESTINATION .)
+file(COPY testSimulation DESTINATION .)
