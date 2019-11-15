@@ -1,1 +1,1 @@
-Tram 10 moving from station A to station A
+Tram 10 moved from station A to station A

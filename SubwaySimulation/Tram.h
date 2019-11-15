@@ -82,6 +82,12 @@ class Tram {
 */
   void switchDirection();
 
+  bool validLine();
+  bool validSpeed();
+  bool validCapacity();
+  bool validStation(string station);
+  bool validDirection();
+
  private:
   Tram * _initCheck; //!use pointer to myself to verify whether I am properly initialized
 

@@ -61,6 +61,10 @@ class Station {
 */
   void setTrack(int track);
 
+  bool validName();
+  bool validStation(string station);
+  bool validTrack();
+
  private:
   Station * _initCheck; //!use pointer to myself to verify whether I am properly initialized
 

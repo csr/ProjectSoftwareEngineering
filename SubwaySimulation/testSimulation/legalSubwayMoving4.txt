@@ -1,3 +1,3 @@
-Tram 13 moving from station C to station A
-Tram 9 moving from station D to station E
-Tram 7 moving from station F to station G
+Tram 13 moved from station C to station A
+Tram 9 moved from station D to station E
+Tram 7 moved from station F to station G

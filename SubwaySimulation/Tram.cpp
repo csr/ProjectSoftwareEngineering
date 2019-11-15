@@ -26,70 +26,92 @@ bool Tram::properlyInitialized() {
 
 int Tram::getLine() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getLine");
-  ENSURE(_line >= 0, "Tram number is negative");
+  ENSURE(validLine(), "Tram number is negative");
   return _line;
 }
 
 int Tram::getCapacity() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCapacity");
-  ENSURE(_capacity >= 0, "Tram capacity is negative");
+  ENSURE(validCapacity(), "Tram capacity is negative");
   return _capacity;
 }
 
 int Tram::getSpeed() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getSpeed");
-  ENSURE(_speed >= 0, "Tram speed is negative");
+  ENSURE(validSpeed(), "Tram speed is negative");
   return _speed;
 }
 
 string Tram::getStartStation() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStation");
-  ENSURE(_currentStation != "", "Start station is null");
+  ENSURE(validStation(_startStation), "Start station is null");
   return _startStation;
 }
 
 string Tram::getCurrentStation() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
-  ENSURE(_currentStation != "", "Current station is null");
+  ENSURE(validStation(_currentStation), "Current station is null");
   return _currentStation;
 }
 
 TramDirection Tram::getDirection() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
-  ENSURE(_direction == Backward || _direction == Forward, "Tram direction is not backward or forward");
+  ENSURE(validDirection(), "Tram direction is not backward or forward");
   return _direction;
 }
 
 void Tram::setLine(int line) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
   _line = line;
-  ENSURE(_line >= 0, "The number of a line is negative");
+  ENSURE(validLine(), "The number of a line is negative");
 }
 
 void Tram::setCapacity(int capacity) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCapacity");
   _capacity = capacity;
-  ENSURE(_capacity >= 0, "Tram capacity is negative");
+  ENSURE(validCapacity(), "Tram capacity is negative");
 }
 
 void Tram::setSpeed(int speed) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
   _speed = speed;
-  ENSURE(_speed >= 0, "Tram speed is negative");
+  ENSURE(validSpeed(), "Tram speed is negative");
 }
 
 void Tram::setStartStation(string startStation) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setStartStation");
   _startStation = startStation;
+  ENSURE(validStation(_startStation), "Tram start station is empty");
 }
 
 void Tram::setCurrentStation(string station) {
 	REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
 	_currentStation = station;
+	ENSURE(validStation(_currentStation), "Tram current station is empty");
 }
 
 void Tram::switchDirection() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling switchDirection");
   _direction = _direction == Forward ? Backward : Forward;
-  ENSURE(_direction == Backward || _direction == Forward, "Tram direction is wrong");
+  ENSURE(validDirection(), "Tram direction is wrong");
+}
+
+bool Tram::validDirection(){
+	return _direction == Backward || _direction == Forward;
+}
+
+bool Tram::validCapacity(){
+	return _capacity >= 0;
+}
+
+bool Tram::validLine(){
+	return _line >= 0;
+}
+
+bool Tram::validSpeed(){
+	return _speed >= 0;
+}
+
+bool Tram::validStation(string station){
+	return station != "";
 }
