@@ -98,8 +98,10 @@ void Subway::clear() {
 
 void Subway::computeAutomaticSimulation(int steps, ostream& outputStream) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
+  REQUIRE(steps > 0, "Number of steps must be greater than zero");
+
   int current = 0;
-  while (current < steps){
+  while (current < steps) {
 	  this->moveTramsOnce(outputStream);
 	  current++;
   }

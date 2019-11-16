@@ -73,14 +73,14 @@ void Station::setTrack(int track) {
   ENSURE(validTrack(), "Station track number can't be negative");
 }
 
-bool Station::validName(){
+bool Station::validName() {
 	return !_name.empty();
 }
 
-bool Station::validStation(string station){
+bool Station::validStation(string station) {
 	return !station.empty();
 }
 
-bool Station::validTrack(){
+bool Station::validTrack() {
 	return _track >= 0;
 }
