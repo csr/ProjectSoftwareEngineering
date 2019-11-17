@@ -18,7 +18,7 @@
 using namespace std;
 
 string stripXMLExtension(string string) {
-  int dot = string.rfind(".xml");
+  unsigned int dot = string.rfind(".xml");
   if (dot != std::string::npos)
   {
     string.resize(dot);
