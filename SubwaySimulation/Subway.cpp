@@ -51,14 +51,14 @@ void Subway::importData(vector<Station*> stations, vector<Tram*> trams) {
 int Subway::getTramsCount() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
   int size = _tramsMap.size();
-  ENSURE(size >= 0, "Trams inside the subway are negative");
+  ENSURE(size >= 0, "Number of trams inside the subway can't negative");
   return size;
 }
 
 int Subway::getStationsCount() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
   int size = _stationsMap.size();
-  ENSURE(size >= 0, "Stations inside the subway are negative");
+  ENSURE(size >= 0, "Number of stations inside the subway can't be negative");
   return size;
 }
 
@@ -98,7 +98,7 @@ void Subway::clear() {
 
 void Subway::computeAutomaticSimulation(int steps, ostream& outputStream) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
-  REQUIRE(steps > 0, "Number of steps must be greater than zero");
+  REQUIRE(steps >= 0, "Number of steps must be positive");
 
   int current = 0;
   while (current < steps) {
@@ -109,6 +109,7 @@ void Subway::computeAutomaticSimulation(int steps, ostream& outputStream) {
 }
 
 void Subway::moveTramsOnce(ostream& outputStream) {
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
   for (auto tram : this->_tramsArray) {
     string currentStationName = tram->getCurrentStation();
     Station *currentStation = _stationsMap[currentStationName];
@@ -132,6 +133,6 @@ void Subway::moveTramsOnce(ostream& outputStream) {
     tram->setCurrentStation(nextState);
     outputStream << "Tram " << tram->getLine() << " moved from station " << currentStationName <<
                  " to station " << nextState << endl;
-    ENSURE(tram->getCurrentStation() == nextState, "Tram doesn't move his position");
+    ENSURE(tram->getCurrentStation() == nextState, "Tram didn't move from its starting position");
   }
 }

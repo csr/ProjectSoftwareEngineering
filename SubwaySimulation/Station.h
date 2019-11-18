@@ -16,8 +16,7 @@ class Station {
 
 /**
  Construct a Station class with name, next station, previous station, and track.
-
- ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+ @note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
  @param name Station name.
  @param next Name of the next Station.
  @param previous Name of the previous Station.
@@ -29,58 +28,65 @@ class Station {
 
 /**
  Returns the Station name.
- REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getName");\n
- ENSURE(validName(), "Name of station not valid");
+ @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getName");
+ @note ENSURE(validName(), "Name of station not valid");
+ @returns Name of Station.
 */
   string getName();
 
 /**
-  Returns the next Station.
-  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getNext");\n
-  ENSURE(validStation(_next), "Next of station not valid");
+  Returns the next Station name.
+  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getNext");
+  @note ENSURE(validStation(_next), "Next of station not valid");
+  @returns Name of next Station.
 */
   string getNext();
 
-
 /**
-  Getter that returns the previous Station.
-  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getPrevious");\n
-  ENSURE(validStation(_previous), "Previous of station not valid");
+  Getter that returns the previous Station name.
+  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getPrevious");
+  @note ENSURE(validStation(_previous), "Previous of station not valid");
+  @returns Name of previous Station.
 */
   string getPrevious();
 
 /**
-  Getter for track number.
-  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getTrack");\n
-  ENSURE(validTrack(), "Track of station not valid");
+  Getter for Station track number.
+  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getTrack");
+  @note ENSURE(validTrack(), "Track of station not valid");
+  @returns Station track number.
 */
   int getTrack();
 
 /**
   Setter for Station name.
-  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setName");\n
-  ENSURE(validName(), "Station name can't be empty");
+  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setName");
+  @note ENSURE(validName(), "Station name can't be empty");
+  @param name Name of Station name.
 */
   void setName(string name);
 
 /**
-  Setter for next Station.
-  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setNext");\n
-  ENSURE(validStation(_next), "Next station name can't be empty");
+  Setter for next Station name.
+  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setNext");\n
+  @note ENSURE(validStation(_next), "Next station name can't be empty");
+  @param next Name of next Station.
 */
   void setNext(string next);
 
 /**
-  Setter for previous Station.
-  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPrevious");\n
-  ENSURE(validStation(_previous), "Previous station name can't be empty");
+  Setter for previous Station name.
+  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPrevious");\n
+  @note ENSURE(validStation(_previous), "Previous station name can't be empty");
+  @param previous Name of previous Station.
 */
   void setPrevious(string previous);
 
 /**
-  Setter for Station rack.
-  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTrack");\n
-  ENSURE(validTrack(track), "Station track number can't be negative");
+  Setter for Station track.
+  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTrack");\n
+  @note ENSURE(validTrack(track), "Station track number can't be negative");
+  @param track Station track.
 */
   void setTrack(int track);
 

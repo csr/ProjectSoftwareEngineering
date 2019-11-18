@@ -19,44 +19,70 @@ using namespace std;
 
 class Subway {
  public:
-  /**
-\n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+
+/**
+  Constructor for the Subway class. This creates an empty simulation.\n
+  @note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+  @returns Empty Subway.
 */
   Subway();
 
   bool properlyInitialized();
 
-  /**
-\n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling addData");
+/**
+  Imports stations and trams into the Subway simulation.
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling importData");
+  @note ENSURE(this->getTramsCount() >= 0, "Trams number are negative");
+  @note ENSURE(this->getStationsCount() >= 0, "Stations number are negative");
+
+  @param stations Vector of stations.
+  @param trams Vector of trams.
 */
   void importData(vector<Station*> stations, vector<Tram*> trams);
 
-  /**
-\n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling toString");
+/**
+  Generates a string representation of the Subway network.
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling toString");
+  @returns String representation of Subway.
 */
   string toString();
 
-  /**
-\n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeSimulation");
+/**
+  Computes the Subway simulation for a given number of steps.
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
+  @note REQUIRE(steps > 0, "Number of steps must be greater than zero");
+  @note ENSURE(current <= steps, "Subway doesn't halted the simulation when reach n steps");
+  @param steps Number of steps to compute.
+  @param outputStream Output stream to use for simulation log output.
 */
   void computeAutomaticSimulation(int steps, std::ostream& outputStream);
 
-  /**
-   \n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling movingTrams");
-   */
+/**
+  Computes the Subway simulation for one step.
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
+  @note ENSURE(tram->getCurrentStation() == nextState, "Tram didn't move from its starting position");
+  @param outputStream Output stream to use for simulation log output.
+*/
   void moveTramsOnce(std::ostream& outputStream);
-  /**
-\n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
+
+/**
+  Getter that returns number of stations in the Subway simulation.
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
+  @note ENSURE(size >= 0, "Number of stations inside the subway can't negative");
+  @returns Number of stations.
 */
   int getStationsCount();
 
-  /**
-\n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
+/**
+  Getter that returns number of trams in the Subway simulation.
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
+  @note ENSURE(size >= 0, "Number of trams inside the subway can't negative");
+  @returns Number of trams.
 */
   int getTramsCount();
 
-  /**
-\n REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling clear");
+/**
+  Empties the contents of the Subway simulation.
 */
   void clear();
 
@@ -69,4 +95,5 @@ class Subway {
   unordered_map<string, Station*> _stationsMap;
   unordered_map<int, Tram*> _tramsMap;
 };
+
 #endif

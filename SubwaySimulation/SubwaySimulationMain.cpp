@@ -55,8 +55,8 @@ int getNumberOfSimulationSteps() {
     cout << "Enter number of steps for the simulation to run: ";
     cin >> steps;
 
-    if (steps <= 0) {
-      cout << "Number of steps needs to be greater than zero. Try again." << endl;
+    if (steps < 0) {
+      cout << "Number of steps needs to be positive. Try again." << endl;
     } else {
       isInputValid = true;
     }

@@ -44,7 +44,6 @@ TEST_F(SubwaySimulationInputTests, InputXMLSyntaxErrors) {
 
     importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
     myfile.close();
-    cout << "Analyzing " << fileName <<  "..." << endl;
     EXPECT_TRUE(importResult == ImportAborted);
     errorfileName = "testInput/xmlsyntaxerror" + ToString(fileCounter) + ".txt";
     EXPECT_TRUE(FileCompare("testInput/xmlError.txt", errorfileName));
@@ -67,7 +66,6 @@ TEST_F(SubwaySimulationInputTests, InputLegalSubways) {
     myfile.open("testInput/zzzError.txt");
     importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
     myfile.close();
-    cout << "Analyzing " << fileName <<  "..." << endl;
     EXPECT_TRUE((importResult == Success));
     EXPECT_TRUE(FileIsEmpty("testInput/zzzError.txt"));
 
@@ -90,7 +88,6 @@ TEST_F(SubwaySimulationInputTests, InputIllegalSimulations) {
     myfile.open("testInput/zzzError.txt");
     importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
     myfile.close();
-    cout << "Analyzing " << fileName <<  "..." << endl;
     EXPECT_TRUE(importResult == ImportAborted);
     errorfileName = "testInput/illegalSubway" + ToString(fileCounter) + ".txt";
     EXPECT_TRUE(FileCompare("testInput/zzzError.txt", errorfileName));
