@@ -18,9 +18,9 @@
 using namespace std;
 
 string stripXMLExtension(string string) {
-  unsigned int dot = string.rfind(".xml");
-  if (dot != std::string::npos)
-  {
+  // Removed unsigned because otherwise code wouldn't compile - cdecal
+  int dot = string.rfind(".xml");
+  if (dot != std::string::npos) {
     string.resize(dot);
   }
   return string;
