@@ -7,6 +7,7 @@ var hierarchy =
     [ "Test", null, [
       [ "SubwaySimulationDomainTests", "class_subway_simulation_domain_tests.html", null ],
       [ "SubwaySimulationInputTests", "class_subway_simulation_input_tests.html", null ],
+      [ "SubwaySimulationMovingTests", "class_subway_simulation_moving_tests.html", null ],
       [ "SubwaySimulationOutputTests", "class_subway_simulation_output_tests.html", null ]
     ] ],
     [ "TiXmlAttributeSet", "class_ti_xml_attribute_set.html", null ],

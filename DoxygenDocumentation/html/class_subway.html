@@ -37,7 +37,7 @@
    <div id="projectname">Subway Simulation
    &#160;<span id="projectnumber">Part 1</span>
    </div>
-   <div id="projectbrief">Subway simulation in C++</div>
+   <div id="projectbrief">C++ Subway Simulation for De Lijn</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -115,10 +115,22 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7f21687833f52266591b9ffec9c28ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2db3e1af5e65992968cf68c132b7e2e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized</a> ()</td></tr>
 <tr class="separator:ac2db3e1af5e65992968cf68c132b7e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6136da7193d835923d7fe5881b95cd18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subway.html#a6136da7193d835923d7fe5881b95cd18">importData</a> (vector&lt; <a class="el" href="class_station.html">Station</a> * &gt; stations, vector&lt; <a class="el" href="class_tram.html">Tram</a> * &gt; trams)</td></tr>
+<tr class="memdesc:a6136da7193d835923d7fe5881b95cd18"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling addData");  <a href="class_subway.html#a6136da7193d835923d7fe5881b95cd18">More...</a><br /></td></tr>
+<tr class="separator:a6136da7193d835923d7fe5881b95cd18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f371a975d60413795f7ca1cf43e321f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subway.html#a3f371a975d60413795f7ca1cf43e321f">toString</a> ()</td></tr>
+<tr class="memdesc:a3f371a975d60413795f7ca1cf43e321f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling toString");  <a href="class_subway.html#a3f371a975d60413795f7ca1cf43e321f">More...</a><br /></td></tr>
 <tr class="separator:a3f371a975d60413795f7ca1cf43e321f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab81df034ee84ae51da7a5d1ba950fc76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subway.html#ab81df034ee84ae51da7a5d1ba950fc76">computeSimulation</a> (int steps)</td></tr>
-<tr class="separator:ab81df034ee84ae51da7a5d1ba950fc76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8900edb88349b5742ffa3ae6d8b4d0ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subway.html#a8900edb88349b5742ffa3ae6d8b4d0ae">computeAutomaticSimulation</a> (int steps, std::ostream &amp;outputStream)</td></tr>
+<tr class="memdesc:a8900edb88349b5742ffa3ae6d8b4d0ae"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling computeSimulation");  <a href="class_subway.html#a8900edb88349b5742ffa3ae6d8b4d0ae">More...</a><br /></td></tr>
+<tr class="separator:a8900edb88349b5742ffa3ae6d8b4d0ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2bebe3fc332252ff4e130eb41eb68e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subway.html#ad2bebe3fc332252ff4e130eb41eb68e4">moveTramsOnce</a> (std::ostream &amp;outputStream)</td></tr>
+<tr class="memdesc:ad2bebe3fc332252ff4e130eb41eb68e4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling movingTrams");  <a href="class_subway.html#ad2bebe3fc332252ff4e130eb41eb68e4">More...</a><br /></td></tr>
+<tr class="separator:ad2bebe3fc332252ff4e130eb41eb68e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a8e5c99e11c6819a24afe91b1130f64"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subway.html#a2a8e5c99e11c6819a24afe91b1130f64">getStationsCount</a> ()</td></tr>
 <tr class="memdesc:a2a8e5c99e11c6819a24afe91b1130f64"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
  REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling getStationsCount");  <a href="class_subway.html#a2a8e5c99e11c6819a24afe91b1130f64">More...</a><br /></td></tr>
@@ -127,6 +139,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1b6c9ff646b1a6f1d9b21723cf1f61bb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
  REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling getTramsCount");  <a href="class_subway.html#a1b6c9ff646b1a6f1d9b21723cf1f61bb">More...</a><br /></td></tr>
 <tr class="separator:a1b6c9ff646b1a6f1d9b21723cf1f61bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aefd716a1d040fc09d30735e3d2c93e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subway.html#a9aefd716a1d040fc09d30735e3d2c93e">clear</a> ()</td></tr>
+<tr class="memdesc:a9aefd716a1d040fc09d30735e3d2c93e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling clear");  <a href="class_subway.html#a9aefd716a1d040fc09d30735e3d2c93e">More...</a><br /></td></tr>
+<tr class="separator:a9aefd716a1d040fc09d30735e3d2c93e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7f21687833f52266591b9ffec9c28ff3"></a>
@@ -150,24 +166,53 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab81df034ee84ae51da7a5d1ba950fc76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab81df034ee84ae51da7a5d1ba950fc76">&#9670;&nbsp;</a></span>computeSimulation()</h2>
+<a id="a9aefd716a1d040fc09d30735e3d2c93e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aefd716a1d040fc09d30735e3d2c93e">&#9670;&nbsp;</a></span>clear()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Subway::computeSimulation </td>
+          <td class="memname">void Subway::clear </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>steps</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment"> Execute the simulation.
- @param steps Number of computations to execute in the simulation. This can also be referred as the time.
-</pre><p> <br  />
+
+<p><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling clear"); </p>
+
+</div>
+</div>
+<a id="a8900edb88349b5742ffa3ae6d8b4d0ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8900edb88349b5742ffa3ae6d8b4d0ae">&#9670;&nbsp;</a></span>computeAutomaticSimulation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Subway::computeAutomaticSimulation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>steps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>outputStream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><br  />
  REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling computeSimulation"); </p>
 
 </div>
@@ -212,6 +257,58 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6136da7193d835923d7fe5881b95cd18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6136da7193d835923d7fe5881b95cd18">&#9670;&nbsp;</a></span>importData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Subway::importData </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_station.html">Station</a> * &gt;&#160;</td>
+          <td class="paramname"><em>stations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_tram.html">Tram</a> * &gt;&#160;</td>
+          <td class="paramname"><em>trams</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling addData"); </p>
+
+</div>
+</div>
+<a id="ad2bebe3fc332252ff4e130eb41eb68e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2bebe3fc332252ff4e130eb41eb68e4">&#9670;&nbsp;</a></span>moveTramsOnce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Subway::moveTramsOnce </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>outputStream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling movingTrams"); </p>
+
+</div>
+</div>
 <a id="ac2db3e1af5e65992968cf68c132b7e2e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac2db3e1af5e65992968cf68c132b7e2e">&#9670;&nbsp;</a></span>properlyInitialized()</h2>
 
@@ -243,8 +340,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment"> Generates a description of the subway via a string.
-</pre><p> <br  />
+
+<p><br  />
  REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling toString"); </p>
 
 </div>

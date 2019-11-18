@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Subway Simulation: SubwaySimulation/SubwaySimulationImporter.h Source File</title>
+<title>Subway Simulation: /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -37,7 +37,7 @@
    <div id="projectname">Subway Simulation
    &#160;<span id="projectnumber">Part 1</span>
    </div>
-   <div id="projectbrief">Subway simulation in C++</div>
+   <div id="projectbrief">C++ Subway Simulation for De Lijn</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -122,14 +122,14 @@ $(document).ready(function(){initNavTree('_subway_simulation_importer_8h_source.
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cbaa118efb098eebf9f2e6fded4a900d565c">   21</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cba">RootElementType</a> {<a class="code" href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cbaaa53ad66b0263cff21d3fbb405ef61ba1">StationType</a>, <a class="code" href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cbaa118efb098eebf9f2e6fded4a900d565c">TramType</a>, <a class="code" href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cbaa791c6b5c1e5f30ce6c7b0937e93adbbb">InvalidType</a>};</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4d">   22</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_subway_simulation_exporter_8h.html#ae69e1bf070c1c339170236b3fef70a4d">SuccessEnum</a> {<a class="code" href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4dafdfbdf3247bd36a1f17270d5cec74c9c">Success</a>, <a class="code" href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4da21205c22fde3e4f49e0e131a4377491a">PartialImport</a>, <a class="code" href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4da0fde0ebd442167df89d810c5e3a4f9de">ImportAborted</a>};</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4d">   22</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4d">SuccessEnum</a> {<a class="code" href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4dafdfbdf3247bd36a1f17270d5cec74c9c">Success</a>, <a class="code" href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4da21205c22fde3e4f49e0e131a4377491a">PartialImport</a>, <a class="code" href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4da0fde0ebd442167df89d810c5e3a4f9de">ImportAborted</a>};</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Goals: parsing the schedule of the subway network: the different stations, how they are connected to each other,</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// and the different trams.</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_subway_simulation_importer.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_subway_simulation_importer.html">SubwaySimulationImporter</a> {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">static</span> <a class="code" href="_subway_simulation_exporter_8h.html#ae69e1bf070c1c339170236b3fef70a4d">SuccessEnum</a> importSubway(<span class="keyword">const</span> <span class="keywordtype">char</span> * inputFileName, std::ostream&amp; errStream, <a class="code" href="class_subway.html">Subway</a>&amp; subway);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">static</span> <a class="code" href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4d">SuccessEnum</a> importSubway(<span class="keyword">const</span> <span class="keywordtype">char</span> * inputFileName, std::ostream&amp; errStream, <a class="code" href="class_subway.html">Subway</a>&amp; subway);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -137,6 +137,7 @@ $(document).ready(function(){initNavTree('_subway_simulation_importer_8h_source.
 </div><!-- doc-content -->
 <div class="ttc" id="a_subway_simulation_importer_8h_html_a2cfde3216b45305b4f68727e981d2cbaa118efb098eebf9f2e6fded4a900d565c"><div class="ttname"><a href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cbaa118efb098eebf9f2e6fded4a900d565c">TramType</a></div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:21</div></div>
 <div class="ttc" id="a_subway_simulation_importer_8h_html_ae69e1bf070c1c339170236b3fef70a4da21205c22fde3e4f49e0e131a4377491a"><div class="ttname"><a href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4da21205c22fde3e4f49e0e131a4377491a">PartialImport</a></div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:22</div></div>
+<div class="ttc" id="a_subway_simulation_importer_8h_html_ae69e1bf070c1c339170236b3fef70a4d"><div class="ttname"><a href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4d">SuccessEnum</a></div><div class="ttdeci">SuccessEnum</div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:22</div></div>
 <div class="ttc" id="a_subway_simulation_importer_8h_html_ae69e1bf070c1c339170236b3fef70a4da0fde0ebd442167df89d810c5e3a4f9de"><div class="ttname"><a href="_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4da0fde0ebd442167df89d810c5e3a4f9de">ImportAborted</a></div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:22</div></div>
 <div class="ttc" id="atinyxml_8h_html"><div class="ttname"><a href="tinyxml_8h.html">tinyxml.h</a></div></div>
 <div class="ttc" id="a_subway_simulation_importer_8h_html_a2cfde3216b45305b4f68727e981d2cba"><div class="ttname"><a href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cba">RootElementType</a></div><div class="ttdeci">RootElementType</div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:21</div></div>
@@ -147,7 +148,6 @@ $(document).ready(function(){initNavTree('_subway_simulation_importer_8h_source.
 <div class="ttc" id="aclass_subway_simulation_importer_html"><div class="ttname"><a href="class_subway_simulation_importer.html">SubwaySimulationImporter</a></div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:27</div></div>
 <div class="ttc" id="aclass_subway_html"><div class="ttname"><a href="class_subway.html">Subway</a></div><div class="ttdef"><b>Definition:</b> Subway.h:20</div></div>
 <div class="ttc" id="a_subway_simulation_importer_8h_html_a2cfde3216b45305b4f68727e981d2cbaaa53ad66b0263cff21d3fbb405ef61ba1"><div class="ttname"><a href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cbaaa53ad66b0263cff21d3fbb405ef61ba1">StationType</a></div><div class="ttdef"><b>Definition:</b> SubwaySimulationImporter.h:21</div></div>
-<div class="ttc" id="a_subway_simulation_exporter_8h_html_ae69e1bf070c1c339170236b3fef70a4d"><div class="ttname"><a href="_subway_simulation_exporter_8h.html#ae69e1bf070c1c339170236b3fef70a4d">SuccessEnum</a></div><div class="ttdeci">SuccessEnum</div><div class="ttdef"><b>Definition:</b> SubwaySimulationExporter.h:15</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

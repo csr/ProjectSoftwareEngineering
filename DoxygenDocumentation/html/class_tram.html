@@ -37,7 +37,7 @@
    <div id="projectname">Subway Simulation
    &#160;<span id="projectnumber">Part 1</span>
    </div>
-   <div id="projectbrief">Subway simulation in C++</div>
+   <div id="projectbrief">C++ Subway Simulation for De Lijn</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -109,10 +109,10 @@ $(document).ready(function(){initNavTree('class_tram.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aad83b2e7e79d57528691bf317ab0e1ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#aad83b2e7e79d57528691bf317ab0e1ef">Tram</a> ()</td></tr>
-<tr class="memdesc:aad83b2e7e79d57528691bf317ab0e1ef"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
- ENSURE(<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "constructor must end in properlyInitialized state");  <a href="class_tram.html#aad83b2e7e79d57528691bf317ab0e1ef">More...</a><br /></td></tr>
-<tr class="separator:aad83b2e7e79d57528691bf317ab0e1ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a585293c4ab3c1a21fcd366bbc6c83281"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a585293c4ab3c1a21fcd366bbc6c83281">Tram</a> (int line, int capacity, int speed, string startStation)</td></tr>
+<tr class="memdesc:a585293c4ab3c1a21fcd366bbc6c83281"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ ENSURE(<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "constructor must end in properlyInitialized state");  <a href="class_tram.html#a585293c4ab3c1a21fcd366bbc6c83281">More...</a><br /></td></tr>
+<tr class="separator:a585293c4ab3c1a21fcd366bbc6c83281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac69cbbacaed7e1b9e60e608d766d02ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized</a> ()</td></tr>
 <tr class="separator:ac69cbbacaed7e1b9e60e608d766d02ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a3587943efd6831f47ea7f3c3eacd5f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a4a3587943efd6831f47ea7f3c3eacd5f">getLine</a> ()</td></tr>
@@ -131,6 +131,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a92bde0ef27b1b80dd83a48fdd01efd89"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
  REQUIRE(this-&gt;<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "Tram wasn't initialized when calling getStartStation");  <a href="class_tram.html#a92bde0ef27b1b80dd83a48fdd01efd89">More...</a><br /></td></tr>
 <tr class="separator:a92bde0ef27b1b80dd83a48fdd01efd89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc12ba3d8a7c100ed7121240d662bcd2"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#abc12ba3d8a7c100ed7121240d662bcd2">getCurrentStation</a> ()</td></tr>
+<tr class="memdesc:abc12ba3d8a7c100ed7121240d662bcd2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "Tram wasn't initialized when calling getCurrentStation");  <a href="class_tram.html#abc12ba3d8a7c100ed7121240d662bcd2">More...</a><br /></td></tr>
+<tr class="separator:abc12ba3d8a7c100ed7121240d662bcd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f225d52afce7445a0d9c96d71ea0974"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_tram_8h.html#a08dc55051b42fc2ed7b4d0de13c2ea73">TramDirection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a5f225d52afce7445a0d9c96d71ea0974">getDirection</a> ()</td></tr>
+<tr class="memdesc:a5f225d52afce7445a0d9c96d71ea0974"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "Tram wasn't initialized when calling getCurrentStation");  <a href="class_tram.html#a5f225d52afce7445a0d9c96d71ea0974">More...</a><br /></td></tr>
+<tr class="separator:a5f225d52afce7445a0d9c96d71ea0974"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5458d62c010aca58cdf0ad3c850086f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#aa5458d62c010aca58cdf0ad3c850086f">setLine</a> (int line)</td></tr>
 <tr class="memdesc:aa5458d62c010aca58cdf0ad3c850086f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
  REQUIRE(this-&gt;<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "Tram wasn't initialized when calling setLine");  <a href="class_tram.html#aa5458d62c010aca58cdf0ad3c850086f">More...</a><br /></td></tr>
@@ -147,10 +155,28 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a075dce38c28b0a2978fa5fb5b3afb4cb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
  REQUIRE(this-&gt;<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "Tram wasn't initialized when calling setStartStation");  <a href="class_tram.html#a075dce38c28b0a2978fa5fb5b3afb4cb">More...</a><br /></td></tr>
 <tr class="separator:a075dce38c28b0a2978fa5fb5b3afb4cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6518b2e21de7ca27dd345e20b2fbbce6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a6518b2e21de7ca27dd345e20b2fbbce6">setCurrentStation</a> (string station)</td></tr>
+<tr class="memdesc:a6518b2e21de7ca27dd345e20b2fbbce6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "Tram wasn't initialized when calling setCurrentStation");  <a href="class_tram.html#a6518b2e21de7ca27dd345e20b2fbbce6">More...</a><br /></td></tr>
+<tr class="separator:a6518b2e21de7ca27dd345e20b2fbbce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a059cd138ca1a960d82e73e284a1ed8c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a059cd138ca1a960d82e73e284a1ed8c1">switchDirection</a> ()</td></tr>
+<tr class="memdesc:a059cd138ca1a960d82e73e284a1ed8c1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "Tram wasn't initialized when calling switchDirection");  <a href="class_tram.html#a059cd138ca1a960d82e73e284a1ed8c1">More...</a><br /></td></tr>
+<tr class="separator:a059cd138ca1a960d82e73e284a1ed8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e62c1aea4b85c1936844056beed77a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a5e62c1aea4b85c1936844056beed77a4">validLine</a> ()</td></tr>
+<tr class="separator:a5e62c1aea4b85c1936844056beed77a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d56a9559ac0862933b8c168dbd78848"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a6d56a9559ac0862933b8c168dbd78848">validSpeed</a> ()</td></tr>
+<tr class="separator:a6d56a9559ac0862933b8c168dbd78848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bf0baa6949f738be0f165d2facbbfb7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a9bf0baa6949f738be0f165d2facbbfb7">validCapacity</a> ()</td></tr>
+<tr class="separator:a9bf0baa6949f738be0f165d2facbbfb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a709f23286f95b7a48d6a5be70f6a4876"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a709f23286f95b7a48d6a5be70f6a4876">validStation</a> (string station)</td></tr>
+<tr class="separator:a709f23286f95b7a48d6a5be70f6a4876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68f3597ebf5fc1ac7de9034bfa9557ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a68f3597ebf5fc1ac7de9034bfa9557ee">validDirection</a> ()</td></tr>
+<tr class="separator:a68f3597ebf5fc1ac7de9034bfa9557ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aad83b2e7e79d57528691bf317ab0e1ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad83b2e7e79d57528691bf317ab0e1ef">&#9670;&nbsp;</a></span>Tram()</h2>
+<a id="a585293c4ab3c1a21fcd366bbc6c83281"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a585293c4ab3c1a21fcd366bbc6c83281">&#9670;&nbsp;</a></span>Tram()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,8 +184,31 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">Tram::Tram </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>capacity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>startStation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -187,6 +236,46 @@ Public Member Functions</h2></td></tr>
 
 <p><br  />
  REQUIRE(this-&gt;<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "Tram wasn't initialized when calling getCapacity"); </p>
+
+</div>
+</div>
+<a id="abc12ba3d8a7c100ed7121240d662bcd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc12ba3d8a7c100ed7121240d662bcd2">&#9670;&nbsp;</a></span>getCurrentStation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Tram::getCurrentStation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "Tram wasn't initialized when calling getCurrentStation"); </p>
+
+</div>
+</div>
+<a id="a5f225d52afce7445a0d9c96d71ea0974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f225d52afce7445a0d9c96d71ea0974">&#9670;&nbsp;</a></span>getDirection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_tram_8h.html#a08dc55051b42fc2ed7b4d0de13c2ea73">TramDirection</a> Tram::getDirection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "Tram wasn't initialized when calling getCurrentStation"); </p>
 
 </div>
 </div>
@@ -288,6 +377,27 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6518b2e21de7ca27dd345e20b2fbbce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6518b2e21de7ca27dd345e20b2fbbce6">&#9670;&nbsp;</a></span>setCurrentStation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tram::setCurrentStation </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>station</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "Tram wasn't initialized when calling setCurrentStation"); </p>
+
+</div>
+</div>
 <a id="aa5458d62c010aca58cdf0ad3c850086f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa5458d62c010aca58cdf0ad3c850086f">&#9670;&nbsp;</a></span>setLine()</h2>
 
@@ -348,6 +458,112 @@ Public Member Functions</h2></td></tr>
 
 <p><br  />
  REQUIRE(this-&gt;<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "Tram wasn't initialized when calling setStartStation"); </p>
+
+</div>
+</div>
+<a id="a059cd138ca1a960d82e73e284a1ed8c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a059cd138ca1a960d82e73e284a1ed8c1">&#9670;&nbsp;</a></span>switchDirection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tram::switchDirection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><br  />
+ REQUIRE(this-&gt;<a class="el" href="class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee">properlyInitialized()</a>, "Tram wasn't initialized when calling switchDirection"); </p>
+
+</div>
+</div>
+<a id="a9bf0baa6949f738be0f165d2facbbfb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bf0baa6949f738be0f165d2facbbfb7">&#9670;&nbsp;</a></span>validCapacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tram::validCapacity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68f3597ebf5fc1ac7de9034bfa9557ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68f3597ebf5fc1ac7de9034bfa9557ee">&#9670;&nbsp;</a></span>validDirection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tram::validDirection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e62c1aea4b85c1936844056beed77a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e62c1aea4b85c1936844056beed77a4">&#9670;&nbsp;</a></span>validLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tram::validLine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d56a9559ac0862933b8c168dbd78848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d56a9559ac0862933b8c168dbd78848">&#9670;&nbsp;</a></span>validSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tram::validSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a709f23286f95b7a48d6a5be70f6a4876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a709f23286f95b7a48d6a5be70f6a4876">&#9670;&nbsp;</a></span>validStation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tram::validStation </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>station</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

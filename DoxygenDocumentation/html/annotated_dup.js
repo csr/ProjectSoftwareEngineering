@@ -6,6 +6,7 @@ var annotated_dup =
     [ "SubwaySimulationExporter", "class_subway_simulation_exporter.html", "class_subway_simulation_exporter" ],
     [ "SubwaySimulationImporter", "class_subway_simulation_importer.html", null ],
     [ "SubwaySimulationInputTests", "class_subway_simulation_input_tests.html", "class_subway_simulation_input_tests" ],
+    [ "SubwaySimulationMovingTests", "class_subway_simulation_moving_tests.html", "class_subway_simulation_moving_tests" ],
     [ "SubwaySimulationOutputTests", "class_subway_simulation_output_tests.html", "class_subway_simulation_output_tests" ],
     [ "TiXmlAttribute", "class_ti_xml_attribute.html", "class_ti_xml_attribute" ],
     [ "TiXmlAttributeSet", "class_ti_xml_attribute_set.html", "class_ti_xml_attribute_set" ],

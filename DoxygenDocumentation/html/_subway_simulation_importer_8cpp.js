@@ -8,6 +8,5 @@ var _subway_simulation_importer_8cpp =
     [ "is_letters_only", "_subway_simulation_importer_8cpp.html#af9df41845f46588cdd84743a8229ad83", null ],
     [ "is_number", "_subway_simulation_importer_8cpp.html#ab28ca41269f2b32969591cc91c1e96a5", null ],
     [ "parseStation", "_subway_simulation_importer_8cpp.html#a9368e0c40fe50d0a03ad0db9e701cd7c", null ],
-    [ "parseTram", "_subway_simulation_importer_8cpp.html#a0f1de7bb552292457867b65f9ac3a8af", null ],
-    [ "printParsedObjects", "_subway_simulation_importer_8cpp.html#a19cc6bc2e93680796073bac0270af036", null ]
+    [ "parseTram", "_subway_simulation_importer_8cpp.html#a0f1de7bb552292457867b65f9ac3a8af", null ]
 ];

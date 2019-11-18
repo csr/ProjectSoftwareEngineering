@@ -1,6 +1,5 @@
 var class_station =
 [
-    [ "Station", "class_station.html#a73d335726aad1d844d81cda6d9fd74e6", null ],
     [ "Station", "class_station.html#a4cd76667fd24aaec8f01f139d5364249", null ],
     [ "getName", "class_station.html#a2863c0eebeedd65a7be47004dc729465", null ],
     [ "getNext", "class_station.html#a43f08fc7fd06633c227837c0ef506c93", null ],

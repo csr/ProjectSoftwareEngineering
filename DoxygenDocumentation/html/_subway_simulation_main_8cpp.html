@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Subway Simulation: SubwaySimulation/SubwaySimulationMain.cpp File Reference</title>
+<title>Subway Simulation: /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationMain.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -37,7 +37,7 @@
    <div id="projectname">Subway Simulation
    &#160;<span id="projectnumber">Part 1</span>
    </div>
-   <div id="projectbrief">Subway simulation in C++</div>
+   <div id="projectbrief">C++ Subway Simulation for De Lijn</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -104,15 +104,61 @@ $(document).ready(function(){initNavTree('_subway_simulation_main_8cpp.html','')
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 <code>#include &quot;<a class="el" href="_subway_8h_source.html">Subway.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_subway_simulation_importer_8h_source.html">SubwaySimulationImporter.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aea4911e98664e43e3d21e20c6f024e61"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_main_8cpp.html#aea4911e98664e43e3d21e20c6f024e61">stripXMLExtension</a> (string string)</td></tr>
+<tr class="separator:aea4911e98664e43e3d21e20c6f024e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36a5f7eb19e9d8955c5b4d661df4acfe"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_main_8cpp.html#a36a5f7eb19e9d8955c5b4d661df4acfe">getInputFileName</a> ()</td></tr>
+<tr class="separator:a36a5f7eb19e9d8955c5b4d661df4acfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177e276bb879cafe3c891dd80dc0ed76"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_main_8cpp.html#a177e276bb879cafe3c891dd80dc0ed76">getNumberOfSimulationSteps</a> ()</td></tr>
+<tr class="separator:a177e276bb879cafe3c891dd80dc0ed76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7533df004e2814a3a785509af82253f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_main_8cpp.html#a7533df004e2814a3a785509af82253f3">runUserProgram</a> ()</td></tr>
+<tr class="separator:a7533df004e2814a3a785509af82253f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a36a5f7eb19e9d8955c5b4d661df4acfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36a5f7eb19e9d8955c5b4d661df4acfe">&#9670;&nbsp;</a></span>getInputFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string getInputFileName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a177e276bb879cafe3c891dd80dc0ed76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a177e276bb879cafe3c891dd80dc0ed76">&#9670;&nbsp;</a></span>getNumberOfSimulationSteps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getNumberOfSimulationSteps </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&nbsp;</a></span>main()</h2>
 
@@ -135,6 +181,41 @@ Functions</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7533df004e2814a3a785509af82253f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7533df004e2814a3a785509af82253f3">&#9670;&nbsp;</a></span>runUserProgram()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void runUserProgram </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea4911e98664e43e3d21e20c6f024e61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea4911e98664e43e3d21e20c6f024e61">&#9670;&nbsp;</a></span>stripXMLExtension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string stripXMLExtension </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">

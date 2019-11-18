@@ -7,7 +7,7 @@ var indexSectionsWithContent =
   4: "ceflnprstuv",
   5: "s",
   6: "nrst",
-  7: "eipst",
+  7: "bfipst",
   8: "st",
   9: "ert",
   10: "d"
