@@ -9,11 +9,13 @@
 #ifndef UNTITLED_TRAM_H
 #define UNTITLED_TRAM_H
 #include <string>
+#import "SimulationObject.h"
+
 using  namespace std;
 
 enum TramDirection {Forward, Backward};
 
-class Tram {
+class Tram: public SimulationObject {
  public:
   /**
 \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
@@ -81,12 +83,6 @@ class Tram {
 \n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling switchDirection");
 */
   void switchDirection();
-
-  bool validLine();
-  bool validSpeed();
-  bool validCapacity();
-  bool validStation(string station);
-  bool validDirection();
 
  private:
   Tram * _initCheck; //!use pointer to myself to verify whether I am properly initialized

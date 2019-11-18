@@ -24,94 +24,78 @@ bool Tram::properlyInitialized() {
   return _initCheck == this;
 }
 
+bool validDirection(TramDirection direction) {
+  return direction == Backward || direction == Forward;
+}
+
 int Tram::getLine() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getLine");
-  ENSURE(validLine(), "Tram number is negative");
+  ENSURE(validIntegerAttribute(_line), "Tram number must be positive");
   return _line;
 }
 
 int Tram::getCapacity() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCapacity");
-  ENSURE(validCapacity(), "Tram capacity is negative");
+  ENSURE(validIntegerAttribute(_capacity), "Tram capacity must be positive");
   return _capacity;
 }
 
 int Tram::getSpeed() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getSpeed");
-  ENSURE(validSpeed(), "Tram speed is negative");
+  ENSURE(validIntegerAttribute(_speed), "Tram speed must be positive");
   return _speed;
 }
 
 string Tram::getStartStation() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStation");
-  ENSURE(validStation(_startStation), "Start station is null");
+  ENSURE(validStringAttribute(_startStation), "Start station must be valid");
   return _startStation;
 }
 
 string Tram::getCurrentStation() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
-  ENSURE(validStation(_currentStation), "Current station is null");
+  ENSURE(validStringAttribute(_currentStation), "Current station must be valid");
   return _currentStation;
 }
 
 TramDirection Tram::getDirection() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
-  ENSURE(validDirection(), "Tram direction is not backward or forward");
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getDirection");
+  ENSURE(validDirection(_direction), "Tram direction must be either backward or forward");
   return _direction;
 }
 
 void Tram::setLine(int line) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
   _line = line;
-  ENSURE(validLine(), "The number of a line is negative");
+  ENSURE(validIntegerAttribute(_line), "The number of a line is negative");
 }
 
 void Tram::setCapacity(int capacity) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCapacity");
   _capacity = capacity;
-  ENSURE(validCapacity(), "Tram capacity is negative");
+  ENSURE(validIntegerAttribute(_capacity), "Tram capacity is negative");
 }
 
 void Tram::setSpeed(int speed) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
   _speed = speed;
-  ENSURE(validSpeed(), "Tram speed is negative");
+  ENSURE(validIntegerAttribute(_speed), "Tram speed is negative");
 }
 
 void Tram::setStartStation(string startStation) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setStartStation");
   _startStation = startStation;
-  ENSURE(validStation(_startStation), "Tram start station is empty");
+  ENSURE(validStringAttribute(_startStation), "Tram start station is empty");
 }
 
 void Tram::setCurrentStation(string station) {
 	REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
 	_currentStation = station;
-	ENSURE(validStation(_currentStation), "Tram current station is empty");
+	ENSURE(validStringAttribute(_currentStation), "Tram current station is empty");
 }
 
 void Tram::switchDirection() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling switchDirection");
   _direction = _direction == Forward ? Backward : Forward;
-  ENSURE(validDirection(), "Tram direction is wrong");
-}
-
-bool Tram::validDirection(){
-	return _direction == Backward || _direction == Forward;
-}
-
-bool Tram::validCapacity(){
-	return _capacity >= 0;
-}
-
-bool Tram::validLine(){
-	return _line >= 0;
-}
-
-bool Tram::validSpeed(){
-	return _speed >= 0;
-}
-
-bool Tram::validStation(string station){
-	return station != "";
+  ENSURE(validDirection(_direction), "Tram direction must be valid");
 }

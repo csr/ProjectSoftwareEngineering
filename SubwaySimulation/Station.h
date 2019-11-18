@@ -9,9 +9,11 @@
 #ifndef UNTITLED_STATION_H
 #define UNTITLED_STATION_H
 
+#import "SimulationObject.h"
+
 using namespace std;
 
-class Station {
+class Station: public SimulationObject {
  public:
 
 /**

@@ -25,58 +25,50 @@ bool Station::properlyInitialized() {
   return _initCheck == this;
 }
 
-bool validAttributeString(string string) {
-  return !string.empty();
-}
-
-bool validTrack(int track) {
-  return track >= 0;
-}
-
 string Station::getName() {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getName");
-  ENSURE(validAttributeString(_name), "Name of station not valid");
+  ENSURE(validStringAttribute(_name), "Name of station not valid");
   return _name;
 }
 
 string Station::getNext() {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getNext");
-  ENSURE(validAttributeString(_next), "Next of station not valid");
+  ENSURE(validStringAttribute(_next), "Next of station not valid");
   return _next;
 }
 
 string Station::getPrevious() {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getPrevious");
-  ENSURE(validAttributeString(_previous), "Previous of station not valid");
+  ENSURE(validStringAttribute(_previous), "Previous of station not valid");
   return _previous;
 }
 
 int Station::getTrack() {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getTrack");
-  ENSURE(validTrack(_track), "Track of station not valid");
+  ENSURE(validIntegerAttribute(_track), "Track of station not valid");
   return _track;
 }
 
 void Station::setName(string name) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setName");
   _name = name;
-  ENSURE(validAttributeString(_name), "Station name can't be empty");
+  ENSURE(validStringAttribute(_name), "Station name can't be empty");
 }
 
 void Station::setNext(string next) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setNext");
   _next = next;
-  ENSURE(validAttributeString(_next), "Next station name can't be empty");
+  ENSURE(validStringAttribute(_next), "Next station name can't be empty");
 }
 
 void Station::setPrevious(string previous) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPrevious");
   _previous = previous;
-  ENSURE(validAttributeString(_previous), "Previous station name can't be empty");
+  ENSURE(validStringAttribute(_previous), "Previous station name can't be empty");
 }
 
 void Station::setTrack(int track) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTrack");
   _track = track;
-  ENSURE(validTrack(track), "Station track number can't be negative");
+  ENSURE(validIntegerAttribute(track), "Station track number can't be negative");
 }
