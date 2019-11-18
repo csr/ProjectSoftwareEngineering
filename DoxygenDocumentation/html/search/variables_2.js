@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['firstchild_605',['firstChild',['../class_ti_xml_node.html#af749fb7f22010b80e8f904c32653d50e',1,'TiXmlNode']]]
+  ['errorstring_605',['errorString',['../class_ti_xml_base.html#a7ac8feec4100e446b3d78e1ac0659700',1,'TiXmlBase']]]
 ];

@@ -17,7 +17,7 @@ class Station: public SimulationObject {
  public:
 
 /**
- Construct a Station class with name, next station, previous station, and track.
+ Constructs a Station class with name, next station, previous station, and track.
  @note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
  @param name Station name.
  @param next Name of the next Station.
@@ -25,8 +25,6 @@ class Station: public SimulationObject {
  @param track Station track number.
 */
   Station(string name, string nextStation, string previousStation, int track);
-
-  bool properlyInitialized();
 
 /**
  Returns the Station name.
@@ -93,7 +91,6 @@ class Station: public SimulationObject {
   void setTrack(int track);
 
  private:
-  Station * _initCheck; //!use pointer to myself to verify whether I am properly initialized
   string _name;
   string _next;
   string _previous;

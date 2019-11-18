@@ -1,7 +1,11 @@
 var dir_94791bb97db3344b88941441ffb48b3b =
 [
     [ "DesignByContract.h", "_design_by_contract_8h.html", "_design_by_contract_8h" ],
-    [ "Station.cpp", "_station_8cpp.html", "_station_8cpp" ],
+    [ "SimulationObject.cpp", "_simulation_object_8cpp.html", null ],
+    [ "SimulationObject.h", "_simulation_object_8h.html", [
+      [ "SimulationObject", "class_simulation_object.html", "class_simulation_object" ]
+    ] ],
+    [ "Station.cpp", "_station_8cpp.html", null ],
     [ "Station.h", "_station_8h.html", [
       [ "Station", "class_station.html", "class_station" ]
     ] ],
@@ -29,6 +33,6 @@ var dir_94791bb97db3344b88941441ffb48b3b =
     [ "tinyxml.h", "tinyxml_8h.html", "tinyxml_8h" ],
     [ "tinyxmlerror.cpp", "tinyxmlerror_8cpp.html", null ],
     [ "tinyxmlparser.cpp", "tinyxmlparser_8cpp.html", "tinyxmlparser_8cpp" ],
-    [ "Tram.cpp", "_tram_8cpp.html", null ],
+    [ "Tram.cpp", "_tram_8cpp.html", "_tram_8cpp" ],
     [ "Tram.h", "_tram_8h.html", "_tram_8h" ]
 ];

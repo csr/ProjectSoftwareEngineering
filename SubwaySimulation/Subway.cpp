@@ -58,7 +58,7 @@ int Subway::getTramsCount() {
 int Subway::getStationsCount() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
   int size = _stationsMap.size();
-  ENSURE(size >= 0, "Number of stations inside the subway can't be negative");
+  ENSURE(size >= 0, "Stations inside the subway can't be negative");
   return size;
 }
 

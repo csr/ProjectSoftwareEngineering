@@ -20,10 +20,6 @@ Tram::Tram(int line, int capacity, int speed, string startStation) {
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
-bool Tram::properlyInitialized() {
-  return _initCheck == this;
-}
-
 bool validDirection(TramDirection direction) {
   return direction == Backward || direction == Forward;
 }

@@ -21,10 +21,6 @@ Station::Station(string name, string next, string previous, int track) {
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
-bool Station::properlyInitialized() {
-  return _initCheck == this;
-}
-
 string Station::getName() {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getName");
   ENSURE(validStringAttribute(_name), "Name of station not valid");

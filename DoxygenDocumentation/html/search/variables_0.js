@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['col_603',['col',['../struct_ti_xml_cursor.html#a5694d7ed2c4d20109d350c14c417969d',1,'TiXmlCursor']]]
+  ['_5finitcheck_603',['_initCheck',['../class_simulation_object.html#ae346e20b6ae930b928045c5b5b8fa13f',1,'SimulationObject']]]
 ];

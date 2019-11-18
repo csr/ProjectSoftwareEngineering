@@ -18,9 +18,6 @@ using namespace std;
 class SubwaySimulationDomainTests: public ::testing::Test {
  protected:
   friend class Subway;
-  // You should make the members protected s.t. they can be
-  // accessed from sub-classes.
-
   Subway subway_;
 };
 

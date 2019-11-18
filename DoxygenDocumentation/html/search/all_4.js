@@ -1,14 +1,9 @@
 var searchData=
 [
-  ['element_32',['Element',['../class_ti_xml_handle.html#ae9b22d71bf5f69ee5fda28f5ad21f19c',1,'TiXmlHandle']]],
-  ['empty_33',['empty',['../class_ti_xml_string.html#a3139aafb0f0a8e26d1a4ed58a50f3678',1,'TiXmlString']]],
-  ['encodestring_34',['EncodeString',['../class_ti_xml_base.html#a32ed202562b58de64c7d799ca3c9db98',1,'TiXmlBase']]],
-  ['encoding_35',['Encoding',['../class_ti_xml_declaration.html#a8d3d1b5b226daa8353276d719497be80',1,'TiXmlDeclaration']]],
-  ['ensure_36',['ENSURE',['../_design_by_contract_8h.html#ab8da60ea2bcdd55183cc29d8526e6857',1,'DesignByContract.h']]],
-  ['error_37',['Error',['../class_ti_xml_document.html#a348e68faad4a3498f413c51ee9bc321a',1,'TiXmlDocument']]],
-  ['errorcol_38',['ErrorCol',['../class_ti_xml_document.html#adea69de889449a2587afb8ee043f43f5',1,'TiXmlDocument']]],
-  ['errordesc_39',['ErrorDesc',['../class_ti_xml_document.html#aab511be262e84a003e3bb86f0215c8c2',1,'TiXmlDocument']]],
-  ['errorid_40',['ErrorId',['../class_ti_xml_document.html#abd928b49a646c8ed53e0453c555d96a2',1,'TiXmlDocument']]],
-  ['errorrow_41',['ErrorRow',['../class_ti_xml_document.html#a062e5257128a7da31b0b2e38cd524600',1,'TiXmlDocument']]],
-  ['errorstring_42',['errorString',['../class_ti_xml_base.html#a7ac8feec4100e446b3d78e1ac0659700',1,'TiXmlBase']]]
+  ['data_27',['data',['../class_ti_xml_string.html#a0e010e1737cfc3ee885b42875171b88e',1,'TiXmlString']]],
+  ['deprecated_20list_28',['Deprecated List',['../deprecated.html',1,'']]],
+  ['designbycontract_2eh_29',['DesignByContract.h',['../_design_by_contract_8h.html',1,'']]],
+  ['determinerootelementtype_30',['determineRootElementType',['../_subway_simulation_importer_8cpp.html#a47145768e134d59a19227e498974e114',1,'SubwaySimulationImporter.cpp']]],
+  ['directoryexists_31',['DirectoryExists',['../_subway_simulation_utils_8cpp.html#a20aa51a3c6e35cb8af1d6d45efd6c71b',1,'DirectoryExists(const std::string dirname):&#160;SubwaySimulationUtils.cpp'],['../_subway_simulation_utils_8h.html#a20aa51a3c6e35cb8af1d6d45efd6c71b',1,'DirectoryExists(const std::string dirname):&#160;SubwaySimulationUtils.cpp']]],
+  ['doublevalue_32',['DoubleValue',['../class_ti_xml_attribute.html#a8cca240fb2a7130c87b0fc6156e8b34f',1,'TiXmlAttribute']]]
 ];

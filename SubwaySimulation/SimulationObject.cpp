@@ -8,6 +8,16 @@
 
 
 #include "SimulationObject.h"
+#include "DesignByContract.h"
+
+SimulationObject::SimulationObject() {
+  _initCheck = this;
+  ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+}
+
+bool SimulationObject::properlyInitialized() {
+  return _initCheck == this;
+}
 
 bool SimulationObject::validIntegerAttribute(int value) {
   return value >= 0;

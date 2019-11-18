@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['validattributestring_579',['validAttributeString',['../_station_8cpp.html#ad344160746ea6620c55ac785b8cf0ad5',1,'Station.cpp']]],
-  ['validcapacity_580',['validCapacity',['../class_tram.html#a9bf0baa6949f738be0f165d2facbbfb7',1,'Tram']]],
-  ['validdirection_581',['validDirection',['../class_tram.html#a68f3597ebf5fc1ac7de9034bfa9557ee',1,'Tram']]],
-  ['validline_582',['validLine',['../class_tram.html#a5e62c1aea4b85c1936844056beed77a4',1,'Tram']]],
-  ['validspeed_583',['validSpeed',['../class_tram.html#a6d56a9559ac0862933b8c168dbd78848',1,'Tram']]],
-  ['validstation_584',['validStation',['../class_tram.html#a709f23286f95b7a48d6a5be70f6a4876',1,'Tram']]],
-  ['validtrack_585',['validTrack',['../_station_8cpp.html#a3b0578c76339067ce9c99f3da24dbaf6',1,'Station.cpp']]],
+  ['validdirection_583',['validDirection',['../_tram_8cpp.html#a36a417fc2128fb924541d910dec9cc52',1,'Tram.cpp']]],
+  ['validintegerattribute_584',['validIntegerAttribute',['../class_simulation_object.html#a49ab1b5ee92f1c5f7ed47455fb03a49b',1,'SimulationObject']]],
+  ['validstringattribute_585',['validStringAttribute',['../class_simulation_object.html#a2946af2c574558e797f1d76225564477',1,'SimulationObject']]],
   ['value_586',['Value',['../class_ti_xml_node.html#ad44dfe927d49a74dd78b72b7514417ad',1,'TiXmlNode::Value()'],['../class_ti_xml_attribute.html#ac9f0b56fcacbedb6eb49e5f282bef014',1,'TiXmlAttribute::Value()']]],
   ['valuetstr_587',['ValueTStr',['../class_ti_xml_node.html#a74c4ea4a91c0a91900c919f69f657d6a',1,'TiXmlNode']]],
   ['version_588',['Version',['../class_ti_xml_declaration.html#a95cdcb9354ea220065bd378ffcacc7bd',1,'TiXmlDeclaration']]],

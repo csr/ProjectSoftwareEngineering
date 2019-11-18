@@ -20,13 +20,6 @@ using namespace std;
 class SubwaySimulationInputTests: public ::testing::Test {
  protected:
   friend class Subway;
-
-  virtual void SetUp() {
-  }
-
-  virtual void TearDown() {
-  }
-
   Subway subway_;
 };
 

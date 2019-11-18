@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "SimulationObject", "class_simulation_object.html", "class_simulation_object" ],
     [ "Station", "class_station.html", "class_station" ],
     [ "Subway", "class_subway.html", "class_subway" ],
     [ "SubwaySimulationDomainTests", "class_subway_simulation_domain_tests.html", "class_subway_simulation_domain_tests" ],
