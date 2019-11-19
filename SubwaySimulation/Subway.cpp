@@ -23,6 +23,8 @@ Subway::Subway() {
   importData({}, {});
 
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+  ENSURE(getTramsCount() == 0, "default constructor should return build empty subway");
+  ENSURE(getStationsCount() == 0, "default constructor should return build empty subway");
 }
 
 bool Subway::properlyInitialized() {

@@ -154,7 +154,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Constructor for the <a class="el" href="class_subway.html">Subway</a> class. </p>
 <p>This creates an empty simulation.<br  />
-</p><dl class="section note"><dt>Note</dt><dd>ENSURE(<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "constructor must end in properlyInitialized state"); </dd></dl>
+</p><dl class="section note"><dt>Note</dt><dd>ENSURE(<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "constructor must end in properlyInitialized state"); </dd>
+<dd>
+ENSURE(<a class="el" href="class_subway.html#a1b6c9ff646b1a6f1d9b21723cf1f61bb" title="Getter that returns number of trams in the Subway simulation.">getTramsCount()</a> == 0, "default constructor should return build empty subway"); </dd>
+<dd>
+ENSURE(<a class="el" href="class_subway.html#a2a8e5c99e11c6819a24afe91b1130f64" title="Getter that returns number of stations in the Subway simulation.">getStationsCount()</a> == 0, "default constructor should return build empty subway"); </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Empty <a class="el" href="class_subway.html">Subway</a>. </dd></dl>
 
 </div>

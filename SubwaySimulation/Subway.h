@@ -23,6 +23,8 @@ class Subway {
 /**
   Constructor for the Subway class. This creates an empty simulation.\n
   @note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+  @note ENSURE(getTramsCount() == 0, "default constructor should return build empty subway");
+  @note ENSURE(getStationsCount() == 0, "default constructor should return build empty subway");
   @returns Empty Subway.
 */
   Subway();
