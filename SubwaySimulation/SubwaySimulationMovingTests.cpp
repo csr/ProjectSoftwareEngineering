@@ -13,7 +13,6 @@ using namespace std;
 #include "Tram.h"
 #include "SubwaySimulationUtils.h"
 #include "SubwaySimulationImporter.h"
-#include "SubwaySimulationExporter.h"
 
 class SubwaySimulationMovingTests: public ::testing::Test {
  protected:

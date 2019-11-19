@@ -25,10 +25,10 @@ else()
 endif()
 
 # Set source files for RELEASE target
-set(RELEASE_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Station.cpp Tram.cpp SubwaySimulationImporter.cpp SubwaySimulationMain.cpp SubwaySimulationExporter.cpp SimulationObject.cpp SimulationObject.h)
+set(RELEASE_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Station.cpp Tram.cpp SubwaySimulationImporter.cpp SubwaySimulationMain.cpp SimulationObject.cpp)
 
 # Set source files for DEBUG target
-set(DEBUG_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp SubwaySimulationTests.cpp SubwaySimulationDomainTests.cpp Subway.cpp Station.cpp Tram.cpp SubwaySimulationDomainTests.cpp SubwaySimulationImporter.cpp SubwaySimulationInputTests.cpp SubwaySimulationExporter.cpp SubwaySimulationUtils.cpp SubwaySimulationOutputTests.cpp SubwaySimulationMovingTests.cpp SimulationObject.cpp SimulationObject.h)
+set(DEBUG_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp SubwaySimulationTests.cpp SubwaySimulationDomainTests.cpp Subway.cpp Station.cpp Tram.cpp SubwaySimulationDomainTests.cpp SubwaySimulationImporter.cpp SubwaySimulationInputTests.cpp SubwaySimulationUtils.cpp SubwaySimulationOutputTests.cpp SubwaySimulationMovingTests.cpp SimulationObject.cpp)
 
 # Create RELEASE target
 add_executable(release ${RELEASE_SOURCE_FILES})

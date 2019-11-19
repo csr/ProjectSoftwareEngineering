@@ -13,18 +13,10 @@ using namespace std;
 #include "Tram.h"
 #include "SubwaySimulationUtils.h"
 #include "SubwaySimulationImporter.h"
-#include "SubwaySimulationExporter.h"
 
 class SubwaySimulationOutputTests: public ::testing::Test {
  protected:
   friend class Subway;
-
-  virtual void SetUp() {
-  }
-
-  virtual void TearDown() {
-  }
-
   Subway subway_;
 };
 
