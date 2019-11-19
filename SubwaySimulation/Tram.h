@@ -9,7 +9,7 @@
 #ifndef UNTITLED_TRAM_H
 #define UNTITLED_TRAM_H
 #include <string>
-#import "SimulationObject.h"
+#include "SimulationObject.h"
 
 using  namespace std;
 
