@@ -47,19 +47,14 @@ void Subway::importData(vector<Station*> stations, vector<Tram*> trams) {
   ENSURE(this->getStationsCount() >= 0, "Stations number are negative");
 }
 
-
 int Subway::getTramsCount() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
-  int size = _tramsMap.size();
-  ENSURE(size >= 0, "Number of trams inside the subway can't negative");
-  return size;
+  return _tramsMap.size();
 }
 
 int Subway::getStationsCount() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
-  int size = _stationsMap.size();
-  ENSURE(size >= 0, "Stations inside the subway can't be negative");
-  return size;
+  return _stationsMap.size();
 }
 
 string Subway::toString() {
@@ -90,22 +85,18 @@ void Subway::clear() {
   _tramsArray.clear();
   _stationsMap.clear();
   _tramsMap.clear();
-  ENSURE(_stationsArray.size() == 0, "Stations array must be cleared");
-  ENSURE(_tramsArray.size() == 0, "Trams array must be cleared");
-  ENSURE(_stationsMap.size() == 0, "Stations map must be cleared");
-  ENSURE(_tramsMap.size() == 0, "Trams map must be cleared");
+  ENSURE(this->getTramsCount() == 0, "Trams array must be cleared");
+  ENSURE(this->getStationsCount() == 0, "Stations map must be cleared");
 }
 
 void Subway::computeAutomaticSimulation(int steps, ostream& outputStream) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
   REQUIRE(steps >= 0, "Number of steps must be positive");
-
   int current = 0;
   while (current < steps) {
 	  this->moveTramsOnce(outputStream);
 	  current++;
   }
-  ENSURE(current <= steps, "Subway doesn't halted the simulation when reach n steps");
 }
 
 void Subway::moveTramsOnce(ostream& outputStream) {

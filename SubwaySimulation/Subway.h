@@ -34,7 +34,6 @@ class Subway {
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling importData");
   @note ENSURE(this->getTramsCount() >= 0, "Trams number are negative");
   @note ENSURE(this->getStationsCount() >= 0, "Stations number are negative");
-
   @param stations Vector of stations.
   @param trams Vector of trams.
 */
@@ -51,7 +50,6 @@ class Subway {
   Computes the Subway simulation for a given number of steps.
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
   @note REQUIRE(steps > 0, "Number of steps must be greater than zero");
-  @note ENSURE(current <= steps, "Subway doesn't halted the simulation when reach n steps");
   @param steps Number of steps to compute.
   @param outputStream Output stream to use for simulation log output.
 */
@@ -68,7 +66,6 @@ class Subway {
 /**
   Getter that returns number of stations in the Subway simulation.
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
-  @note ENSURE(size >= 0, "Number of stations inside the subway can't negative");
   @returns Number of stations.
 */
   int getStationsCount();
@@ -76,7 +73,6 @@ class Subway {
 /**
   Getter that returns number of trams in the Subway simulation.
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
-  @note ENSURE(size >= 0, "Number of trams inside the subway can't negative");
   @returns Number of trams.
 */
   int getTramsCount();
@@ -84,10 +80,8 @@ class Subway {
 /**
   Empties the contents of the Subway simulation.
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling clear");
-  @note ENSURE(_stationsArray.size() == 0, "Stations array must be cleared");
-  @note ENSURE(_tramsArray.size() == 0, "Trams array must be cleared");
-  @note ENSURE(_stationsMap.size() == 0, "Stations map must be cleared");
-  @note ENSURE(_tramsMap.size() == 0, "Trams map must be cleared");
+  @note ENSURE(this->getTramsCount() == 0, "Trams array must be cleared");
+  @note ENSURE(this->getStationsCount() == 0, "Stations map must be cleared");
 */
   void clear();
 

@@ -36,7 +36,6 @@ class Tram: public SimulationObject {
 */
   int getLine();
 
-
 /**
   Getter for the capacity of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCapacity");
