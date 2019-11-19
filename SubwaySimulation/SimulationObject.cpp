@@ -19,10 +19,12 @@ bool SimulationObject::properlyInitialized() {
   return _initCheck == this;
 }
 
+// The current specs require all integers to be positive
 bool SimulationObject::validIntegerAttribute(int value) {
   return value >= 0;
 }
 
+// The current specs require all string to be non-empty
 bool SimulationObject::validStringAttribute(string string) {
   return !string.empty();
 }

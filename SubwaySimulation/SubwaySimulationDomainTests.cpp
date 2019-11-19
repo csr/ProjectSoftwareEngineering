@@ -109,3 +109,11 @@ TEST_F(SubwaySimulationDomainTests, SubwayReset) {
   EXPECT_EQ(0, subway_.getStationsCount());
   EXPECT_EQ(0, subway_.getTramsCount());
 }
+
+/**
+Verify whether unsatisfied pre-conditions indeed trigger failures
+*/
+TEST_F(SubwaySimulationDomainTests, ContractViolations) {
+//  Station newStation = Station("A", "B", "C", 12);
+//  EXPECT_DEATH(newStation.setTrack(-10), "Assertion.*failed");
+}

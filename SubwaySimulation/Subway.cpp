@@ -90,10 +90,10 @@ void Subway::clear() {
   _tramsArray.clear();
   _stationsMap.clear();
   _tramsMap.clear();
-  ENSURE(_stationsArray.size() == 0, "Stations array is not clean");
-  ENSURE(_tramsArray.size() == 0, "Trams array is not clean");
-  ENSURE(_stationsMap.size() == 0, "Stations map is not clean");
-  ENSURE(_tramsMap.size() == 0, "Trams map is not clean");
+  ENSURE(_stationsArray.size() == 0, "Stations array must be cleared");
+  ENSURE(_tramsArray.size() == 0, "Trams array must be cleared");
+  ENSURE(_stationsMap.size() == 0, "Stations map must be cleared");
+  ENSURE(_tramsMap.size() == 0, "Trams map must be cleared");
 }
 
 void Subway::computeAutomaticSimulation(int steps, ostream& outputStream) {

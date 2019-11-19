@@ -29,7 +29,6 @@ class Station: public SimulationObject {
 /**
  Returns the Station name.
  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getName");
- @note ENSURE(validName(), "Name of station not valid");
  @returns Name of Station.
 */
   string getName();
@@ -37,7 +36,6 @@ class Station: public SimulationObject {
 /**
   Returns the next Station name.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getNext");
-  @note ENSURE(validStation(_next), "Next of station not valid");
   @returns Name of next Station.
 */
   string getNext();
@@ -45,7 +43,6 @@ class Station: public SimulationObject {
 /**
   Getter that returns the previous Station name.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getPrevious");
-  @note ENSURE(validStation(_previous), "Previous of station not valid");
   @returns Name of previous Station.
 */
   string getPrevious();
@@ -53,7 +50,6 @@ class Station: public SimulationObject {
 /**
   Getter for Station track number.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getTrack");
-  @note ENSURE(validTrack(), "Track of station not valid");
   @returns Station track number.
 */
   int getTrack();
@@ -61,7 +57,7 @@ class Station: public SimulationObject {
 /**
   Setter for Station name.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setName");
-  @note ENSURE(validName(), "Station name can't be empty");
+  @note ENSURE(validStringAttribute(getName()), "Station name can't be empty");
   @param name Name of Station name.
 */
   void setName(string name);
@@ -69,7 +65,7 @@ class Station: public SimulationObject {
 /**
   Setter for next Station name.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setNext");\n
-  @note ENSURE(validStation(_next), "Next station name can't be empty");
+  @note ENSURE(validStringAttribute(getNext()), "Next station name can't be empty");
   @param next Name of next Station.
 */
   void setNext(string next);
@@ -77,7 +73,7 @@ class Station: public SimulationObject {
 /**
   Setter for previous Station name.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPrevious");\n
-  @note ENSURE(validStation(_previous), "Previous station name can't be empty");
+  @note ENSURE(validStringAttribute(getPrevious()), "Previous station name can't be empty");
   @param previous Name of previous Station.
 */
   void setPrevious(string previous);
@@ -85,7 +81,7 @@ class Station: public SimulationObject {
 /**
   Setter for Station track.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTrack");\n
-  @note ENSURE(validTrack(track), "Station track number can't be negative");
+  @note ENSURE(validIntegerAttribute(getTrack()), "Station track number can't be negative");
   @param track Station track.
 */
   void setTrack(int track);

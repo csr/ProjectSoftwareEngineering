@@ -83,6 +83,11 @@ class Subway {
 
 /**
   Empties the contents of the Subway simulation.
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling clear");
+  @note ENSURE(_stationsArray.size() == 0, "Stations array must be cleared");
+  @note ENSURE(_tramsArray.size() == 0, "Trams array must be cleared");
+  @note ENSURE(_stationsMap.size() == 0, "Stations map must be cleared");
+  @note ENSURE(_tramsMap.size() == 0, "Trams map must be cleared");
 */
   void clear();
 
