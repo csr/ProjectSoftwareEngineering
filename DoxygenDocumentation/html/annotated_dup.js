@@ -4,7 +4,6 @@ var annotated_dup =
     [ "Station", "class_station.html", "class_station" ],
     [ "Subway", "class_subway.html", "class_subway" ],
     [ "SubwaySimulationDomainTests", "class_subway_simulation_domain_tests.html", "class_subway_simulation_domain_tests" ],
-    [ "SubwaySimulationExporter", "class_subway_simulation_exporter.html", "class_subway_simulation_exporter" ],
     [ "SubwaySimulationImporter", "class_subway_simulation_importer.html", null ],
     [ "SubwaySimulationInputTests", "class_subway_simulation_input_tests.html", "class_subway_simulation_input_tests" ],
     [ "SubwaySimulationMovingTests", "class_subway_simulation_moving_tests.html", "class_subway_simulation_moving_tests" ],

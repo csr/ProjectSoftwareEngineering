@@ -176,6 +176,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Empties the contents of the <a class="el" href="class_subway.html">Subway</a> simulation. </p>
+<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling clear"); </dd>
+<dd>
+ENSURE(this-&gt;<a class="el" href="class_subway.html#a1b6c9ff646b1a6f1d9b21723cf1f61bb" title="Getter that returns number of trams in the Subway simulation.">getTramsCount()</a> == 0, "Trams array must be cleared"); </dd>
+<dd>
+ENSURE(this-&gt;<a class="el" href="class_subway.html#a2a8e5c99e11c6819a24afe91b1130f64" title="Getter that returns number of stations in the Subway simulation.">getStationsCount()</a> == 0, "Stations map must be cleared"); </dd></dl>
 
 </div>
 </div>
@@ -208,9 +213,7 @@ Public Member Functions</h2></td></tr>
 <p>Computes the <a class="el" href="class_subway.html">Subway</a> simulation for a given number of steps. </p>
 <dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling computeAutomaticSimulation"); </dd>
 <dd>
-REQUIRE(steps &gt; 0, "Number of steps must be greater than zero"); </dd>
-<dd>
-ENSURE(current &lt;= steps, "Subway doesn't halted the simulation when reach n steps"); </dd></dl>
+REQUIRE(steps &gt; 0, "Number of steps must be greater than zero"); </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">steps</td><td>Number of steps to compute. </td></tr>
@@ -237,9 +240,7 @@ ENSURE(current &lt;= steps, "Subway doesn't halted the simulation when reach n s
 </div><div class="memdoc">
 
 <p>Getter that returns number of stations in the <a class="el" href="class_subway.html">Subway</a> simulation. </p>
-<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling getStationsCount"); </dd>
-<dd>
-ENSURE(size &gt;= 0, "Number of stations inside the subway can't negative"); </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling getStationsCount"); </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Number of stations. </dd></dl>
 
 </div>
@@ -260,9 +261,7 @@ ENSURE(size &gt;= 0, "Number of stations inside the subway can't negative"); </d
 </div><div class="memdoc">
 
 <p>Getter that returns number of trams in the <a class="el" href="class_subway.html">Subway</a> simulation. </p>
-<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling getTramsCount"); </dd>
-<dd>
-ENSURE(size &gt;= 0, "Number of trams inside the subway can't negative"); </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_subway.html#ac2db3e1af5e65992968cf68c132b7e2e">properlyInitialized()</a>, "Subway wasn't initialized when calling getTramsCount"); </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Number of trams. </dd></dl>
 
 </div>
@@ -298,7 +297,7 @@ ENSURE(size &gt;= 0, "Number of trams inside the subway can't negative"); </dd><
 <dd>
 ENSURE(this-&gt;<a class="el" href="class_subway.html#a1b6c9ff646b1a6f1d9b21723cf1f61bb" title="Getter that returns number of trams in the Subway simulation.">getTramsCount()</a> &gt;= 0, "Trams number are negative"); </dd>
 <dd>
-ENSURE(this-&gt;<a class="el" href="class_subway.html#a2a8e5c99e11c6819a24afe91b1130f64" title="Getter that returns number of stations in the Subway simulation.">getStationsCount()</a> &gt;= 0, "Stations number are negative");</dd></dl>
+ENSURE(this-&gt;<a class="el" href="class_subway.html#a2a8e5c99e11c6819a24afe91b1130f64" title="Getter that returns number of stations in the Subway simulation.">getStationsCount()</a> &gt;= 0, "Stations number are negative"); </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">stations</td><td>Vector of stations. </td></tr>

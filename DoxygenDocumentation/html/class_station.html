@@ -235,9 +235,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the <a class="el" href="class_station.html">Station</a> name. </p>
-<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Station wasn't initialized when calling getName"); </dd>
-<dd>
-ENSURE(validName(), "Name of station not valid"); </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Station wasn't initialized when calling getName"); </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Name of <a class="el" href="class_station.html">Station</a>. </dd></dl>
 
 </div>
@@ -258,9 +256,7 @@ ENSURE(validName(), "Name of station not valid"); </dd></dl>
 </div><div class="memdoc">
 
 <p>Returns the next <a class="el" href="class_station.html">Station</a> name. </p>
-<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Station wasn't initialized when calling getNext"); </dd>
-<dd>
-ENSURE(validStation(_next), "Next of station not valid"); </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Station wasn't initialized when calling getNext"); </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Name of next <a class="el" href="class_station.html">Station</a>. </dd></dl>
 
 </div>
@@ -281,9 +277,7 @@ ENSURE(validStation(_next), "Next of station not valid"); </dd></dl>
 </div><div class="memdoc">
 
 <p>Getter that returns the previous <a class="el" href="class_station.html">Station</a> name. </p>
-<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Station wasn't initialized when calling getPrevious"); </dd>
-<dd>
-ENSURE(validStation(_previous), "Previous of station not valid"); </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Station wasn't initialized when calling getPrevious"); </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Name of previous <a class="el" href="class_station.html">Station</a>. </dd></dl>
 
 </div>
@@ -304,9 +298,7 @@ ENSURE(validStation(_previous), "Previous of station not valid"); </dd></dl>
 </div><div class="memdoc">
 
 <p>Getter for <a class="el" href="class_station.html">Station</a> track number. </p>
-<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Station wasn't initialized when calling getTrack"); </dd>
-<dd>
-ENSURE(validTrack(), "Track of station not valid"); </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Station wasn't initialized when calling getTrack"); </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_station.html">Station</a> track number. </dd></dl>
 
 </div>
@@ -330,7 +322,7 @@ ENSURE(validTrack(), "Track of station not valid"); </dd></dl>
 <p>Setter for <a class="el" href="class_station.html">Station</a> name. </p>
 <dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Station wasn't initialized when calling setName"); </dd>
 <dd>
-ENSURE(validName(), "Station name can't be empty"); </dd></dl>
+ENSURE(validStringAttribute(getName()), "Station name can't be empty"); </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>Name of <a class="el" href="class_station.html">Station</a> name. </td></tr>
@@ -360,7 +352,7 @@ ENSURE(validName(), "Station name can't be empty"); </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Station wasn't initialized when calling setNext");<br  />
 </dd>
 <dd>
-ENSURE(validStation(_next), "Next station name can't be empty"); </dd></dl>
+ENSURE(validStringAttribute(getNext()), "Next station name can't be empty"); </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">next</td><td>Name of next <a class="el" href="class_station.html">Station</a>. </td></tr>
@@ -390,7 +382,7 @@ ENSURE(validStation(_next), "Next station name can't be empty"); </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Station wasn't initialized when calling setPrevious");<br  />
 </dd>
 <dd>
-ENSURE(validStation(_previous), "Previous station name can't be empty"); </dd></dl>
+ENSURE(validStringAttribute(getPrevious()), "Previous station name can't be empty"); </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">previous</td><td>Name of previous <a class="el" href="class_station.html">Station</a>. </td></tr>
@@ -420,7 +412,7 @@ ENSURE(validStation(_previous), "Previous station name can't be empty"); </dd></
 <dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Station wasn't initialized when calling setTrack");<br  />
 </dd>
 <dd>
-ENSURE(validTrack(track), "Station track number can't be negative"); </dd></dl>
+ENSURE(validIntegerAttribute(getTrack()), "Station track number can't be negative"); </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">track</td><td><a class="el" href="class_station.html">Station</a> track. </td></tr>

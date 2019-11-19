@@ -5,7 +5,6 @@ var hierarchy =
       [ "Tram", "class_tram.html", null ]
     ] ],
     [ "Subway", "class_subway.html", null ],
-    [ "SubwaySimulationExporter", "class_subway_simulation_exporter.html", null ],
     [ "SubwaySimulationImporter", "class_subway_simulation_importer.html", null ],
     [ "Test", null, [
       [ "SubwaySimulationDomainTests", "class_subway_simulation_domain_tests.html", null ],

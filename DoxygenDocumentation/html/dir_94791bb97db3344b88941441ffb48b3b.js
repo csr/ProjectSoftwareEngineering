@@ -14,10 +14,6 @@ var dir_94791bb97db3344b88941441ffb48b3b =
       [ "Subway", "class_subway.html", "class_subway" ]
     ] ],
     [ "SubwaySimulationDomainTests.cpp", "_subway_simulation_domain_tests_8cpp.html", "_subway_simulation_domain_tests_8cpp" ],
-    [ "SubwaySimulationExporter.cpp", "_subway_simulation_exporter_8cpp.html", null ],
-    [ "SubwaySimulationExporter.h", "_subway_simulation_exporter_8h.html", [
-      [ "SubwaySimulationExporter", "class_subway_simulation_exporter.html", "class_subway_simulation_exporter" ]
-    ] ],
     [ "SubwaySimulationImporter.cpp", "_subway_simulation_importer_8cpp.html", "_subway_simulation_importer_8cpp" ],
     [ "SubwaySimulationImporter.h", "_subway_simulation_importer_8h.html", "_subway_simulation_importer_8h" ],
     [ "SubwaySimulationInputTests.cpp", "_subway_simulation_input_tests_8cpp.html", "_subway_simulation_input_tests_8cpp" ],
@@ -33,6 +29,6 @@ var dir_94791bb97db3344b88941441ffb48b3b =
     [ "tinyxml.h", "tinyxml_8h.html", "tinyxml_8h" ],
     [ "tinyxmlerror.cpp", "tinyxmlerror_8cpp.html", null ],
     [ "tinyxmlparser.cpp", "tinyxmlparser_8cpp.html", "tinyxmlparser_8cpp" ],
-    [ "Tram.cpp", "_tram_8cpp.html", "_tram_8cpp" ],
+    [ "Tram.cpp", "_tram_8cpp.html", null ],
     [ "Tram.h", "_tram_8h.html", "_tram_8h" ]
 ];
