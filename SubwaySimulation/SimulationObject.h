@@ -6,7 +6,7 @@
 // Description : Subway simulation in C++
 //============================================================================
 
-#import <string>
+#include <string>
 
 using namespace std;
 
