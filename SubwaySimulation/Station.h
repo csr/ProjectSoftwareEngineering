@@ -9,7 +9,7 @@
 #ifndef UNTITLED_STATION_H
 #define UNTITLED_STATION_H
 
-#import "SimulationObject.h"
+#include "SimulationObject.h"
 
 using namespace std;
 
