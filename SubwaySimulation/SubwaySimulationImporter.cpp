@@ -47,6 +47,8 @@ bool is_number(std::string string) {
 
 // Parse station given its root element
 Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
+  int maxChildrenCount = 4;
+
   // Edge case: if the station is empty return null
   if (root->NoChildren()) {
     return NULL;
@@ -64,7 +66,7 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
     childrenCount++;
   }
 
-  if (childrenCount != 4) {
+  if (childrenCount != maxChildrenCount) {
     return NULL;
   }
 
@@ -102,6 +104,8 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
 
 // Parse station given its root element
 Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
+  int maxChildrenCount = 4;
+
   // Edge case: if the tram is empty return null
   if (root->NoChildren()) {
     return NULL;
@@ -113,7 +117,7 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
     childrenCount++;
   }
 
-  if (childrenCount != 4) {
+  if (childrenCount != maxChildrenCount) {
     return NULL;
   }
 

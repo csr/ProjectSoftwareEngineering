@@ -88,5 +88,28 @@ TEST_F(SubwaySimulationInputTests, InputIllegalSimulations) {
     fileCounter = fileCounter + 1;
     fileName = "testInput/illegalSubway" + ToString(fileCounter) + ".xml";
   };
-  EXPECT_TRUE(fileCounter == 11);
+  EXPECT_TRUE(fileCounter == 12);
+}
+
+TEST_F(SubwaySimulationInputTests, InputPartialSimulations) {
+  ASSERT_TRUE(DirectoryExists("testInput"));
+
+  ofstream myfile;
+  SuccessEnum importResult;
+  int fileCounter = 1;
+  string fileName = "testInput/partialSubway" + ToString(fileCounter) + ".xml";
+  string errorfileName;
+
+  while (FileExists (fileName)) {
+    myfile.open("testInput/zzzError.txt");
+    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
+    myfile.close();
+    EXPECT_TRUE(importResult == PartialImport);
+    errorfileName = "testInput/partialSubway" + ToString(fileCounter) + ".txt";
+    EXPECT_TRUE(FileCompare("testInput/zzzError.txt", errorfileName));
+
+    fileCounter = fileCounter + 1;
+    fileName = "testInput/partialSubway" + ToString(fileCounter) + ".xml";
+  };
+  EXPECT_TRUE(fileCounter == 3);
 }

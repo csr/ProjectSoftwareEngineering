@@ -67,9 +67,9 @@ int getNumberOfSimulationSteps() {
 void runUserProgram() {
   ofstream errorFile, simpleOutputFile;
 
-  errorFile.open("userFiles/temporaryError.txt");
-
   string inputFileName = getInputFileName();
+  string errorFileDirectory = "userFiles/temporaryError.txt";
+
   int steps = getNumberOfSimulationSteps();
 
   cout << "Importing file with name " << inputFileName << "..." << endl;
@@ -77,25 +77,31 @@ void runUserProgram() {
   string simulationFileNameDirectory = "userFiles/" + inputFileName + ".txt";
 
   Subway subway = Subway();
+  errorFile.open(errorFileDirectory, std::ofstream::out | std::ofstream::trunc);
   SuccessEnum importResult = SubwaySimulationImporter::importSubway(inputFileNameDirectory.c_str(), errorFile, subway);
-
-  cout << "Running simulation for " << steps << " steps..." << endl;
 
   subway.computeAutomaticSimulation(steps, cout);
 
-  if (importResult == Success) {
-    string simpleOutputFileNameDirectory = "userFiles/" + inputFileName + ".txt";
-    simpleOutputFile.open(simpleOutputFileNameDirectory);
-    errorFile.open("userFiles/temporaryError.txt");
+  string simpleOutputFileNameDirectory = "userFiles/" + inputFileName + ".txt";
+
+  if (importResult == Success || importResult == PartialImport) {
+    simpleOutputFile.open(simpleOutputFileNameDirectory.c_str());
     simpleOutputFile << subway.toString();
-    cout << "Import successful. I saved the simple output in " << simpleOutputFileNameDirectory << endl;
   } else {
-    cout << "Something went wrong when importing the file. Error printed in userFiles/temporaryError." << endl;
+    cout << "Couldn't import file. Error printed in " << errorFileDirectory << endl;
+  }
+
+  if (importResult == Success) {
+    cout << "Import successful. I saved the simple output in " << simpleOutputFileNameDirectory << endl;
+  } else if (importResult == PartialImport) {
+    cout << "Import semi-successful. I saved the simple output in " << simpleOutputFileNameDirectory << endl;
+    cout << "Error(s) printed in " << errorFileDirectory << endl;
   }
 
   // Make sure we clean our subway simulation environment once we're done printing
   subway.clear();
 
+  simpleOutputFile.close();
   errorFile.close();
 }
 
