@@ -53,19 +53,19 @@ TramDirection Tram::getDirection() {
 void Tram::setLine(int line) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
   _line = line;
-  ENSURE(validIntegerAttribute(getLine()), "The number of a line is negative");
+  ENSURE(validIntegerAttribute(getLine()), "Tram line can't be negative");
 }
 
 void Tram::setCapacity(int capacity) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCapacity");
   _capacity = capacity;
-  ENSURE(validIntegerAttribute(getCapacity()), "Tram capacity is negative");
+  ENSURE(validIntegerAttribute(getCapacity()), "Tram capacity can't be negative");
 }
 
 void Tram::setSpeed(int speed) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
   _speed = speed;
-  ENSURE(validIntegerAttribute(getSpeed()), "Tram speed is negative");
+  ENSURE(validIntegerAttribute(getSpeed()), "Tram speed can't be negative");
 }
 
 void Tram::setStartStation(string startStation) {

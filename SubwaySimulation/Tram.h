@@ -75,7 +75,7 @@ class Tram: public SimulationObject {
   Setter for the line of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
   _line = line;
-  @note ENSURE(validIntegerAttribute(getLine()), "The number of a line is negative");
+  @note ENSURE(validIntegerAttribute(getLine()), "Tram line can't be negative");
   @param line Line of the Tram.
 */
   void setLine(int line);
@@ -84,7 +84,7 @@ class Tram: public SimulationObject {
   Setter for the capacity of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCapacity");
   _capacity = capacity;
-  @note ENSURE(validIntegerAttribute(getCapacity()), "Tram capacity is negative");
+  @note ENSURE(validIntegerAttribute(getCapacity()), "Tram capacity can't be negative");
   @param capacity Capacity of the Tram.
 */
   void setCapacity(int capacity);
@@ -92,7 +92,7 @@ class Tram: public SimulationObject {
 /**
   Setter for the speed of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
-  @note ENSURE(validIntegerAttribute(getSpeed()), "Tram speed is negative");
+  @note ENSURE(validIntegerAttribute(getSpeed()), "Tram speed can't be negative");
   @param speed Speed of the Tram.
 */
   void setSpeed(int speed);

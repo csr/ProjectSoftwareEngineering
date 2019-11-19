@@ -114,6 +114,13 @@ TEST_F(SubwaySimulationDomainTests, SubwayReset) {
 Verify whether unsatisfied pre-conditions indeed trigger failures
 */
 TEST_F(SubwaySimulationDomainTests, ContractViolations) {
-//  Station newStation = Station("A", "B", "C", 12);
-//  EXPECT_DEATH(newStation.setTrack(-10), "Assertion.*failed");
+  int negativeValue = -20;
+
+  Station newStation = Station("A", "B", "C", 12);
+  EXPECT_DEATH(newStation.setTrack(negativeValue), "Station track number can't be negative");
+
+  Tram newTram = Tram(10, 10, 10, "A");
+  EXPECT_DEATH(newTram.setSpeed(negativeValue), "Tram speed can't be negative");
+  EXPECT_DEATH(newTram.setCapacity(negativeValue), "Tram capacity can't be negative");
+  EXPECT_DEATH(newTram.setLine(negativeValue), "Tram line can't be negative");
 }

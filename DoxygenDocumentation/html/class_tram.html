@@ -377,7 +377,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Setter for the capacity of the <a class="el" href="class_tram.html">Tram</a>. </p>
 <dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Tram wasn't initialized when calling setCapacity"); _capacity = capacity; </dd>
 <dd>
-ENSURE(validIntegerAttribute(getCapacity()), "Tram capacity is negative"); </dd></dl>
+ENSURE(validIntegerAttribute(getCapacity()), "Tram capacity can't be negative"); </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">capacity</td><td>Capacity of the <a class="el" href="class_tram.html">Tram</a>. </td></tr>
@@ -435,7 +435,7 @@ ENSURE(validStringAttribute(getCurrentStation()), "Tram current station is empty
 <p>Setter for the line of the <a class="el" href="class_tram.html">Tram</a>. </p>
 <dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Tram wasn't initialized when calling setLine"); _line = line; </dd>
 <dd>
-ENSURE(validIntegerAttribute(getLine()), "The number of a line is negative"); </dd></dl>
+ENSURE(validIntegerAttribute(getLine()), "Tram line can't be negative"); </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">line</td><td>Line of the <a class="el" href="class_tram.html">Tram</a>. </td></tr>
@@ -464,7 +464,7 @@ ENSURE(validIntegerAttribute(getLine()), "The number of a line is negative"); </
 <p>Setter for the speed of the <a class="el" href="class_tram.html">Tram</a>. </p>
 <dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_simulation_object.html#a8bfd20c0d2b8004614e0674005133efa">properlyInitialized()</a>, "Tram wasn't initialized when calling setSpeed"); </dd>
 <dd>
-ENSURE(validIntegerAttribute(getSpeed()), "Tram speed is negative"); </dd></dl>
+ENSURE(validIntegerAttribute(getSpeed()), "Tram speed can't be negative"); </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">speed</td><td>Speed of the <a class="el" href="class_tram.html">Tram</a>. </td></tr>
