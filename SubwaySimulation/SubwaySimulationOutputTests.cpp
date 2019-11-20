@@ -94,18 +94,17 @@ TEST_F(SubwaySimulationOutputTests, PartialSubwaysOutput) {
 
     // The outputContainerFile will be passed as the "error" file to the import subway
     // If the import result is Success, there should be NO error output (an empty error file means everything was ok)
-    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), outputContainerFile, subway_);
+    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), errorFile, subway_);
 
     EXPECT_TRUE(importResult == PartialImport);
 
     // The outputContainerFile will also be used to dump the contents of subway_.toString()
-    outputContainerFile << fileName << endl;
     outputContainerFile << subway_.toString();
     outputContainerFile.close();
     errorFile.close();
 
     string expectedOutputFilename = "testOutput/partialSubwayOutput" + ToString(fileCounter) + ".txt";
-    EXPECT_TRUE(FileCompare("testOutput/temporaryOutput.txt", expectedOutputFile));
+    EXPECT_TRUE(FileCompare(expectedOutputFilename, "testOutput/temporaryOutput.txt"));
 
     fileCounter = fileCounter + 1;
     fileName = "testInput/partialSubway" + ToString(fileCounter) + ".xml";
