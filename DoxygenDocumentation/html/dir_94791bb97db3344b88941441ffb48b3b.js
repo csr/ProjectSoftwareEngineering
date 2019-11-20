@@ -1,10 +1,6 @@
 var dir_94791bb97db3344b88941441ffb48b3b =
 [
     [ "DesignByContract.h", "_design_by_contract_8h.html", "_design_by_contract_8h" ],
-    [ "SimulationObject.cpp", "_simulation_object_8cpp.html", null ],
-    [ "SimulationObject.h", "_simulation_object_8h.html", [
-      [ "SimulationObject", "class_simulation_object.html", "class_simulation_object" ]
-    ] ],
     [ "Station.cpp", "_station_8cpp.html", null ],
     [ "Station.h", "_station_8h.html", [
       [ "Station", "class_station.html", "class_station" ]

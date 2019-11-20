@@ -7,6 +7,7 @@ var class_tram =
     [ "getLine", "class_tram.html#a4a3587943efd6831f47ea7f3c3eacd5f", null ],
     [ "getSpeed", "class_tram.html#ad7f7d87b30e90fc884ad4fe2bd019e80", null ],
     [ "getStartStation", "class_tram.html#a92bde0ef27b1b80dd83a48fdd01efd89", null ],
+    [ "properlyInitialized", "class_tram.html#ac69cbbacaed7e1b9e60e608d766d02ee", null ],
     [ "setCapacity", "class_tram.html#a6a3c154de47b35baad5d28cd96b60ee6", null ],
     [ "setCurrentStation", "class_tram.html#a6518b2e21de7ca27dd345e20b2fbbce6", null ],
     [ "setLine", "class_tram.html#aa5458d62c010aca58cdf0ad3c850086f", null ],

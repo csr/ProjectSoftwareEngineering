@@ -10,6 +10,7 @@
 #include <fstream>
 #include <sys/stat.h>
 #include <gtest/gtest.h>
+#include <vector>
 using namespace std;
 
 #include "Subway.h"
@@ -36,7 +37,7 @@ TEST_F(SubwaySimulationDomainTests, DefaultConstructor) {
 Tests getter/setter of Station.
 */
 TEST_F(SubwaySimulationDomainTests, StationConstructor) {
-  string name = "Antwerpen-Centraal", next = "Antwerpen-Berchem", previous = "Roosendaal";
+  string name = "AntwerpenCentraal", next = "AntwerpenBerchem", previous = "Roosendaal";
   int track = 23;
   Station station = Station(name, next, previous, track);
   EXPECT_TRUE(station.properlyInitialized());
@@ -47,7 +48,7 @@ TEST_F(SubwaySimulationDomainTests, StationConstructor) {
   EXPECT_EQ(previous, station.getPrevious());
   EXPECT_EQ(track, station.getTrack());
 
-  string newName = "Milano-Centrale", newNext = "Milano-Garibaldi", newPrevious = "Milano-Cadorna";
+  string newName = "MilanoCentrale", newNext = "MilanoGaribaldi", newPrevious = "MilanoCadorna";
   int newTrack = 54;
 
   // Test setters
@@ -68,7 +69,7 @@ Tests getter/setter of Tram.
 TEST_F(SubwaySimulationDomainTests, TramConstructor) {
 //  Tram(int line, int capacity, int speed, string startStation)
   int line = 12, capacity = 24, speed = 59;
-  string startStation = "Antwerpen-Centraal";
+  string startStation = "AntwerpenCentraal";
   Tram tram = Tram(line, capacity, speed, startStation);
 
   // Test getters
@@ -78,7 +79,7 @@ TEST_F(SubwaySimulationDomainTests, TramConstructor) {
   EXPECT_EQ(startStation, tram.getStartStation());
 
   int newLine = 11, newCapacity = 304, newSpeed = 40;
-  string newStartStation = "Antwerpen-Berchem";
+  string newStartStation = "AntwerpenBerchem";
 
   // Test setters
   tram.setLine(newLine);
@@ -117,9 +118,24 @@ TEST_F(SubwaySimulationDomainTests, ContractViolations) {
   int negativeValue = -20;
 
   Station newStation = Station("A", "B", "C", 12);
-  EXPECT_DEATH(newStation.setTrack(negativeValue), "Station track number can't be negative");
-
   Tram newTram = Tram(10, 10, 10, "A");
+
+  vector<string> invalidStrings = {"", ".", " ", "-", "*", "Antwerpen Centraal"};
+
+  std::vector<std::string>::iterator it;
+
+  it = invalidStrings.begin();
+  for (it = invalidStrings.begin(); it < invalidStrings.end(); it++) {
+    string currentString = *it;
+    EXPECT_DEATH(newStation.setName(currentString), "Station name must be valid");
+    EXPECT_DEATH(newStation.setPrevious(currentString), "Previous station name must be valid");
+    EXPECT_DEATH(newStation.setNext(currentString), "Next station name must be valid");
+    EXPECT_DEATH(newTram.setCurrentStation(currentString), "Tram current station must be valid");
+    EXPECT_DEATH(newTram.setStartStation(currentString), "Tram start station must be valid");
+  }
+
+  // Test negative numbers
+  EXPECT_DEATH(newStation.setTrack(negativeValue), "Station track number can't be negative");
   EXPECT_DEATH(newTram.setSpeed(negativeValue), "Tram speed can't be negative");
   EXPECT_DEATH(newTram.setCapacity(negativeValue), "Tram capacity can't be negative");
   EXPECT_DEATH(newTram.setLine(negativeValue), "Tram line can't be negative");

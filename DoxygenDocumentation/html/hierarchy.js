@@ -1,9 +1,6 @@
 var hierarchy =
 [
-    [ "SimulationObject", "class_simulation_object.html", [
-      [ "Station", "class_station.html", null ],
-      [ "Tram", "class_tram.html", null ]
-    ] ],
+    [ "Station", "class_station.html", null ],
     [ "Subway", "class_subway.html", null ],
     [ "SubwaySimulationImporter", "class_subway_simulation_importer.html", null ],
     [ "Test", null, [
@@ -32,5 +29,6 @@ var hierarchy =
     ] ],
     [ "TiXmlVisitor", "class_ti_xml_visitor.html", [
       [ "TiXmlPrinter", "class_ti_xml_printer.html", null ]
-    ] ]
+    ] ],
+    [ "Tram", "class_tram.html", null ]
 ];

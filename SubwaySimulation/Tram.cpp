@@ -8,6 +8,7 @@
 
 #include "Tram.h"
 #include "DesignByContract.h"
+#include "SubwaySimulationUtils.h"
 
 Tram::Tram(int line, int capacity, int speed, string startStation) {
   _initCheck = this;
@@ -18,6 +19,10 @@ Tram::Tram(int line, int capacity, int speed, string startStation) {
   _currentStation = _startStation;
   _direction = Forward;
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+}
+
+bool Tram::properlyInitialized() {
+  return _initCheck == this;
 }
 
 int Tram::getLine() {
@@ -53,31 +58,31 @@ TramDirection Tram::getDirection() {
 void Tram::setLine(int line) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
   _line = line;
-  ENSURE(validIntegerAttribute(getLine()), "Tram line can't be negative");
+  ENSURE(ValidIntegerAttribute(getLine()), "Tram line can't be negative");
 }
 
 void Tram::setCapacity(int capacity) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCapacity");
   _capacity = capacity;
-  ENSURE(validIntegerAttribute(getCapacity()), "Tram capacity can't be negative");
+  ENSURE(ValidIntegerAttribute(getCapacity()), "Tram capacity can't be negative");
 }
 
 void Tram::setSpeed(int speed) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
   _speed = speed;
-  ENSURE(validIntegerAttribute(getSpeed()), "Tram speed can't be negative");
+  ENSURE(ValidIntegerAttribute(getSpeed()), "Tram speed can't be negative");
 }
 
 void Tram::setStartStation(string startStation) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setStartStation");
   _startStation = startStation;
-  ENSURE(validStringAttribute(getStartStation()), "Tram start station is empty");
+  ENSURE(ValidStringAttribute(getStartStation()), "Tram start station must be valid");
 }
 
 void Tram::setCurrentStation(string station) {
 	REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
 	_currentStation = station;
-	ENSURE(validStringAttribute(getCurrentStation()), "Tram current station is empty");
+	ENSURE(ValidStringAttribute(getCurrentStation()), "Tram current station must be valid");
 }
 
 void Tram::switchDirection() {

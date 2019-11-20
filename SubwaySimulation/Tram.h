@@ -9,13 +9,12 @@
 #ifndef UNTITLED_TRAM_H
 #define UNTITLED_TRAM_H
 #include <string>
-#include "SimulationObject.h"
 
-using  namespace std;
+using namespace std;
 
 enum TramDirection {Forward, Backward};
 
-class Tram: public SimulationObject {
+class Tram {
  public:
 
 /**
@@ -29,6 +28,7 @@ class Tram: public SimulationObject {
 */
   Tram(int line, int capacity, int speed, string startStation);
 
+  bool properlyInitialized();
 /**
   Getter for the line of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getLine");
@@ -108,7 +108,7 @@ class Tram: public SimulationObject {
 /**
   Setter for the current start Station name.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
-  @note ENSURE(validStringAttribute(getCurrentStation()), "Tram current station is empty");
+  @note ENSURE(validStringAttribute(getCurrentStation()), "Tram current station must be valid");
   @param station Start Station name.
 */
   void setCurrentStation(string station);
@@ -120,6 +120,7 @@ class Tram: public SimulationObject {
   void switchDirection();
 
  private:
+  Tram * _initCheck;
   int _line;
   int _capacity;
   int _speed;

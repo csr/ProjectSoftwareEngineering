@@ -11,6 +11,7 @@
 #include <sys/stat.h>
 #include <cstdio>
 #include <string>
+#include <regex>
 
 using namespace std;
 
@@ -83,4 +84,31 @@ string ToString( int x ) {
   string str( buf );
   delete[] buf;
   return str;
+}
+
+// Check if this string is made up of letters ONLY
+bool isLettersOnly(string string) {
+  for (unsigned int i = 0; i < string.size(); i++) {
+    char c = string[i];
+    if (!isalpha(c) || isdigit(c) || isspace(c)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// Check if a given string is a number
+bool IsStringNumber(std::string string) {
+  std::regex e ("^-?\\d+");
+  return std::regex_match(string, e);
+}
+
+// The current specs require all integers to be positive
+bool ValidIntegerAttribute(int value) {
+  return value >= 0;
+}
+
+// The current specs require all string to be non-empty
+bool ValidStringAttribute(string string) {
+  return !string.empty() && isLettersOnly(string);
 }

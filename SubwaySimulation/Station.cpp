@@ -9,6 +9,7 @@
 #include <iostream>
 #include "Station.h"
 #include "DesignByContract.h"
+#include "SubwaySimulationUtils.h"
 
 using namespace std;
 
@@ -19,6 +20,10 @@ Station::Station(string name, string next, string previous, int track) {
   setPrevious(previous);
   setTrack(track);
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+}
+
+bool Station::properlyInitialized() {
+  return _initCheck == this;
 }
 
 string Station::getName() {
@@ -44,23 +49,23 @@ int Station::getTrack() {
 void Station::setName(string name) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setName");
   _name = name;
-  ENSURE(validStringAttribute(getName()), "Station name can't be empty");
+  ENSURE(ValidStringAttribute(getName()), "Station name must be valid");
 }
 
 void Station::setNext(string next) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setNext");
   _next = next;
-  ENSURE(validStringAttribute(getNext()), "Next station name can't be empty");
+  ENSURE(ValidStringAttribute(getNext()), "Next station name must be valid");
 }
 
 void Station::setPrevious(string previous) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPrevious");
   _previous = previous;
-  ENSURE(validStringAttribute(getPrevious()), "Previous station name can't be empty");
+  ENSURE(ValidStringAttribute(getPrevious()), "Previous station name must be valid");
 }
 
 void Station::setTrack(int track) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTrack");
   _track = track;
-  ENSURE(validIntegerAttribute(getTrack()), "Station track number can't be negative");
+  ENSURE(ValidIntegerAttribute(getTrack()), "Station track number can't be negative");
 }

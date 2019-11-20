@@ -20,6 +20,20 @@ bool FileIsEmpty(const std::string filename);
 
 bool FileCompare(const std::string leftFileName, const std::string rightFileName);
 
+/**
+Checks if the attribute string is valid.
+@returns True if the string isn't empty.
+*/
+bool ValidStringAttribute(string string);
+
+/**
+  Checks if the attribute integer is valid.
+  @returns True if the value is positive.
+*/
+bool ValidIntegerAttribute(int value);
+
+bool IsStringNumber(std::string string);
+
 std::string ToString(int i);
 
 // Closing of the ``header guard''.

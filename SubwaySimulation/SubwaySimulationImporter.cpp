@@ -13,6 +13,7 @@
 #include <regex>
 
 #include "SubwaySimulationImporter.h"
+#include "SubwaySimulationUtils.h"
 #include "tinyxml.h"
 
 using namespace std;
@@ -26,23 +27,6 @@ const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
   TiXmlText* text = elemNode->ToText();
   if(text == NULL) return "";
   return text->Value();
-}
-
-// Check if this string is made up of letters ONLY
-bool is_letters_only(string string) {
-  for (unsigned int i = 0; i < string.size(); i++) {
-    char c = string[i];
-    if (!isalpha(c) || isdigit(c) || isspace(c)) {
-      return false;
-    }
-  }
-  return true;
-}
-
-// Check if a given string is a number
-bool is_number(std::string string) {
-    std::regex e ("^-?\\d+");
-    return std::regex_match(string, e);
 }
 
 // Parse station given its root element
@@ -79,20 +63,16 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
   string name = fetch_text(elem_name, errStream);
   string previous = fetch_text(elem_previous, errStream);
   string next = fetch_text(elem_next, errStream);
-  int track;
 
-  if (!is_letters_only(name) || !is_letters_only(previous) || !is_letters_only(next)) {
+  if (!ValidStringAttribute(name) || !ValidStringAttribute(previous) || !ValidStringAttribute(next)) {
     return NULL;
   }
 
+  int track;
   string trackStr = fetch_text(elem_track, errStream);
 
-  if (name.empty() || previous.empty() || next.empty() || trackStr.empty()) {
-    return NULL;
-  }
-
   // If the track is a number, then return station
-  if (is_number(trackStr)) {
+  if (IsStringNumber(trackStr)) {
     track = stoi(trackStr);
   } else {
     // Otherwise skip
@@ -137,7 +117,7 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
   int line, capacity, speed;
   string startStation = fetch_text(elem_startStation, errStream);
 
-  if (startStation.empty() || !is_letters_only(startStation)) {
+  if (!ValidStringAttribute(startStation)) {
     return NULL;
   }
 
@@ -145,19 +125,19 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
   string lineStr = fetch_text(elem_line, errStream);
   string speedStr = fetch_text(elem_speed, errStream);
 
-  if (is_number(capacityStr)) {
+  if (IsStringNumber(capacityStr)) {
     capacity = stoi(capacityStr);
   } else {
     return NULL;
   }
 
-  if (is_number(lineStr)) {
+  if (IsStringNumber(lineStr)) {
     line = stoi(lineStr);
   } else {
     return NULL;
   }
 
-  if (is_number(speedStr)) {
+  if (IsStringNumber(speedStr)) {
     speed = stoi(speedStr);
   } else {
     return NULL;

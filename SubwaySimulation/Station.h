@@ -9,11 +9,9 @@
 #ifndef UNTITLED_STATION_H
 #define UNTITLED_STATION_H
 
-#include "SimulationObject.h"
-
 using namespace std;
 
-class Station: public SimulationObject {
+class Station {
  public:
 
 /**
@@ -26,6 +24,7 @@ class Station: public SimulationObject {
 */
   Station(string name, string nextStation, string previousStation, int track);
 
+  bool properlyInitialized();
 /**
  Returns the Station name.
  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getName");
@@ -57,7 +56,7 @@ class Station: public SimulationObject {
 /**
   Setter for Station name.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setName");
-  @note ENSURE(validStringAttribute(getName()), "Station name can't be empty");
+  @note ENSURE(validStringAttribute(getName()), "Station name must be valid");
   @param name Name of Station name.
 */
   void setName(string name);
@@ -65,7 +64,7 @@ class Station: public SimulationObject {
 /**
   Setter for next Station name.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setNext");\n
-  @note ENSURE(validStringAttribute(getNext()), "Next station name can't be empty");
+  @note ENSURE(validStringAttribute(getNext()), "Next station name must be valid");
   @param next Name of next Station.
 */
   void setNext(string next);
@@ -73,7 +72,7 @@ class Station: public SimulationObject {
 /**
   Setter for previous Station name.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPrevious");\n
-  @note ENSURE(validStringAttribute(getPrevious()), "Previous station name can't be empty");
+  @note ENSURE(validStringAttribute(getPrevious()), "Previous station name must be valid");
   @param previous Name of previous Station.
 */
   void setPrevious(string previous);
@@ -87,6 +86,7 @@ class Station: public SimulationObject {
   void setTrack(int track);
 
  private:
+  Station * _initCheck;
   string _name;
   string _next;
   string _previous;

@@ -1,11 +1,14 @@
 var searchData=
 [
-  ['validintegerattribute_303',['validIntegerAttribute',['../class_simulation_object.html#a49ab1b5ee92f1c5f7ed47455fb03a49b',1,'SimulationObject']]],
-  ['validstringattribute_304',['validStringAttribute',['../class_simulation_object.html#a2946af2c574558e797f1d76225564477',1,'SimulationObject']]],
-  ['value_305',['Value',['../class_ti_xml_node.html#ad44dfe927d49a74dd78b72b7514417ad',1,'TiXmlNode::Value()'],['../class_ti_xml_attribute.html#ac9f0b56fcacbedb6eb49e5f282bef014',1,'TiXmlAttribute::Value()'],['../class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b',1,'TiXmlNode::value()']]],
-  ['valuetstr_306',['ValueTStr',['../class_ti_xml_node.html#a74c4ea4a91c0a91900c919f69f657d6a',1,'TiXmlNode']]],
-  ['version_307',['Version',['../class_ti_xml_declaration.html#a95cdcb9354ea220065bd378ffcacc7bd',1,'TiXmlDeclaration']]],
-  ['visit_308',['Visit',['../class_ti_xml_visitor.html#afad71c71ce6473fb9b4b64cd92de4a19',1,'TiXmlVisitor::Visit(const TiXmlDeclaration &amp;)'],['../class_ti_xml_visitor.html#a399b8ebca5cd14664974a32d2ce029e5',1,'TiXmlVisitor::Visit(const TiXmlText &amp;)'],['../class_ti_xml_visitor.html#a53a60e7a528627b31af3161972cc7fa2',1,'TiXmlVisitor::Visit(const TiXmlComment &amp;)'],['../class_ti_xml_visitor.html#a7e284d607d275c51dac1adb58159ce28',1,'TiXmlVisitor::Visit(const TiXmlUnknown &amp;)'],['../class_ti_xml_printer.html#adaf7eec4dc43ad071ff52b60361574f5',1,'TiXmlPrinter::Visit(const TiXmlDeclaration &amp;declaration)'],['../class_ti_xml_printer.html#a0857c5d32c59b9a257f9a49cb9411df5',1,'TiXmlPrinter::Visit(const TiXmlText &amp;text)'],['../class_ti_xml_printer.html#a9870423f5603630e6142f6bdb66dfb57',1,'TiXmlPrinter::Visit(const TiXmlComment &amp;comment)'],['../class_ti_xml_printer.html#a08591a15c9a07afa83c24e08b03d6358',1,'TiXmlPrinter::Visit(const TiXmlUnknown &amp;unknown)']]],
-  ['visitenter_309',['VisitEnter',['../class_ti_xml_visitor.html#a07baecb52dd7d8716ae2a48ad0956ee0',1,'TiXmlVisitor::VisitEnter(const TiXmlDocument &amp;)'],['../class_ti_xml_visitor.html#af6c6178ffa517bbdba95d70490875fff',1,'TiXmlVisitor::VisitEnter(const TiXmlElement &amp;, const TiXmlAttribute *)'],['../class_ti_xml_printer.html#a2ec73087db26ff4d2c4316c56f861db7',1,'TiXmlPrinter::VisitEnter(const TiXmlDocument &amp;doc)'],['../class_ti_xml_printer.html#a6dccaf5ee4979f13877690afe28721e8',1,'TiXmlPrinter::VisitEnter(const TiXmlElement &amp;element, const TiXmlAttribute *firstAttribute)']]],
-  ['visitexit_310',['VisitExit',['../class_ti_xml_visitor.html#aa0ade4f27087447e93974e975c3246ad',1,'TiXmlVisitor::VisitExit(const TiXmlDocument &amp;)'],['../class_ti_xml_visitor.html#aec2b1f8116226d52f3a1b95dafd3a32c',1,'TiXmlVisitor::VisitExit(const TiXmlElement &amp;)'],['../class_ti_xml_printer.html#a0a636046fa589b6d7f3e5bd025b3f33e',1,'TiXmlPrinter::VisitExit(const TiXmlDocument &amp;doc)'],['../class_ti_xml_printer.html#ae6a1df8271df4bf62d7873c38e34aa69',1,'TiXmlPrinter::VisitExit(const TiXmlElement &amp;element)']]]
+  ['_7etixmlattributeset_309',['~TiXmlAttributeSet',['../class_ti_xml_attribute_set.html#add463905dff96142a29fe16a01ecf28f',1,'TiXmlAttributeSet']]],
+  ['_7etixmlbase_310',['~TiXmlBase',['../class_ti_xml_base.html#ad1837ecb25a913612fa1115f090cbb56',1,'TiXmlBase']]],
+  ['_7etixmlcomment_311',['~TiXmlComment',['../class_ti_xml_comment.html#a3264ae2e9c4a127edfa03289bb2c9aa2',1,'TiXmlComment']]],
+  ['_7etixmldeclaration_312',['~TiXmlDeclaration',['../class_ti_xml_declaration.html#ad5f37a673f4c507fd7e550470f9cec25',1,'TiXmlDeclaration']]],
+  ['_7etixmldocument_313',['~TiXmlDocument',['../class_ti_xml_document.html#a1b8a035c2c2aab38e4387246a0b712c5',1,'TiXmlDocument']]],
+  ['_7etixmlelement_314',['~TiXmlElement',['../class_ti_xml_element.html#aa049a47c5081c0d021968666360da261',1,'TiXmlElement']]],
+  ['_7etixmlnode_315',['~TiXmlNode',['../class_ti_xml_node.html#a027a76cccd359c831ee4024b58c49625',1,'TiXmlNode']]],
+  ['_7etixmlstring_316',['~TiXmlString',['../class_ti_xml_string.html#a7ac03f581ca3422c4808162ab14f3450',1,'TiXmlString']]],
+  ['_7etixmltext_317',['~TiXmlText',['../class_ti_xml_text.html#a829a4bd2d8d2461c333eb4f3f5b1b3d2',1,'TiXmlText']]],
+  ['_7etixmlunknown_318',['~TiXmlUnknown',['../class_ti_xml_unknown.html#ac21966c3b551553d760b4a339c9acda0',1,'TiXmlUnknown']]],
+  ['_7etixmlvisitor_319',['~TiXmlVisitor',['../class_ti_xml_visitor.html#a276c739ec4701f27c3f86b8ead095e5a',1,'TiXmlVisitor']]]
 ];

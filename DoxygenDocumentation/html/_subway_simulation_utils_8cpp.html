@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('_subway_simulation_utils_8cpp.html',''
 <code>#include &lt;sys/stat.h&gt;</code><br />
 <code>#include &lt;cstdio&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;regex&gt;</code><br />
 <code>#include &quot;<a class="el" href="_subway_simulation_utils_8h_source.html">SubwaySimulationUtils.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -123,6 +124,16 @@ Functions</h2></td></tr>
 <tr class="separator:a7e429f636217210c61bb4f2cdfe74871"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42bab1f342fce3280ec0cee8f3e88125"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_utils_8cpp.html#a42bab1f342fce3280ec0cee8f3e88125">ToString</a> (int x)</td></tr>
 <tr class="separator:a42bab1f342fce3280ec0cee8f3e88125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9de2c9552e31ad81f4f83aec1868857a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_utils_8cpp.html#a9de2c9552e31ad81f4f83aec1868857a">isLettersOnly</a> (string string)</td></tr>
+<tr class="separator:a9de2c9552e31ad81f4f83aec1868857a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11ffad870cd1b0c27365aa62e260e62f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_utils_8cpp.html#a11ffad870cd1b0c27365aa62e260e62f">IsNumber</a> (std::string string)</td></tr>
+<tr class="separator:a11ffad870cd1b0c27365aa62e260e62f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27c67fdc9af6dde772542fade1820098"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_utils_8cpp.html#a27c67fdc9af6dde772542fade1820098">ValidIntegerAttribute</a> (int value)</td></tr>
+<tr class="memdesc:a27c67fdc9af6dde772542fade1820098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the attribute integer is valid.  <a href="_subway_simulation_utils_8cpp.html#a27c67fdc9af6dde772542fade1820098">More...</a><br /></td></tr>
+<tr class="separator:a27c67fdc9af6dde772542fade1820098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b0c990329bab2fca5757872a70ac205"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_utils_8cpp.html#a8b0c990329bab2fca5757872a70ac205">ValidStringAttribute</a> (string string)</td></tr>
+<tr class="memdesc:a8b0c990329bab2fca5757872a70ac205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the attribute string is valid.  <a href="_subway_simulation_utils_8cpp.html#a8b0c990329bab2fca5757872a70ac205">More...</a><br /></td></tr>
+<tr class="separator:a8b0c990329bab2fca5757872a70ac205"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a20aa51a3c6e35cb8af1d6d45efd6c71b"></a>
@@ -209,6 +220,42 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a9de2c9552e31ad81f4f83aec1868857a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9de2c9552e31ad81f4f83aec1868857a">&#9670;&nbsp;</a></span>isLettersOnly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isLettersOnly </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a11ffad870cd1b0c27365aa62e260e62f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11ffad870cd1b0c27365aa62e260e62f">&#9670;&nbsp;</a></span>IsNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool IsNumber </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a42bab1f342fce3280ec0cee8f3e88125"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a42bab1f342fce3280ec0cee8f3e88125">&#9670;&nbsp;</a></span>ToString()</h2>
 
@@ -224,6 +271,48 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27c67fdc9af6dde772542fade1820098"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27c67fdc9af6dde772542fade1820098">&#9670;&nbsp;</a></span>ValidIntegerAttribute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ValidIntegerAttribute </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the attribute integer is valid. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the value is positive. </dd></dl>
+
+</div>
+</div>
+<a id="a8b0c990329bab2fca5757872a70ac205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b0c990329bab2fca5757872a70ac205">&#9670;&nbsp;</a></span>ValidStringAttribute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ValidStringAttribute </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the attribute string is valid. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the string isn't empty. </dd></dl>
 
 </div>
 </div>
