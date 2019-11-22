@@ -68,6 +68,7 @@ class Subway {
 /**
   Getter that returns number of stations in the Subway simulation.
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
+  @note ENSURE(ValidIntegerAttribute(size), "Stations count can't be negative");
   @returns Number of stations.
 */
   int getStationsCount();
@@ -75,17 +76,18 @@ class Subway {
 /**
   Getter that returns number of trams in the Subway simulation.
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
+  @note ENSURE(ValidIntegerAttribute(size), "Trams count can't be negative");
   @returns Number of trams.
 */
   int getTramsCount();
 
 /**
   Empties the contents of the Subway simulation.
-  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling clear");
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling reset");
   @note ENSURE(this->getTramsCount() == 0, "Trams array must be cleared");
   @note ENSURE(this->getStationsCount() == 0, "Stations map must be cleared");
 */
-  void clear();
+  void reset();
 
  private:
   Subway * _initCheck; //!use pointer to myself to verify whether I am properly initialized

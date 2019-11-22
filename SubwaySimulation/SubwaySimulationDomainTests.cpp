@@ -105,7 +105,7 @@ TEST_F(SubwaySimulationDomainTests, SubwayReset) {
   EXPECT_EQ(2, subway_.getStationsCount());
   EXPECT_EQ(1, subway_.getTramsCount());
 
-  subway_.clear();
+  subway_.reset();
 
   EXPECT_EQ(0, subway_.getStationsCount());
   EXPECT_EQ(0, subway_.getTramsCount());

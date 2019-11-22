@@ -100,7 +100,7 @@ void runUserProgram() {
   }
 
   // Make sure we clean our subway simulation environment once we're done printing
-  subway.clear();
+  subway.reset();
 
   simpleOutputFile.close();
   errorFile.close();

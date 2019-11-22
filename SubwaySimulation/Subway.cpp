@@ -13,6 +13,7 @@
 #include "Tram.h"
 #include "Subway.h"
 #include "DesignByContract.h"
+#include "SubwaySimulationUtils.h"
 
 using namespace std;
 
@@ -51,12 +52,18 @@ void Subway::importData(vector<Station*> stations, vector<Tram*> trams) {
 
 int Subway::getTramsCount() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
-  return _tramsMap.size();
+  int size = _tramsMap.size();
+  // TO CHECK - get this checked by Prof. Brent
+  ENSURE(ValidIntegerAttribute(size), "Trams count can't be negative");
+  return size;
 }
 
 int Subway::getStationsCount() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
-  return _stationsMap.size();
+  int size = _stationsMap.size();
+  // TO CHECK - get this checked by Prof. Brent
+  ENSURE(ValidIntegerAttribute(size), "Stations count can't be negative");
+  return size;
 }
 
 string Subway::toString() {
@@ -81,8 +88,8 @@ string Subway::toString() {
     return outputString;
 }
 
-void Subway::clear() {
-  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling clear");
+void Subway::reset() {
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling reset");
   _stationsArray.clear();
   _tramsArray.clear();
   _stationsMap.clear();
