@@ -74,8 +74,8 @@ class Tram {
 /**
   Setter for the line of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
-  _line = line;
-  @note ENSURE(validIntegerAttribute(getLine()), "Tram line can't be negative");
+  @note ENSURE(ValidIntegerAttribute(getLine()), "Tram line can't be negative");
+  @note ENSURE(line == getLine(), "Tram line was not set correctly");
   @param line Line of the Tram.
 */
   void setLine(int line);
@@ -83,8 +83,8 @@ class Tram {
 /**
   Setter for the capacity of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCapacity");
-  _capacity = capacity;
-  @note ENSURE(validIntegerAttribute(getCapacity()), "Tram capacity can't be negative");
+  @note ENSURE(ValidIntegerAttribute(getCapacity()), "Tram capacity can't be negative");
+  @note ENSURE(capacity == getCapacity(), "Tram capacity was not set correctly");
   @param capacity Capacity of the Tram.
 */
   void setCapacity(int capacity);
@@ -92,7 +92,8 @@ class Tram {
 /**
   Setter for the speed of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
-  @note ENSURE(validIntegerAttribute(getSpeed()), "Tram speed can't be negative");
+  @note ENSURE(ValidIntegerAttribute(getSpeed()), "Tram speed can't be negative");
+  @note ENSURE(speed == getSpeed(), "Tram speed was not set correctly");
   @param speed Speed of the Tram.
 */
   void setSpeed(int speed);
@@ -100,7 +101,8 @@ class Tram {
 /**
   Setter for the start Station name.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setStartStation");
-  @note ENSURE(validStringAttribute(getStartStation()), "Tram start station is empty");
+  @note ENSURE(ValidStringAttribute(getStartStation()), "Tram start station must be valid");
+  @note ENSURE(startStation == getStartStation(), "Tram start station was not set correctly");
   @param startStaton Start Station name of the Tram.
 */
   void setStartStation(string startStation);
@@ -108,13 +110,15 @@ class Tram {
 /**
   Setter for the current start Station name.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
-  @note ENSURE(validStringAttribute(getCurrentStation()), "Tram current station must be valid");
+  @note ENSURE(ValidStringAttribute(getCurrentStation()), "Tram current station must be valid");
+  @note ENSURE(station == getCurrentStation(), "Tram current station was not set correctly");
   @param station Start Station name.
 */
   void setCurrentStation(string station);
 
 /**
   Switches the direction of the Tram. E.g. Forward becomes Backward, and viceversa.
+  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling switchDirection");
   @note ENSURE(previousDirection != this->getDirection(), "Tram direction must be valid");
 */
   void switchDirection();

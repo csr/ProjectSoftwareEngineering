@@ -56,31 +56,35 @@ class Station {
 /**
   Setter for Station name.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setName");
-  @note ENSURE(validStringAttribute(getName()), "Station name must be valid");
+  @note ENSURE(ValidStringAttribute(getName()), "Station name must be valid");
+  @note ENSURE(getName() == name, "Station name was not set correctly");
   @param name Name of Station name.
 */
   void setName(string name);
 
 /**
   Setter for next Station name.
-  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setNext");\n
-  @note ENSURE(validStringAttribute(getNext()), "Next station name must be valid");
+  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setNext");
+  @note ENSURE(ValidStringAttribute(getNext()), "Next station name must be valid");
+  @note ENSURE(getNext() == next, "Station next station was not set correctly");
   @param next Name of next Station.
 */
   void setNext(string next);
 
 /**
   Setter for previous Station name.
-  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPrevious");\n
-  @note ENSURE(validStringAttribute(getPrevious()), "Previous station name must be valid");
+  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPrevious");
+  @note ENSURE(ValidStringAttribute(getPrevious()), "Previous station name must be valid");
+  @note ENSURE(getPrevious() == previous, "Station previous station was not set correctly");
   @param previous Name of previous Station.
 */
   void setPrevious(string previous);
 
 /**
   Setter for Station track.
-  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTrack");\n
-  @note ENSURE(validIntegerAttribute(getTrack()), "Station track number can't be negative");
+  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTrack");
+  @note ENSURE(ValidIntegerAttribute(getTrack()), "Station track number can't be negative");
+  @note ENSURE(getTrack() == track, "Station track number was not set correctly");
   @param track Station track.
 */
   void setTrack(int track);

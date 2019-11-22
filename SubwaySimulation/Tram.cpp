@@ -59,30 +59,35 @@ void Tram::setLine(int line) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
   _line = line;
   ENSURE(ValidIntegerAttribute(getLine()), "Tram line can't be negative");
+  ENSURE(line == getLine(), "Tram line was not set correctly");
 }
 
 void Tram::setCapacity(int capacity) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCapacity");
   _capacity = capacity;
   ENSURE(ValidIntegerAttribute(getCapacity()), "Tram capacity can't be negative");
+  ENSURE(capacity == getCapacity(), "Tram capacity was not set correctly");
 }
 
 void Tram::setSpeed(int speed) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
   _speed = speed;
   ENSURE(ValidIntegerAttribute(getSpeed()), "Tram speed can't be negative");
+  ENSURE(speed == getSpeed(), "Tram speed was not set correctly");
 }
 
 void Tram::setStartStation(string startStation) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setStartStation");
   _startStation = startStation;
   ENSURE(ValidStringAttribute(getStartStation()), "Tram start station must be valid");
+  ENSURE(startStation == getStartStation(), "Tram start station was not set correctly");
 }
 
 void Tram::setCurrentStation(string station) {
-	REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
-	_currentStation = station;
-	ENSURE(ValidStringAttribute(getCurrentStation()), "Tram current station must be valid");
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
+  _currentStation = station;
+  ENSURE(ValidStringAttribute(getCurrentStation()), "Tram current station must be valid");
+  ENSURE(station == getCurrentStation(), "Tram current station was not set correctly");
 }
 
 void Tram::switchDirection() {

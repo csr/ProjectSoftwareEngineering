@@ -50,22 +50,26 @@ void Station::setName(string name) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setName");
   _name = name;
   ENSURE(ValidStringAttribute(getName()), "Station name must be valid");
+  ENSURE(getName() == name, "Station name was not set correctly");
 }
 
 void Station::setNext(string next) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setNext");
   _next = next;
   ENSURE(ValidStringAttribute(getNext()), "Next station name must be valid");
+  ENSURE(getNext() == next, "Station next station was not set correctly");
 }
 
 void Station::setPrevious(string previous) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPrevious");
   _previous = previous;
   ENSURE(ValidStringAttribute(getPrevious()), "Previous station name must be valid");
+  ENSURE(getPrevious() == previous, "Station previous station was not set correctly");
 }
 
 void Station::setTrack(int track) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTrack");
   _track = track;
   ENSURE(ValidIntegerAttribute(getTrack()), "Station track number can't be negative");
+  ENSURE(getTrack() == track, "Station track number was not set correctly");
 }
