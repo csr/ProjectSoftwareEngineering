@@ -12,13 +12,15 @@
 
 Tram::Tram(int line, int capacity, int speed, string startStation) {
   _initCheck = this;
-  _line = line;
-  _capacity = capacity;
-  _speed = speed;
-  _startStation = startStation;
-  _currentStation = _startStation;
-  _direction = Forward;
-  ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+  setLine(line);
+  setCapacity(capacity);
+  setSpeed(speed);
+  setStartStationName(startStation);
+
+  ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
+  ENSURE(capacity == getCapacity(), "Capacity wasn't set correctly in constructor");
+  ENSURE(speed == getSpeed(), "Speed wasn't set correctly in constructor");
+  ENSURE(startStation == getStartStationName(), "Start station wasn't set correctly in constructor");
 }
 
 bool Tram::properlyInitialized() {
@@ -40,19 +42,24 @@ int Tram::getSpeed() {
   return _speed;
 }
 
-string Tram::getStartStation() {
+Station* Tram::getStartStation() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStation");
   return _startStation;
 }
 
-string Tram::getCurrentStation() {
+Station* Tram::getCurrentStation() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
   return _currentStation;
 }
 
-TramDirection Tram::getDirection() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getDirection");
-  return _direction;
+string Tram::getStartStationName() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStationName");
+  return _startStationName;
+}
+
+string Tram::getCurrentStationName() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStationName");
+  return _currentStationName;
 }
 
 void Tram::setLine(int line) {
@@ -76,23 +83,33 @@ void Tram::setSpeed(int speed) {
   ENSURE(speed == getSpeed(), "Tram speed was not set correctly");
 }
 
-void Tram::setStartStation(string startStation) {
+void Tram::setStartStation(Station *startStation) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setStartStation");
   _startStation = startStation;
-  ENSURE(ValidStringAttribute(getStartStation()), "Tram start station must be valid");
   ENSURE(startStation == getStartStation(), "Tram start station was not set correctly");
 }
 
-void Tram::setCurrentStation(string station) {
+void Tram::setCurrentStation(Station *station) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
   _currentStation = station;
-  ENSURE(ValidStringAttribute(getCurrentStation()), "Tram current station must be valid");
   ENSURE(station == getCurrentStation(), "Tram current station was not set correctly");
 }
 
-void Tram::switchDirection() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling switchDirection");
-  TramDirection previousDirection = this->getDirection();
-  _direction = _direction == Forward ? Backward : Forward;
-  ENSURE(previousDirection != this->getDirection(), "Tram direction must be valid");
+void Tram::setStartStationName(string startStation) {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStation");
+  _startStationName = startStation;
+  ENSURE(startStation == getStartStationName(), "Tram start station name was not set correctly");
+}
+
+void Tram::setCurrentStationName(string currentStation) {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStationName");
+  _currentStationName = currentStation;
+  ENSURE(currentStation == getCurrentStationName(), "Tram current station name was not set correctly");
+}
+
+void Tram::move() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
+  Station *currentStation = this->getCurrentStation();
+  Station *nextStation = currentStation->getNext();
+  this->setCurrentStation(nextStation);
 }

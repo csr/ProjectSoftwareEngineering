@@ -14,9 +14,12 @@
 
 #include "SubwaySimulationImporter.h"
 #include "SubwaySimulationUtils.h"
+#include "Station.h"
 #include "tinyxml.h"
 
 using namespace std;
+
+int maxChildrenCount = 4;
 
 // Auxiliary function for internal use only
 const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
@@ -31,8 +34,6 @@ const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
 
 // Parse station given its root element
 Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
-  int maxChildrenCount = 4;
-
   // Edge case: if the station is empty return null
   if (root->NoChildren()) {
     return NULL;
@@ -84,8 +85,6 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
 
 // Parse station given its root element
 Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
-  int maxChildrenCount = 4;
-
   // Edge case: if the tram is empty return null
   if (root->NoChildren()) {
     return NULL;
@@ -181,8 +180,8 @@ bool check_prev_next_track_tram(unordered_map<string, Station*> stations, unorde
   unordered_map<string, Station*>::iterator it;
   for (it = stations.begin(); it != stations.end() && is_ok; it++) {
     Station *station = it->second;
-    string next = station->getNext();
-    string prev = station->getPrevious();
+    string next = station->getNextName();
+    string prev = station->getPreviousName();
     int track = station->getTrack();
 
     // check if each track has exactly one tram: it counts how many trams have line == track
@@ -225,7 +224,7 @@ bool check_line_track(unordered_map<int, Tram *> trams, unordered_map<string, St
     int line = tram->getLine();
     // for debug
     // cout << "Line " << line << endl;
-    string startStation = tram->getStartStation();
+    string startStation = tram->getStartStationName();
     // for debug
     // cout << "StartStation " << startStation << endl;
     unordered_map<string, Station*>::iterator it1;
@@ -338,6 +337,32 @@ SuccessEnum SubwaySimulationImporter::importSubway(
   if (!line_track) {
     errStream << "XML IMPORT ABORTED: the lines don't correspond to the tracks" << endl;
     return ImportAborted;
+  }
+
+  // Link objects
+  // Transform station names into Station pointers
+  std::vector<Station*>::iterator stationIterator;
+  stationIterator = stationsArray.begin();
+  for (stationIterator = stationsArray.begin(); stationIterator < stationsArray.end(); stationIterator++) {
+    Station *currentStation = *stationIterator;
+    string nextStationName = currentStation->getNextName();
+    string previousStationName = currentStation->getPreviousName();
+
+    Station *nextStation = stations[nextStationName];
+    Station *previousStation = stations[previousStationName];
+
+    currentStation->setNext(nextStation);
+    currentStation->setPrevious(previousStation);
+  }
+
+  // Transform station names into Station pointers
+  std::vector<Tram*>::iterator tramIterator;
+  tramIterator = tramsArray.begin();
+  for (tramIterator = tramsArray.begin(); tramIterator < tramsArray.end(); tramIterator++) {
+    Tram *currentTram = *tramIterator;
+    string startStationName = currentTram->getStartStationName();
+    Station *startStation = stations[startStationName];
+    currentTram->setStartStation(startStation);
   }
 
   subway.importData(stationsArray, tramsArray);

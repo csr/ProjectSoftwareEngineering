@@ -72,14 +72,14 @@ string Subway::toString() {
   string outputString = "";
     for (auto & station : this->_stationsArray) {
       outputString = outputString + "Station " + station->getName() + "\n" +
-             "<- Station " + station->getPrevious() + "\n" +
-             "-> Station " + station->getNext() + "\n" +
+             "<- Station " + station->getPrevious()->getName() + "\n" +
+             "-> Station " + station->getNext()->getName() + "\n" +
              "Track " + to_string(station->getTrack());
 
         // If there's a tram associated to the track, print capacity
         if (this->_tramsMap.count(station->getTrack())) {
             Tram *tram = this->_tramsMap[station->getTrack()];
-            if (tram->getStartStation() == station->getName()) {
+            if (tram->getStartStation()->getName() == station->getName()) {
               outputString = outputString + ": Tram with " + to_string(tram->getCapacity()) + " seats";
             }
         }
@@ -111,28 +111,10 @@ void Subway::computeAutomaticSimulation(int steps, ostream& outputStream) {
 void Subway::moveTramsOnce(ostream& outputStream) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
   for (auto tram : this->_tramsArray) {
-    string currentStationName = tram->getCurrentStation();
-    Station *currentStation = _stationsMap[currentStationName];
-    string nextStationName = currentStation->getNext();
-    string previousStationName = currentStation->getPrevious();
-    string nextState;
-    if (nextStationName == tram->getStartStation() && tram->getDirection() == Forward) {
-      // Edge case: reaching the end of the line
-      tram->switchDirection();
-      nextState = previousStationName; 
-    } else if (currentStationName == tram->getStartStation() && tram->getDirection() == Backward) {
-      // Edge case: reaching the start of the line
-      tram->switchDirection();
-      nextState = nextStationName;
-    } else if (tram->getDirection() == Forward) {
-      nextState = nextStationName;
-    } else if (tram->getDirection() == Backward) {
-      nextState = previousStationName;
-    }
 
-    tram->setCurrentStation(nextState);
-    outputStream << "Tram " << tram->getLine() << " moved from station " << currentStationName <<
-                 " to station " << nextState << endl;
-    ENSURE(tram->getCurrentStation() == nextState, "Tram didn't move from its starting position");
+    tram->move();
+//    outputStream << "Tram " << tram->getLine() << " moved from station " << currentStationName <<
+//                 " to station " << nextState << endl;
+//    ENSURE(tram->getCurrentStation() == nextState, "Tram didn't move from its starting position");
   }
 }

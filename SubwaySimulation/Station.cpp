@@ -16,8 +16,8 @@ using namespace std;
 Station::Station(string name, string next, string previous, int track) {
   _initCheck = this;
   setName(name);
-  setNext(next);
-  setPrevious(previous);
+  setNextName(next);
+  setPreviousName(previous);
   setTrack(track);
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
@@ -31,14 +31,24 @@ string Station::getName() {
   return _name;
 }
 
-string Station::getNext() {
+Station* Station::getNext() {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getNext");
   return _next;
 }
 
-string Station::getPrevious() {
+Station* Station::getPrevious() {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getPrevious");
   return _previous;
+}
+
+string Station::getNextName() {
+  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getNextName");
+  return _nextName;
+}
+
+string Station::getPreviousName() {
+  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getPreviousName");
+  return _previousName;
 }
 
 int Station::getTrack() {
@@ -53,18 +63,30 @@ void Station::setName(string name) {
   ENSURE(getName() == name, "Station name was not set correctly");
 }
 
-void Station::setNext(string next) {
+void Station::setNext(Station* next) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setNext");
   _next = next;
-  ENSURE(ValidStringAttribute(getNext()), "Next station name must be valid");
   ENSURE(getNext() == next, "Station next station was not set correctly");
 }
 
-void Station::setPrevious(string previous) {
+void Station::setPrevious(Station* previous) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPrevious");
   _previous = previous;
-  ENSURE(ValidStringAttribute(getPrevious()), "Previous station name must be valid");
   ENSURE(getPrevious() == previous, "Station previous station was not set correctly");
+}
+
+void Station::setNextName(string next) {
+  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setNextName");
+  _nextName = next;
+  ENSURE(ValidStringAttribute(getNextName()), "Station next name must be valid");
+  ENSURE(getNextName() == _nextName, "Station next station name was not set correctly");
+}
+
+void Station::setPreviousName(string previous) {
+  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPreviousName");
+  _previousName = previous;
+  ENSURE(ValidStringAttribute(getPreviousName()), "Station next name must be valid");
+  ENSURE(getPreviousName() == _previousName, "Station previous station name was not set correctly");
 }
 
 void Station::setTrack(int track) {

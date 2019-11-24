@@ -9,10 +9,9 @@
 #ifndef UNTITLED_TRAM_H
 #define UNTITLED_TRAM_H
 #include <string>
+#include "Station.h"
 
 using namespace std;
-
-enum TramDirection {Forward, Backward};
 
 class Tram {
  public:
@@ -20,10 +19,14 @@ class Tram {
 /**
  Constructs a Tram class with line, capacity, speed, and start Station name.
  @note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+ @note ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
+ @note ENSURE(capacity == getCapacity(), "Capacity wasn't set correctly in constructor");
+ @note ENSURE(speed = getSpeed(), "Speed wasn't set correctly in constructor");
+ @note ENSURE(startStation = getStartStationName(), "Start station wasn't set correctly in constructor");
  @param line Line of the Tram.
  @param next Capacity of the Tram.
  @param speed Speed of the Tram.
- @param startStation Start Station name of the Tram.
+ @param startStation Start Station of the Tram.
  @returns An instance of Tram.
 */
   Tram(int line, int capacity, int speed, string startStation);
@@ -53,23 +56,20 @@ class Tram {
 /**
   Getter for the start Station of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStation");
-  @returns Start Station name of the Tram.
+  @returns Start Station of the Tram.
 */
-  string getStartStation();
+  Station* getStartStation();
 
 /**
   Getter for the current Station name of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
-  @returns Name of the current Station the tram is at.
+  @returns Current Station the tram is at.
 */
-  string getCurrentStation();
+  Station* getCurrentStation();
 
-/**
-  Getter for the Tram direction.
-  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getDirection");
-  @returns The direction the tram is travelling at.
-*/
-  TramDirection getDirection();
+  string getStartStationName();
+
+  string getCurrentStationName();
 
 /**
   Setter for the line of the Tram.
@@ -103,34 +103,34 @@ class Tram {
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setStartStation");
   @note ENSURE(ValidStringAttribute(getStartStation()), "Tram start station must be valid");
   @note ENSURE(startStation == getStartStation(), "Tram start station was not set correctly");
-  @param startStaton Start Station name of the Tram.
+  @param startStaton Start Station of the Tram.
 */
-  void setStartStation(string startStation);
+  void setStartStation(Station *station);
 
 /**
   Setter for the current start Station name.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
   @note ENSURE(ValidStringAttribute(getCurrentStation()), "Tram current station must be valid");
   @note ENSURE(station == getCurrentStation(), "Tram current station was not set correctly");
-  @param station Start Station name.
+  @param station Start Station.
 */
-  void setCurrentStation(string station);
+  void setCurrentStation(Station *station);
 
-/**
-  Switches the direction of the Tram. E.g. Forward becomes Backward, and viceversa.
-  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling switchDirection");
-  @note ENSURE(previousDirection != this->getDirection(), "Tram direction must be valid");
-*/
-  void switchDirection();
+  void setStartStationName(string startStation);
+
+  void setCurrentStationName(string currentStation);
+
+  void move();
 
  private:
   Tram * _initCheck;
   int _line;
   int _capacity;
   int _speed;
-  string _startStation;
-  string _currentStation;
-  TramDirection _direction;
+  Station* _startStation;
+  Station* _currentStation;
+  string _startStationName;
+  string _currentStationName;
 };
 
 #endif //UNTITLED_TRAM_H

@@ -13,13 +13,12 @@ using namespace std;
 
 class Station {
  public:
-
 /**
- Constructs a Station class with name, next station, previous station, and track.
+ Constructs a Station class with name, next station name, previous station name, and track.
  @note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
  @param name Station name.
- @param next Name of the next Station.
- @param previous Name of the previous Station.
+ @param next Next Station name.
+ @param previous Previous Station name.
  @param track Station track number.
 */
   Station(string name, string nextStation, string previousStation, int track);
@@ -37,16 +36,28 @@ class Station {
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getNext");
   @returns Name of next Station.
 */
-  string getNext();
+  Station* getNext();
 
 /**
   Getter that returns the previous Station name.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getPrevious");
   @returns Name of previous Station.
 */
-  string getPrevious();
+  Station* getPrevious();
 
 /**
+  Getter for next Station name.
+  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getNextName");
+*/
+  string getNextName();
+
+/**
+  Getter for previous Station name.
+  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getPreviousName");
+*/
+  string getPreviousName();
+
+  /**
   Getter for Station track number.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getTrack");
   @returns Station track number.
@@ -67,20 +78,31 @@ class Station {
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setNext");
   @note ENSURE(ValidStringAttribute(getNext()), "Next station name must be valid");
   @note ENSURE(getNext() == next, "Station next station was not set correctly");
-  @param next Name of next Station.
+  @param next Next Station.
 */
-  void setNext(string next);
+  void setNext(Station* next);
 
 /**
-  Setter for previous Station name.
+  Setter for previous Station.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPrevious");
   @note ENSURE(ValidStringAttribute(getPrevious()), "Previous station name must be valid");
   @note ENSURE(getPrevious() == previous, "Station previous station was not set correctly");
-  @param previous Name of previous Station.
+  @param previous Previous Station.
 */
-  void setPrevious(string previous);
+  void setPrevious(Station* previous);
+
+
+  void setNextName(string next);
 
 /**
+  Setter for previous Station name.
+  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPreviousName");
+  @note ENSURE(ValidStringAttribute(getPreviousName()), "Station next name must be valid");
+  @note ENSURE(getPreviousName() == _previousName, "Station previous station name was not set correctly");
+*/
+  void setPreviousName(string previous);
+
+  /**
   Setter for Station track.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTrack");
   @note ENSURE(ValidIntegerAttribute(getTrack()), "Station track number can't be negative");
@@ -92,8 +114,10 @@ class Station {
  private:
   Station * _initCheck;
   string _name;
-  string _next;
-  string _previous;
+  Station* _next;
+  Station* _previous;
+  string _nextName;
+  string _previousName;
   int _track;
 };
 
