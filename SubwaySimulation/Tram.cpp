@@ -10,16 +10,12 @@
 #include "DesignByContract.h"
 #include "SubwaySimulationUtils.h"
 
-Tram::Tram(int line, int capacity, int speed, string startStation) {
+Tram::Tram(int line, TramType type, string startStation) {
   _initCheck = this;
   setLine(line);
-  setCapacity(capacity);
-  setSpeed(speed);
   setStartStationName(startStation);
-
+  setType(type);
   ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
-  ENSURE(capacity == getCapacity(), "Capacity wasn't set correctly in constructor");
-  ENSURE(speed == getSpeed(), "Speed wasn't set correctly in constructor");
   ENSURE(startStation == getStartStationName(), "Start station wasn't set correctly in constructor");
 }
 
@@ -34,12 +30,31 @@ int Tram::getLine() {
 
 int Tram::getCapacity() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCapacity");
-  return _capacity;
+  switch (_type) {
+    case Albatross: {
+      return 72;
+    }
+    case PCC: {
+      return 16;
+    }
+  }
 }
 
 int Tram::getSpeed() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getSpeed");
-  return _speed;
+  switch (_type) {
+    case Albatross: {
+      return 70;
+    }
+    case PCC: {
+      return 40;
+    }
+  }
+}
+
+TramType Tram::getType() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getType");
+  return _type;
 }
 
 Station* Tram::getStartStation() {
@@ -57,30 +72,11 @@ string Tram::getStartStationName() {
   return _startStationName;
 }
 
-string Tram::getCurrentStationName() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStationName");
-  return _currentStationName;
-}
-
 void Tram::setLine(int line) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
   _line = line;
   ENSURE(ValidIntegerAttribute(getLine()), "Tram line can't be negative");
   ENSURE(line == getLine(), "Tram line was not set correctly");
-}
-
-void Tram::setCapacity(int capacity) {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCapacity");
-  _capacity = capacity;
-  ENSURE(ValidIntegerAttribute(getCapacity()), "Tram capacity can't be negative");
-  ENSURE(capacity == getCapacity(), "Tram capacity was not set correctly");
-}
-
-void Tram::setSpeed(int speed) {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
-  _speed = speed;
-  ENSURE(ValidIntegerAttribute(getSpeed()), "Tram speed can't be negative");
-  ENSURE(speed == getSpeed(), "Tram speed was not set correctly");
 }
 
 void Tram::setStartStation(Station *startStation) {
@@ -101,10 +97,10 @@ void Tram::setStartStationName(string startStation) {
   ENSURE(startStation == getStartStationName(), "Tram start station name was not set correctly");
 }
 
-void Tram::setCurrentStationName(string currentStation) {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStationName");
-  _currentStationName = currentStation;
-  ENSURE(currentStation == getCurrentStationName(), "Tram current station name was not set correctly");
+void Tram::setType(TramType type) {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setType");
+  _type = type;
+  ENSURE(type == getType(), "Tram type was not set correctly");
 }
 
 void Tram::move() {

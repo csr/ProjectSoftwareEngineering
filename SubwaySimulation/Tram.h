@@ -13,6 +13,8 @@
 
 using namespace std;
 
+enum TramType {Albatross, PCC};
+
 class Tram {
  public:
 
@@ -29,7 +31,7 @@ class Tram {
  @param startStation Start Station of the Tram.
  @returns An instance of Tram.
 */
-  Tram(int line, int capacity, int speed, string startStation);
+  Tram(int line, TramType type, string startStation);
 
   bool properlyInitialized();
 /**
@@ -69,7 +71,7 @@ class Tram {
 
   string getStartStationName();
 
-  string getCurrentStationName();
+  TramType getType();
 
 /**
   Setter for the line of the Tram.
@@ -79,24 +81,6 @@ class Tram {
   @param line Line of the Tram.
 */
   void setLine(int line);
-
-/**
-  Setter for the capacity of the Tram.
-  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCapacity");
-  @note ENSURE(ValidIntegerAttribute(getCapacity()), "Tram capacity can't be negative");
-  @note ENSURE(capacity == getCapacity(), "Tram capacity was not set correctly");
-  @param capacity Capacity of the Tram.
-*/
-  void setCapacity(int capacity);
-
-/**
-  Setter for the speed of the Tram.
-  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
-  @note ENSURE(ValidIntegerAttribute(getSpeed()), "Tram speed can't be negative");
-  @note ENSURE(speed == getSpeed(), "Tram speed was not set correctly");
-  @param speed Speed of the Tram.
-*/
-  void setSpeed(int speed);
 
 /**
   Setter for the start Station name.
@@ -116,21 +100,31 @@ class Tram {
 */
   void setCurrentStation(Station *station);
 
+/**
+  Setter for the start Station name.
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStation");
+  _startStationName = startStation;
+  ENSURE(startStation == getStartStationName(), "Tram start station name was not set correctly");
+*/
   void setStartStationName(string startStation);
 
-  void setCurrentStationName(string currentStation);
+/**
+  Setter for tram type.
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setType");
+  ENSURE(type == getType(), "Tram type was not set correctly");
+*/
+  void setType(TramType type);
 
   void move();
 
  private:
   Tram * _initCheck;
   int _line;
-  int _capacity;
-  int _speed;
   Station* _startStation;
   Station* _currentStation;
   string _startStationName;
   string _currentStationName;
+  TramType _type;
 };
 
 #endif //UNTITLED_TRAM_H

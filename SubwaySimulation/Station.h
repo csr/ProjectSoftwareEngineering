@@ -11,6 +11,8 @@
 
 using namespace std;
 
+enum StationType {TypeStation, TypeStop};
+
 class Station {
  public:
 /**
@@ -64,6 +66,9 @@ class Station {
 */
   int getTrack();
 
+
+  StationType getType();
+
 /**
   Setter for Station name.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setName");
@@ -91,7 +96,6 @@ class Station {
 */
   void setPrevious(Station* previous);
 
-
   void setNextName(string next);
 
 /**
@@ -102,7 +106,7 @@ class Station {
 */
   void setPreviousName(string previous);
 
-  /**
+/**
   Setter for Station track.
   @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTrack");
   @note ENSURE(ValidIntegerAttribute(getTrack()), "Station track number can't be negative");
@@ -110,6 +114,8 @@ class Station {
   @param track Station track.
 */
   void setTrack(int track);
+
+  void setType(StationType type);
 
  private:
   Station * _initCheck;
@@ -119,6 +125,7 @@ class Station {
   string _nextName;
   string _previousName;
   int _track;
+  StationType _type;
 };
 
 #endif //UNTITLED_STATION_H

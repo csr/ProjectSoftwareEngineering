@@ -56,6 +56,11 @@ int Station::getTrack() {
   return _track;
 }
 
+StationType Station::getType() {
+  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getType");
+  return _type;
+}
+
 void Station::setName(string name) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setName");
   _name = name;
@@ -94,4 +99,10 @@ void Station::setTrack(int track) {
   _track = track;
   ENSURE(ValidIntegerAttribute(getTrack()), "Station track number can't be negative");
   ENSURE(getTrack() == track, "Station track number was not set correctly");
+}
+
+void Station::setType(StationType type) {
+  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setType");
+  _type = type;
+  ENSURE(type == getType(), "Station previous station name was not set correctly");
 }

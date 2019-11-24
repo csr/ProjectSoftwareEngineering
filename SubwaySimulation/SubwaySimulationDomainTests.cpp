@@ -68,28 +68,30 @@ Tests getter/setter of Tram.
 */
 TEST_F(SubwaySimulationDomainTests, TramConstructor) {
 //  Tram(int line, int capacity, int speed, string startStation)
-  int line = 12, capacity = 24, speed = 59;
+  int line = 12;
+  int albatrossCapacity = 72, albatrossSpeed = 70;
+
   string startStation = "AntwerpenCentraal";
-  Tram tram = Tram(line, capacity, speed, startStation);
+  Tram tram = Tram(line, Albatross, startStation);
 
   // Test getters
   EXPECT_EQ(line, tram.getLine());
-  EXPECT_EQ(capacity, tram.getCapacity());
-  EXPECT_EQ(speed, tram.getSpeed());
+  EXPECT_EQ(albatrossCapacity, tram.getCapacity());
+  EXPECT_EQ(albatrossSpeed, tram.getSpeed());
   EXPECT_EQ(startStation, tram.getStartStationName());
 
-  int newLine = 11, newCapacity = 304, newSpeed = 40;
+  int newLine = 11;
   string newStartStation = "AntwerpenBerchem";
 
   // Test setters
   tram.setLine(newLine);
-  tram.setCapacity(newCapacity);
-  tram.setSpeed(newSpeed);
+//  tram.setCapacity(newCapacity);
+//  tram.setSpeed(newSpeed);
   tram.setStartStationName(newStartStation);
 
   EXPECT_EQ(newLine, tram.getLine());
-  EXPECT_EQ(newCapacity, tram.getCapacity());
-  EXPECT_EQ(newSpeed, tram.getSpeed());
+//  EXPECT_EQ(newCapacity, tram.getCapacity());
+//  EXPECT_EQ(newSpeed, tram.getSpeed());
   EXPECT_EQ(newStartStation, tram.getStartStationName());
 }
 
@@ -99,7 +101,7 @@ Tests Subway reset method.
 TEST_F(SubwaySimulationDomainTests, SubwayReset) {
   Station *station1 = new Station("A", "B", "C", 34);
   Station *station2 = new Station("C", "D", "E", 334);
-  Tram *tram = new Tram(2, 43, 3, "A");
+  Tram *tram = new Tram(2, Albatross, "A");
 
   subway_.importData({station1, station2}, {tram});
   EXPECT_EQ(2, subway_.getStationsCount());
@@ -118,7 +120,7 @@ TEST_F(SubwaySimulationDomainTests, ContractViolations) {
   int negativeValue = -20;
 
   Station newStation = Station("A", "B", "C", 12);
-  Tram newTram = Tram(10, 10, 10, "A");
+  Tram newTram = Tram(10, PCC, "A");
 
   vector<string> invalidStrings = {"", ".", " ", "-", "*", "Antwerpen Centraal"};
 
@@ -136,7 +138,7 @@ TEST_F(SubwaySimulationDomainTests, ContractViolations) {
 
   // Test negative numbers
   EXPECT_DEATH(newStation.setTrack(negativeValue), "Station track number can't be negative");
-  EXPECT_DEATH(newTram.setSpeed(negativeValue), "Tram speed can't be negative");
-  EXPECT_DEATH(newTram.setCapacity(negativeValue), "Tram capacity can't be negative");
+//  EXPECT_DEATH(newTram.setSpeed(negativeValue), "Tram speed can't be negative");
+//  EXPECT_DEATH(newTram.setCapacity(negativeValue), "Tram capacity can't be negative");
   EXPECT_DEATH(newTram.setLine(negativeValue), "Tram line can't be negative");
 }

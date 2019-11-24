@@ -18,7 +18,6 @@
 
 using namespace std;
 
-enum RootElementType {StationType, TramType, InvalidType};
 enum SuccessEnum {Success, PartialImport, ImportAborted};
 
 // Goals: parsing the schedule of the subway network: the different stations, how they are connected to each other,
