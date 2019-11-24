@@ -73,6 +73,8 @@ class Tram {
 
   TramType getType();
 
+  int getNumber();
+
 /**
   Setter for the line of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
@@ -115,10 +117,13 @@ class Tram {
 */
   void setType(TramType type);
 
+  void setNumber(int number);
+
   void move();
 
  private:
   Tram * _initCheck;
+  int _number;
   int _line;
   Station* _startStation;
   Station* _currentStation;

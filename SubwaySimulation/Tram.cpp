@@ -52,11 +52,6 @@ int Tram::getSpeed() {
   }
 }
 
-TramType Tram::getType() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getType");
-  return _type;
-}
-
 Station* Tram::getStartStation() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStation");
   return _startStation;
@@ -70,6 +65,16 @@ Station* Tram::getCurrentStation() {
 string Tram::getStartStationName() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStationName");
   return _startStationName;
+}
+
+TramType Tram::getType() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getType");
+  return _type;
+}
+
+int Tram::getNumber() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getNumber");
+  return _number;
 }
 
 void Tram::setLine(int line) {
@@ -101,6 +106,12 @@ void Tram::setType(TramType type) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setType");
   _type = type;
   ENSURE(type == getType(), "Tram type was not set correctly");
+}
+
+void Tram::setNumber(int number) {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setNumber");
+  _number = number;
+  ENSURE(number == getNumber(), "Tram type was not set correctly");
 }
 
 void Tram::move() {
