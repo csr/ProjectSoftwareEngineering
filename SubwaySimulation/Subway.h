@@ -60,7 +60,6 @@ class Subway {
 /**
   Computes the Subway simulation for one step.
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
-  @note ENSURE(tram->getCurrentStation() == nextState, "Tram didn't move from its starting position");
   @param outputStream Output stream to use for simulation log output.
 */
   void moveTramsOnce(std::ostream& outputStream);

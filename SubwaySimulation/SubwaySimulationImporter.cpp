@@ -363,6 +363,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(
     string startStationName = currentTram->getStartStationName();
     Station *startStation = stations[startStationName];
     currentTram->setStartStation(startStation);
+    currentTram->setCurrentStation(startStation);
   }
 
   subway.importData(stationsArray, tramsArray);

@@ -20,28 +20,6 @@ class SubwaySimulationOutputTests: public ::testing::Test {
   Subway subway_;
 };
 
-TEST_F(SubwaySimulationOutputTests, ExampleOutputTest) {
-  //if directory doesn't exist then no need in proceeding with the test
-  ASSERT_TRUE(DirectoryExists("testSimulation"));
-
-  Station *stationA = new Station("A", "B", "C", 12);
-  Station *stationB = new Station("B", "C", "A", 12);
-  Station *stationC = new Station("C", "A", "B", 12);
-
-  Tram *tram = new Tram(12, 32, 60, "A");
-
-  subway_.importData({stationA, stationB, stationC}, {tram});
-  ASSERT_TRUE(subway_.getStationsCount() == 3);
-  ASSERT_TRUE(subway_.getTramsCount() == 1);
-  
-  ofstream myfile;
-  myfile.open("testOutput/temporaryOutput.txt");
-  myfile << subway_.toString();
-  myfile.close();
-  EXPECT_TRUE(FileCompare("testOutput/temporaryOutput.txt", "testOutput/legalSubwayOutputManual1.txt"));
-}
-
-
 TEST_F(SubwaySimulationOutputTests, LegalSubwaysOutput) {
   //if directory doesn't exist then no need in proceeding with the test
   ASSERT_TRUE(DirectoryExists("testInput"));

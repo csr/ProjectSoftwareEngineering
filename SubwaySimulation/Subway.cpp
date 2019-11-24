@@ -111,10 +111,10 @@ void Subway::computeAutomaticSimulation(int steps, ostream& outputStream) {
 void Subway::moveTramsOnce(ostream& outputStream) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
   for (auto tram : this->_tramsArray) {
-
+    string previousStationName = tram->getCurrentStation()->getName();
     tram->move();
-//    outputStream << "Tram " << tram->getLine() << " moved from station " << currentStationName <<
-//                 " to station " << nextState << endl;
-//    ENSURE(tram->getCurrentStation() == nextState, "Tram didn't move from its starting position");
+    string currentStationName = tram->getCurrentStation()->getName();
+    outputStream << "Tram " << tram->getLine() << " moved from station " << previousStationName <<
+                 " to station " << currentStationName << endl;
   }
 }
