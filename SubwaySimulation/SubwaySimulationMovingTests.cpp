@@ -2,10 +2,8 @@
 // Created by Marco Natali, Veronica Orsanigo, Cesare de Cal on 11/12/19.
 //
 
-#include <iostream>
 #include <fstream>
 #include <sys/stat.h>
-#include <gtest/gtest.h>
 
 using namespace std;
 

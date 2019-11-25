@@ -8,6 +8,8 @@
 
 #ifndef UNTITLED_STATION_H
 #define UNTITLED_STATION_H
+#include <cstdlib>
+
 
 using namespace std;
 
@@ -23,7 +25,7 @@ class Station {
  @param previous Previous Station name.
  @param track Station track number.
 */
-  Station(string name, string nextStation, string previousStation, int track);
+  Station(string name, string nextStation, string previousStation, int track, StationType type);
 
   bool properlyInitialized();
 /**
@@ -68,6 +70,8 @@ class Station {
 
 
   StationType getType();
+
+  bool isOccupy();
 
 /**
   Setter for Station name.
@@ -117,6 +121,8 @@ class Station {
 
   void setType(StationType type);
 
+  void setOccupy(bool response);
+
  private:
   Station * _initCheck;
   string _name;
@@ -126,6 +132,7 @@ class Station {
   string _previousName;
   int _track;
   StationType _type;
+  bool _occupy;
 };
 
 #endif //UNTITLED_STATION_H

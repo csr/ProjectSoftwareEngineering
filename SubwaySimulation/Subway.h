@@ -72,6 +72,8 @@ class Subway {
 */
   int getStationsCount();
 
+  vector<Station*> getStations();
+
 /**
   Getter that returns number of trams in the Subway simulation.
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
@@ -96,6 +98,8 @@ class Subway {
 
   unordered_map<string, Station*> _stationsMap;
   unordered_map<int, Tram*> _tramsMap;
+
+
 };
 
 #endif

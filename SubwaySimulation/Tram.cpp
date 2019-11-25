@@ -10,11 +10,12 @@
 #include "DesignByContract.h"
 #include "SubwaySimulationUtils.h"
 
-Tram::Tram(int line, TramType type, string startStation) {
+Tram::Tram(int line, TramType type, string startStation, int number) {
   _initCheck = this;
   setLine(line);
   setStartStationName(startStation);
   setType(type);
+  setNumber(number);
   ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
   ENSURE(startStation == getStartStationName(), "Start station wasn't set correctly in constructor");
 }
@@ -38,6 +39,7 @@ int Tram::getCapacity() {
       return 16;
     }
   }
+  return 0;
 }
 
 int Tram::getSpeed() {
@@ -50,6 +52,7 @@ int Tram::getSpeed() {
       return 40;
     }
   }
+  return 0;
 }
 
 Station* Tram::getStartStation() {
@@ -111,7 +114,7 @@ void Tram::setType(TramType type) {
 void Tram::setNumber(int number) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setNumber");
   _number = number;
-  ENSURE(number == getNumber(), "Tram type was not set correctly");
+  ENSURE(number == getNumber(), "Tram vehicleNumber was not set correctly");
 }
 
 void Tram::move() {

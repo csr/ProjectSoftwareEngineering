@@ -13,12 +13,13 @@
 
 using namespace std;
 
-Station::Station(string name, string next, string previous, int track) {
+Station::Station(string name, string next, string previous, int track, StationType type) {
   _initCheck = this;
   setName(name);
   setNextName(next);
   setPreviousName(previous);
   setTrack(track);
+  setType(type);
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
@@ -61,6 +62,10 @@ StationType Station::getType() {
   return _type;
 }
 
+bool Station::isOccupy() {
+    REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling isOccupy");
+    return _occupy;
+}
 void Station::setName(string name) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setName");
   _name = name;
@@ -105,4 +110,10 @@ void Station::setType(StationType type) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setType");
   _type = type;
   ENSURE(type == getType(), "Station previous station name was not set correctly");
+}
+
+void Station::setOccupy(bool response){
+    REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setOccupy");
+    _occupy = response;
+    ENSURE(response == isOccupy(), "Station occupy was not set correctly");
 }

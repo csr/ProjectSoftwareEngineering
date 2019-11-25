@@ -31,7 +31,7 @@ class Tram {
  @param startStation Start Station of the Tram.
  @returns An instance of Tram.
 */
-  Tram(int line, TramType type, string startStation);
+  Tram(int line, TramType type, string startStation, int number);
 
   bool properlyInitialized();
 /**

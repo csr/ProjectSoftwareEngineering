@@ -94,7 +94,7 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
     return NULL;
   }
 
-  return new Station(name, next, previous, track);
+  return new Station(name, next, previous, track, 0);
 }
 
 // Parse station given its root element
@@ -241,8 +241,7 @@ bool check_line_track(unordered_map<int, Tram *> trams, unordered_map<string, St
   return is_ok;
 }
 
-SuccessEnum SubwaySimulationImporter::importSubway(
-    const char *inputFileName, std::ostream& errStream, Subway& subway) {
+SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, std::ostream& errStream, Subway& subway) {
   TiXmlDocument doc;
   SuccessEnum endResult = Success;
 

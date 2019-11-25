@@ -6,10 +6,8 @@
 // Description : Subway simulation in C++
 //============================================================================
 
-#include <iostream>
 #include <fstream>
 #include <sys/stat.h>
-#include <gtest/gtest.h>
 
 using namespace std;
 
