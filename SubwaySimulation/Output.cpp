@@ -8,36 +8,35 @@
 #include "SubwaySimulationUtils.h"
 
 void graficalOutput(string fileName, Subway& subway) {
-    if(!FileExists(fileName)){
-        cout << "Output file doesn't exist";
-    }
+  if(!FileExists(fileName)){
+    cout << "Output file doesn't exist";
+  }
 
-    ofstream outputStream;
-    outputStream.open(fileName);
-    for(auto station : subway.getStations()){
-        outputStream << station->getName() << "===";
-    }
-    outputStream << endl;
-    outputStream << " ";
+  ofstream outputStream;
+  outputStream.open(fileName);
+  for(auto station : subway.getStations()){
+    outputStream << station->getName() << "===";
+  }
+  outputStream << endl;
+  outputStream << " ";
 
-    for(auto station : subway.getStations()){
-        if(station->isOccupy())
-            outputStream << "T   ";
-        else
-            outputStream << "    ";
-    }
+  for(auto station : subway.getStations()){
+    if(station->isCurrentlyOccupied())
+      outputStream << "T   ";
+    else
+      outputStream << "    ";
+  }
 
-    outputStream.close();
+  outputStream.close();
 }
 
 void simpleOutput(string  fileName, Subway& subway){
-    if(!FileExists(fileName)){
-        cout << "Output file doesn't exist" << endl;
-    }
+  if(!FileExists(fileName)){
+    cout << "Output file doesn't exist" << endl;
+  }
 
-    ofstream outputStream;
-    outputStream.open(fileName);
-    outputStream << subway.toString();
-    outputStream.close();
+  ofstream outputStream;
+  outputStream.open(fileName);
+  outputStream << subway.toString();
+  outputStream.close();
 }
-

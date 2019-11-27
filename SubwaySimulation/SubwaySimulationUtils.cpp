@@ -114,7 +114,7 @@ bool ValidStringAttribute(string string) {
   return !string.empty() && isLettersOnly(string);
 }
 
-int GenerateNumber(int a, int b){
+int GenerateRandomNumber(int a, int b){
     srand(time(nullptr));
     return rand() % (b - a) + a;
 }

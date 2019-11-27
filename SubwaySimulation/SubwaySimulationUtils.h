@@ -20,7 +20,7 @@ bool FileIsEmpty(const std::string filename);
 
 bool FileCompare(const std::string leftFileName, const std::string rightFileName);
 
-int GenerateNumber(int a, int b);
+int GenerateRandomNumber(int a, int b);
 
 /**
 Checks if the attribute string is valid.

@@ -94,7 +94,8 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
     return NULL;
   }
 
-  return new Station(name, next, previous, track, 0);
+  // TODO: change type based on what's been parsed
+  return new Station(name, next, previous, TypeStation);
 }
 
 // Parse station given its root element
@@ -152,94 +153,83 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
     return NULL;
   }
 
-  return new Tram(line, type, startStation);
-}
-
-int find_track(unordered_map<string, Station*> stations, unordered_map<string, Station*>::iterator it) {
-  // Check if element exists in map or not
-  /*for debug
-  Element with key 'hat' found
-  cout << "Found" << std::endl;
-  Access the Key from iterator
-  string key = it->first;
-  cout << "NEXT " << key << endl;*/
-  // Access the next/previous station from iterator
-  Station* station = it->second;
-  // Access the track of next/previous station
-  int track = station->getTrack();
-  // print for debug
-  //cout << "key = " << key << " track = " << track << std::endl;
-  return track;
+  // TODO: make sure you input the right vehicle number instead of using zero
+  return new Tram(line, type, startStation, 0);
 }
 
 // Check if each station has a next and previous with same track and if each track has exactly one tram
 // point 2 - 4 of consistency
-bool check_prev_next_track_tram(unordered_map<string, Station*> stations, unordered_map<int, Tram *> trams){
-  bool is_ok = true;
-  unordered_map<string, Station*>::iterator it;
-  for (it = stations.begin(); it != stations.end() && is_ok; it++) {
-    Station *station = it->second;
-    string next = station->getNextName();
-    string prev = station->getPreviousName();
-    int track = station->getTrack();
-
-    // check if each track has exactly one tram: it counts how many trams have line == track
-    // point 4 of consistency
-    if (trams.count(track) == 0) {
-      return false;
-    }
-
-    // iterator for next
-    unordered_map<string, Station*>::iterator it1;
-    // Find next station
-    it1 = stations.find(next);
-    // iterator for previous
-    unordered_map<string, Station*>::iterator it2;
-    // Find previous station
-    it2 = stations.find(prev);
-
-    // Check if element exists in map or not
-    if(it1 != stations.end() && it2 != stations.end()){
-      int next_track = find_track(stations, it1);
-      int prev_track = find_track(stations, it2);
-      if(track == next_track && next_track == prev_track)
-        is_ok =  true;
-      else
-        is_ok = false;
-    }
-    else
-      is_ok = false;
-  }
-  return is_ok;
-}
+//bool check_prev_next_track_tram(unordered_map<string, Station*> stations, unordered_map<int, Tram *> trams){
+//  bool is_ok = true;
+//  unordered_map<string, Station*>::iterator it;
+//  for (it = stations.begin(); it != stations.end() && is_ok; it++) {
+//    Station *station = it->second;
+//    string next = station->getNextName();
+//    string prev = station->getPreviousName();
+//    int track = station->getTrack();
+//
+//    // check if each track has exactly one tram: it counts how many trams have line == track
+//    // point 4 of consistency
+//    if (trams.count(track) == 0) {
+//      return false;
+//    }
+//
+//    // iterator for next
+//    unordered_map<string, Station*>::iterator it1;
+//    // Find next station
+//    it1 = stations.find(next);
+//    // iterator for previous
+//    unordered_map<string, Station*>::iterator it2;
+//    // Find previous station
+//    it2 = stations.find(prev);
+//
+//    // Check if element exists in map or not
+//    if(it1 != stations.end() && it2 != stations.end()){
+////      int next_track = find_track(stations, it1);
+////      int prev_track = find_track(stations, it2);
+//
+//      // TEMPORANEO
+//      int next_track = 0;
+//      int prev_track = 0;
+//
+//      if(track == next_track && next_track == prev_track)
+//        is_ok =  true;
+//      else
+//        is_ok = false;
+//    }
+//    else
+//      is_ok = false;
+//  }
+//  return is_ok;
+//}
 
 // Check if each tram has its startStation in the subway and its line corresponds to track of its startStation
 // point 3-5 of consistency
-bool check_line_track(unordered_map<int, Tram *> trams, unordered_map<string, Station*> stations) {
-  bool is_ok = true;
-  unordered_map<int, Tram*>::iterator it;
-  for (it = trams.begin(); it != trams.end() && is_ok; it++) {
-    Tram* tram = it->second;
-    int line = tram->getLine();
-    // for debug
-    // cout << "Line " << line << endl;
-    string startStation = tram->getStartStationName();
-    // for debug
-    // cout << "StartStation " << startStation << endl;
-    unordered_map<string, Station*>::iterator it1;
-    it1 = stations.find(startStation);
-    // for debug
-    // cout << "Ok " << (it1 != stations.end()) << endl;
-    if(it1 != stations.end()) {
-      Station* station = it1->second;
-      if(station->getTrack() != line)
-        is_ok = false; // if line != track, point 3 of consistency
-    }
-    else // if startStation of a tram is not in the subway, point 5 of consistency
-      is_ok = false;
-  }
-  return is_ok;
-}
+//bool check_line_track(unordered_map<int, Tram *> trams, unordered_map<string, Station*> stations) {
+//  bool is_ok = true;
+//  unordered_map<int, Tram*>::iterator it;
+//  for (it = trams.begin(); it != trams.end() && is_ok; it++) {
+//    Tram* tram = it->second;
+//    int line = tram->getLine();
+//    // for debug
+//    // cout << "Line " << line << endl;
+//    string startStation = tram->getStartStationName();
+//    // for debug
+//    // cout << "StartStation " << startStation << endl;
+//    unordered_map<string, Station*>::iterator it1;
+//    it1 = stations.find(startStation);
+//    // for debug
+//    // cout << "Ok " << (it1 != stations.end()) << endl;
+//    if(it1 != stations.end()) {
+//      Station* station = it1->second;
+//      if(station->getTrack() != line)
+//        is_ok = false; // if line != track, point 3 of consistency
+//    }
+//    else // if startStation of a tram is not in the subway, point 5 of consistency
+//      is_ok = false;
+//  }
+//  return is_ok;
+//}
 
 SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, std::ostream& errStream, Subway& subway) {
   TiXmlDocument doc;
@@ -324,33 +314,33 @@ SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, st
   // Consistency
 
   // Check points 2 - 4 of consistency
-  bool prev_next_track_tram = check_prev_next_track_tram(stations, trams);
-  if (!prev_next_track_tram) {
-    errStream << "XML IMPORT ABORTED: Some stations don't have a next and/or right station or there's a missing tram" << endl;
-    return ImportAborted;
-  }
+//  bool prev_next_track_tram = check_prev_next_track_tram(stations, trams);
+//  if (!prev_next_track_tram) {
+//    errStream << "XML IMPORT ABORTED: Some stations don't have a next and/or right station or there's a missing tram" << endl;
+//    return ImportAborted;
+//  }
 
   // Check points 3 - 5 of consistency
-  bool line_track = check_line_track(trams, stations);
-  if (!line_track) {
-    errStream << "XML IMPORT ABORTED: the lines don't correspond to the tracks" << endl;
-    return ImportAborted;
-  }
+//  bool line_track = check_line_track(trams, stations);
+//  if (!line_track) {
+//    errStream << "XML IMPORT ABORTED: the lines don't correspond to the tracks" << endl;
+//    return ImportAborted;
+//  }
 
   // Link objects
   // Transform station names into Station pointers
   std::vector<Station*>::iterator stationIterator;
   stationIterator = stationsArray.begin();
   for (stationIterator = stationsArray.begin(); stationIterator < stationsArray.end(); stationIterator++) {
-    Station *currentStation = *stationIterator;
-    string nextStationName = currentStation->getNextName();
-    string previousStationName = currentStation->getPreviousName();
-
-    Station *nextStation = stations[nextStationName];
-    Station *previousStation = stations[previousStationName];
-
-    currentStation->setNext(nextStation);
-    currentStation->setPrevious(previousStation);
+//    Station *currentStation = *stationIterator;
+//    string nextStationName = currentStation->getNextName();
+//    string previousStationName = currentStation->getPreviousName();
+//
+//    Station *nextStation = stations[nextStationName];
+//    Station *previousStation = stations[previousStationName];
+//
+//    currentStation->setNext(nextStation);
+//    currentStation->setPrevious(previousStation);
   }
 
   // Transform station names into Station pointers
