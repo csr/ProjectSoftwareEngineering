@@ -109,8 +109,8 @@ void Tram::move() {
   setTurnover();
 
   // Set next station
-  Track track = currentStation->getTrack(this->getNumber());
-  Station *nextStation = track.getNextStation();
+  Track *track = currentStation->getTrack(this->getNumber());
+  Station *nextStation = track->getNext();
   this->setCurrentStation(nextStation);
 
   passengers = GenerateRandomNumber(0, this->getCurrentCapacity());

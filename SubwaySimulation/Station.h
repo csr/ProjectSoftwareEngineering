@@ -10,7 +10,9 @@
 #define UNTITLED_STATION_H
 #include <cstdlib>
 #include <string>
+#include <vector>
 #include <unordered_map>
+
 #include "Track.h"
 
 using namespace std;
@@ -21,6 +23,8 @@ enum StationType {TypeStation, TypeStop};
 //<TRACK>...</TRACK>
 //<TRACK>...</TRACK>
 //<type>stop</type>
+
+class Track;
 
 class Station {
  public:
@@ -36,16 +40,18 @@ class Station {
 
   StationType getType();
 
-  Track getTrack(int number);
+  Track* getTrack(int number);
 
-  bool getOccupiedStatus();
+  vector<Track*> getTracks();
+
+  bool isCurrentlyOccupied();
 
  private:
   Station * _initCheck;
   string _name;
   StationType _type;
   bool _isOccupied;
-  unordered_map<int, Track> _tracks;
+  unordered_map<int, Track*> _tracks;
 };
 
 #endif //UNTITLED_STATION_H

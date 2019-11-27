@@ -32,11 +32,11 @@ class Track {
 
   void setPrevious(Station* previous);
 
-  int getTrackNumber();
+  int getNumber();
 
-  Station* getNextStation();
+  Station* getNext();
 
-  Station* getPreviousStation();
+  Station* getPrevious();
 
  private:
    Track* _init;

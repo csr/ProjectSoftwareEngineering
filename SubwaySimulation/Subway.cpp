@@ -70,19 +70,25 @@ string Subway::toString() {
 
     string outputString;
     for (auto &station : this->_stationsArray) {
-        outputString = outputString + "Station " + station->getName() + "\n" +
-                       "<- Station " + station->getPrevious()->getName() + "\n" +
-                       "-> Station " + station->getNext()->getName() + "\n" +
-                       "Track " + to_string(station->getTrack());
+      // Print Station name
+      outputString = outputString + "Station " + station->getName() + "\n";
+
+      // Iterate over tracks and print track details
+      for (auto *track : station->getTracks()) {
+        outputString += "Track " + to_string(track->getNumber()) + "\n" +
+                        "<- Station" + track->getPrevious()->getName() + "\n" +
+                        "-> Station" + track->getNext()->getName() + "\n";
 
         // If there's a tram associated to the track, print capacity
-        if (this->_tramsMap.count(station->getTrack())) {
-            Tram *tram = this->_tramsMap[station->getTrack()];
-            if (tram->getStartStation()->getName() == station->getName()) {
-                outputString = outputString + ": Tram with " + to_string(tram->getMaxCapacity()) + " seats";
-            }
+        if (this->_tramsMap.count(track->getNumber())) {
+          Tram *tram = this->_tramsMap[track->getNumber()];
+          if (tram->getStartStation()->getName() == station->getName()) {
+            outputString += ": Tram with " + to_string(tram->getMaxCapacity()) + " seats" + "\n";
+          }
         }
         outputString += "\n";
+      }
+
     }
     return outputString;
 }
@@ -113,10 +119,12 @@ void Subway::computeAutomaticSimulation(int steps, ostream &outputStream) {
 }
 
 void Subway::moveTramsOnce(ostream &outputStream) {
-    REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
-    for (auto tram : this->_tramsArray) {
-        string previousStationName = tram->getCurrentStation()->getName();
-        if(!tram->getCurrentStation()->getNext()->isCurrentlyOccupied()) {
+    REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling moveTramsOnce");
+    for (auto tram: this->_tramsArray) {
+        Station *currentStation = tram->getCurrentStation();
+        string previousStationName = currentStation->getName();
+        Track *track = currentStation->getTrack(tram->getNumber());
+        if (!track->getNext()->isCurrentlyOccupied()) {
           tram->move();
         }
         string currentStationName = tram->getCurrentStation()->getName();
@@ -125,7 +133,7 @@ void Subway::moveTramsOnce(ostream &outputStream) {
     }
 }
 
-void Subway::collectStatisticalData(){
+void Subway::collectStatisticalData() {
 //    fileStream <<
 }
 

@@ -34,7 +34,7 @@ void Station::setName(string name) {
 void Station::setOccupied(bool isOccupied) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setOccupied");
   _isOccupied = isOccupied;
-  ENSURE(isOccupied == getOccupiedStatus(), "Station occupied was not set correctly");
+  ENSURE(isOccupied == isCurrentlyOccupied(), "Station occupied was not set correctly");
 }
 
 string Station::getName() {
@@ -42,10 +42,24 @@ string Station::getName() {
   return _name;
 }
 
-Track Station::getTrack(int number) {
+Track* Station::getTrack(int number) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getTrack");
-  Track track = _tracks[number];
-  return track;
+  if (_tracks.count(number)) {
+    return _tracks[number];
+  } else {
+    return NULL;
+  }
+}
+
+vector<Track*> Station::getTracks() {
+  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getTracks");
+  vector<Track*> keys;
+  keys.reserve(_tracks.size());
+
+  for(auto keyValuePair : _tracks) {
+    keys.push_back(keyValuePair.second);
+  }
+  return keys;
 }
 
 StationType Station::getType() {
@@ -53,7 +67,7 @@ StationType Station::getType() {
   return _type;
 }
 
-bool Station::getOccupiedStatus() {
-    REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getOccupiedStatus");
+bool Station::isCurrentlyOccupied() {
+    REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling isCurrentlyOccupied");
     return _isOccupied;
 }
