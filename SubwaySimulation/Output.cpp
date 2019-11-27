@@ -21,7 +21,7 @@ void graficalOutput(string fileName, Subway& subway) {
   outputStream << " ";
 
   for(auto station : subway.getStations()){
-    if(station->isCurrentlyOccupied())
+    if(station->getOccupiedStatus())
       outputStream << "T   ";
     else
       outputStream << "    ";

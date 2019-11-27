@@ -104,12 +104,12 @@ void Tram::setNumber(int number) {
 void Tram::move() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
   Station *currentStation = this->getCurrentStation();
-  int passengers = GenerateNumber(this->getCurrentCapacity(), this->getMaxCapacity());
+  int passengers = GenerateRandomNumber(this->getCurrentCapacity(), this->getMaxCapacity());
   setCurrentCapacity(passengers); // controllare
   setTurnover();
   Station *nextStation = currentStation->getNext();
   this->setCurrentStation(nextStation);
-  passengers = GenerateNumber(0, this->getCurrentCapacity());
+  passengers = GenerateRandomNumber(0, this->getCurrentCapacity());
   setCurrentCapacity(passengers);
 
 }

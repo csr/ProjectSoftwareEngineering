@@ -18,6 +18,8 @@
 //<previous>B</previous>
 //</TRACK>
 
+class Station;
+
 class Track {
  public:
 
