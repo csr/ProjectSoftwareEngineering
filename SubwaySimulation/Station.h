@@ -102,7 +102,7 @@ class Station {
   void setNextName(string next);
 
   void setOccupied(bool isOccupied);
-  
+
  private:
   Station * _initCheck;
   string _name;

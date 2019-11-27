@@ -11,24 +11,35 @@
 
 #include "Station.h"
 
+// Example Track:
+//<TRACK>
+//<track>12</track>
+//<next>A</next>
+//<previous>B</previous>
+//</TRACK>
+
 class Track {
  public:
-  Track(int track, Station* next, Station* previous);
-
-  void setTrack(int track);
-  void setNext(Station* next);
 
 /**
-    Setter for previous Station name.
-    @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPreviousName");
-    @note ENSURE(ValidStringAttribute(getPreviousName()), "Station next name must be valid");
-    @note ENSURE(getPreviousName() == _previousName, "Station previous station name was not set correctly");
+  Constructor for the Track class.
 */
-  void setPrevious(Station* previous);
-  int getTrack();
-  Station* getNext();
-  Station* getPrevious();
+  Track(int track, Station* next, Station* previous);
+
   bool properlyInitialized();
+
+  void setTrack(int track);
+
+  void setNext(Station* next);
+
+  void setPrevious(Station* previous);
+
+  int getTrackNumber();
+
+  Station* getNextStation();
+
+  Station* getPreviousStation();
+
  private:
    Track* _init;
    int _track;

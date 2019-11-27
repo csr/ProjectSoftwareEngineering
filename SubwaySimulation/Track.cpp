@@ -7,43 +7,47 @@
 #include "SubwaySimulationUtils.h"
 
 Track::Track(int track, Station *next, Station *previous) {
-    _init = this;
-    setTrack(track);
-    setNext(next);
-    setPrevious(previous);
+  _init = this;
+  setTrack(track);
+  setNext(next);
+  setPrevious(previous);
+  ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+}
+
+bool Track::properlyInitialized() {
+  return _init == this;
+}
+
+void Track::setTrack(int number) {
+  REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized");
+  _track = number;
+  ENSURE(ValidIntegerAttribute(number), "Number of track is negative");
+  ENSURE(number == getTrackNumber(), "Number of track is negative");
 }
 
 void Track::setNext(Station *next) {
-    REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized");
-    _next = next;
+  REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized");
+  _next = next;
+  ENSURE(next == getNextStation(), "Next station wasn't set correctly");
 }
 
 void Track::setPrevious(Station *previous) {
-    REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized");
-    _previous = previous;
+  REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized when calling setPrevious");
+  _previous = previous;
+  ENSURE(previous == getPreviousStation(), "Previous station wasn't set correctly");
 }
 
-void Track::setTrack(int track) {
-    REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized");
-    _track = track;
-    ENSURE(ValidIntegerAttribute(track), "Number of track is negative");
-}
-
-int Track::getTrack() {
+int Track::getTrackNumber() {
     REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized");
     return _track;
 }
 
-Station* Track::getNext() {
+Station* Track::getNextStation() {
     REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized");
     return _next;
 }
 
-Station* Track::getPrevious() {
+Station* Track::getPreviousStation() {
     REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized");
     return _previous;
-}
-
-bool Track::properlyInitialized() {
-    return _init == this;
 }

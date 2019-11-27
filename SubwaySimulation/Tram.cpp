@@ -96,7 +96,7 @@ void Tram::setType(TramType type) {
 }
 
 void Tram::setNumber(int number) {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setNumber");
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setTrack");
   _number = number;
   ENSURE(number == getNumber(), "Tram vehicleNumber was not set correctly");
 }
