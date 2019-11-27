@@ -48,6 +48,8 @@ class Tram {
 */
   int getCapacity();
 
+  int getCurrentCapacity();
+
 /**
   Getter for the speed of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getSpeed");
@@ -74,6 +76,8 @@ class Tram {
   TramType getType();
 
   int getNumber();
+
+  int getTurnover();
 
 /**
   Setter for the line of the Tram.
@@ -119,6 +123,13 @@ class Tram {
 
   void setNumber(int number);
 
+  void setCurrentCapacity(int number);
+
+  void setTurnover();
+
+  void setSpeed();
+  void setCapacity();
+
   void move();
 
  private:
@@ -130,6 +141,11 @@ class Tram {
   string _startStationName;
   string _currentStationName;
   TramType _type;
+  int _currentCapacity;
+  int _capacity;
+  int _turnover;
+  int _speed;
+
 };
 
 #endif //UNTITLED_TRAM_H

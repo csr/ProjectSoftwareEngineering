@@ -64,6 +64,8 @@ class Subway {
 */
   void moveTramsOnce(std::ostream& outputStream);
 
+  void collectStatisticalData();
+
 /**
   Getter that returns number of stations in the Subway simulation.
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");

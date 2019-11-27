@@ -106,6 +106,7 @@ void Subway::computeAutomaticSimulation(int steps, ostream &outputStream) {
     REQUIRE(steps >= 0, "Number of steps must be positive");
     int current = 0;
     while (current < steps) {
+        collectStatisticalData();
         this->moveTramsOnce(outputStream);
         current++;
     }
@@ -115,10 +116,16 @@ void Subway::moveTramsOnce(ostream &outputStream) {
     REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
     for (auto tram : this->_tramsArray) {
         string previousStationName = tram->getCurrentStation()->getName();
-        tram->move();
+        if(!tram->getCurrentStation()->getNext()->isOccupy())
+            tram->move();
+
         string currentStationName = tram->getCurrentStation()->getName();
         outputStream << "Tram " << tram->getLine() << " moved from station " << previousStationName <<
                      " to station " << currentStationName << endl;
     }
-
 }
+
+void Subway::collectStatisticalData(){
+    fileStream << 
+}
+

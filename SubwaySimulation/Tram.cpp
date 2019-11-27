@@ -31,28 +31,12 @@ int Tram::getLine() {
 
 int Tram::getCapacity() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCapacity");
-  switch (_type) {
-    case Albatross: {
-      return 72;
-    }
-    case PCC: {
-      return 16;
-    }
-  }
-  return 0;
+  return _capacity;
 }
 
 int Tram::getSpeed() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getSpeed");
-  switch (_type) {
-    case Albatross: {
-      return 70;
-    }
-    case PCC: {
-      return 40;
-    }
-  }
-  return 0;
+  return _speed;
 }
 
 Station* Tram::getStartStation() {
@@ -120,6 +104,49 @@ void Tram::setNumber(int number) {
 void Tram::move() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
   Station *currentStation = this->getCurrentStation();
+  int passengers = GenerateNumber(this->getCurrentCapacity(), this->getCapacity());
+  setCapacity(passengers);
+  setTurnover();
   Station *nextStation = currentStation->getNext();
   this->setCurrentStation(nextStation);
+  passengers = GenerateNumber(0, this->getCurrentCapacity());
+  setCurrentCapacity(passengers);
+
 }
+
+void Tram::setCurrentCapacity(int number) {
+    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
+    _currentCapacity = number;
+    ENSURE(getCurrentCapacity() <= getCapacity(), "Tram currentCapacity is greater than maximum capacity");
+    ENSURE(number == getCurrentCapacity(), "Tram currentCapacity was not set correctly");
+}
+
+int Tram::getTurnover() {
+    return _turnover;
+}
+
+void Tram::setTurnover() {
+    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setTurnover");
+    _turnover = 2 * getCurrentCapacity();
+}
+
+void Tram::setCapacity() {
+    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCapacity");
+    if (this->_type == Albatross)
+        _capacity = 72;
+    else if (this->_type == PCC)
+        _capacity = 16;
+}
+
+void Tram::setSpeed(){
+    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
+    if(this->_type == Albatross)
+        _speed = 70;
+    else if (this->_type == PCC)
+        _speed = 40;
+}
+
+int Tram::getCurrentCapacity() {
+    return _currentCapacity;
+}
+

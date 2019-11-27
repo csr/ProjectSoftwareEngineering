@@ -12,6 +12,7 @@
 #include <cstdio>
 #include <string>
 #include <regex>
+#include <cstdlib>
 
 using namespace std;
 
@@ -111,4 +112,9 @@ bool ValidIntegerAttribute(int value) {
 // The current specs require all string to be non-empty
 bool ValidStringAttribute(string string) {
   return !string.empty() && isLettersOnly(string);
+}
+
+int GenerateNumber(int a, int b){
+    srand(time(nullptr));
+    return rand() % (b - a) + a;
 }
