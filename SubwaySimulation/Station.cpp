@@ -13,12 +13,9 @@
 
 using namespace std;
 
-Station::Station(string name, string next, string previous, int track, StationType type) {
+Station::Station(string name, string nextStation, string previousStation, StationType type) {
   _initCheck = this;
   setName(name);
-  setNextName(next);
-  setPreviousName(previous);
-  setTrack(track);
   setType(type);
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
@@ -62,10 +59,11 @@ StationType Station::getType() {
   return _type;
 }
 
-bool Station::isOccupy() {
-    REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling isOccupy");
-    return _occupy;
+bool Station::isCurrentlyOccupied() {
+    REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling isCurrentlyOccupied");
+    return _isCurrentlyOccupied;
 }
+
 void Station::setName(string name) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setName");
   _name = name;
@@ -92,28 +90,14 @@ void Station::setNextName(string next) {
   ENSURE(getNextName() == _nextName, "Station next station name was not set correctly");
 }
 
-void Station::setPreviousName(string previous) {
-  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPreviousName");
-  _previousName = previous;
-  ENSURE(ValidStringAttribute(getPreviousName()), "Station next name must be valid");
-  ENSURE(getPreviousName() == _previousName, "Station previous station name was not set correctly");
-}
-
-void Station::setTrack(int track) {
-  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTrack");
-  _track = track;
-  ENSURE(ValidIntegerAttribute(getTrack()), "Station track number can't be negative");
-  ENSURE(getTrack() == track, "Station track number was not set correctly");
-}
-
-void Station::setType(StationType type) {
+void setType(StationType type) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setType");
   _type = type;
   ENSURE(type == getType(), "Station previous station name was not set correctly");
 }
 
-void Station::setOccupy(bool response){
-    REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setOccupy");
-    _occupy = response;
-    ENSURE(response == isOccupy(), "Station occupy was not set correctly");
+void Station::setOccupied(bool isOccupied) {
+  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setOccupied");
+  _isCurrentlyOccupied = isOccupied;
+  ENSURE(isOccupied == isCurrentlyOccupied(), "Station occupied was not set correctly");
 }

@@ -42,12 +42,17 @@ class Tram {
   int getLine();
 
 /**
-  Getter for the capacity of the Tram.
-  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCapacity");
+  Getter for the maximum capacity of the Tram.
+  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getMaxCapacity");
   @returns Capacity of the Tram.
 */
-  int getCapacity();
+  int getMaxCapacity();
 
+/**
+  Getter for the current capacity of the Tram.
+  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentCapacity");
+  @returns Capacity of the Tram.
+*/
   int getCurrentCapacity();
 
 /**
@@ -77,6 +82,10 @@ class Tram {
 
   int getNumber();
 
+  /**
+  Setter for the line of the Tram.
+  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getTurnover");
+*/
   int getTurnover();
 
 /**
@@ -128,7 +137,7 @@ class Tram {
   void setTurnover();
 
   void setSpeed();
-  void setCapacity();
+  void setCapacity(int capacity);
 
   void move();
 
@@ -142,10 +151,9 @@ class Tram {
   string _currentStationName;
   TramType _type;
   int _currentCapacity;
-  int _capacity;
+  int _maxCapacity;
   int _turnover;
   int _speed;
-
 };
 
 #endif //UNTITLED_TRAM_H

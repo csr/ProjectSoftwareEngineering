@@ -94,7 +94,8 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
     return NULL;
   }
 
-  return new Station(name, next, previous, track, 0);
+  // TODO: change type based on what's been parsed
+  return new Station(name, next, previous, TypeStation);
 }
 
 // Parse station given its root element

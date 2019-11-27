@@ -79,7 +79,7 @@ string Subway::toString() {
         if (this->_tramsMap.count(station->getTrack())) {
             Tram *tram = this->_tramsMap[station->getTrack()];
             if (tram->getStartStation()->getName() == station->getName()) {
-                outputString = outputString + ": Tram with " + to_string(tram->getCapacity()) + " seats";
+                outputString = outputString + ": Tram with " + to_string(tram->getMaxCapacity()) + " seats";
             }
         }
         outputString += "\n";
@@ -126,6 +126,6 @@ void Subway::moveTramsOnce(ostream &outputStream) {
 }
 
 void Subway::collectStatisticalData(){
-    fileStream << 
+//    fileStream <<
 }
 

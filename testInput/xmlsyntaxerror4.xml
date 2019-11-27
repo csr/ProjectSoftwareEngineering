@@ -1,7 +1,0 @@
-<!--Next doesn't have a correct closing tag-->
-<STATION>
-    <name>A</name>
-    <next>B</name>
-    <previous>C</previous>
-    <track>12</track>
-</STATION>

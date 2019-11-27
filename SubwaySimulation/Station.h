@@ -9,7 +9,7 @@
 #ifndef UNTITLED_STATION_H
 #define UNTITLED_STATION_H
 #include <cstdlib>
-
+#include <string>
 
 using namespace std;
 
@@ -25,7 +25,7 @@ class Station {
  @param previous Previous Station name.
  @param track Station track number.
 */
-  Station(string name, string nextStation, string previousStation, int track, StationType type);
+  Station(string name, string nextStation, string previousStation, StationType type);
 
   bool properlyInitialized();
 /**
@@ -68,10 +68,9 @@ class Station {
 */
   int getTrack();
 
-
   StationType getType();
 
-  bool isOccupy();
+  bool isCurrentlyOccupied();
 
 /**
   Setter for Station name.
@@ -102,26 +101,9 @@ class Station {
 
   void setNextName(string next);
 
-/**
-  Setter for previous Station name.
-  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setPreviousName");
-  @note ENSURE(ValidStringAttribute(getPreviousName()), "Station next name must be valid");
-  @note ENSURE(getPreviousName() == _previousName, "Station previous station name was not set correctly");
-*/
-  void setPreviousName(string previous);
-
-/**
-  Setter for Station track.
-  @note REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTrack");
-  @note ENSURE(ValidIntegerAttribute(getTrack()), "Station track number can't be negative");
-  @note ENSURE(getTrack() == track, "Station track number was not set correctly");
-  @param track Station track.
-*/
-  void setTrack(int track);
+  void setOccupied(bool isOccupied);
 
   void setType(StationType type);
-
-  void setOccupy(bool response);
 
  private:
   Station * _initCheck;
@@ -132,7 +114,7 @@ class Station {
   string _previousName;
   int _track;
   StationType _type;
-  bool _occupy;
+  bool _isCurrentlyOccupied;
 };
 
 #endif //UNTITLED_STATION_H

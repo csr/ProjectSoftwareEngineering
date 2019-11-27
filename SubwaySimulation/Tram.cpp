@@ -1,9 +1,9 @@
 //============================================================================
-// Name        : Tram.cpp
+// Name        : Track.cpp
 // Author      : Cesare De Cal, Marco Natali, Veronica Orsanigo
 // Version     :
 // Copyright   : Cesare De Cal, Marco Natali, Veronica Orsanigo
-// Description : This class is the blueprint for the Tram object.
+// Description : Subway simulation in C++
 //============================================================================
 
 #include "Tram.h"
@@ -29,9 +29,9 @@ int Tram::getLine() {
   return _line;
 }
 
-int Tram::getCapacity() {
+int Tram::getMaxCapacity() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCapacity");
-  return _capacity;
+  return _maxCapacity;
 }
 
 int Tram::getSpeed() {
@@ -104,7 +104,7 @@ void Tram::setNumber(int number) {
 void Tram::move() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
   Station *currentStation = this->getCurrentStation();
-  int passengers = GenerateNumber(this->getCurrentCapacity(), this->getCapacity());
+  int passengers = GenerateNumber(this->getCurrentCapacity(), this->getMaxCapacity());
   setCapacity(passengers);
   setTurnover();
   Station *nextStation = currentStation->getNext();
@@ -117,12 +117,13 @@ void Tram::move() {
 void Tram::setCurrentCapacity(int number) {
     REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
     _currentCapacity = number;
-    ENSURE(getCurrentCapacity() <= getCapacity(), "Tram currentCapacity is greater than maximum capacity");
+    ENSURE(getCurrentCapacity() <= getMaxCapacity(), "Tram currentCapacity is greater than maximum capacity");
     ENSURE(number == getCurrentCapacity(), "Tram currentCapacity was not set correctly");
 }
 
 int Tram::getTurnover() {
-    return _turnover;
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getTurnover");
+  return _turnover;
 }
 
 void Tram::setTurnover() {
@@ -130,23 +131,17 @@ void Tram::setTurnover() {
     _turnover = 2 * getCurrentCapacity();
 }
 
-void Tram::setCapacity() {
-    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCapacity");
-    if (this->_type == Albatross)
-        _capacity = 72;
-    else if (this->_type == PCC)
-        _capacity = 16;
-}
-
-void Tram::setSpeed(){
-    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
-    if(this->_type == Albatross)
-        _speed = 70;
-    else if (this->_type == PCC)
-        _speed = 40;
+void Tram::setSpeed() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
+  if(this->_type == Albatross) {
+    _speed = 70;
+  } else if (this->_type == PCC) {
+    _speed = 40;
+  }
 }
 
 int Tram::getCurrentCapacity() {
-    return _currentCapacity;
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentCapacity");
+  return _currentCapacity;
 }
 
