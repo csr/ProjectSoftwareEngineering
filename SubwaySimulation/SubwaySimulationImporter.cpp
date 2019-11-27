@@ -138,7 +138,7 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
 
   if (typeStr == "Albatross") {
     type = Albatross;
-  } else if (typeStr == "TRAM") {
+  } else if (typeStr == "PCC") {
     type = PCC;
   } else {
     // Invalid tram type means invalid tram
