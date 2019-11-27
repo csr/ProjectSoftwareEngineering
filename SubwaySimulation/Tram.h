@@ -137,12 +137,13 @@ class Tram {
   void setTurnover();
 
   void setSpeed();
-  void setCapacity(int capacity);
+
+  void setMaximumCapacity(int capacity);
 
   void move();
 
  private:
-  Tram * _initCheck;
+  Tram* _initCheck;
   int _number;
   int _line;
   Station* _startStation;

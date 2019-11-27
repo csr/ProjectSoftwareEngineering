@@ -116,9 +116,9 @@ void Subway::moveTramsOnce(ostream &outputStream) {
     REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
     for (auto tram : this->_tramsArray) {
         string previousStationName = tram->getCurrentStation()->getName();
-        if(!tram->getCurrentStation()->getNext()->isOccupy())
-            tram->move();
-
+        if(!tram->getCurrentStation()->getNext()->isCurrentlyOccupied()) {
+          tram->move();
+        }
         string currentStationName = tram->getCurrentStation()->getName();
         outputStream << "Tram " << tram->getLine() << " moved from station " << previousStationName <<
                      " to station " << currentStationName << endl;

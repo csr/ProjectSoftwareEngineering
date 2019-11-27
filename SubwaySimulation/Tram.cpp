@@ -105,7 +105,7 @@ void Tram::move() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
   Station *currentStation = this->getCurrentStation();
   int passengers = GenerateNumber(this->getCurrentCapacity(), this->getMaxCapacity());
-  setCapacity(passengers);
+  setCurrentCapacity(passengers); // controllare
   setTurnover();
   Station *nextStation = currentStation->getNext();
   this->setCurrentStation(nextStation);

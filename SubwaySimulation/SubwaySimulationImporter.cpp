@@ -153,7 +153,8 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
     return NULL;
   }
 
-  return new Tram(line, type, startStation);
+  // TODO: make sure you input the right vehicle number instead of using zero
+  return new Tram(line, type, startStation, 0);
 }
 
 int find_track(unordered_map<string, Station*> stations, unordered_map<string, Station*>::iterator it) {

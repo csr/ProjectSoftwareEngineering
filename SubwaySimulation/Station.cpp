@@ -16,7 +16,7 @@ using namespace std;
 Station::Station(string name, string nextStation, string previousStation, StationType type) {
   _initCheck = this;
   setName(name);
-  setType(type);
+  _type = type;
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
@@ -88,12 +88,6 @@ void Station::setNextName(string next) {
   _nextName = next;
   ENSURE(ValidStringAttribute(getNextName()), "Station next name must be valid");
   ENSURE(getNextName() == _nextName, "Station next station name was not set correctly");
-}
-
-void setType(StationType type) {
-  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setType");
-  _type = type;
-  ENSURE(type == getType(), "Station previous station name was not set correctly");
 }
 
 void Station::setOccupied(bool isOccupied) {
