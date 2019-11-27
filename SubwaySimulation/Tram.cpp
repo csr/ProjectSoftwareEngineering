@@ -107,11 +107,14 @@ void Tram::move() {
   int passengers = GenerateRandomNumber(this->getCurrentCapacity(), this->getMaxCapacity());
   setCurrentCapacity(passengers); // controllare
   setTurnover();
-  Station *nextStation = currentStation->getNext();
+
+  // Set next station
+  Track track = currentStation->getTrack(this->getNumber());
+  Station *nextStation = track.getNextStation();
   this->setCurrentStation(nextStation);
+
   passengers = GenerateRandomNumber(0, this->getCurrentCapacity());
   setCurrentCapacity(passengers);
-
 }
 
 void Tram::setCurrentCapacity(int number) {

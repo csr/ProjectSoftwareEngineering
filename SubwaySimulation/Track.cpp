@@ -1,12 +1,16 @@
-//
-// Created by bigboss98 on 24/11/19.
-//
+//============================================================================
+// Name        : Track.cpp
+// Author      : Group A
+// Version     :
+// Copyright   : Group A
+// Description : Subway simulation in C++
+//============================================================================
 
 #include "Track.h"
 #include "DesignByContract.h"
 #include "SubwaySimulationUtils.h"
 
-Track::Track(int track, Station *next, Station *previous) {
+Track::Track(int track, Station* next, Station* previous) {
   _init = this;
   setTrack(track);
   setNext(next);
@@ -38,16 +42,16 @@ void Track::setPrevious(Station *previous) {
 }
 
 int Track::getTrackNumber() {
-    REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized");
+    REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized when calling getTrackNumber");
     return _track;
 }
 
 Station* Track::getNextStation() {
-    REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized");
+    REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized when calling getNextStation");
     return _next;
 }
 
 Station* Track::getPreviousStation() {
-    REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized");
+    REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized when calling getPreviousStation");
     return _previous;
 }

@@ -1,8 +1,8 @@
 //============================================================================
 // Name        : Track.h
-// Author      : Cesare De Cal, Marco Natali, Veronica Orsanigo
+// Author      : Group A
 // Version     :
-// Copyright   : Cesare De Cal, Marco Natali, Veronica Orsanigo
+// Copyright   : Group A
 // Description : Subway simulation in C++
 //============================================================================
 
@@ -22,10 +22,6 @@ class Station;
 
 class Track {
  public:
-
-/**
-  Constructor for the Track class.
-*/
   Track(int track, Station* next, Station* previous);
 
   bool properlyInitialized();
