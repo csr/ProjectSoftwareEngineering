@@ -27,31 +27,33 @@ enum StationType {TypeStation, TypeStop};
 class Track;
 
 class Station {
- public:
-  Station(string name, string nextStation, string previousStation, StationType type);
+public:
+    Station(string name, StationType type, unordered_map<int, Track*> tracks);
 
-  bool properlyInitialized();
+    bool properlyInitialized();
 
-  void setName(string name);
+    void setName(string name);
 
-  void setOccupied(bool isOccupied);
+    void setOccupied(bool isOccupied);
 
-  string getName();
+    void setTracks(unordered_map<int, Track*> tracks);
 
-  StationType getType();
+    string getName();
 
-  Track* getTrack(int number);
+    StationType getType();
 
-  vector<Track*> getTracks();
+    Track* getTrack(int number);
 
-  bool isCurrentlyOccupied();
+    vector<Track*> getTracks();
 
- private:
-  Station * _initCheck;
-  string _name;
-  StationType _type;
-  bool _isOccupied;
-  unordered_map<int, Track*> _tracks;
+    bool isCurrentlyOccupied();
+
+private:
+    Station * _initCheck;
+    string _name;
+    StationType _type;
+    bool _isOccupied;
+    unordered_map<int, Track*> _tracks;
 };
 
 #endif //UNTITLED_STATION_H

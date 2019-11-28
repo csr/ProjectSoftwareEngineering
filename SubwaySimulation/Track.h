@@ -9,7 +9,10 @@
 #ifndef SUBWAYSIMULATION_TRACK_H
 #define SUBWAYSIMULATION_TRACK_H
 
+#include <string>
 #include "Station.h"
+
+using namespace std;
 
 // Example Track:
 //<TRACK>
@@ -23,6 +26,7 @@ class Station;
 class Track {
  public:
   Track(int track, Station* next, Station* previous);
+  Track(int track, string next, string previous);
 
   bool properlyInitialized();
 
@@ -32,17 +36,27 @@ class Track {
 
   void setPrevious(Station* previous);
 
-  int getNumber();
+  void setNextStr(string next);
+
+  void setPreviousStr(string previous);
+
+  int getTrack();
 
   Station* getNext();
 
   Station* getPrevious();
+
+  string getNextStr();
+
+  string getPreviousStr();
 
  private:
    Track* _init;
    int _track;
    Station* _next;
    Station* _previous;
+   string _nextStr;
+   string _previousStr;
 };
 
 #endif //SUBWAYSIMULATION_TRACK_H

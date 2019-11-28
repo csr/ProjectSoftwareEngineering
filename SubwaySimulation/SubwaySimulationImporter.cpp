@@ -17,11 +17,13 @@
 #include "Station.h"
 #include "Tram.h"
 #include "tinyxml.h"
+#include "Track.h"
 
 using namespace std;
 
-int maxStationChildrenCount = 5;
-int maxTramChildrenCount = 3;
+int maxStationChildrenCount = 3; // station children = name, type, TRACK
+int maxTramChildrenCount = 4; // line, vehicle, type, startStation
+int maxTrackChildrenCount = 3; // track, previious, next
 enum RootElementType {StationT, TramT, InvalidT};
 
 // Auxiliary function for internal use only
@@ -53,49 +55,105 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
     return NULL;
   }
 
+  // map of future tracks
+  unordered_map<int, Track*> tracks;
+
   // The attributes of a station are name, previous, next, track
-  TiXmlNode *elem_name, *elem_previous, *elem_next, *elem_track;
+  TiXmlNode *elem_name, *elem_previous, *elem_next, *elem_track, *elem_type;
+
   elem_name = root->FirstChild("name");
+  elem_type = root->FirstChild("type");
+  /* questi non ci sono più perchè sono dentro a TRACK
   elem_previous = root->FirstChild("previous");
   elem_next = root->FirstChild("next");
-  elem_track = root->FirstChild("track");
+  elem_track = root->FirstChild("track");*/
 
+  if (elem_name == NULL || elem_type == NULL) {
+      return NULL;
+  }
+
+  int num_track = 0; // to count how many tracks there are in a station
   int childrenCount = 0;
-  for (const TiXmlNode* node = root->FirstChild(); node; node = node->NextSibling()) {
-    childrenCount++;
+
+  // check if there are TRACK and if number of children of TRACK and of  STATION is correct
+  for (TiXmlElement *node = root->FirstChildElement(); node; node = node->NextSiblingElement()) {
+     // elem_value can be name, type, TRACK
+        string elem_value = node->Value();
+
+        // other way using TiXmlNode instead of TiXmlElement
+  /*for (TiXmlNode* node = root->FirstChild(); node; node = node->NextSibling()) {
+      TiXmlText* elem_text = node->ToText();
+      string elem_value = elem_text->Value();*/
+
+      if(elem_value == "TRACK") {
+          int childrenTrackCount = 0;
+          num_track++;
+          elem_previous = node->FirstChild("previous");
+          elem_next = node->FirstChild("next");
+          elem_track = root->FirstChild("track");
+          for (TiXmlNode* node1 = node->FirstChild(); node1; node1 = node1->NextSibling()) {
+              childrenTrackCount++;
+          }
+          if (childrenTrackCount != maxTrackChildrenCount)
+              return NULL;
+          else {
+              if (elem_previous == NULL || elem_next == NULL || elem_track == NULL) {
+                  // Invalid format, return
+                  return NULL;
+              }
+              string previous = fetch_text(elem_previous, errStream);
+              string next = fetch_text(elem_next, errStream);
+              string trackStr = fetch_text(elem_track, errStream);
+              if (!ValidStringAttribute(previous) || !ValidStringAttribute(next)) {
+                  return NULL;
+              }
+              int track;
+              // If the track is a number, then create a Track* track_el
+              if (IsStringNumber(trackStr)) {
+                  track = stoi(trackStr);
+              } else {
+                  // Otherwise skip
+                  return NULL;
+              }
+              Track* track_el = new Track(track, next, previous);
+              tracks[track_el->getTrack()] = track_el;
+          }
+          if (num_track < 2) // if there are more then one track, we should not increase the number of children,
+              // because we want to check if there are one/more TRACK, one name, one type for station
+              childrenCount++;
+      }
+      if (elem_value != "TRACK")
+          childrenCount++;
   }
 
   if (childrenCount != maxStationChildrenCount) {
     return NULL;
   }
 
-  if (elem_name == NULL || elem_previous == NULL || elem_next == NULL) {
-    // Invalid format, return
-    return NULL;
-  }
+  string name = fetch_text(elem_name, errStream);
+  string type = fetch_text(elem_type, errStream);
 
   // Check these are made up of letters ONLY
-  string name = fetch_text(elem_name, errStream);
-  string previous = fetch_text(elem_previous, errStream);
-  string next = fetch_text(elem_next, errStream);
-
-  if (!ValidStringAttribute(name) || !ValidStringAttribute(previous) || !ValidStringAttribute(next)) {
-    return NULL;
+  if (!ValidStringAttribute(name)) {
+      return NULL;
   }
 
-  int track = 0;
-  string trackStr = fetch_text(elem_track, errStream);
+  StationType typeS;
 
-  // If the track is a number, then return station
-  if (IsStringNumber(trackStr)) {
-    track = stoi(trackStr);
-  } else {
-    // Otherwise skip
-    return NULL;
+  // check if the type is correct
+  if (type == "station") {
+      typeS = TypeStation;
   }
-  cout << track;
-  // TODO: change type based on what's been parsed
-  return new Station(name, next, previous, TypeStation);
+  else if (type == "stop") {
+      typeS = TypeStop;
+  }
+  else {
+      // Invalid station type means invalid station
+      return NULL;
+  }
+
+  return new Station(name, typeS, tracks);
+
 }
 
 // Parse station given its root element
@@ -116,25 +174,29 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
   }
 
   // The attributes of a tram are line, capacity, speed and start station
-  TiXmlNode *elem_startStation, *elem_line, *elem_type;
+  TiXmlNode *elem_startStation, *elem_line, *elem_type, *elem_vehicle;
 
   elem_line = root->FirstChild("line");
   elem_type = root->FirstChild("type");
   elem_startStation = root->FirstChild("startStation");
+  elem_vehicle = root->FirstChild("vehicle");
 
-  if (elem_startStation == NULL || elem_type == NULL) {
+  if (elem_startStation == NULL || elem_type == NULL || elem_line == NULL || elem_vehicle == NULL) {
     return NULL;
   }
 
   int line;
+  int vehicle;
+  TramType type;
+
   string startStation = fetch_text(elem_startStation, errStream);
   string typeStr = fetch_text(elem_type, errStream);
+  string lineStr = fetch_text(elem_line, errStream);
+  string vehicleStr = fetch_text(elem_vehicle, errStream);
 
   if (!ValidStringAttribute(startStation)) {
     return NULL;
   }
-
-  TramType type;
 
   if (typeStr == "Albatross") {
     type = Albatross;
@@ -145,16 +207,19 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
     return NULL;
   }
 
-  string lineStr = fetch_text(elem_line, errStream);
-
   if (IsStringNumber(lineStr)) {
     line = stoi(lineStr);
   } else {
     return NULL;
   }
 
-  // TODO: make sure you input the right vehicle number instead of using zero
-  return new Tram(line, type, startStation, 0);
+  if (IsStringNumber(vehicleStr)) {
+      vehicle = stoi(vehicleStr);
+  } else {
+      return NULL;
+  }
+
+  return new Tram(line, type, startStation, vehicle);
 }
 
 // Check if each station has a next and previous with same track and if each track has exactly one tram
@@ -245,7 +310,8 @@ SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, st
   vector<Tram*> tramsArray;
 
   unordered_map<string, Station*> stations; // station name - station
-  unordered_map<int, Tram*> trams; // tram startStation - tram
+  typedef pair<int, int> pair;
+  map<pair, Tram*> trams;
 
   // Iterate through the file
   for (TiXmlElement *root = doc.FirstChildElement(); root != NULL; root = root->NextSiblingElement()) {
@@ -285,13 +351,13 @@ SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, st
         } else {
           // Check if there aren't trams already parsed with the same line to avoid duplicates
           // The count would be 1 if the element is indeed present in the map.
-          if (trams.count(tram->getLine())) {
+          if (trams.count(make_pair(tram->getLine(), tram->getVehicle()))) {
             // We found a duplicate. Exit early.
             errStream << "XML IMPORT ABORTED: found duplicate tram with line " << tram->getLine() << endl;
             return ImportAborted;
           } else {
             // First time we're seeing a tram with this line. Add this to our map.
-            trams[tram->getLine()] = tram;
+            trams[make_pair(tram->getLine(), tram->getVehicle())] = tram;
             tramsArray.push_back(tram);
           }
         }

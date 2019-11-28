@@ -10,13 +10,15 @@
 #include "Station.h"
 #include "DesignByContract.h"
 #include "SubwaySimulationUtils.h"
+#include "Track.h"
 
 using namespace std;
 
-Station::Station(string name, string nextStation, string previousStation, StationType type) {
+Station::Station(string name, StationType type, unordered_map<int, Track*> tracks) {
   _initCheck = this;
   setName(name);
   _type = type;
+  setTracks(tracks);
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
@@ -35,6 +37,10 @@ void Station::setOccupied(bool isOccupied) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setOccupied");
   _isOccupied = isOccupied;
   ENSURE(isOccupied == isCurrentlyOccupied(), "Station occupied was not set correctly");
+}
+
+void Station::setTracks(unordered_map<int, Track*> tracks) {
+  _tracks = tracks;
 }
 
 string Station::getName() {
@@ -68,6 +74,6 @@ StationType Station::getType() {
 }
 
 bool Station::isCurrentlyOccupied() {
-    REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling isCurrentlyOccupied");
-    return _isOccupied;
+  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling isCurrentlyOccupied");
+  return _isOccupied;
 }

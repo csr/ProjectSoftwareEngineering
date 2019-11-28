@@ -31,7 +31,7 @@ class Tram {
  @param startStation Start Station of the Tram.
  @returns An instance of Tram.
 */
-  Tram(int line, TramType type, string startStation, int number);
+  Tram(int line, TramType type, string startStation, int vehicle);
 
   bool properlyInitialized();
 /**
@@ -80,7 +80,7 @@ class Tram {
 
   TramType getType();
 
-  int getNumber();
+  int getVehicle();
 
   /**
   Setter for the line of the Tram.
@@ -130,7 +130,7 @@ class Tram {
 */
   void setType(TramType type);
 
-  void setNumber(int number);
+  void setVehicle(int vehicle);
 
   void setCurrentCapacity(int number);
 
@@ -142,18 +142,9 @@ class Tram {
 
   void move();
 
-  void setDistance(int distance);
-
-  int calculateDistance();
-
-
-  void decreaseDistance();
-
-  int getDistance();
-
  private:
   Tram* _initCheck;
-  int _number;
+  int _vehicle;
   int _line;
   Station* _startStation;
   Station* _currentStation;
@@ -164,7 +155,6 @@ class Tram {
   int _maxCapacity;
   int _turnover;
   int _speed;
-  int _distance;
 };
 
 #endif //UNTITLED_TRAM_H
