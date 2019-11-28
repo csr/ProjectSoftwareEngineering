@@ -142,6 +142,15 @@ class Tram {
 
   void move();
 
+  void setDistance(int distance);
+
+  int calculateDistance();
+
+
+  void decreaseDistance();
+
+  int getDistance();
+
  private:
   Tram* _initCheck;
   int _number;
@@ -155,6 +164,7 @@ class Tram {
   int _maxCapacity;
   int _turnover;
   int _speed;
+  int _distance;
 };
 
 #endif //UNTITLED_TRAM_H

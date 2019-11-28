@@ -112,7 +112,6 @@ void Subway::computeAutomaticSimulation(int steps, ostream &outputStream) {
     REQUIRE(steps >= 0, "Number of steps must be positive");
     int current = 0;
     while (current < steps) {
-        collectStatisticalData();
         this->moveTramsOnce(outputStream);
         current++;
     }
@@ -120,20 +119,32 @@ void Subway::computeAutomaticSimulation(int steps, ostream &outputStream) {
 
 void Subway::moveTramsOnce(ostream &outputStream) {
     REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling moveTramsOnce");
-    for (auto tram: this->_tramsArray) {
+    for (auto tram : this->_tramsArray) {
         Station *currentStation = tram->getCurrentStation();
         string previousStationName = currentStation->getName();
-        Track *track = currentStation->getTrack(tram->getNumber());
-        if (!track->getNext()->isCurrentlyOccupied()) {
-          tram->move();
-        }
-        string currentStationName = tram->getCurrentStation()->getName();
-        outputStream << "Tram " << tram->getLine() << " moved from station " << previousStationName <<
-                     " to station " << currentStationName << endl;
+        if (tram->getDistance() == 0){
+            Track *track = currentStation->getTrack(tram->getNumber());
+            if (!track->getNext()->isCurrentlyOccupied()) {
+                tram->calculateDistance();
+                tram->move();
+            }
+        }else if(tram->getDistance() == 1){
+            tram->decreaseDistance();
+            tram->move();
+            string currentStationName = tram->getCurrentStation()->getName();
+            outputStream << "Tram " << tram->getLine() << " moved from station " << previousStationName <<
+                         " to station " << currentStationName << endl;
+            //this->collectStatisticalData(statisticalFile);
+        }else
+            tram->decreaseDistance();
+
+
     }
 }
 
-void Subway::collectStatisticalData() {
-//    fileStream <<
+void Subway::collectStatisticalData(string fileName) {
+    //ofstream fileStream(fileName);
+    //fileStream <<
+    //fileStream.close();
 }
 

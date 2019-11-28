@@ -64,7 +64,7 @@ class Subway {
 */
   void moveTramsOnce(std::ostream& outputStream);
 
-  void collectStatisticalData();
+  void collectStatisticalData(string statisticalFile);
 
 /**
   Getter that returns number of stations in the Subway simulation.

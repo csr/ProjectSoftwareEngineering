@@ -83,7 +83,7 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
     return NULL;
   }
 
-  int track;
+  int track = 0;
   string trackStr = fetch_text(elem_track, errStream);
 
   // If the track is a number, then return station
@@ -93,7 +93,7 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
     // Otherwise skip
     return NULL;
   }
-
+  cout << track;
   // TODO: change type based on what's been parsed
   return new Station(name, next, previous, TypeStation);
 }
