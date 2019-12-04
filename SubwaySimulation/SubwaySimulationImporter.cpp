@@ -395,14 +395,11 @@ SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, st
   }
 
   // Transform station names into Station pointers
-  std::vector<Tram*>::iterator tramIterator;
-  tramIterator = tramsArray.begin();
-  for (tramIterator = tramsArray.begin(); tramIterator < tramsArray.end(); tramIterator++) {
-    Tram *currentTram = *tramIterator;
-    string startStationName = currentTram->getStartStationName();
+  for (auto &tram: tramsArray) {
+    string startStationName = tram->getStartStationName();
     Station *startStation = stations[startStationName];
-    currentTram->setStartStation(startStation);
-    currentTram->setCurrentStation(startStation);
+    tram->setStartStation(startStation);
+    tram->setCurrentStation(startStation);
   }
 
   subway.importData(stationsArray, tramsArray);

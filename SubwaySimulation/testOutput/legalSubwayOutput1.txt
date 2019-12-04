@@ -1,0 +1,24 @@
+Station A
+Track 12
+<- Station C
+-> Station B
+Track 21
+<- Station B
+-> Station C
+
+Station B
+Track 12
+<- Station A
+-> Station C
+Track 21
+<- Station C
+-> Station A
+
+Station C
+Track 12
+<- Station B
+-> Station A
+Track 21
+<- Station A
+-> Station B
+
