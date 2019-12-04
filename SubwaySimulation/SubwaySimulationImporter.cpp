@@ -77,7 +77,7 @@ Track *parseTrack(TiXmlElement *root, std::ostream& errStream) {
   for (TiXmlElement *node = root->FirstChildElement(); node; node = node->NextSiblingElement()) {
     childrenCount++;
   }
-  if (childrenCount != maxTramChildrenCount) {
+  if (childrenCount != maxTrackChildrenCount) {
     return NULL;
   }
 
