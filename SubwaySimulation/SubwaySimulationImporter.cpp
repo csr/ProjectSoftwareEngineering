@@ -21,7 +21,7 @@
 
 using namespace std;
 
-int maxStationChildrenCount = 4; // name, track1, track2, type
+int minimumStationChildrenCount = 4; // name, track1, track2, trackN, type
 int maxTramChildrenCount = 4; // line, vehicle, type, startStation
 int maxTrackChildrenCount = 3; // track, next, previous
 
@@ -93,17 +93,9 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
 
   // map of future tracks
   unordered_map<int, Track*> tracks;
-
-  // The attributes of a station are name, previous, next, track
-  TiXmlNode *elem_name, *elem_type;
-
-  elem_name = root->FirstChild("name");
-  elem_type = root->FirstChild("type");
-
-  if (elem_name == NULL || elem_type == NULL) {
-    return NULL;
-  }
-
+  StationType typeStation;
+  string name;
+  
   int childrenCount = 0;
 
   for (TiXmlElement *node = root->FirstChildElement(); node; node = node->NextSiblingElement()) {
@@ -122,30 +114,30 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
         // Invalid track, doesn't count towards children count
         childrenCount--;
       }
+    } else if (elem_value == "type") {
+      string type = fetch_text(node, errStream);
+      // check if the type is correct
+      if (type == "station") {
+        typeStation = TypeStation;
+      } else if (type == "stop") {
+        typeStation = TypeStop;
+      } else {
+        // Invalid station type means invalid station
+        return NULL;
+      }
+    } else if (elem_value == "name") {
+        name = fetch_text(node, errStream);
+        if (!ValidStringAttribute(name)) {
+          return NULL;
+        }
+    } else {
+      // Unrecognized element
+      return NULL;
     }
   }
 
-  if (childrenCount != maxStationChildrenCount) {
-    return NULL;
-  }
-
-  string name = fetch_text(elem_name, errStream);
-  string type = fetch_text(elem_type, errStream);
-
-  // Check these are made up of letters ONLY
-  if (!ValidStringAttribute(name)) {
-    return NULL;
-  }
-
-  StationType typeStation;
-
-  // check if the type is correct
-  if (type == "station") {
-    typeStation = TypeStation;
-  } else if (type == "stop") {
-    typeStation = TypeStop;
-  } else {
-    // Invalid station type means invalid station
+  // Watch out! We need to support multiple tracks.
+  if (childrenCount >= minimumStationChildrenCount) {
     return NULL;
   }
 
