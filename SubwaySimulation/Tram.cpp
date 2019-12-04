@@ -123,15 +123,14 @@ void Tram::move() {
       this->getCurrentStation()->setOccupied(false);
 
       ENSURE(!this->getCurrentStation()->isCurrentlyOccupied(), "Tram doesn't leave the station");
-      }
-
+  }
 }
 
 void Tram::setCurrentCapacity(int number) {
-    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
-    _currentCapacity = number;
-    ENSURE(getCurrentCapacity() <= getMaxCapacity(), "Tram currentCapacity is greater than maximum capacity");
-    ENSURE(number == getCurrentCapacity(), "Tram currentCapacity was not set correctly");
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
+  _currentCapacity = number;
+  ENSURE(getCurrentCapacity() <= getMaxCapacity(), "Tram currentCapacity is greater than maximum capacity");
+  ENSURE(number == getCurrentCapacity(), "Tram currentCapacity was not set correctly");
 }
 
 int Tram::getTurnover() {
@@ -140,8 +139,8 @@ int Tram::getTurnover() {
 }
 
 void Tram::setTurnover() {
-    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setTurnover");
-    _turnover = 2 * getCurrentCapacity();
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setTurnover");
+  _turnover = 2 * getCurrentCapacity();
 }
 
 void Tram::setSpeed() {
@@ -158,9 +157,9 @@ int Tram::getCurrentCapacity() {
   return _currentCapacity;
 }
 
-int Tram::getDistance(){
-    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getDistance");
-    return _distance;
+int Tram::getDistance() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getDistance");
+  return _distance;
 }
 
 int Tram::calculateDistance() {
@@ -184,9 +183,9 @@ void Tram::setDistance(int distance) {
 }
 
 void Tram::decreaseDistance() {
-    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling decreaseDistance");
-    int dist = this->getDistance();
-    _distance--;
-    ENSURE(this->getDistance() == dist - 1, "Tram doesn't decrease the distance");
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling decreaseDistance");
+  int previousDistance = this->getDistance();
+  _distance--;
+  ENSURE(this->getDistance() == previousDistance - 1, "Tram doesn't decrease the distance");
 }
 

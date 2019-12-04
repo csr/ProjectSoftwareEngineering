@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="SubwaySimulation"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="debug">
+				<Option output="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/debug" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testSimulation"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/userFiles"/>
+					<Add directory="/opt/intel/compilers_and_libraries_2019.5.281/mac/mkl/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 debug"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="debug/fast">
+				<Option output="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/debug" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testSimulation"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/userFiles"/>
+					<Add directory="/opt/intel/compilers_and_libraries_2019.5.281/mac/mkl/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 debug/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="release">
+				<Option output="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/release" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testSimulation"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/userFiles"/>
+					<Add directory="/opt/intel/compilers_and_libraries_2019.5.281/mac/mkl/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 release"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="release/fast">
+				<Option output="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/release" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testSimulation"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/userFiles"/>
+					<Add directory="/opt/intel/compilers_and_libraries_2019.5.281/mac/mkl/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 release/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Output.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Output.h">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Station.h">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Subway.h">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationDomainTests.cpp">
+			<Option target="debug"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationImporter.h">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationInputTests.cpp">
+			<Option target="debug"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationMain.cpp">
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationMovingTests.cpp">
+			<Option target="debug"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationOutputTests.cpp">
+			<Option target="debug"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationTests.cpp">
+			<Option target="debug"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.h">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Track.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Track.h">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Tram.h">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinystr.h">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxml.h">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxmlerror.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/tinyxmlparser.cpp">
+			<Option target="debug"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

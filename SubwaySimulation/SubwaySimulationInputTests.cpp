@@ -9,18 +9,42 @@
 #include <fstream>
 #include <sys/stat.h>
 
+#include <iostream>
+#include <gtest/gtest.h>
+
 using namespace std;
 
 #include "Subway.h"
 #include "SubwaySimulationUtils.h"
 #include "SubwaySimulationImporter.h"
 
-//class SubwaySimulationInputTests: public ::testing::Test {
-// protected:
-//  friend class Subway;
-//  Subway subway_;
-//};
-//
+class SubwaySimulationInputTests: public ::testing::Test {
+ protected:
+  friend class Subway;
+  Subway subway_;
+};
+
+TEST_F(SubwaySimulationInputTests, InputLegalSubways) {
+  ASSERT_TRUE(DirectoryExists("testInput"));
+
+  ofstream myfile;
+  SuccessEnum importResult;
+  int fileCounter = 1;
+  string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+
+  while (FileExists (fileName)) {
+    myfile.open("testInput/zzzError.txt");
+    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
+    myfile.close();
+    EXPECT_TRUE((importResult == Success));
+    EXPECT_TRUE(FileIsEmpty("testInput/zzzError.txt"));
+
+    fileCounter = fileCounter + 1;
+    fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+  };
+  EXPECT_TRUE(fileCounter == 1);
+}
+
 //TEST_F(SubwaySimulationInputTests, InputXMLSyntaxErrors) {
 //  ASSERT_TRUE(DirectoryExists("testInput"));
 //
@@ -44,28 +68,7 @@ using namespace std;
 //  };
 //  EXPECT_TRUE(fileCounter == 6);
 //}
-//
-//TEST_F(SubwaySimulationInputTests, InputLegalSubways) {
-//  ASSERT_TRUE(DirectoryExists("testInput"));
-//
-//  ofstream myfile;
-//  SuccessEnum importResult;
-//  int fileCounter = 1;
-//  string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
-//
-//  while (FileExists (fileName)) {
-//    myfile.open("testInput/zzzError.txt");
-//    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
-//    myfile.close();
-//    EXPECT_TRUE((importResult == Success));
-//    EXPECT_TRUE(FileIsEmpty("testInput/zzzError.txt"));
-//
-//    fileCounter = fileCounter + 1;
-//    fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
-//  };
-//  EXPECT_TRUE(fileCounter == 5);
-//}
-//
+
 //TEST_F(SubwaySimulationInputTests, InputPartialSimulations) {
 //  ASSERT_TRUE(DirectoryExists("testInput"));
 //
@@ -88,7 +91,7 @@ using namespace std;
 //  };
 //  EXPECT_TRUE(fileCounter == 3);
 //}
-//
+
 //TEST_F(SubwaySimulationInputTests, InputIllegalSimulations) {
 //  ASSERT_TRUE(DirectoryExists("testInput"));
 //

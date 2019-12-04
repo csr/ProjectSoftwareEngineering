@@ -10,14 +10,6 @@
 #include "DesignByContract.h"
 #include "SubwaySimulationUtils.h"
 
-Track::Track(int track, Station* next, Station* previous) {
-  _init = this;
-  setTrack(track);
-  setNext(next);
-  setPrevious(previous);
-  ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
-}
-
 Track::Track(int track, string nextStr, string previousStr) {
     _init = this;
     setTrack(track);

@@ -1,0 +1,3 @@
+XML PARTIAL IMPORT: invalid station found
+XML PARTIAL IMPORT: invalid tram found
+XML IMPORT ABORTED: found empty file

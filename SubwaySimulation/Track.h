@@ -25,7 +25,6 @@ class Station;
 
 class Track {
  public:
-  Track(int track, Station* next, Station* previous);
   Track(int track, string next, string previous);
 
   bool properlyInitialized();
