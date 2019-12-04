@@ -149,59 +149,52 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
     return NULL;
   }
 
+  TramType type;
+  string startStation;
+  int vehicle = 0, line = 0;
+
   // Check that the number of children is 4
   int childrenCount = 0;
-  for (const TiXmlNode* node = root->FirstChild(); node; node = node->NextSibling()) {
+  for (TiXmlElement *node = root->FirstChildElement(); node; node = node->NextSiblingElement()) {
     childrenCount++;
+
+    string elem_value = node->Value();
+
+    if (elem_value == "line") {
+      string lineStr = fetch_text(node, errStream);
+      if (IsStringNumber(lineStr)) {
+        line = stoi(lineStr);
+      } else {
+        return NULL;
+      }
+    } else if (elem_value == "type") {
+      string typeStr = fetch_text(node, errStream);
+      if (typeStr == "Albatross") {
+        type = Albatross;
+      } else if (typeStr == "PCC") {
+        type = PCC;
+      } else {
+        return NULL;
+      }
+    } else if (elem_value == "startStation") {
+      startStation = fetch_text(node, errStream);
+      if (!ValidStringAttribute(startStation)) {
+        return NULL;
+      }
+    } else if (elem_value == "vehicle") {
+      string vehicleStr = fetch_text(node, errStream);
+      if (IsStringNumber(vehicleStr)) {
+        vehicle = stoi(vehicleStr);
+      } else {
+        return NULL;
+      }
+    } else {
+      // invalid element found
+      return NULL;
+    }
   }
 
   if (childrenCount != maxTramChildrenCount) {
-    return NULL;
-  }
-
-  // The attributes of a tram are line, capacity, speed and start station
-  TiXmlNode *elem_startStation, *elem_line, *elem_type, *elem_vehicle;
-
-  elem_line = root->FirstChild("line");
-  elem_type = root->FirstChild("type");
-  elem_startStation = root->FirstChild("startStation");
-  elem_vehicle = root->FirstChild("vehicle");
-
-  if (elem_startStation == NULL || elem_type == NULL || elem_line == NULL || elem_vehicle == NULL) {
-    return NULL;
-  }
-
-  int line;
-  int vehicle;
-  TramType type;
-
-  string startStation = fetch_text(elem_startStation, errStream);
-  string typeStr = fetch_text(elem_type, errStream);
-  string lineStr = fetch_text(elem_line, errStream);
-  string vehicleStr = fetch_text(elem_vehicle, errStream);
-
-  if (!ValidStringAttribute(startStation)) {
-    return NULL;
-  }
-
-  if (typeStr == "Albatross") {
-    type = Albatross;
-  } else if (typeStr == "PCC") {
-    type = PCC;
-  } else {
-    // Invalid tram type means invalid tram
-    return NULL;
-  }
-
-  if (IsStringNumber(lineStr)) {
-    line = stoi(lineStr);
-  } else {
-    return NULL;
-  }
-
-  if (IsStringNumber(vehicleStr)) {
-    vehicle = stoi(vehicleStr);
-  } else {
     return NULL;
   }
 

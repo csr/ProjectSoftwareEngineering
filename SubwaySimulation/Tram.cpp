@@ -16,6 +16,8 @@ Tram::Tram(int line, TramType type, string startStation, int number) {
   setStartStationName(startStation);
   setType(type);
   setNumber(number);
+  setMaximumCapacity();
+  setSpeed();
   ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
   ENSURE(startStation == getStartStationName(), "Start station wasn't set correctly in constructor");
 }
@@ -149,6 +151,15 @@ void Tram::setSpeed() {
     _speed = 70;
   } else if (this->_type == PCC) {
     _speed = 40;
+  }
+}
+
+void Tram::setMaximumCapacity() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setMaximumCapacity");
+  if(this->_type == Albatross) {
+    _maxCapacity = 72;
+  } else if (this->_type == PCC) {
+    _maxCapacity = 16;
   }
 }
 

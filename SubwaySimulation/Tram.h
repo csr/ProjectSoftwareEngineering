@@ -138,7 +138,7 @@ class Tram {
 
   void setSpeed();
 
-  void setMaximumCapacity(int capacity);
+  void setMaximumCapacity();
 
   void move();
 

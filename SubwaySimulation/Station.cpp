@@ -78,7 +78,6 @@ vector<Track*> Station::getTracksArray() {
   return tracksVector;
 }
 
-
 StationType Station::getType() {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getType");
   return _type;
