@@ -2,6 +2,7 @@ Station A
 Track 12
 <- Station C
 -> Station B
+Tram with 16 seats
 Track 21
 <- Station B
 -> Station C
@@ -13,6 +14,7 @@ Track 12
 Track 21
 <- Station C
 -> Station A
+Tram with 72 seats
 
 Station C
 Track 12
