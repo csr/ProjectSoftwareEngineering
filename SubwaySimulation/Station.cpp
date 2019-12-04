@@ -14,11 +14,12 @@
 using namespace std;
 
 Station::Station(string name, StationType type, unordered_map<int, Track*> tracks) {
-    _initCheck = this;
-    setName(name);
-    _type = type;
-    setTracks(tracks);
-    ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+  _initCheck = this;
+  setName(name);
+  _type = type;
+  setTracks(tracks);
+  setOccupied(false);
+  ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
 bool Station::properlyInitialized() {
@@ -39,7 +40,9 @@ void Station::setOccupied(bool isOccupied) {
 }
 
 void Station::setTracks(unordered_map<int, Track*> tracks) {
-    _tracks = tracks;
+  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTracks");
+  _tracks = tracks;
+  ENSURE(tracks == getTracks(), "Station tracks weren't set correctly");
 }
 
 string Station::getName() {
@@ -56,15 +59,9 @@ Track* Station::getTrack(int number) {
   }
 }
 
-vector<Track*> Station::getTracks() {
+unordered_map<int, Track*> Station::getTracks() {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getTracks");
-  vector<Track*> keys;
-  keys.reserve(_tracks.size());
-
-  for(auto keyValuePair : _tracks) {
-    keys.push_back(keyValuePair.second);
-  }
-  return keys;
+  return _tracks;
 }
 
 StationType Station::getType() {
@@ -73,6 +70,6 @@ StationType Station::getType() {
 }
 
 bool Station::isCurrentlyOccupied() {
-    REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling isCurrentlyOccupied");
-    return _isOccupied;
+  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling isCurrentlyOccupied");
+  return _isOccupied;
 }

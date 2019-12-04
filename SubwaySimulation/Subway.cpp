@@ -73,8 +73,19 @@ string Subway::toString() {
     // Print Station name
     outputString = outputString + "Station " + station->getName() + "\n";
 
+    unordered_map<int, Track*> tracks = station->getTracks();
+    // Get tracks array
+    vector<Track*> tracksVector;
+    tracksVector.reserve(tracks.size());
+
+    for(auto keyValuePair : tracks) {
+      tracksVector.push_back(keyValuePair.second);
+    }
+
+    outputString += "Hello???";
+
     // Iterate over tracks and print track details
-    for (auto *track : station->getTracks()) {
+    for (auto *track : tracksVector) {
       outputString += "Track " + to_string(track->getTrack()) + "\n" +
           "<- Station" + track->getPrevious()->getName() + "\n" +
           "-> Station" + track->getNext()->getName() + "\n";
