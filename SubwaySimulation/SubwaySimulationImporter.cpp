@@ -381,18 +381,17 @@ SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, st
 
   // Link objects
   // Transform station names into Station pointers
-  std::vector<Station*>::iterator stationIterator;
-  stationIterator = stationsArray.begin();
-  for (stationIterator = stationsArray.begin(); stationIterator < stationsArray.end(); stationIterator++) {
-//    Station *currentStation = *stationIterator;
-//    string nextStationName = currentStation->getNextName();
-//    string previousStationName = currentStation->getPreviousName();
-//
-//    Station *nextStation = stations[nextStationName];
-//    Station *previousStation = stations[previousStationName];
-//
-//    currentStation->setNext(nextStation);
-//    currentStation->setPrevious(previousStation);
+  for (auto &station: stationsArray) {
+    for (auto &track: station->getTracksArray()) {
+      string nextStationName = track->getNextStr();
+      string previousStationName = track->getPreviousStr();
+
+      Station *nextStation = stations[nextStationName];
+      Station *previousStation = stations[previousStationName];
+
+      track->setNext(nextStation);
+      track->setPrevious(previousStation);
+    }
   }
 
   // Transform station names into Station pointers

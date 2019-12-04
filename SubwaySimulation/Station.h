@@ -10,6 +10,7 @@
 #define UNTITLED_STATION_H
 #include <cstdlib>
 #include <string>
+#include <vector>
 #include <unordered_map>
 
 #include "Track.h"
@@ -39,6 +40,8 @@ class Station {
   Track* getTrack(int number);
 
   unordered_map<int, Track*> getTracks();
+
+  vector<Track*> getTracksArray();
 
   bool isCurrentlyOccupied();
 

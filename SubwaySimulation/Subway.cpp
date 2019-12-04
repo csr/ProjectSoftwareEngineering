@@ -52,7 +52,6 @@ void Subway::importData(vector<Station *> stations, vector<Tram *> trams) {
 int Subway::getTramsCount() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
   unsigned long size = _tramsMap.size();
-  // TO CHECK - get this checked by Prof. Brent
   ENSURE(ValidIntegerAttribute(size), "Trams count can't be negative");
   return size;
 }
@@ -60,7 +59,6 @@ int Subway::getTramsCount() {
 int Subway::getStationsCount() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
   unsigned long size = _stationsMap.size();
-  // TO CHECK - get this checked by Prof. Brent
   ENSURE(ValidIntegerAttribute(size), "Stations count can't be negative");
   return size;
 }
@@ -69,42 +67,33 @@ string Subway::toString() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling toString");
 
   string outputString;
+
   for (auto &station : this->_stationsArray) {
-    // Print Station name
-    outputString = outputString + "Station " + station->getName() + "\n";
+    outputString += + "Station " + station->getName();
 
     unordered_map<int, Track*> tracks = station->getTracks();
-    // Get tracks array
-    vector<Track*> tracksVector;
-    tracksVector.reserve(tracks.size());
-
-    for(auto keyValuePair : tracks) {
-      tracksVector.push_back(keyValuePair.second);
-    }
-
-    outputString += "Hello???";
 
     // Iterate over tracks and print track details
-    for (auto *track : tracksVector) {
-      outputString += "Track " + to_string(track->getTrack()) + "\n" +
-          "<- Station" + track->getPrevious()->getName() + "\n" +
-          "-> Station" + track->getNext()->getName() + "\n";
+    for (auto *track : station->getTracksArray()) {
+      outputString += "\nTrack " + to_string(track->getTrack()) + "\n" +
+          "<- Station " + track->getPrevious()->getName() + "\n" +
+          "-> Station " + track->getNext()->getName();
 
       // If there's a tram associated to the track, print capacity
       if (this->_tramsMap.count(track->getTrack())) {
         Tram *tram = this->_tramsMap[track->getTrack()];
         if (tram->getStartStation()->getName() == station->getName()) {
-          outputString += ": Tram with " + to_string(tram->getMaxCapacity()) + " seats" + "\n";
+          outputString += ": Tram with " + to_string(tram->getMaxCapacity()) + " seats";
         }
       }
-      outputString += "\n";
     }
-
+    outputString += "\n\n";
   }
   return outputString;
 }
 
-vector<Station*> Subway::getStations(){
+vector<Station*> Subway::getStations() {
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStations");
   return _stationsArray;
 }
 
@@ -154,6 +143,7 @@ void Subway::moveTramsOnce(ostream &outputStream) {
 }
 
 void Subway::collectStatisticalData(string fileName) {
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling collectStatisticalData");
   //ofstream fileStream(fileName);
   //fileStream <<
   //fileStream.close();

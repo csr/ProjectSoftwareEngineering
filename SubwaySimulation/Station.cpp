@@ -64,6 +64,21 @@ unordered_map<int, Track*> Station::getTracks() {
   return _tracks;
 }
 
+vector<Track*> Station::getTracksArray() {
+  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getTracksArray");
+
+  // Get tracks array
+  vector<Track*> tracksVector;
+  tracksVector.reserve(_tracks.size());
+
+  for(auto keyValuePair : _tracks) {
+    tracksVector.push_back(keyValuePair.second);
+  }
+
+  return tracksVector;
+}
+
+
 StationType Station::getType() {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getType");
   return _type;
