@@ -25,7 +25,7 @@ int maxStationChildrenCount = 4; // name, track1, track2, type
 int maxTramChildrenCount = 4; // line, vehicle, type, startStation
 int maxTrackChildrenCount = 3; // track, next, previous
 
-enum RootElementType {StationT, TramT, TrackT, InvalidT};
+enum RootElementType {StationT, TramT, InvalidT};
 
 // Auxiliary function for internal use only
 const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
@@ -44,8 +44,6 @@ RootElementType determineRootElementType(string rootName) {
     return StationT;
   } else if (rootName == "TRAM") {
     return TramT;
-  } else if (rootName == "TRACK") {
-    return TrackT;
   } else {
     return InvalidT;
   }
@@ -118,7 +116,8 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
     if (elem_value == "TRACK") {
       Track *track = parseTrack(node, errStream);
       if (track != NULL) {
-
+        int number = track->getTrack();
+        tracks[number] = track;
       } else {
         // Invalid track, doesn't count towards children count
         childrenCount--;
@@ -359,10 +358,6 @@ SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, st
           }
         }
         break;
-      }
-      case TrackT: {
-        // Track tags not valid at root level
-        // We fall back to the next case:
       }
       case InvalidT: {
         // If the root element has an unrecognized name then skip to next root element
