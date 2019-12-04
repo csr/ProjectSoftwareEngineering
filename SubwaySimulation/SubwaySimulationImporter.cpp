@@ -21,7 +21,7 @@
 
 using namespace std;
 
-int minimumStationChildrenCount = 4; // name, track1, track2, trackN, type
+int minimumStationChildrenCount = 4; // name, track1, track2, trackN (supporting multiple tracks), type
 int maxTramChildrenCount = 4; // line, vehicle, type, startStation
 int maxTrackChildrenCount = 3; // track, next, previous
 
@@ -95,7 +95,7 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
   unordered_map<int, Track*> tracks;
   StationType typeStation;
   string name;
-  
+
   int childrenCount = 0;
 
   for (TiXmlElement *node = root->FirstChildElement(); node; node = node->NextSiblingElement()) {
@@ -111,8 +111,7 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
         int number = track->getTrack();
         tracks[number] = track;
       } else {
-        // Invalid track, doesn't count towards children count
-        childrenCount--;
+        return NULL;
       }
     } else if (elem_value == "type") {
       string type = fetch_text(node, errStream);
@@ -126,18 +125,17 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
         return NULL;
       }
     } else if (elem_value == "name") {
-        name = fetch_text(node, errStream);
-        if (!ValidStringAttribute(name)) {
-          return NULL;
-        }
+      name = fetch_text(node, errStream);
+      if (!ValidStringAttribute(name)) {
+        return NULL;
+      }
     } else {
       // Unrecognized element
       return NULL;
     }
   }
 
-  // Watch out! We need to support multiple tracks.
-  if (childrenCount >= minimumStationChildrenCount) {
+  if (childrenCount < minimumStationChildrenCount) {
     return NULL;
   }
 
