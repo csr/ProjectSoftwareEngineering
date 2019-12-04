@@ -173,7 +173,7 @@ int Tram::calculateDistance() {
     }
     else{
         distance += 60;
-        ENSURE(distance >= 0, "Distance can not be negative");
+        //ENSURE(distance >= 0, "Distance can not be negative");
     }
     return distance;
 }
@@ -188,6 +188,5 @@ void Tram::decreaseDistance() {
     int dist = this->getDistance();
     _distance--;
     ENSURE(this->getDistance() == dist - 1, "Tram doesn't decrease the distance");
-
 }
 

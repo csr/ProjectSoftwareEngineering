@@ -75,13 +75,13 @@ string Subway::toString() {
 
       // Iterate over tracks and print track details
       for (auto *track : station->getTracks()) {
-        outputString += "Track " + to_string(track->getNumber()) + "\n" +
+        outputString += "Track " + to_string(track->getTrack()) + "\n" +
                         "<- Station" + track->getPrevious()->getName() + "\n" +
                         "-> Station" + track->getNext()->getName() + "\n";
 
         // If there's a tram associated to the track, print capacity
-        if (this->_tramsMap.count(track->getNumber())) {
-          Tram *tram = this->_tramsMap[track->getNumber()];
+        if (this->_tramsMap.count(track->getTrack())) {
+          Tram *tram = this->_tramsMap[track->getTrack()];
           if (tram->getStartStation()->getName() == station->getName()) {
             outputString += ": Tram with " + to_string(tram->getMaxCapacity()) + " seats" + "\n";
           }

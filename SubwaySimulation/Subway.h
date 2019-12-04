@@ -15,6 +15,7 @@ using namespace std;
 #include "Station.h"
 #include "Tram.h"
 #include <unordered_map>
+#include <map>
 #include <vector>
 
 class Subway {
@@ -99,7 +100,7 @@ class Subway {
   vector<Tram*> _tramsArray;
 
   unordered_map<string, Station*> _stationsMap;
-  unordered_map<int, Tram*> _tramsMap;
+  map<int, Tram*> _tramsMap;
 
 
 };

@@ -28,13 +28,15 @@ class Track;
 
 class Station {
  public:
-  Station(string name, string nextStation, string previousStation, StationType type);
+    Station(string name, StationType type, unordered_map<int, Track*> tracks);
 
   bool properlyInitialized();
 
   void setName(string name);
 
   void setOccupied(bool isOccupied);
+
+  void setTracks(unordered_map<int, Track*> tracks);
 
   string getName();
 
