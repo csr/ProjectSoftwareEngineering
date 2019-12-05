@@ -3,7 +3,7 @@
 //
 
 #include <fstream>
-#include "Output.h"
+#include "SubwaySimulationExporter.h"
 #include "Subway.h"
 #include "SubwaySimulationUtils.h"
 
