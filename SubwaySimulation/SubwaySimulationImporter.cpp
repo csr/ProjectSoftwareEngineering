@@ -201,6 +201,107 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
   return new Tram(line, type, startStation, vehicle);
 }
 
+// CONSISTENCY
+
+// auxiliary for check_prev_next_tracks: find next and previous of a station in a particular track
+int find_next_prev_station(unordered_map<int, Track*>::iterator ptr, unordered_map<string, Station*> stations) {
+    int numTrack = ptr->first;
+    Track *track = ptr->second;
+    string next = track->getNextStr();
+    string prev = track->getPreviousStr();
+
+    // Find next station
+    unordered_map<string, Station *>::iterator it1;
+    it1 = stations.find(next);
+    // Find previous station
+    unordered_map<string, Station *>::iterator it2;
+    it2 = stations.find(prev);
+
+    return numTrack;
+}
+
+// auxiliary for check_prev_next_tracks: check if nextStation, prevStation have same track of station
+bool check_same_track(int numTrack, unordered_map<string, Station*>::iterator it1, unordered_map<string, Station*>::iterator it2, bool is_ok) {
+    Station *nextStation = it1->second;
+    Station *prevStation = it2->second;
+    unordered_map<int, Track*> tracksNext = nextStation->getTracks();
+    unordered_map<int, Track*> tracksPrev = prevStation->getTracks();
+
+    // check if nextStation has same track among its tracks
+    unordered_map<int, Track*>::iterator it3;
+    it3 = tracksNext.find(numTrack);
+    // check if nextStation has same track among its tracks
+    unordered_map<int, Track*>::iterator it4;
+    it4 = tracksPrev.find(numTrack);
+
+    if(it3 == tracksNext.end() || it4 == tracksPrev.end()) { // nextStation or prevStation has not same track
+        is_ok = false; // return because consistency is not respected
+    }
+
+    return is_ok;
+}
+
+// check if each station has next and previous on each track with same track
+bool check_prev_next_tracks(unordered_map<string, Station*> stations, unordered_map<int, Tram *> trams) {
+    bool is_ok = true;
+    unordered_map<string, Station *>::iterator it;
+
+    for (it = stations.begin(); it != stations.end() && is_ok; it++) {
+        Station *station = it->second;
+        string name = station->getName();
+        //oppure anche string name = it->first quindi con la key
+        unordered_map<int, Track *> tracks = station->getTracks();
+        unordered_map<int, Track *>::iterator ptr;
+        for (ptr = tracks.begin(); ptr != tracks.end(); ptr++) {
+            unordered_map<string, Station *>::iterator it1;
+            unordered_map<string, Station *>::iterator it2;
+            int numTrack = find_next_prev_station(ptr, stations);
+            // Check if element exists in map or not
+
+            if (it1 != stations.end() && it2 != stations.end()) { // station has a valid next and previous
+                is_ok = check_same_track(numTrack, it1, it2, is_ok);
+                if (is_ok == false) {
+                    return is_ok; // return because consistency is not respected
+                }
+            } else { // station has not a valid next or previous
+                is_ok = false;
+                return is_ok; // return because consistency is not respected
+            }
+        }
+    }
+
+    return is_ok;
+}
+
+// check if startStation of each tram is in stations and if line corresponds to a track in the startStation
+bool check_station_tram(map<pairInt, Tram*> trams, unordered_map<string, Station*> stations) {
+    bool is_ok = true;
+    map<pairInt, Tram*>::iterator it;
+
+    for (it = trams.begin(); it != trams.end() && is_ok; it++) {
+        Tram *tram = it->second;
+        string startStation = tram->getStartStationName();
+        int line = tram->getLine();
+        unordered_map<string, Station *>::iterator it1;
+        it1 = stations.find(startStation);
+        if(it1 != stations.end()) { // stations contains the startStation of the tram
+            Station *station = it1->second;
+            unordered_map<int, Track*> tracks = station->getTracks();
+            unordered_map<int, Track*>::iterator it2;
+            it2 = tracks.find(line);
+            if(it2 == tracks.end()) {
+                is_ok = false;
+                return is_ok;
+            }
+        } else { // stations does not contain the startStation of the tram
+            is_ok = false;
+            return is_ok;
+        }
+    }
+
+    return is_ok;
+}
+
 // Check if each station has a next and previous with same track and if each track has exactly one tram
 // point 2 - 4 of consistency
 //bool check_prev_next_track_tram(unordered_map<string, Station*> stations, unordered_map<int, Tram *> trams){
