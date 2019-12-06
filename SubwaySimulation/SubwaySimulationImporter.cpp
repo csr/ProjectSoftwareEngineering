@@ -26,6 +26,7 @@ int maxTramChildrenCount = 4; // line, vehicle, type, startStation
 int maxTrackChildrenCount = 3; // track, next, previous
 
 enum RootElementType {StationT, TramT, InvalidT};
+typedef pair<int, int> pairInt; // HERE SO THAT WE CAN USE IT IN EACH FUNCTION
 
 // Auxiliary function for internal use only
 const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
@@ -390,8 +391,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, st
   vector<Tram*> tramsArray;
 
   unordered_map<string, Station*> stations; // station name - station
-  typedef pair<int, int> pair;
-  map<pair, Tram*> trams;
+  map<pairInt, Tram*> trams;
 
   // Iterate through the file
   for (TiXmlElement *root = doc.FirstChildElement(); root != NULL; root = root->NextSiblingElement()) {
