@@ -101,7 +101,7 @@ class Subway {
   vector<Tram*> _tramsArray;
 
   unordered_map<string, Station*> _stationsMap;
-  map<int, Tram*> _tramsMap;
+  map<pairInt, Tram*> _tramsMap;
 
 
 };
