@@ -37,6 +37,9 @@ TEST_F(SubwaySimulationMovingTests, MovingTram) {
     SuccessEnum importResult;
     int fileCounter = 1;
     string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+    while(FileExists(fileName)){
+        string temporaryOutput = "testSimulation/temporaryOutput.txt";
+    }
 }
     //
 //  while (FileExists(fileName)) {
