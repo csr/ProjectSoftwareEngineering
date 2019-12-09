@@ -1,36 +1,48 @@
 Station A
+Track 13
 <- Station C
 -> Station B
-Track 13
+
 Station B
+Track 13
 <- Station A
 -> Station C
-Track 13
+
 Station C
+Track 13
 <- Station B
 -> Station A
-Track 13: Tram with 12 seats
+Tram with 72 seats
+
 Station D
+Track 9
 <- Station E
 -> Station E
-Track 9: Tram with 12 seats
+Tram with 16 seats
+
 Station E
+Track 9
 <- Station D
 -> Station D
-Track 9
+
 Station F
+Track 7
 <- Station I
 -> Station G
-Track 7: Tram with 7 seats
+Tram with 72 seats
+
 Station G
+Track 7
 <- Station F
 -> Station H
-Track 7
+
 Station H
+Track 7
 <- Station G
 -> Station I
-Track 7
+
 Station I
+Track 7
 <- Station H
 -> Station F
-Track 7
+
