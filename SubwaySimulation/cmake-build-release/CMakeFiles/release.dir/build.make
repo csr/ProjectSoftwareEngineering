@@ -18,9 +18,6 @@ SUFFIXES =
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -190,18 +187,18 @@ CMakeFiles/release.dir/SubwaySimulationUtils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/release.dir/SubwaySimulationUtils.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationUtils.cpp -o CMakeFiles/release.dir/SubwaySimulationUtils.cpp.s
 
-CMakeFiles/release.dir/Output.cpp.o: CMakeFiles/release.dir/flags.make
-CMakeFiles/release.dir/Output.cpp.o: ../Output.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/release.dir/Output.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release.dir/Output.cpp.o -c /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Output.cpp
+CMakeFiles/release.dir/SubwaySimulationExporter.cpp.o: CMakeFiles/release.dir/flags.make
+CMakeFiles/release.dir/SubwaySimulationExporter.cpp.o: ../SubwaySimulationExporter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/release.dir/SubwaySimulationExporter.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release.dir/SubwaySimulationExporter.cpp.o -c /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationExporter.cpp
 
-CMakeFiles/release.dir/Output.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/release.dir/Output.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Output.cpp > CMakeFiles/release.dir/Output.cpp.i
+CMakeFiles/release.dir/SubwaySimulationExporter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/release.dir/SubwaySimulationExporter.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationExporter.cpp > CMakeFiles/release.dir/SubwaySimulationExporter.cpp.i
 
-CMakeFiles/release.dir/Output.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/release.dir/Output.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/Output.cpp -o CMakeFiles/release.dir/Output.cpp.s
+CMakeFiles/release.dir/SubwaySimulationExporter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/release.dir/SubwaySimulationExporter.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/SubwaySimulationExporter.cpp -o CMakeFiles/release.dir/SubwaySimulationExporter.cpp.s
 
 CMakeFiles/release.dir/Track.cpp.o: CMakeFiles/release.dir/flags.make
 CMakeFiles/release.dir/Track.cpp.o: ../Track.cpp
@@ -228,7 +225,7 @@ release_OBJECTS = \
 "CMakeFiles/release.dir/SubwaySimulationImporter.cpp.o" \
 "CMakeFiles/release.dir/SubwaySimulationMain.cpp.o" \
 "CMakeFiles/release.dir/SubwaySimulationUtils.cpp.o" \
-"CMakeFiles/release.dir/Output.cpp.o" \
+"CMakeFiles/release.dir/SubwaySimulationExporter.cpp.o" \
 "CMakeFiles/release.dir/Track.cpp.o"
 
 # External object files for target release
@@ -244,7 +241,7 @@ release: CMakeFiles/release.dir/Tram.cpp.o
 release: CMakeFiles/release.dir/SubwaySimulationImporter.cpp.o
 release: CMakeFiles/release.dir/SubwaySimulationMain.cpp.o
 release: CMakeFiles/release.dir/SubwaySimulationUtils.cpp.o
-release: CMakeFiles/release.dir/Output.cpp.o
+release: CMakeFiles/release.dir/SubwaySimulationExporter.cpp.o
 release: CMakeFiles/release.dir/Track.cpp.o
 release: CMakeFiles/release.dir/build.make
 release: CMakeFiles/release.dir/link.txt

@@ -5,7 +5,7 @@
         <previous>C</previous>
         <track>13</track>
     </TRACK>
-    <type>Station </type>
+    <type>Station</type>
 </STATION>
 <STATION>
     <name>B</name>
@@ -14,7 +14,7 @@
         <previous>A</previous>
         <track>13</track>
     </TRACK>
-    <type> Stop </type>
+    <type>Stop</type>
 </STATION>
 <STATION>
     <name>C</name>
@@ -23,12 +23,12 @@
         <previous>B</previous>
         <track>13</track>
     </TRACK>
-    <type> Station </type>
+    <type>Station</type>
 </STATION>
 <TRAM>
     <line>13</line>
-    <vehicle> 1 </vehicle>
-    <type> Albatros </type>
+    <vehicle>1</vehicle>
+    <type>Albatross</type>
     <startStation>C</startStation>
 </TRAM>
 <TRAM>

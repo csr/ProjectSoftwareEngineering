@@ -5,7 +5,7 @@
         <previous>C</previous>
         <track>13</track>
     </TRACK>
-    <type>Station </type>
+    <type>Station</type>
 </STATION>
 <STATION>
     <name>B</name>
@@ -14,7 +14,7 @@
         <previous>A</previous>
         <track>13</track>
     </TRACK>
-    <type> Stop </type>
+    <type>Stop</type>
 </STATION>
 <STATION>
     <name>C</name>
@@ -23,12 +23,12 @@
         <previous>B</previous>
         <track>13</track>
     </TRACK>
-    <type> Station </type>
+    <type>Station</type>
 </STATION>
 <TRAM>
     <line>13</line>
-    <vehicle> 1 </vehicle>
-    <type> Albatros </type>
+    <vehicle>1</vehicle>
+    <type>Albatross</type>
     <startStation>C</startStation>
 </TRAM>
 <STATION>
@@ -38,7 +38,7 @@
         <previous>E</previous>
         <track>9</track>
     </TRACK>
-    <type> Station </type>
+    <type>Station</type>
 </STATION>
 <STATION>
     <name>E</name>
@@ -47,7 +47,7 @@
         <previous>D</previous>
         <track>9</track>
     </TRACK>
-    <type> Stop </type>
+    <type>Stop</type>
 </STATION>
 <TRAM>
    <line>9</line>
@@ -62,7 +62,7 @@
         <previous>I</previous>
         <track>7</track>
    </TRACK>
-   <type> Station </type>
+   <type>Station</type>
 </STATION>
 <TRAM>
    <line>7</line>
@@ -77,7 +77,7 @@
         <previous>F</previous>
         <track>7</track>
     </TRACK>
-    <type> Stop </type>
+    <type>Stop</type>
 </STATION>
 <STATION>
     <name>H</name>
@@ -86,7 +86,7 @@
         <previous>G</previous>
         <track>7</track>
     </TRACK>
-    <type> Station </type>
+    <type>Station</type>
 </STATION>
 <STATION>
     <name>I</name>
@@ -95,5 +95,5 @@
         <previous>H</previous>
         <track>7</track>
     </TRACK>
-    <type> Stop </type>
+    <type>Stop</type>
 </STATION>

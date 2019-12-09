@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/debug.dir/Output.cpp.o"
   "CMakeFiles/debug.dir/Station.cpp.o"
   "CMakeFiles/debug.dir/Subway.cpp.o"
   "CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.o"
+  "CMakeFiles/debug.dir/SubwaySimulationExporter.cpp.o"
   "CMakeFiles/debug.dir/SubwaySimulationImporter.cpp.o"
   "CMakeFiles/debug.dir/SubwaySimulationInputTests.cpp.o"
   "CMakeFiles/debug.dir/SubwaySimulationMovingTests.cpp.o"

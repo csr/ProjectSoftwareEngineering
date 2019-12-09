@@ -23,9 +23,6 @@ SUFFIXES =
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -139,36 +136,6 @@ release/fast:
 	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/build
 .PHONY : release/fast
 
-Output.o: Output.cpp.o
-
-.PHONY : Output.o
-
-# target to build an object file
-Output.cpp.o:
-	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/Output.cpp.o
-	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/Output.cpp.o
-.PHONY : Output.cpp.o
-
-Output.i: Output.cpp.i
-
-.PHONY : Output.i
-
-# target to preprocess a source file
-Output.cpp.i:
-	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/Output.cpp.i
-	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/Output.cpp.i
-.PHONY : Output.cpp.i
-
-Output.s: Output.cpp.s
-
-.PHONY : Output.s
-
-# target to generate assembly for a file
-Output.cpp.s:
-	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/Output.cpp.s
-	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/Output.cpp.s
-.PHONY : Output.cpp.s
-
 Station.o: Station.cpp.o
 
 .PHONY : Station.o
@@ -255,6 +222,36 @@ SubwaySimulationDomainTests.s: SubwaySimulationDomainTests.cpp.s
 SubwaySimulationDomainTests.cpp.s:
 	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/SubwaySimulationDomainTests.cpp.s
 .PHONY : SubwaySimulationDomainTests.cpp.s
+
+SubwaySimulationExporter.o: SubwaySimulationExporter.cpp.o
+
+.PHONY : SubwaySimulationExporter.o
+
+# target to build an object file
+SubwaySimulationExporter.cpp.o:
+	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/SubwaySimulationExporter.cpp.o
+	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/SubwaySimulationExporter.cpp.o
+.PHONY : SubwaySimulationExporter.cpp.o
+
+SubwaySimulationExporter.i: SubwaySimulationExporter.cpp.i
+
+.PHONY : SubwaySimulationExporter.i
+
+# target to preprocess a source file
+SubwaySimulationExporter.cpp.i:
+	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/SubwaySimulationExporter.cpp.i
+	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/SubwaySimulationExporter.cpp.i
+.PHONY : SubwaySimulationExporter.cpp.i
+
+SubwaySimulationExporter.s: SubwaySimulationExporter.cpp.s
+
+.PHONY : SubwaySimulationExporter.s
+
+# target to generate assembly for a file
+SubwaySimulationExporter.cpp.s:
+	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/SubwaySimulationExporter.cpp.s
+	$(MAKE) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/SubwaySimulationExporter.cpp.s
+.PHONY : SubwaySimulationExporter.cpp.s
 
 SubwaySimulationImporter.o: SubwaySimulationImporter.cpp.o
 
@@ -641,9 +638,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... release"
-	@echo "... Output.o"
-	@echo "... Output.i"
-	@echo "... Output.s"
 	@echo "... Station.o"
 	@echo "... Station.i"
 	@echo "... Station.s"
@@ -653,6 +647,9 @@ help:
 	@echo "... SubwaySimulationDomainTests.o"
 	@echo "... SubwaySimulationDomainTests.i"
 	@echo "... SubwaySimulationDomainTests.s"
+	@echo "... SubwaySimulationExporter.o"
+	@echo "... SubwaySimulationExporter.i"
+	@echo "... SubwaySimulationExporter.s"
 	@echo "... SubwaySimulationImporter.o"
 	@echo "... SubwaySimulationImporter.i"
 	@echo "... SubwaySimulationImporter.s"

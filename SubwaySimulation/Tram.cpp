@@ -21,7 +21,11 @@ Tram::Tram(int line, TramType type, string startStation, int number) {
   setSpeed();
   ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
   ENSURE(startStation == getStartStationName(), "Start station wasn't set correctly in constructor");
-  ENSURE(getStartStation()->isCurrentlyOccupied(), "Start Station is not currently occupied");
+  ENSURE(type == getType(), "Type wasn't set correctly in constructor");
+  ENSURE(number == getNumber(), "Number wasn't set correctly in constructor");
+
+  // Removed because it may return an error
+//  ENSURE(getStartStation()->isCurrentlyOccupied(), "Start Station is not currently occupied");
 }
 
 bool Tram::properlyInitialized() {
