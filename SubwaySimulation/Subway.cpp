@@ -79,10 +79,9 @@ string Subway::toString() {
           "<- Station " + track->getPrevious()->getName() + "\n" +
           "-> Station " + track->getNext()->getName();
 
-      // If there's a tram associated to the track, print capacity
-      if (this->_tramsMap.count(track->getTrack())) {
-        Tram *tram = this->_tramsMap[track->getTrack()];
-        if (tram->getStartStation()->getName() == station->getName()) {
+      // Check if there's a tram with same line and station
+      for (auto &tram: this->_tramsArray) {
+        if (tram->getLine() == track->getTrack() && tram->getCurrentStation()->getName() == station->getName()) {
           outputString += "\nTram with " + to_string(tram->getMaxCapacity()) + " seats";
         }
       }

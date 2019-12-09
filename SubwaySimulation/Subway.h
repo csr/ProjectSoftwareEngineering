@@ -13,6 +13,7 @@
 
 using namespace std;
 #include "Station.h"
+#include "SubwaySimulationUtils.h"
 #include "Tram.h"
 #include <unordered_map>
 #include <map>

@@ -34,8 +34,7 @@ void Station::setName(string name) {
 }
 
 void Station::setOccupied(bool isOccupied) {
-// Mi dà errore - @cdecal
-//  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setOccupied");
+  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setOccupied");
   _isOccupied = isOccupied;
   ENSURE(isOccupied == isCurrentlyOccupied(), "Station occupied was not set correctly");
 }
@@ -85,7 +84,6 @@ StationType Station::getType() {
 }
 
 bool Station::isCurrentlyOccupied() {
-  // Mi dà errore - @cdecal
-//  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling isCurrentlyOccupied");
+  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling isCurrentlyOccupied");
   return _isOccupied;
 }

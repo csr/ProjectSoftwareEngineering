@@ -50,6 +50,6 @@
     <line>7</line>
     <type>PCC</type>
     <vehicle>1</vehicle>
-    <startStation>A</startStation>
+    <startStation>A </startStation>
 </TRAM>
 

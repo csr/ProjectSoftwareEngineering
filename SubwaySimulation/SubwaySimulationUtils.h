@@ -12,6 +12,8 @@
 
 #include <iostream>
 
+typedef pair<int, int> pairInt;
+
 bool DirectoryExists(const std::string dirname);
 
 bool FileExists(const std::string dirname);

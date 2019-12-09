@@ -33,7 +33,7 @@ TEST_F(SubwaySimulationInputTests, InputLegalSubways) {
   string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
 
   while (FileExists (fileName)) {
-    cout << "Parsing..." << endl;
+    cout << "Parsing: " << fileName << endl;
     myfile.open("testInput/zzzError.txt");
     importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
     myfile.close();
@@ -43,7 +43,7 @@ TEST_F(SubwaySimulationInputTests, InputLegalSubways) {
     fileCounter = fileCounter + 1;
     fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
   };
-//  EXPECT_TRUE(fileCounter == 7);
+  EXPECT_TRUE(fileCounter == 3);
 }
 
 //TEST_F(SubwaySimulationInputTests, InputXMLSyntaxErrors) {

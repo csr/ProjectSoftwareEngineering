@@ -21,12 +21,11 @@
 
 using namespace std;
 
-int minimumStationChildrenCount = 4; // name, track1, track2, trackN (supporting multiple tracks), type
+int minimumStationChildrenCount = 3; // name, track1, trackN (supporting multiple tracks), type
 int maxTramChildrenCount = 4; // line, vehicle, type, startStation
 int maxTrackChildrenCount = 3; // track, next, previous
 
 enum RootElementType {StationT, TramT, InvalidT};
-typedef pair<int, int> pairInt; // HERE SO THAT WE CAN USE IT IN EACH FUNCTION
 
 // Auxiliary function for internal use only
 const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
@@ -122,7 +121,7 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
       } else if (type == "stop") {
         typeStation = TypeStop;
       } else {
-        // Invalid station type means invalid statio
+        // Invalid station type means invalid station
         return nullptr;
       }
     } else if (elem_value == "name") {
@@ -243,7 +242,7 @@ bool check_same_track(int numTrack, unordered_map<string, Station*>::iterator it
 }
 
 // check if each station has next and previous on each track with same track
-bool check_prev_next_tracks(unordered_map<string, Station*> stations, unordered_map<int, Tram *> trams) {
+bool check_prev_next_tracks(unordered_map<string, Station*> stations, unordered_map<int, Tram*> trams) {
     bool is_ok = true;
     unordered_map<string, Station *>::iterator it;
 
@@ -385,10 +384,8 @@ SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, st
   }
 
   // Consistency
-
-  // Check points 2 - 4 of consistency
-//  bool prev_next_track_tram = check_prev_next_track_tram(stations, trams);
-//  if (!prev_next_track_tram) {
+//  bool success = check_prev_next_tracks(stations, );
+//  if (!success) {
 //    errStream << "XML IMPORT ABORTED: Some stations don't have a next and/or right station or there's a missing tram" << endl;
 //    return ImportAborted;
 //  }
@@ -421,6 +418,7 @@ SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, st
     Station *startStation = stations[startStationName];
     tram->setStartStation(startStation);
     tram->setCurrentStation(startStation);
+    startStation->setOccupied(true);
   }
 
   subway.importData(stationsArray, tramsArray);

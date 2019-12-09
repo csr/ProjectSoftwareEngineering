@@ -14,7 +14,6 @@ Tram::Tram(int line, TramType type, string startStation, int number) {
   _initCheck = this;
   setLine(line);
   setStartStationName(startStation);
-  getStartStation()->setOccupied(true);
   setType(type);
   setNumber(number);
   setMaximumCapacity();
@@ -23,9 +22,6 @@ Tram::Tram(int line, TramType type, string startStation, int number) {
   ENSURE(startStation == getStartStationName(), "Start station wasn't set correctly in constructor");
   ENSURE(type == getType(), "Type wasn't set correctly in constructor");
   ENSURE(number == getNumber(), "Number wasn't set correctly in constructor");
-
-  // Removed because it may return an error
-//  ENSURE(getStartStation()->isCurrentlyOccupied(), "Start Station is not currently occupied");
 }
 
 bool Tram::properlyInitialized() {
