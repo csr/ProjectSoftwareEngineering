@@ -10,7 +10,7 @@
         <previous>B</previous>
         <track>7</track>
     </TRACK>
-    <type>Station</type>
+    <type>station</type>
 </STATION>
 <STATION>
     <name>B</name>
@@ -24,7 +24,7 @@
         <previous>C</previous>
         <track>7</track>
     </TRACK>
-    <type>Stop</type>
+    <type>stop</type>
 </STATION>
 <STATION>
     <name>C</name>
@@ -38,7 +38,7 @@
         <previous>A</previous>
         <track>7</track>
     </TRACK>
-    <type>Station</type>
+    <type>station</type>
 </STATION>
 <TRAM>
     <line>13</line>
@@ -50,6 +50,5 @@
     <line>7</line>
     <type>PCC</type>
     <vehicle>1</vehicle>
-    <startStation>A </startStation>
+    <startStation>A</startStation>
 </TRAM>
-
