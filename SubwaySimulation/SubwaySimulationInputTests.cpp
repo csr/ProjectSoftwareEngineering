@@ -45,29 +45,29 @@ TEST_F(SubwaySimulationInputTests, InputLegalSubways) {
   EXPECT_TRUE(fileCounter == 5);
 }
 
-//TEST_F(SubwaySimulationInputTests, InputXMLSyntaxErrors) {
-//  ASSERT_TRUE(DirectoryExists("testInput"));
-//
-//  ofstream myfile;
-//  SuccessEnum importResult;
-//  int fileCounter = 1;
-//  string fileName = "testInput/xmlsyntaxerror" + ToString(fileCounter) + ".xml";
-//  string errorfileName;
-//
-//  while (FileExists(fileName)) {
-//    myfile.open( "testInput/xmlError.txt");
-//
-//    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
-//    myfile.close();
-//    EXPECT_TRUE(importResult == ImportAborted);
-//    errorfileName = "testInput/xmlsyntaxerror" + ToString(fileCounter) + ".txt";
-//    EXPECT_TRUE(FileCompare("testInput/xmlError.txt", errorfileName));
-//
-//    fileCounter = fileCounter + 1;
-//    fileName = "testInput/xmlsyntaxerror" + ToString(fileCounter) + ".xml";
-//  };
-//  EXPECT_TRUE(fileCounter == 6);
-//}
+TEST_F(SubwaySimulationInputTests, InputXMLSyntaxErrors) {
+  ASSERT_TRUE(DirectoryExists("testInput"));
+
+  ofstream myfile;
+  SuccessEnum importResult;
+  int fileCounter = 1;
+  string fileName = "testInput/xmlsyntaxerror" + ToString(fileCounter) + ".xml";
+  string errorfileName;
+
+  while (FileExists(fileName)) {
+    myfile.open( "testInput/xmlError.txt");
+
+    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
+    myfile.close();
+    EXPECT_TRUE(importResult == ImportAborted);
+    errorfileName = "testInput/xmlsyntaxerror" + ToString(fileCounter) + ".txt";
+    EXPECT_TRUE(FileCompare("testInput/xmlError.txt", errorfileName));
+
+    fileCounter = fileCounter + 1;
+    fileName = "testInput/xmlsyntaxerror" + ToString(fileCounter) + ".xml";
+  };
+  EXPECT_TRUE(fileCounter == 6);
+}
 
 //TEST_F(SubwaySimulationInputTests, InputPartialSimulations) {
 //  ASSERT_TRUE(DirectoryExists("testInput"));
