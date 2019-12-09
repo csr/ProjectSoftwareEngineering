@@ -30,12 +30,12 @@ typedef pair<int, int> pairInt; // HERE SO THAT WE CAN USE IT IN EACH FUNCTION
 
 // Auxiliary function for internal use only
 const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
-  if (pElement == NULL) return "";
+  if (pElement == nullptr) return "";
 
   TiXmlNode *elemNode = pElement->FirstChild();
-  if (elemNode == NULL) return "";
+  if (elemNode == nullptr) return "";
   TiXmlText* text = elemNode->ToText();
-  if(text == NULL) return "";
+  if(text == nullptr) return "";
   return text->Value();
 }
 
@@ -94,7 +94,7 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
 
   // map of future tracks
   unordered_map<int, Track*> tracks;
-  StationType typeStation;
+  StationType typeStation = TypeStation;
   string name;
 
   int childrenCount = 0;
@@ -112,7 +112,7 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
         int number = track->getTrack();
         tracks[number] = track;
       } else {
-        return NULL;
+        return nullptr;
       }
     } else if (elem_value == "type") {
       string type = fetch_text(node, errStream);
@@ -122,17 +122,17 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
       } else if (type == "stop") {
         typeStation = TypeStop;
       } else {
-        // Invalid station type means invalid station
-        return NULL;
+        // Invalid station type means invalid statio
+        return nullptr;
       }
     } else if (elem_value == "name") {
       name = fetch_text(node, errStream);
       if (!ValidStringAttribute(name)) {
-        return NULL;
+        return nullptr;
       }
     } else {
       // Unrecognized element
-      return NULL;
+      return nullptr;
     }
   }
 
@@ -397,8 +397,9 @@ SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, st
   for (TiXmlElement *root = doc.FirstChildElement(); root != NULL; root = root->NextSiblingElement()) {
     // Root name must be either station or tram. Other values should be considered invalid.
     string rootName = root->Value();
-    RootElementType rootElementType = determineRootElementType(rootName);
+    RootElementType rootElementType = determineRootElementType(rootName);//Stabilire se è station o Tram
 
+    //SE RIESCO METTERLO ALL'INTERNO DI UNA FUNZIONE!!!!
     switch (rootElementType) {
       case StationT: {
         // Create new Station object to hold the parsed data

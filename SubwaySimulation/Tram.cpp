@@ -14,12 +14,14 @@ Tram::Tram(int line, TramType type, string startStation, int number) {
   _initCheck = this;
   setLine(line);
   setStartStationName(startStation);
+  getStartStation()->setOccupied(true);
   setType(type);
   setNumber(number);
   setMaximumCapacity();
   setSpeed();
   ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
   ENSURE(startStation == getStartStationName(), "Start station wasn't set correctly in constructor");
+  ENSURE(getStartStation()->isCurrentlyOccupied(), "Start Station is not currently occupied");
 }
 
 bool Tram::properlyInitialized() {
@@ -175,14 +177,15 @@ int Tram::getDistance() {
 
 int Tram::calculateDistance() {
     REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling calculateDistance");
-    int distance = 7200 / _speed;
-    if(this->getType() == Albatross && this->getCurrentStation()->getTrack(this->getNumber())->getNext()->getType() != TypeStop){
+    int distance = 0;
+    if (this->getType() == Albatross && this->getCurrentStation()->getTrack(this->getNumber())->getNext()->getType() != TypeStop){
         distance++;
         ENSURE(distance >= 0, "Distance can not be negative");
         return distance++ + calculateDistance();
     }
     else{
-        distance += 60;
+        distance = 7200 / _speed;
+        setWaiting(60);
         //ENSURE(distance >= 0, "Distance can not be negative");
     }
     return distance;
@@ -200,3 +203,37 @@ void Tram::decreaseDistance() {
   ENSURE(this->getDistance() == previousDistance - 1, "Tram doesn't decrease the distance");
 }
 
+bool Tram::trackFree() {
+    if (this->getType() == Albatross){
+        bool answer = true;
+        int track = this->getLine();
+        Station* elem = this->getCurrentStation()->getTrack(track)->getNext();
+        while(elem->getType() == TypeStop){
+            if(elem->isCurrentlyOccupied())
+                return false;
+            elem = elem->getTrack(track)->getNext();
+        }
+        return !elem->isCurrentlyOccupied();
+    } else{
+        int track = this->getLine();
+        return !this->getCurrentStation()->getTrack(track)->getNext()->isCurrentlyOccupied();
+    }
+}
+
+int Tram::getWaiting() {
+    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getWaiting");
+    return _waiting;
+}
+
+void Tram::setWaiting(int number) {
+    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setWaiting");
+    _waiting = number;
+    ENSURE(this->getWaiting() == number, "Tram does't set waiting time");
+}
+
+void Tram::decreaseWaiting() {
+    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling decreaseWaiting");
+    int previous = _waiting;
+    _waiting = _waiting - 1;
+    ENSURE(this->getWaiting() == (previous - 1), "Tram doesn't decrease waiting time");
+}

@@ -5,6 +5,8 @@
 #include <fstream>
 #include <sys/stat.h>
 #include <gtest/gtest.h>
+#include <iostream>
+#include <unordered_map>
 
 using namespace std;
 
@@ -26,16 +28,17 @@ class SubwaySimulationMovingTests: public ::testing::Test {
   Subway subway_;
 };
 
-//TEST_F(SubwaySimulationMovingTests, MovingTram) {
-//  //if directory doesn't exist then no need in proceeding with the test
-//  ASSERT_TRUE(DirectoryExists("testInput"));
-//  ASSERT_TRUE(DirectoryExists("testSimulation"));
-//
-//  ofstream outputContainerFile;
-//  SuccessEnum importResult;
-//  int fileCounter = 1;
-//  string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
-//
+TEST_F(SubwaySimulationMovingTests, MovingTram) {
+//if directory doesn't exist then no need in proceeding with the test
+    ASSERT_TRUE(DirectoryExists("testInput"));
+    ASSERT_TRUE(DirectoryExists("testSimulation"));
+
+    ofstream outputContainerFile;
+    SuccessEnum importResult;
+    int fileCounter = 1;
+    string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+}
+    //
 //  while (FileExists(fileName)) {
 //    string temporaryOutput = "testSimulation/temporaryOutput.txt";
 //    outputContainerFile.open(temporaryOutput);
@@ -93,35 +96,35 @@ class SubwaySimulationMovingTests: public ::testing::Test {
 ///**
 //Tests Subway simulation with one step.
 //*/
-////TEST_F(SubwaySimulationMovingTests, SubwaySimpleSimulation) {
-////  int line = 12;
-////  Station *station1 = new Station("A", "B", "C", line);
-////  Station *station2 = new Station("B", "C", "A", line);
-////  Station *station3 = new Station("C", "A", "B", line);
-////  Tram *tram = new Tram(line, 32, 60, "A");
-////
-////  subway_.importData({station1, station2, station3}, {tram});
-////
-////  EXPECT_EQ(tram->getStartStation(), "A");
-////  EXPECT_EQ(tram->getCurrentStation(), "A");
-////
-////  ofstream myfile;
-////  subway_.moveTramsOnce(myfile);
-////  EXPECT_EQ(tram->getCurrentStation(), "B");
-////
-////  subway_.moveTramsOnce(myfile);
-////  EXPECT_EQ(tram->getCurrentStation(), "C");
-////
-////  subway_.moveTramsOnce(myfile);
-////  EXPECT_EQ(tram->getCurrentStation(), "B");
-////
-////  subway_.moveTramsOnce(myfile);
-////  EXPECT_EQ(tram->getCurrentStation(), "A");
-////
-////  subway_.moveTramsOnce(myfile);
-////  EXPECT_EQ(tram->getCurrentStation(), "B");
-////}
-////
+TEST_F(SubwaySimulationMovingTests, SubwayAutomaticSimulation) {
+    ASSERT_TRUE(DirectoryExists("testInput"));
+    ASSERT_TRUE(DirectoryExists("testSimulation"));
+
+    ofstream outputContainerFile;
+
+    SuccessEnum importResult;
+    int fileCounter = 1;
+    string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+    string temporaryOutput = "testSimulation/temporaryOutput.txt";
+
+    outputContainerFile.open(temporaryOutput);
+
+    // The outputContainerFile will be passed as the "error" file to the import subway
+    // If the import result is Success, there should be NO error output (an empty error file means everything was ok)
+    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), outputContainerFile, subway_);
+    //
+    EXPECT_TRUE(importResult == Success);
+//
+//    // The outputContainerFile will also be used to dump the contents of subway_.toString()
+    subway_.computeAutomaticSimulation(20000, outputContainerFile) ;
+    outputContainerFile.close();
+
+    string expectedOutputFilename = "testSimulation/legalSubwaySimulation" + ToString(fileCounter) + ".txt";
+    EXPECT_TRUE(FileCompare(temporaryOutput, expectedOutputFilename));
+}
+
+
+
 ////TEST_F(SubwaySimulationMovingTests, SubwayMultipleTramsSimulation) {
 ////  int firstLine = 12;
 ////  int secondLine = 32;

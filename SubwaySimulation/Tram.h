@@ -82,6 +82,8 @@ class Tram {
 
   int getNumber();
 
+  int getWaiting();
+
   /**
   Setter for the line of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getTurnover");
@@ -146,10 +148,13 @@ class Tram {
 
   int calculateDistance();
 
+  bool trackFree();
 
   void decreaseDistance();
 
   int getDistance();
+
+  void decreaseWaiting();
 
  private:
   Tram* _initCheck;
@@ -165,6 +170,9 @@ class Tram {
   int _turnover;
   int _speed;
   int _distance;
+  int _waiting;
+
+  void setWaiting(int number);
 };
 
 #endif //UNTITLED_TRAM_H

@@ -122,12 +122,19 @@ void Subway::moveTramsOnce(ostream &outputStream) {
   for (auto tram : this->_tramsArray) {
     Station *currentStation = tram->getCurrentStation();
     string previousStationName = currentStation->getName();
-    if (tram->getDistance() == 0) {
-      Track *track = currentStation->getTrack(tram->getNumber());
-      if (!track->getNext()->isCurrentlyOccupied()) {
-        tram->calculateDistance();
-        tram->move();
-      }
+    if (tram->getDistance() == 0){
+        if(tram->getWaiting() == 0) {
+            Track *track = currentStation->getTrack(tram->getNumber());
+            if (tram->getType() == Albatross && tram->trackFree()) {
+                tram->calculateDistance();
+                tram->move();
+            } else if (tram->getType() == PCC && tram->trackFree()) {
+                tram->calculateDistance();
+                tram->move();
+            }
+        }else
+            tram->decreaseWaiting();
+
     } else if(tram->getDistance() == 1){
       tram->decreaseDistance();
       tram->move();
