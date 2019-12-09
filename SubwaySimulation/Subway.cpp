@@ -43,7 +43,7 @@ void Subway::importData(vector<Station *> stations, vector<Tram *> trams) {
 
   // Fill trams map
   for (auto tram : _tramsArray) {
-    _tramsMap[tram->getLine()] = tram;
+    _tramsMap[make_pair(tram->getLine(), tram->getNumber())] = tram;
     tram->getCurrentStation()->setOccupied(true);
   }
   ENSURE(this->getTramsCount() >= 0, "Trams number are negative");
