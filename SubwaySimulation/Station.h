@@ -50,7 +50,7 @@ class Station {
   string _name;
   StationType _type;
   bool _isOccupied;
-  unordered_map<int, Track*> _tracks;
+  map<pairInt, Track*> _tracks;
 };
 
 #endif //UNTITLED_STATION_H
