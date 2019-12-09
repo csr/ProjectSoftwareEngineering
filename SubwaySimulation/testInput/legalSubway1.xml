@@ -49,6 +49,6 @@
 <TRAM>
     <line>21</line>
     <vehicle>1</vehicle>
-    <type>Albatross</type>
-    <startStation>C <startStation>
+    <type>Albatros</type>
+    <startStation>C </startStation>
 </TRAM>

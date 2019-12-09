@@ -14,7 +14,6 @@ Tram::Tram(int line, TramType type, string startStation, int number) {
   _initCheck = this;
   setLine(line);
   setStartStationName(startStation);
-  getStartStation()->setOccupied(true);
   setType(type);
   setNumber(number);
   setMaximumCapacity();
