@@ -242,7 +242,7 @@ bool check_same_track(int numTrack, unordered_map<string, Station*>::iterator it
 }
 
 // check if each station has next and previous on each track with same track
-bool check_prev_next_tracks(unordered_map<string, Station*> stations, unordered_map<int, Tram*> trams) {
+bool check_prev_next_tracks(unordered_map<string, Station*> stations) {
     bool is_ok = true;
     unordered_map<string, Station *>::iterator it;
 
