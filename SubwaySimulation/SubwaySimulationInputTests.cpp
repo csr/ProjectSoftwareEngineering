@@ -33,7 +33,6 @@ TEST_F(SubwaySimulationInputTests, InputLegalSubways) {
   string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
 
   while (FileExists (fileName)) {
-    cout << "Parsing: " << fileName << endl;
     myfile.open("testInput/zzzError.txt");
     importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
     myfile.close();
