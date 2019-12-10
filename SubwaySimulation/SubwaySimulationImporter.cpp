@@ -274,7 +274,7 @@ bool check_prev_next_tracks(unordered_map<string, Station*> stations) {
 }
 
 // check if startStation of each tram is in stations and if line corresponds to a track in the startStation
-bool check_station_tram(map<pairInt, Tram*> trams, unordered_map<string, Station*> stations) {
+bool check_station_tram(unordered_map<string, Station*> stations, map<pairInt, Tram*> trams) {
     bool is_ok = true;
     map<pairInt, Tram*>::iterator it;
 
@@ -383,16 +383,16 @@ SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, st
     return ImportAborted;
   }
 
-  // Consistency
-//  bool success = check_prev_next_tracks(stations, );
-//  if (!success) {
+  // Consistency check
+//  bool successNextPrev = check_prev_next_tracks(stations);
+//  if (!successNextPrev) {
 //    errStream << "XML IMPORT ABORTED: Some stations don't have a next and/or right station or there's a missing tram" << endl;
 //    return ImportAborted;
 //  }
-
-  // Check points 3 - 5 of consistency
-//  bool line_track = check_line_track(trams, stations);
-//  if (!line_track) {
+//
+//  // check if startStation of each tram is in stations and if line corresponds to a track in the startStation
+//  bool successLineMatch = check_station_tram(stations, trams);
+//  if (!successLineMatch) {
 //    errStream << "XML IMPORT ABORTED: the lines don't correspond to the tracks" << endl;
 //    return ImportAborted;
 //  }

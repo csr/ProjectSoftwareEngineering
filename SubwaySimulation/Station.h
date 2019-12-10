@@ -14,6 +14,7 @@
 #include <unordered_map>
 
 #include "Track.h"
+#include "SubwaySimulationUtils.h"
 
 using namespace std;
 
@@ -50,7 +51,7 @@ class Station {
   string _name;
   StationType _type;
   bool _isOccupied;
-  map<int, Track*> _tracks;
+  unordered_map<int, Track*> _tracks;
 };
 
 #endif //UNTITLED_STATION_H

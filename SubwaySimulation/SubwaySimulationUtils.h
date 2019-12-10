@@ -12,7 +12,7 @@
 
 #include <iostream>
 
-typedef pair<int, int> pairInt;
+typedef std::pair<int, int> pairInt;
 
 bool DirectoryExists(const std::string dirname);
 
@@ -28,7 +28,7 @@ int GenerateRandomNumber(int a, int b);
 Checks if the attribute string is valid.
 @returns True if the string isn't empty.
 */
-bool ValidStringAttribute(string string);
+bool ValidStringAttribute(std::string string);
 
 /**
   Checks if the attribute integer is valid.
