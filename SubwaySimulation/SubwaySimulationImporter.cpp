@@ -203,13 +203,17 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
 
 // CONSISTENCY
 
+/*
+ * NON DA USARE MA PER IL MOMENTO LA LASICAMO QUI
 // auxiliary for check_prev_next_tracks: find next and previous of a station in a particular track
 int find_next_prev_station(unordered_map<int, Track*>::iterator ptr, unordered_map<string, Station*> stations) {
     int numTrack = ptr->first;
     Track *track = ptr->second;
     string next = track->getNextStr();
     string prev = track->getPreviousStr();
-
+    cout << "ninterno track " << numTrack << endl;
+    cout << "next " << next << endl;
+    cout << "prev "  << prev << endl;
     // Find next station
     unordered_map<string, Station *>::iterator it1;
     it1 = stations.find(next);
@@ -219,6 +223,7 @@ int find_next_prev_station(unordered_map<int, Track*>::iterator ptr, unordered_m
 
     return numTrack;
 }
+*/
 
 // auxiliary for check_prev_next_tracks: check if nextStation, prevStation have same track of station
 bool check_same_track(int numTrack, unordered_map<string, Station*>::iterator it1, unordered_map<string, Station*>::iterator it2, bool is_ok) {
@@ -226,7 +231,6 @@ bool check_same_track(int numTrack, unordered_map<string, Station*>::iterator it
     Station *prevStation = it2->second;
     unordered_map<int, Track*> tracksNext = nextStation->getTracks();
     unordered_map<int, Track*> tracksPrev = prevStation->getTracks();
-
     // check if nextStation has same track among its tracks
     unordered_map<int, Track*>::iterator it3;
     it3 = tracksNext.find(numTrack);
@@ -245,7 +249,6 @@ bool check_same_track(int numTrack, unordered_map<string, Station*>::iterator it
 bool check_prev_next_tracks(unordered_map<string, Station*> stations) {
     bool is_ok = true;
     unordered_map<string, Station *>::iterator it;
-
     for (it = stations.begin(); it != stations.end() && is_ok; it++) {
         Station *station = it->second;
         string name = station->getName();
@@ -253,11 +256,17 @@ bool check_prev_next_tracks(unordered_map<string, Station*> stations) {
         unordered_map<int, Track *> tracks = station->getTracks();
         unordered_map<int, Track *>::iterator ptr;
         for (ptr = tracks.begin(); ptr != tracks.end(); ptr++) {
+            int numTrack = ptr->first;
+            Track *track = ptr->second;
+            string next = track->getNextStr();
+            string prev = track->getPreviousStr();
+            // Find next station
             unordered_map<string, Station *>::iterator it1;
+            it1 = stations.find(next);
+            // Find previous station
             unordered_map<string, Station *>::iterator it2;
-            int numTrack = find_next_prev_station(ptr, stations);
+            it2 = stations.find(prev);
             // Check if element exists in map or not
-
             if (it1 != stations.end() && it2 != stations.end()) { // station has a valid next and previous
                 is_ok = check_same_track(numTrack, it1, it2, is_ok);
                 if (is_ok == false) {
@@ -305,7 +314,6 @@ bool check_station_tram(unordered_map<string, Station*> stations, map<pairInt, T
 SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, std::ostream& errStream, Subway& subway) {
   TiXmlDocument doc;
   SuccessEnum endResult = Success;
-
   if (!doc.LoadFile(inputFileName)) {
     errStream << "XML IMPORT ABORTED: " << doc.ErrorDesc();
     return ImportAborted;
@@ -384,18 +392,20 @@ SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, st
   }
 
   // Consistency check
-//  bool successNextPrev = check_prev_next_tracks(stations);
-//  if (!successNextPrev) {
-//    errStream << "XML IMPORT ABORTED: Some stations don't have a next and/or right station or there's a missing tram" << endl;
-//    return ImportAborted;
-//  }
-//
-//  // check if startStation of each tram is in stations and if line corresponds to a track in the startStation
-//  bool successLineMatch = check_station_tram(stations, trams);
-//  if (!successLineMatch) {
-//    errStream << "XML IMPORT ABORTED: the lines don't correspond to the tracks" << endl;
-//    return ImportAborted;
-//  }
+
+  // check if each station has next and previous on each track with same track
+  bool successNextPrev = check_prev_next_tracks(stations);
+    if (!successNextPrev) {
+        errStream << "XML IMPORT ABORTED: Some stations don't have a next and/or previous right station or tracks don't correspond" << endl;
+        return ImportAborted;
+    }
+
+  // check if startStation of each tram is in stations and if line corresponds to a track in the startStation
+  bool successLineMatch = check_station_tram(stations, trams);
+    if (!successLineMatch) {
+        errStream << "XML IMPORT ABORTED: tram's start station doesn't exist or the lines don't correspond to the tracks" << endl;
+        return ImportAborted;
+    }
 
   // Link objects
   // Transform station names into Station pointers
