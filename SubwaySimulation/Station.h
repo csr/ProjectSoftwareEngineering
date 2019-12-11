@@ -18,7 +18,7 @@
 
 using namespace std;
 
-enum StationType {TypeStation, TypeStop};
+enum StationType {NotSet, TypeStation, TypeStop};
 
 class Track;
 

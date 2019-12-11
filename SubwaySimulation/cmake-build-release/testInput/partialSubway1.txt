@@ -1,1 +1,3 @@
 XML PARTIAL IMPORT: invalid station found
+XML PARTIAL IMPORT: invalid station found
+XML PARTIAL IMPORT: invalid station found

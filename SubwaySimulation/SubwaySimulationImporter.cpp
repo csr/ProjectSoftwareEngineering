@@ -63,13 +63,13 @@ Track *parseTrack(TiXmlElement *root, std::ostream& errStream) {
   int track = 0;
 
   if (!ValidStringAttribute(next) || !ValidStringAttribute(previous)) {
-    return NULL;
+    return nullptr;
   }
 
   if (IsStringNumber(trackStr)) {
     track = stoi(trackStr);
   } else {
-    return NULL;
+    return nullptr;
   }
 
   // Check track children count
@@ -78,7 +78,7 @@ Track *parseTrack(TiXmlElement *root, std::ostream& errStream) {
     childrenCount++;
   }
   if (childrenCount != maxTrackChildrenCount) {
-    return NULL;
+    return nullptr;
   }
 
   return new Track(track, next, previous);
@@ -88,12 +88,12 @@ Track *parseTrack(TiXmlElement *root, std::ostream& errStream) {
 Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
   // Edge case: if the station is empty return null
   if (root->NoChildren()) {
-    return NULL;
+    return nullptr;
   }
 
   // map of future tracks
   unordered_map<int, Track*> tracks;
-  StationType typeStation = TypeStation;
+  StationType typeStation = NotSet;
   string name;
 
   int childrenCount = 0;
@@ -135,8 +135,12 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
     }
   }
 
+  if (!ValidStringAttribute(name) || typeStation == NotSet) {
+    return nullptr;
+  }
+
   if (childrenCount < minimumStationChildrenCount) {
-    return NULL;
+    return nullptr;
   }
 
   return new Station(name, typeStation, tracks);
@@ -146,7 +150,7 @@ Station *parseStation(TiXmlElement *root, std::ostream& errStream) {
 Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
   // Edge case: if the tram is empty return null
   if (root->NoChildren()) {
-    return NULL;
+    return nullptr;
   }
 
   TramType type;
@@ -165,7 +169,7 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
       if (IsStringNumber(lineStr)) {
         line = stoi(lineStr);
       } else {
-        return NULL;
+        return nullptr;
       }
     } else if (elem_value == "type") {
       string typeStr = fetch_text(node, errStream);
@@ -174,28 +178,28 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
       } else if (typeStr == "PCC") {
         type = PCC;
       } else {
-        return NULL;
+        return nullptr;
       }
     } else if (elem_value == "startStation") {
       startStation = fetch_text(node, errStream);
       if (!ValidStringAttribute(startStation)) {
-        return NULL;
+        return nullptr;
       }
     } else if (elem_value == "vehicle") {
       string vehicleStr = fetch_text(node, errStream);
       if (IsStringNumber(vehicleStr)) {
         vehicle = stoi(vehicleStr);
       } else {
-        return NULL;
+        return nullptr;
       }
     } else {
       // invalid element found
-      return NULL;
+      return nullptr;
     }
   }
 
   if (childrenCount != maxTramChildrenCount) {
-    return NULL;
+    return nullptr;
   }
 
   return new Tram(line, type, startStation, vehicle);
