@@ -1,1 +1,1 @@
-XML IMPORT ABORTED: the lines don't correspond to the tracks
+XML IMPORT ABORTED: Some stations don't have a next and/or previous right station or tracks don't correspond

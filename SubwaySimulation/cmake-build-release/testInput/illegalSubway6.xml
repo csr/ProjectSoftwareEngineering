@@ -1,3 +1,4 @@
+<!--Station B has invalid track-->
 <STATION>
     <name>A</name>
     <type>stop</type>
@@ -15,30 +16,30 @@
 <STATION>
     <name>B</name>
     <type>stop</type>
-<TRACK>
-    <track>12</track>
-    <next>C</next>
-    <previous>A</previous>
-</TRACK>
-<TRACK>
-    <track>21</track>
-    <next>A</next>
-    <previous>C</previous>
-</TRACK>
+    <TRACK>
+        <track>12</track>
+        <next>C</next>
+        <previous>A</previous>
+    </TRACK>
+    <TRACK>
+        <track>100000</track>
+        <next>A</next>
+        <previous>C</previous>
+    </TRACK>
 </STATION>
 <STATION>
     <name>C</name>
     <type>station</type>
-<TRACK>
-    <track>12</track>
-    <next>A</next>
-    <previous>B</previous>
-</TRACK>
-<TRACK>
-    <track>21</track>
-    <next>B</next>
-    <previous>A</previous>
-</TRACK>
+    <TRACK>
+        <track>12</track>
+        <next>A</next>
+        <previous>B</previous>
+    </TRACK>
+    <TRACK>
+        <track>21</track>
+        <next>B</next>
+        <previous>A</previous>
+    </TRACK>
 </STATION>
 <TRAM>
     <line>12</line>

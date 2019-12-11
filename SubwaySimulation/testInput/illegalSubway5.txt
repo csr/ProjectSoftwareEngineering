@@ -1,1 +1,2 @@
-XML IMPORT ABORTED: Some stations don't have a next and/or right station or there's a missing tram
+UNRECOGNIZED ELEMENT with name HELLO. Expected <previous> ... </previous>.
+XML IMPORT ABORTED: found empty file

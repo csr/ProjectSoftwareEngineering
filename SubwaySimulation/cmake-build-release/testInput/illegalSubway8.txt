@@ -1,2 +1,1 @@
-XML PARTIAL IMPORT: invalid station found
-XML IMPORT ABORTED: Some stations don't have a next and/or right station or there's a missing tram
+XML IMPORT ABORTED: Some stations don't have a next and/or previous right station or tracks don't correspond
