@@ -13,13 +13,13 @@
 Tram::Tram(int line, TramType type, string startStation, int number) {
   _initCheck = this;
   setLine(line);
-  setStartStationName(startStation);
+  setCurrentStationName(startStation);
   setType(type);
   setNumber(number);
   setMaximumCapacity();
   setSpeed();
   ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
-  ENSURE(startStation == getStartStationName(), "Start station wasn't set correctly in constructor");
+  ENSURE(startStation == getCurrentStationName(), "Start station wasn't set correctly in constructor");
   ENSURE(type == getType(), "Type wasn't set correctly in constructor");
   ENSURE(number == getNumber(), "Number wasn't set correctly in constructor");
 }
@@ -43,19 +43,14 @@ int Tram::getSpeed() {
   return _speed;
 }
 
-Station* Tram::getStartStation() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStation");
-  return _startStation;
-}
-
 Station* Tram::getCurrentStation() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
   return _currentStation;
 }
 
-string Tram::getStartStationName() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStationName");
-  return _startStationName;
+string Tram::getCurrentStationName() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStationName");
+  return _currentStationName;
 }
 
 TramType Tram::getType() {
@@ -75,22 +70,18 @@ void Tram::setLine(int line) {
   ENSURE(line == getLine(), "Tram line was not set correctly");
 }
 
-void Tram::setStartStation(Station *startStation) {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setStartStation");
-  _startStation = startStation;
-  ENSURE(startStation == getStartStation(), "Tram start station was not set correctly");
-}
-
 void Tram::setCurrentStation(Station *station) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
   _currentStation = station;
+  _currentStation->setOccupied(true);
+  ENSURE(station->isCurrentlyOccupied() == true, "Station must be set to occupied");
   ENSURE(station == getCurrentStation(), "Tram current station was not set correctly");
 }
 
-void Tram::setStartStationName(string startStation) {
+void Tram::setCurrentStationName(string currentStation) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStation");
-  _startStationName = startStation;
-  ENSURE(startStation == getStartStationName(), "Tram start station name was not set correctly");
+  _currentStationName = currentStation;
+  ENSURE(getCurrentStationName() == currentStation, "Tram start station name was not set correctly");
 }
 
 void Tram::setType(TramType type) {

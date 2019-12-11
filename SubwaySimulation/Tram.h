@@ -63,20 +63,14 @@ class Tram {
   int getSpeed();
 
 /**
-  Getter for the start Station of the Tram.
-  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStation");
-  @returns Start Station of the Tram.
-*/
-  Station* getStartStation();
-
-/**
   Getter for the current Station name of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
   @returns Current Station the tram is at.
 */
   Station* getCurrentStation();
 
-  string getStartStationName();
+  string getCurrentStationName();
+
 
   TramType getType();
 
@@ -100,15 +94,6 @@ class Tram {
   void setLine(int line);
 
 /**
-  Setter for the start Station name.
-  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setStartStation");
-  @note ENSURE(ValidStringAttribute(getStartStation()), "Tram start station must be valid");
-  @note ENSURE(startStation == getStartStation(), "Tram start station was not set correctly");
-  @param startStaton Start Station of the Tram.
-*/
-  void setStartStation(Station *station);
-
-/**
   Setter for the current start Station name.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
   @note ENSURE(ValidStringAttribute(getCurrentStation()), "Tram current station must be valid");
@@ -123,7 +108,7 @@ class Tram {
   _startStationName = startStation;
   ENSURE(startStation == getStartStationName(), "Tram start station name was not set correctly");
 */
-  void setStartStationName(string startStation);
+  void setCurrentStationName(string startStation);
 
 /**
   Setter for tram type.
@@ -162,7 +147,6 @@ class Tram {
   int _line;
   Station* _startStation;
   Station* _currentStation;
-  string _startStationName;
   string _currentStationName;
   TramType _type;
   int _currentCapacity;

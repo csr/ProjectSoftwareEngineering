@@ -28,19 +28,19 @@ class SubwaySimulationMovingTests: public ::testing::Test {
   Subway subway_;
 };
 
-TEST_F(SubwaySimulationMovingTests, MovingTram) {
-//if directory doesn't exist then no need in proceeding with the test
-    ASSERT_TRUE(DirectoryExists("testInput"));
-    ASSERT_TRUE(DirectoryExists("testSimulation"));
-
-    ofstream outputContainerFile;
-    SuccessEnum importResult;
-    int fileCounter = 1;
-    string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
-    while(FileExists(fileName)){
-        string temporaryOutput = "testSimulation/temporaryOutput.txt";
-    }
-}
+//TEST_F(SubwaySimulationMovingTests, MovingTram) {
+////if directory doesn't exist then no need in proceeding with the test
+//    ASSERT_TRUE(DirectoryExists("testInput"));
+//    ASSERT_TRUE(DirectoryExists("testSimulation"));
+//
+//    ofstream outputContainerFile;
+//    SuccessEnum importResult;
+//    int fileCounter = 1;
+//    string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+//    while(FileExists(fileName)){
+//        string temporaryOutput = "testSimulation/temporaryOutput.txt";
+//    }
+//}
     //
 //  while (FileExists(fileName)) {
 //    string temporaryOutput = "testSimulation/temporaryOutput.txt";

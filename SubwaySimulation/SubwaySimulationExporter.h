@@ -10,6 +10,7 @@
 
 using namespace std;
 
+// Make this a class
 void graficalOutput(string fileName, Subway& subway);
 
 void simpleOutput(string  fileName, Subway& subway);

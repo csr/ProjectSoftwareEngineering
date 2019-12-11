@@ -29,7 +29,7 @@ bool DirectoryExists(const std::string dirname) {
 bool FileExists(const std::string filename) {
   struct stat st;
   if (stat(filename.c_str(), &st) != 0)
-	  return false;
+    return false;
   ifstream f(filename.c_str());
   if (f.good()) {
     f.close();
@@ -78,7 +78,7 @@ bool FileCompare(const std::string leftFileName, const std::string rightFileName
   return result;
 }
 
-string ToString( int x ) {
+string ToString(int x) {
   int length = snprintf( NULL, 0, "%d", x );
   char* buf = new char[length + 1];
   snprintf( buf, length + 1, "%d", x );
@@ -114,7 +114,9 @@ bool ValidStringAttribute(string string) {
   return !string.empty() && isLettersOnly(string);
 }
 
-int GenerateRandomNumber(int a, int b){
-    srand(time(nullptr));
-    return rand() % (b - a) + a;
+int GenerateRandomNumber(int a, int b) {
+  // Setting seed
+  srand(time(nullptr));
+
+  return rand() % (b - a) + a;
 }

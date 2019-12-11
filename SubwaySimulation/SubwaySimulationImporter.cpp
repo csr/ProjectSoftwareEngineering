@@ -280,7 +280,7 @@ bool check_station_tram(unordered_map<string, Station*> stations, map<pairInt, T
 
     for (it = trams.begin(); it != trams.end() && is_ok; it++) {
         Tram *tram = it->second;
-        string startStation = tram->getStartStationName();
+        string startStation = tram->getCurrentStationName();
         int line = tram->getLine();
         unordered_map<string, Station *>::iterator it1;
         it1 = stations.find(startStation);
@@ -414,11 +414,9 @@ SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, st
 
   // Transform station names into Station pointers
   for (auto &tram: tramsArray) {
-    string startStationName = tram->getStartStationName();
+    string startStationName = tram->getCurrentStationName();
     Station *startStation = stations[startStationName];
-    tram->setStartStation(startStation);
     tram->setCurrentStation(startStation);
-    startStation->setOccupied(true);
   }
 
   subway.importData(stationsArray, tramsArray);

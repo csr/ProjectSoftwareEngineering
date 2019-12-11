@@ -18,6 +18,14 @@ Track::Track(int track, string nextStr, string previousStr) {
     ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
+Track::Track(int track, Station* next, Station* previous) {
+  _init = this;
+  setTrack(track);
+  setNext(next);
+  setPrevious(previous);
+  ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+}
+
 bool Track::properlyInitialized() {
   return _init == this;
 }

@@ -27,6 +27,8 @@ class Track {
  public:
   Track(int track, string next, string previous);
 
+  Track(int track, Station* next, Station* previous);
+
   bool properlyInitialized();
 
   void setTrack(int track);
