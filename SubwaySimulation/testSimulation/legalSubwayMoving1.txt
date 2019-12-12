@@ -1,1 +1,1 @@
-Tram 12 moved from station A to station B
+Tram 12 moved from station A to station B at time 

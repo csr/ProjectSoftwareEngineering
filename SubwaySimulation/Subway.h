@@ -94,6 +94,10 @@ class Subway {
 */
   void reset();
 
+  void incrementTime();
+
+  int getCurrentTime();
+
  private:
   Subway * _initCheck; //!use pointer to myself to verify whether I am properly initialized
 
@@ -103,7 +107,9 @@ class Subway {
   unordered_map<string, Station*> _stationsMap;
   map<pairInt, Tram*> _tramsMap;
 
+  int _time;
 
+  void setInitialTime();
 };
 
 #endif

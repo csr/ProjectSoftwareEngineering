@@ -99,32 +99,32 @@ class SubwaySimulationMovingTests: public ::testing::Test {
 ///**
 //Tests Subway simulation with one step.
 //*/
-//TEST_F(SubwaySimulationMovingTests, SubwayAutomaticSimulation) {
-//    ASSERT_TRUE(DirectoryExists("testInput"));
-//    ASSERT_TRUE(DirectoryExists("testSimulation"));
-//
-//    ofstream outputContainerFile;
-//
-//    SuccessEnum importResult;
-//    int fileCounter = 1;
-//    string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
-//    string temporaryOutput = "testSimulation/temporaryOutput.txt";
-//
-//    outputContainerFile.open(temporaryOutput);
-//
-//    // The outputContainerFile will be passed as the "error" file to the import subway
-//    // If the import result is Success, there should be NO error output (an empty error file means everything was ok)
-//    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), outputContainerFile, subway_);
-//    //
-//    EXPECT_TRUE(importResult == Success);
-////
-////    // The outputContainerFile will also be used to dump the contents of subway_.toString()
-//    subway_.computeAutomaticSimulation(20000, outputContainerFile) ;
-//    outputContainerFile.close();
-//
-//    string expectedOutputFilename = "testSimulation/legalSubwaySimulation" + ToString(fileCounter) + ".txt";
-//    EXPECT_TRUE(FileCompare(temporaryOutput, expectedOutputFilename));
-//}
+TEST_F(SubwaySimulationMovingTests, SubwayAutomaticSimulation) {
+    ASSERT_TRUE(DirectoryExists("testInput"));
+    ASSERT_TRUE(DirectoryExists("testSimulation"));
+
+    ofstream outputContainerFile;
+
+    SuccessEnum importResult;
+    int fileCounter = 2;
+    string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+    string temporaryOutput = "testSimulation/temporaryOutput.txt";
+
+    outputContainerFile.open(temporaryOutput);
+
+    // The outputContainerFile will be passed as the "error" file to the import subway
+    // If the import result is Success, there should be NO error output (an empty error file means everything was ok)
+    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), outputContainerFile, subway_);
+
+    EXPECT_TRUE(importResult == Success);
+
+    // The outputContainerFile will also be used to dump the contents of subway_.toString()
+    subway_.computeAutomaticSimulation(500, outputContainerFile);
+    outputContainerFile.close();
+
+    string expectedOutputFilename = "testSimulation/legalSubwaySimulation" + ToString(fileCounter) + ".txt";
+    EXPECT_TRUE(FileCompare(temporaryOutput, expectedOutputFilename));
+}
 
 
 

@@ -21,7 +21,7 @@ Subway::Subway() {
 
   // Import empty station and tram arrays
   importData({}, {});
-
+  setInitialTime();
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
   ENSURE(getTramsCount() == 0, "default constructor should return build empty subway");
   ENSURE(getStationsCount() == 0, "default constructor should return build empty subway");
@@ -110,10 +110,9 @@ void Subway::reset() {
 void Subway::computeAutomaticSimulation(int steps, ostream &outputStream) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
   REQUIRE(steps >= 0, "Number of steps must be positive");
-  int current = 0;
-  while (current < steps) {
+  while (getCurrentTime() < steps) {
     this->moveTramsOnce(outputStream);
-    current++;
+    incrementTime();
   }
 }
 
@@ -126,24 +125,27 @@ void Subway::moveTramsOnce(ostream &outputStream) {
         if(tram->getWaiting() == 0) {
             Track *track = currentStation->getTrack(tram->getNumber());
             if (tram->trackFree()) {
-                tram->calculateDistance();
+                //Leave a station
                 tram->move();
+                //this->collectStatisticalData(statisticalFile);
             }
         }else
             tram->decreaseWaiting();
 
     } else if(tram->getDistance() == 1) {
+        //Arrive in a Station
       tram->decreaseDistance();
       tram->move();
       string currentStationName = tram->getCurrentStation()->getName();
       outputStream << "Tram " << tram->getLine() << " moved from station " << previousStationName <<
-                   " to station " << currentStationName << endl;
+                   " to station " << currentStationName << " at time " << getCurrentTime() << endl;
       //this->collectStatisticalData(statisticalFile);
     }else
       tram->decreaseDistance();
 
 
   }
+
 }
 
 void Subway::collectStatisticalData(string fileName) {
@@ -151,5 +153,24 @@ void Subway::collectStatisticalData(string fileName) {
   //ofstream fileStream(fileName);
   //fileStream <<
   //fileStream.close();
+}
+
+int Subway::getCurrentTime(){
+    REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTime");
+    ENSURE(_time >= 0, "Time can't be negative");
+    return _time;
+}
+
+void Subway::setInitialTime(){
+    REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling setInitialTime");
+    _time = 0;
+    ENSURE(_time == 0, "Time wasn't set to 0");
+}
+
+void Subway::incrementTime(){
+    REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling incrementTime");
+    int previous = getCurrentTime();
+    _time++;
+    ENSURE(getCurrentTime() == previous + 1, "Time wasn't incremented in incrementTime");
 }
 

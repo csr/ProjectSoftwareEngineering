@@ -14,19 +14,14 @@ Tram::Tram(int line, TramType type, string startStation, int number) {
   _initCheck = this;
   setLine(line);
   setCurrentStationName(startStation);
-  _type = type;
+  setType(type);
   setNumber(number);
-
-  // Subclass this class and move this to appropriate method
-  if(this->_type == Albatross) {
-    _maxCapacity = 72;
-  } else if (this->_type == PCC) {
-    _maxCapacity = 16;
-  }
-
+  setMaximumCapacity();
+  setCurrentCapacity(0);
   setSpeed();
+  setDistance(0);
+  setWaiting(0);
   ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
-  ENSURE(type == getType(), "Type wasn't set correctly in constructor");
   ENSURE(startStation == getCurrentStationName(), "Start station wasn't set correctly in constructor");
   ENSURE(type == getType(), "Type wasn't set correctly in constructor");
   ENSURE(number == getNumber(), "Number wasn't set correctly in constructor");
@@ -92,6 +87,12 @@ void Tram::setCurrentStationName(string currentStation) {
   ENSURE(getCurrentStationName() == currentStation, "Tram start station name was not set correctly");
 }
 
+void Tram::setType(TramType type) {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setType");
+  _type = type;
+  ENSURE(type == getType(), "Tram type was not set correctly");
+}
+
 void Tram::setNumber(int number) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setTrack");
   _number = number;
@@ -102,21 +103,26 @@ void Tram::move() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
 
   //Arrive in a new Station
-  if(this->getDistance() == 0) {
+  if(this->getWaiting() != 0) {
       Station *currentStation = this->getCurrentStation();
-      Track *track = currentStation->getTrack(this->getNumber());
-      Station *nextStation = track->getNext();
+      Track *track = currentStation->getTrack(this->getLine());
+      cout << track->getNext()->getName() << endl;
+      Station* nextStation = track->getNext();
       this->setCurrentStation(nextStation);
       this->getCurrentStation()->setOccupied(true);
       ENSURE(this->getCurrentStation()->isCurrentlyOccupied(), "Tram doesn't arrive in the next station");
       int passengers = GenerateRandomNumber(0, this->getCurrentCapacity());
+      setDistance(calculateDistance());
       setCurrentCapacity(passengers);
       setTurnover();
       }else {
       //Leave a station
+      cout << this->getMaxCapacity() << endl;
       int passengers = GenerateRandomNumber(this->getCurrentCapacity(), this->getMaxCapacity());
+      cout << "Passengers: " << passengers << " on tram " << this->getLine() << endl;
       setCurrentCapacity(passengers);
       setTurnover();
+      setDistance(calculateDistance());
       this->getCurrentStation()->setOccupied(false);
 
       ENSURE(!this->getCurrentStation()->isCurrentlyOccupied(), "Tram doesn't leave the station");
@@ -149,6 +155,15 @@ void Tram::setSpeed() {
   }
 }
 
+void Tram::setMaximumCapacity() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setMaximumCapacity");
+  if(this->_type == Albatross) {
+    _maxCapacity = 72;
+  } else if (this->_type == PCC) {
+    _maxCapacity = 16;
+  }
+}
+
 int Tram::getCurrentCapacity() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentCapacity");
   return _currentCapacity;
@@ -161,17 +176,21 @@ int Tram::getDistance() {
 
 int Tram::calculateDistance() {
     REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling calculateDistance");
-    int distance = 0;
-    if (this->getType() == Albatross && this->getCurrentStation()->getTrack(this->getNumber())->getNext()->getType() != TypeStop){
+    int distance = 7200 / _speed;
+    if(this->getType() == Albatross){
         distance++;
         ENSURE(distance >= 0, "Distance can not be negative");
-        return distance++ + calculateDistance();
+        Station* elem = this->getCurrentStation()->getTrack(this->getLine())->getNext();
+        while(elem->getType() == TypeStop){
+            distance += 7200 / _speed + 1;
+            elem = elem->getTrack(this->getLine())->getNext();
+        }
     }
     else{
-        distance = 7200 / _speed;
         setWaiting(60);
         //ENSURE(distance >= 0, "Distance can not be negative");
     }
+
     return distance;
 }
 void Tram::setDistance(int distance) {
@@ -200,7 +219,7 @@ bool Tram::trackFree() {
         return !elem->isCurrentlyOccupied();
     } else{
         int track = this->getLine();
-        return !this->getCurrentStation()->getTrack(track)->getNext()->isCurrentlyOccupied();
+        return !(this->getCurrentStation()->getTrack(track)->getNext()->isCurrentlyOccupied());
     }
 }
 
