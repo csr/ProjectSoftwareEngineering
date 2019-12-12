@@ -102,7 +102,6 @@ TEST_F(SubwaySimulationInputTests, InputPartialSimulations) {
   string errorfileName;
 
   while (FileExists (fileName)) {
-    cout << "Parsing partial file with name: " << fileName << endl;
     myfile.open("testInput/zzzError.txt");
     importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
     myfile.close();

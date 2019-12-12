@@ -10,9 +10,10 @@
 
 using namespace std;
 
-// Make this a class
-void graficalOutput(string fileName, Subway& subway);
+class SubwaySimulationExporter {
+ public:
+  void graficalOutput(string fileName, Subway& subway);
+  void simpleOutput(string  fileName, Subway& subway);
+};
 
-void simpleOutput(string  fileName, Subway& subway);
-
-#endif //SUBWAYSIMULATION_OUTPUT_H
+#endif

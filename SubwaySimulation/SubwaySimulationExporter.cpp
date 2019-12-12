@@ -7,7 +7,7 @@
 #include "Subway.h"
 #include "SubwaySimulationUtils.h"
 
-void graficalOutput(string fileName, Subway& subway) {
+void SubwaySimulationExporter::graficalOutput(string fileName, Subway& subway) {
   if(!FileExists(fileName)){
     cout << "Output file doesn't exist";
   }
@@ -30,7 +30,7 @@ void graficalOutput(string fileName, Subway& subway) {
   outputStream.close();
 }
 
-void simpleOutput(string  fileName, Subway& subway){
+void SubwaySimulationExporter::simpleOutput(string  fileName, Subway& subway){
   if(!FileExists(fileName)){
     cout << "Output file doesn't exist" << endl;
   }
