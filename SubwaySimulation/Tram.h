@@ -71,7 +71,6 @@ class Tram {
 
   string getCurrentStationName();
 
-
   TramType getType();
 
   int getNumber();
@@ -110,13 +109,6 @@ class Tram {
 */
   void setCurrentStationName(string startStation);
 
-/**
-  Setter for tram type.
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setType");
-  ENSURE(type == getType(), "Tram type was not set correctly");
-*/
-  void setType(TramType type);
-
   void setNumber(int number);
 
   void setCurrentCapacity(int number);
@@ -124,8 +116,6 @@ class Tram {
   void setTurnover();
 
   void setSpeed();
-
-  void setMaximumCapacity();
 
   void move();
 
