@@ -51,6 +51,10 @@ class Track {
 
   string getPreviousStr();
 
+  bool isCurrentlyOccupied();
+
+  void setOccupied(bool isOccupied);
+
 private:
    Track* _init;
    int _track;
@@ -58,6 +62,7 @@ private:
    Station* _previous;
    string _nextStr;
    string _previousStr;
+   bool _isOccupied;
 };
 
 #endif //SUBWAYSIMULATION_TRACK_H

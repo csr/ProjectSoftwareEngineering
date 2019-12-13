@@ -30,7 +30,6 @@ class Station {
 
   void setName(string name);
 
-  void setOccupied(bool isOccupied);
 
   void setTracks(unordered_map<int, Track*> tracks);
 
@@ -44,13 +43,11 @@ class Station {
 
   vector<Track*> getTracksArray();
 
-  bool isCurrentlyOccupied();
 
  private:
   Station * _initCheck;
   string _name;
   StationType _type;
-  bool _isOccupied;
   unordered_map<int, Track*> _tracks;
 };
 

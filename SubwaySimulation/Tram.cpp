@@ -82,8 +82,8 @@ void Tram::setLine(int line) {
 void Tram::setCurrentStation(Station *station) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
   _currentStation = station;
-  _currentStation->setOccupied(true);
-  ENSURE(station->isCurrentlyOccupied() == true, "Station must be set to occupied");
+  _currentStation->getTrack(this->getLine())->setOccupied(true);
+  ENSURE(station->getTrack(this->getLine())->isCurrentlyOccupied() == true, "Station must be set to occupied");
   ENSURE(station == getCurrentStation(), "Tram current station was not set correctly");
 }
 
@@ -103,11 +103,11 @@ void Tram::arrive(){
     REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
     Station* currentStation = this->getCurrentStation();
     Track *track = currentStation->getTrack(this->getLine());
-    Station* nextStation = track->getNext();
+    Station* nextStation = getNextStation();
     this->setCurrentStation(nextStation);
-    this->getCurrentStation()->setOccupied(true);
+    this->getCurrentStation()->getTrack(this->getLine())->setOccupied(true);
 
-    ENSURE(this->getCurrentStation()->isCurrentlyOccupied(), "Tram doesn't arrive in the next station");
+    ENSURE(this->getCurrentStation()->getTrack(this->getLine())->isCurrentlyOccupied(), "Tram doesn't arrive in the next station");
     setCurrentCapacity(GenerateRandomNumber(0, this->getCurrentCapacity()));
     setTurnover();
 }
@@ -118,8 +118,8 @@ void Tram::leave() {
     cout << "New Distance" << calculateDistance() << endl;
     setDistance(calculateDistance());
     setWaiting(60);
-    this->getCurrentStation()->setOccupied(false);
-    ENSURE(!this->getCurrentStation()->isCurrentlyOccupied(), "Tram doesn't leave the station");
+    this->getCurrentStation()->getTrack(this->getLine())->setOccupied(false);
+    ENSURE(!this->getCurrentStation()->getTrack(this->getLine())->isCurrentlyOccupied(), "Tram doesn't leave the station");
 }
 
 void Tram::setCurrentCapacity(int number) {
@@ -186,23 +186,20 @@ void Tram::decreaseDistance() {
 }
 
 bool Tram::trackFree() {
+    int track = this->getLine();
 
     if (this->getType() == Albatross){
         bool answer = true;
-        int track = this->getLine();
         Station* elem = this->getCurrentStation()->getTrack(track)->getNext();
-        cout << "Next: " << elem->getName() << " of track" << track << " with vehicle " << this->getNumber() << endl;
+
         while(elem->getType() == TypeStop){
-            if(elem->isCurrentlyOccupied())
+            if(elem->getTrack(track)->isCurrentlyOccupied())
                 return false;
             elem = elem->getTrack(track)->getNext();
         }
-        return !elem->isCurrentlyOccupied();
+        return !elem->getTrack(track)->isCurrentlyOccupied();
     } else{
-        int track = this->getLine();
-        bool answer = this->getCurrentStation()->getTrack(track)->getNext()->isCurrentlyOccupied();
-        cout << "Answer: " << answer << endl;
-        return answer;
+        return !this->getCurrentStation()->getTrack(track)->getNext()->getTrack(track)->isCurrentlyOccupied();
     }
 }
 
@@ -222,4 +219,14 @@ void Tram::decreaseWaiting() {
     int previous = _waiting;
     _waiting = _waiting - 1;
     ENSURE(this->getWaiting() == (previous - 1), "Tram doesn't decrease waiting time");
+}
+
+Station* Tram::getNextStation(){
+    Station* next = this->getCurrentStation()->getTrack(this->getLine())->getNext();
+    if (this->getType() == Albatross){
+        while(next->getType() == TypeStop){
+            next = next->getTrack(this->getLine())->getNext();
+        }
+    }
+    return next;
 }

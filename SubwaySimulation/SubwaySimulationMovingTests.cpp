@@ -94,7 +94,7 @@ TEST_F(SubwaySimulationMovingTests, SubwaySimpleAutomaticSimulation) {
         subway_.computeAutomaticSimulation(500, outputContainerFile);
         outputContainerFile.close();
 
-        string expectedOutputFilename = "testSimulation/legalSubwaySimulation" + ToString(fileCounter) + ".txt";
+        string expectedOutputFilename = "testSimulation/simple/legalSubwaySimulation" + ToString(fileCounter) + ".txt";
         EXPECT_TRUE(FileCompare(temporaryOutput, expectedOutputFilename));
         fileCounter++;
         fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
@@ -114,7 +114,7 @@ TEST_F(SubwaySimulationMovingTests, SubwayNormalAutomaticSimulation) {
     string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
     string temporaryOutput = "testSimulation/temporaryOutput.txt";
 
-    while (FileExists(fileName)) {
+    //while (FileExists(fileName)) {
         outputContainerFile.open(temporaryOutput);
         // The outputContainerFile will be passed as the "error" file to the import subway
         // If the import result is Success, there should be NO error output (an empty error file means everything was ok)
@@ -123,16 +123,16 @@ TEST_F(SubwaySimulationMovingTests, SubwayNormalAutomaticSimulation) {
         EXPECT_TRUE(importResult == Success);
 
         // The outputContainerFile will also be used to dump the contents of subway_.toString()
-        subway_.computeAutomaticSimulation(2000, outputContainerFile);
+        subway_.computeAutomaticSimulation(1000, outputContainerFile);
         outputContainerFile.close();
 
-        string expectedOutputFilename = "testSimulation/legalSubwaySimulation" + ToString(fileCounter) + ".txt";
+        string expectedOutputFilename = "testSimulation/normal/legalSubwaySimulation" + ToString(fileCounter) + ".txt";
         EXPECT_TRUE(FileCompare(temporaryOutput, expectedOutputFilename));
         fileCounter++;
         fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
         cout << "Done it" << endl;
-    }
-    EXPECT_TRUE(fileCounter == 5);
+    //}
+    //EXPECT_TRUE(fileCounter == 5);
 }
 
 TEST_F(SubwaySimulationMovingTests, SubwayComplexAutomaticSimulation) {
@@ -155,10 +155,10 @@ TEST_F(SubwaySimulationMovingTests, SubwayComplexAutomaticSimulation) {
         EXPECT_TRUE(importResult == Success);
 
         // The outputContainerFile will also be used to dump the contents of subway_.toString()
-        subway_.computeAutomaticSimulation(10000, outputContainerFile);
+        subway_.computeAutomaticSimulation(2000, outputContainerFile);
         outputContainerFile.close();
 
-        string expectedOutputFilename = "testSimulation/legalSubwaySimulation" + ToString(fileCounter) + ".txt";
+        string expectedOutputFilename = "testSimulation/complex/legalSubwaySimulation" + ToString(fileCounter) + ".txt";
         EXPECT_TRUE(FileCompare(temporaryOutput, expectedOutputFilename));
         fileCounter++;
         fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
@@ -250,6 +250,6 @@ TEST_F(SubwaySimulationMovingTests, SubwayTurnoverSimulation){
     EXPECT_TRUE(fileCounter == 5);
 }
 
-//TEST_F(SubwaySimulationMovingTests, SubwayCSVSimulation){
+TEST_F(SubwaySimulationMovingTests, SubwayCSVSimulation){
 
-//}
+}

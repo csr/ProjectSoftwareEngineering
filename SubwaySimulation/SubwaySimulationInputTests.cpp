@@ -89,7 +89,7 @@ TEST_F(SubwaySimulationInputTests, InputIllegalSimulations) {
     fileCounter = fileCounter + 1;
     fileName = "testInput/illegalSubway" + ToString(fileCounter) + ".xml";
   };
-  EXPECT_TRUE(fileCounter == 11);
+  EXPECT_TRUE(fileCounter == 13);
 }
 
 TEST_F(SubwaySimulationInputTests, InputPartialSimulations) {
