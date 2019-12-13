@@ -118,6 +118,7 @@ void Subway::computeAutomaticSimulation(int steps, ostream &outputStream) {
 
 void Subway::moveTramsOnce(ostream &outputStream) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling moveTramsOnce");
+
   for (auto tram : this->_tramsArray) {
     Station *currentStation = tram->getCurrentStation();
     string previousStationName = currentStation->getName();
@@ -126,19 +127,20 @@ void Subway::moveTramsOnce(ostream &outputStream) {
             Track *track = currentStation->getTrack(tram->getNumber());
             if (tram->trackFree()) {
                 //Leave a station
-                tram->move();
+                tram->leave();
                 //this->collectStatisticalData(statisticalFile);
             }
-        }else
+        }else {
             tram->decreaseWaiting();
-
+        }
     } else if(tram->getDistance() == 1) {
         //Arrive in a Station
       tram->decreaseDistance();
-      tram->move();
+      tram->arrive();
       string currentStationName = tram->getCurrentStation()->getName();
       outputStream << "Tram " << tram->getLine() << " moved from station " << previousStationName <<
                    " to station " << currentStationName << " at time " << getCurrentTime() << endl;
+
       //this->collectStatisticalData(statisticalFile);
     }else
       tram->decreaseDistance();
@@ -174,3 +176,7 @@ void Subway::incrementTime(){
     ENSURE(getCurrentTime() == previous + 1, "Time wasn't incremented in incrementTime");
 }
 
+vector<Tram*> Subway::getTrams(){
+    REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTracks");
+    return _tramsArray;
+}

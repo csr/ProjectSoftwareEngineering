@@ -78,6 +78,8 @@ class Subway {
 
   vector<Station*> getStations();
 
+  vector<Tram*> getTrams();
+
 /**
   Getter that returns number of trams in the Subway simulation.
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");

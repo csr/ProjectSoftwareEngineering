@@ -117,6 +117,7 @@ bool ValidStringAttribute(string string) {
 int GenerateRandomNumber(int a, int b) {
   // Setting seed
   srand(time(nullptr));
-
+  if (a == b)
+      return a;
   return rand() % (b - a) + a;
 }

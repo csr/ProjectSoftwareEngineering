@@ -117,7 +117,9 @@ class Tram {
 
   void setSpeed();
 
-  void move();
+  void leave();
+
+  void arrive();
 
   void setDistance(int distance);
 
@@ -131,7 +133,9 @@ class Tram {
 
   void decreaseWaiting();
 
- private:
+    void setWaiting(int number);
+
+private:
   Tram* _initCheck;
   int _number;
   int _line;
@@ -146,7 +150,9 @@ class Tram {
   int _distance;
   int _waiting;
 
-  void setWaiting(int number);
+    void setType(TramType type);
+
+    void setMaximumCapacity();
 };
 
 #endif //UNTITLED_TRAM_H

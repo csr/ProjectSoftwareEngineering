@@ -99,34 +99,27 @@ void Tram::setNumber(int number) {
   ENSURE(number == getNumber(), "Tram vehicleNumber was not set correctly");
 }
 
-void Tram::move() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
+void Tram::arrive(){
+    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
+    Station* currentStation = this->getCurrentStation();
+    Track *track = currentStation->getTrack(this->getLine());
+    Station* nextStation = track->getNext();
+    this->setCurrentStation(nextStation);
+    this->getCurrentStation()->setOccupied(true);
 
-  //Arrive in a new Station
-  if(this->getWaiting() != 0) {
-      Station *currentStation = this->getCurrentStation();
-      Track *track = currentStation->getTrack(this->getLine());
-      cout << track->getNext()->getName() << endl;
-      Station* nextStation = track->getNext();
-      this->setCurrentStation(nextStation);
-      this->getCurrentStation()->setOccupied(true);
-      ENSURE(this->getCurrentStation()->isCurrentlyOccupied(), "Tram doesn't arrive in the next station");
-      int passengers = GenerateRandomNumber(0, this->getCurrentCapacity());
-      setDistance(calculateDistance());
-      setCurrentCapacity(passengers);
-      setTurnover();
-      }else {
-      //Leave a station
-      cout << this->getMaxCapacity() << endl;
-      int passengers = GenerateRandomNumber(this->getCurrentCapacity(), this->getMaxCapacity());
-      cout << "Passengers: " << passengers << " on tram " << this->getLine() << endl;
-      setCurrentCapacity(passengers);
-      setTurnover();
-      setDistance(calculateDistance());
-      this->getCurrentStation()->setOccupied(false);
-
-      ENSURE(!this->getCurrentStation()->isCurrentlyOccupied(), "Tram doesn't leave the station");
-  }
+    ENSURE(this->getCurrentStation()->isCurrentlyOccupied(), "Tram doesn't arrive in the next station");
+    setCurrentCapacity(GenerateRandomNumber(0, this->getCurrentCapacity()));
+    setTurnover();
+}
+void Tram::leave() {
+    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
+    setCurrentCapacity(GenerateRandomNumber(this->getCurrentCapacity(), this->getMaxCapacity()));
+    setTurnover();
+    cout << "New Distance" << calculateDistance() << endl;
+    setDistance(calculateDistance());
+    setWaiting(60);
+    this->getCurrentStation()->setOccupied(false);
+    ENSURE(!this->getCurrentStation()->isCurrentlyOccupied(), "Tram doesn't leave the station");
 }
 
 void Tram::setCurrentCapacity(int number) {
@@ -182,15 +175,10 @@ int Tram::calculateDistance() {
         ENSURE(distance >= 0, "Distance can not be negative");
         Station* elem = this->getCurrentStation()->getTrack(this->getLine())->getNext();
         while(elem->getType() == TypeStop){
-            distance += 7200 / _speed + 1;
+            distance += 7200 / _speed  + 1;
             elem = elem->getTrack(this->getLine())->getNext();
         }
     }
-    else{
-        setWaiting(60);
-        //ENSURE(distance >= 0, "Distance can not be negative");
-    }
-
     return distance;
 }
 void Tram::setDistance(int distance) {
@@ -207,10 +195,12 @@ void Tram::decreaseDistance() {
 }
 
 bool Tram::trackFree() {
+
     if (this->getType() == Albatross){
         bool answer = true;
         int track = this->getLine();
         Station* elem = this->getCurrentStation()->getTrack(track)->getNext();
+        cout << "Next: " << elem->getName() << " of track" << track << " with vehicle " << this->getNumber() << endl;
         while(elem->getType() == TypeStop){
             if(elem->isCurrentlyOccupied())
                 return false;
@@ -219,7 +209,9 @@ bool Tram::trackFree() {
         return !elem->isCurrentlyOccupied();
     } else{
         int track = this->getLine();
-        return !(this->getCurrentStation()->getTrack(track)->getNext()->isCurrentlyOccupied());
+        bool answer = this->getCurrentStation()->getTrack(track)->getNext()->isCurrentlyOccupied();
+        cout << "Answer: " << answer << endl;
+        return answer;
     }
 }
 
@@ -231,7 +223,7 @@ int Tram::getWaiting() {
 void Tram::setWaiting(int number) {
     REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setWaiting");
     _waiting = number;
-    ENSURE(this->getWaiting() == number, "Tram does't set waiting time");
+    ENSURE(this->getWaiting() == number && number >= 0, "Tram does't set waiting time");
 }
 
 void Tram::decreaseWaiting() {
