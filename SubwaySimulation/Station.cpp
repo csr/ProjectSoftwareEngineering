@@ -18,7 +18,9 @@ Station::Station(string name, StationType type, unordered_map<int, Track*> track
   setName(name);
   _type = type;
   setTracks(tracks);
-  setOccupied(false);
+  for(auto track: getTracksArray()){
+      track->setOccupied(false);
+  }
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
@@ -33,11 +35,7 @@ void Station::setName(string name) {
   ENSURE(getName() == name, "Station name was not set correctly");
 }
 
-void Station::setOccupied(bool isOccupied) {
-  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setOccupied");
-  _isOccupied = isOccupied;
-  ENSURE(isOccupied == isCurrentlyOccupied(), "Station occupied was not set correctly");
-}
+
 
 void Station::setTracks(unordered_map<int, Track*> tracks) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTracks");
@@ -83,7 +81,3 @@ StationType Station::getType() {
   return _type;
 }
 
-bool Station::isCurrentlyOccupied() {
-  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling isCurrentlyOccupied");
-  return _isOccupied;
-}

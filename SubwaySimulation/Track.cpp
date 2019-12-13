@@ -85,3 +85,14 @@ string Track::getPreviousStr() {
     REQUIRE(this->properlyInitialized(), "Track wasn't properly initialized when calling getPreviousStr");
     return _previousStr;
 }
+
+bool Track::isCurrentlyOccupied() {
+    REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling isCurrentlyOccupied");
+    return _isOccupied;
+}
+
+void Track::setOccupied(bool isOccupied) {
+    REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setOccupied");
+    _isOccupied = isOccupied;
+    ENSURE(isOccupied == isCurrentlyOccupied(), "Station occupied was not set correctly");
+}

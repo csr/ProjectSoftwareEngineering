@@ -135,6 +135,8 @@ class Tram {
 
   void setWaiting(int number);
 
+  Station* getNextStation();
+
  private:
   Tram* _initCheck;
   int _number;

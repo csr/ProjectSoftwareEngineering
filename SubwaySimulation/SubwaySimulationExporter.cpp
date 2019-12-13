@@ -21,10 +21,10 @@ void SubwaySimulationExporter::graficalOutput(string fileName, Subway& subway) {
   outputStream << " ";
 
   for(auto station : subway.getStations()){
-    if(station->isCurrentlyOccupied())
-      outputStream << "T   ";
-    else
-      outputStream << "    ";
+    //if(station->getTrack()isCurrentlyOccupied())
+      //outputStream << "T   ";
+    //else
+  //    outputStream << "    ";
   }
 
   outputStream.close();
