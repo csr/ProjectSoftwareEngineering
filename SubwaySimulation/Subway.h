@@ -57,18 +57,11 @@ class Subway {
   @param steps Number of steps to compute.
   @param outputStream Output stream to use for simulation log output.
 */
-  void computeAutomaticSimulation(int steps, std::ostream& outputStream);
+  void computeAutomaticSimulation(int steps, ostream &outputStream);
 
-/**
-  Computes the Subway simulation for one step.
-  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
-  @param outputStream Output stream to use for simulation log output.
-*/
-  void moveTramsOnce(std::ostream& outputStream);
+  void computeAutomaticSimulationStats(int steps, ostream &statsStream);
 
-  void collectStatisticalData(string statisticalFile);
-
-/**
+  /**
   Getter that returns number of stations in the Subway simulation.
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
   @note ENSURE(ValidIntegerAttribute(size), "Stations count can't be negative");
@@ -111,7 +104,9 @@ class Subway {
 
   int _time;
 
+  void moveTramsOnce(ostream &outputStream, ostream &statsStream);
   void setInitialTime();
+  void printStatsData(bool isLeaving, Tram *tram, ostream &statsStream);
 };
 
 #endif

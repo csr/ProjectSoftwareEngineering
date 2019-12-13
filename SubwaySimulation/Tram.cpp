@@ -115,7 +115,7 @@ void Tram::leave() {
     REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
     setCurrentCapacity(GenerateRandomNumber(this->getCurrentCapacity(), this->getMaxCapacity()));
     setTurnover();
-    cout << "New Distance" << calculateDistance() << endl;
+//    cout << "New Distance" << calculateDistance() << endl;
     setDistance(calculateDistance());
     setWaiting(60);
     this->getCurrentStation()->setOccupied(false);
@@ -191,7 +191,7 @@ bool Tram::trackFree() {
         bool answer = true;
         int track = this->getLine();
         Station* elem = this->getCurrentStation()->getTrack(track)->getNext();
-        cout << "Next: " << elem->getName() << " of track" << track << " with vehicle " << this->getNumber() << endl;
+//        cout << "Next: " << elem->getName() << " of track" << track << " with vehicle " << this->getNumber() << endl;
         while(elem->getType() == TypeStop){
             if(elem->isCurrentlyOccupied())
                 return false;
@@ -201,7 +201,7 @@ bool Tram::trackFree() {
     } else{
         int track = this->getLine();
         bool answer = this->getCurrentStation()->getTrack(track)->getNext()->isCurrentlyOccupied();
-        cout << "Answer: " << answer << endl;
+//        cout << "Answer: " << answer << endl;
         return answer;
     }
 }
