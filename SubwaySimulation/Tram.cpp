@@ -30,7 +30,7 @@ Tram::Tram(int line, TramType type, string startStation, int number) {
   ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
   ENSURE(startStation == getCurrentStationName(), "Start station wasn't set correctly in constructor");
   ENSURE(type == getType(), "Type wasn't set correctly in constructor");
-  ENSURE(number == getNumber(), "Number wasn't set correctly in constructor");
+  ENSURE(number == getVehicle(), "Number wasn't set correctly in constructor");
 }
 
 bool Tram::properlyInitialized() {
@@ -67,8 +67,8 @@ TramType Tram::getType() {
   return _type;
 }
 
-int Tram::getNumber() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getNumber");
+int Tram::getVehicle() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getVehicle");
   return _number;
 }
 
@@ -96,7 +96,7 @@ void Tram::setCurrentStationName(string currentStation) {
 void Tram::setNumber(int number) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setTrack");
   _number = number;
-  ENSURE(number == getNumber(), "Tram vehicleNumber was not set correctly");
+  ENSURE(number == getVehicle(), "Tram vehicleNumber was not set correctly");
 }
 
 void Tram::arrive(){
@@ -191,12 +191,14 @@ bool Tram::trackFree() {
     if (this->getType() == Albatross){
         bool answer = true;
         Station* elem = this->getCurrentStation()->getTrack(track)->getNext();
-
         while(elem->getType() == TypeStop){
             if(elem->getTrack(track)->isCurrentlyOccupied())
                 return false;
             elem = elem->getTrack(track)->getNext();
+
         }
+        if (elem == this->getCurrentStation())
+            return true;
         return !elem->getTrack(track)->isCurrentlyOccupied();
     } else{
         return !this->getCurrentStation()->getTrack(track)->getNext()->getTrack(track)->isCurrentlyOccupied();

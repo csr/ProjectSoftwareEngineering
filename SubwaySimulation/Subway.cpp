@@ -43,7 +43,7 @@ void Subway::importData(vector<Station *> stations, vector<Tram *> trams) {
 
   // Fill trams map
   for (auto tram : _tramsArray) {
-    _tramsMap[make_pair(tram->getLine(), tram->getNumber())] = tram;
+    _tramsMap[make_pair(tram->getLine(), tram->getVehicle())] = tram;
     int track = tram->getLine();
     tram->getCurrentStation()->getTrack(track)->setOccupied(true);
   }
@@ -125,7 +125,8 @@ void Subway::moveTramsOnce(ostream &outputStream) {
     string previousStationName = currentStation->getName();
     if (tram->getDistance() == 0) {
         if(tram->getWaiting() == 0) {
-            Track *track = currentStation->getTrack(tram->getNumber());
+
+            Track *track = currentStation->getTrack(tram->getVehicle());
             if (tram->trackFree()) {
                 //Leave a station
                 tram->leave();
@@ -139,7 +140,7 @@ void Subway::moveTramsOnce(ostream &outputStream) {
       tram->decreaseDistance();
       tram->arrive();
       string currentStationName = tram->getCurrentStation()->getName();
-      outputStream << "Tram " << tram->getLine() << " moved from station " << previousStationName <<
+      cout << "Tram " << tram->getLine() << " moved from station " << previousStationName <<
                    " to station " << currentStationName << " at time " << getCurrentTime() << endl;
 
       //this->collectStatisticalData(statisticalFile);

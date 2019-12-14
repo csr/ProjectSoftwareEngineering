@@ -78,7 +78,7 @@ TEST_F(SubwaySimulationMovingTests, SubwaySimpleAutomaticSimulation) {
     ofstream outputContainerFile;
 
     SuccessEnum importResult;
-    int fileCounter = 1;
+    int fileCounter = 3;
     string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
     string temporaryOutput = "testSimulation/temporaryOutput.txt";
 
