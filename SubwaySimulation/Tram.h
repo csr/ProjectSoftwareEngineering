@@ -20,20 +20,21 @@ class Tram {
 
 /**
  Constructs a Tram class with line, capacity, speed, and start Station name.
- @note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
  @note ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
- @note ENSURE(capacity == getCapacity(), "Capacity wasn't set correctly in constructor");
- @note ENSURE(speed = getSpeed(), "Speed wasn't set correctly in constructor");
- @note ENSURE(startStation = getStartStationName(), "Start station wasn't set correctly in constructor");
+ @note ENSURE(type == getType(), "Type wasn't set correctly in constructor");
+ @note ENSURE(startStation == getCurrentStationName(), "Start station wasn't set correctly in constructor");
+ @note ENSURE(number == getNumber(), "Number wasn't set correctly in constructor");
+ @note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
  @param line Line of the Tram.
- @param next Capacity of the Tram.
- @param speed Speed of the Tram.
- @param startStation Start Station of the Tram.
+ @param type Type of the Tram.
+ @param startStation Start station of the Tram.
+ @param number Tram number.
  @returns An instance of Tram.
 */
   Tram(int line, TramType type, string startStation, int number);
 
   bool properlyInitialized();
+
 /**
   Getter for the line of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getLine");
@@ -63,16 +64,31 @@ class Tram {
   int getSpeed();
 
 /**
-  Getter for the current Station name of the Tram.
+  Getter for the current Station of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
   @returns Current Station the tram is at.
 */
   Station* getCurrentStation();
 
+/**
+  Getter for the current Station name of the Tram.
+  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStationName");
+  @returns Current Station name the tram is at.
+*/
   string getCurrentStationName();
 
+/**
+  Getter for the Tram type.
+  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getType");
+  @returns Tram type.
+*/
   TramType getType();
 
+/**
+  Getter for the Tram vehicle number.
+  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getNumber");
+  @returns Tram number.
+*/
   int getNumber();
 
   int getWaiting();
@@ -82,6 +98,8 @@ class Tram {
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getTurnover");
 */
   int getTurnover();
+
+  int getDistance();
 
 /**
   Setter for the line of the Tram.
@@ -128,8 +146,6 @@ class Tram {
   bool trackFree();
 
   void decreaseDistance();
-
-  int getDistance();
 
   void decreaseWaiting();
 

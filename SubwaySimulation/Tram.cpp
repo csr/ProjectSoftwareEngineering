@@ -27,10 +27,12 @@ Tram::Tram(int line, TramType type, string startStation, int number) {
   setSpeed();
   setDistance(0);
   setWaiting(0);
+
   ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
-  ENSURE(startStation == getCurrentStationName(), "Start station wasn't set correctly in constructor");
   ENSURE(type == getType(), "Type wasn't set correctly in constructor");
+  ENSURE(startStation == getCurrentStationName(), "Start station wasn't set correctly in constructor");
   ENSURE(number == getNumber(), "Number wasn't set correctly in constructor");
+  ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
 bool Tram::properlyInitialized() {
@@ -71,6 +73,27 @@ int Tram::getNumber() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getNumber");
   return _number;
 }
+
+int Tram::getWaiting() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getWaiting");
+  return _waiting;
+}
+
+int Tram::getTurnover() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getTurnover");
+  return _turnover;
+}
+
+int Tram::getCurrentCapacity() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentCapacity");
+  return _currentCapacity;
+}
+
+int Tram::getDistance() {
+  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getDistance");
+  return _distance;
+}
+
 
 void Tram::setLine(int line) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
@@ -129,11 +152,6 @@ void Tram::setCurrentCapacity(int number) {
   ENSURE(number == getCurrentCapacity(), "Tram currentCapacity was not set correctly");
 }
 
-int Tram::getTurnover() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getTurnover");
-  return _turnover;
-}
-
 void Tram::setTurnover() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setTurnover");
   _turnover = 2 * getCurrentCapacity();
@@ -146,16 +164,6 @@ void Tram::setSpeed() {
   } else if (this->_type == PCC) {
     _speed = 40;
   }
-}
-
-int Tram::getCurrentCapacity() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentCapacity");
-  return _currentCapacity;
-}
-
-int Tram::getDistance() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getDistance");
-  return _distance;
 }
 
 int Tram::calculateDistance() {
@@ -203,11 +211,6 @@ bool Tram::trackFree() {
     }
 }
 
-int Tram::getWaiting() {
-    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getWaiting");
-    return _waiting;
-}
-
 void Tram::setWaiting(int number) {
     REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setWaiting");
     _waiting = number;
@@ -221,7 +224,7 @@ void Tram::decreaseWaiting() {
     ENSURE(this->getWaiting() == (previous - 1), "Tram doesn't decrease waiting time");
 }
 
-Station* Tram::getNextStation(){
+Station* Tram::getNextStation() {
     Station* next = this->getCurrentStation()->getTrack(this->getLine())->getNext();
     if (this->getType() == Albatross){
         while(next->getType() == TypeStop){
