@@ -33,42 +33,6 @@ class Subway {
 
   bool properlyInitialized();
 
-/**
-  Imports stations and trams into the Subway simulation.
-  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling importData");
-  @note ENSURE(this->getTramsCount() >= 0, "Trams number are negative");
-  @note ENSURE(this->getStationsCount() >= 0, "Stations number are negative");
-  @param stations Vector of stations.
-  @param trams Vector of trams.
-*/
-  void importData(vector<Station*> stations, vector<Tram*> trams);
-
-/**
-  Generates a string representation of the Subway network.
-  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling toString");
-  @returns String representation of Subway.
-*/
-  string toString();
-
-/**
-  Computes the Subway simulation for a given number of steps.
-  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
-  @note REQUIRE(steps > 0, "Number of steps must be greater than zero");
-  @param steps Number of steps to compute.
-  @param outputStream Output stream to use for simulation log output.
-*/
-  void computeAutomaticSimulation(int steps, ostream &outputStream);
-
-  void computeAutomaticSimulationStats(int steps, ostream &statsStream);
-
-  /**
-  Getter that returns number of stations in the Subway simulation.
-  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
-  @note ENSURE(ValidIntegerAttribute(size), "Stations count can't be negative");
-  @returns Number of stations.
-*/
-  int getStationsCount();
-
   vector<Station*> getStations();
 
   vector<Tram*> getTrams();
@@ -79,19 +43,68 @@ class Subway {
   @note ENSURE(ValidIntegerAttribute(size), "Trams count can't be negative");
   @returns Number of trams.
 */
-  int getTramsCount();
+    int getTramsCount();
 
-/**
-  Empties the contents of the Subway simulation.
-  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling reset");
-  @note ENSURE(this->getTramsCount() == 0, "Trams array must be cleared");
-  @note ENSURE(this->getStationsCount() == 0, "Stations map must be cleared");
+
+    int getCurrentTime();
+
+
+
+
+  /**
+  Getter that returns number of stations in the Subway simulation.
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
+  @note ENSURE(ValidIntegerAttribute(size), "Stations count can't be negative");
+  @returns Number of stations.
 */
+  int getStationsCount();
+
+  /**
+    Imports stations and trams into the Subway simulation.
+    @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling importData");
+    @note ENSURE(this->getTramsCount() >= 0, "Trams number are negative");
+    @note ENSURE(this->getStationsCount() >= 0, "Stations number are negative");
+    @param stations Vector of stations.
+    @param trams Vector of trams.
+  */
+  void importData(vector<Station*> stations, vector<Tram*> trams);
+
+  /**
+    Generates a string representation of the Subway network.
+     @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling toString");
+    @returns String representation of Subway.
+  */
+  string toString();
+
+
+
+    /**
+        Empties the contents of the Subway simulation.
+        @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling reset");
+        @note ENSURE(this->getTramsCount() == 0, "Trams array must be cleared");
+        @note ENSURE(this->getStationsCount() == 0, "Stations map must be cleared");
+      */
   void reset();
 
+    /**
+    Computes the Subway simulation for a given number of steps.
+    @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
+    @note REQUIRE(steps > 0, "Number of steps must be greater than zero");
+    @note  ENSURE(getCurrentTime() <= steps, "Compute Automatic Simulation doesn't halt after n steps");
+    @param steps Number of steps to compute.
+    @param outputStream Output stream to use for simulation log output.
+    @param statsStream Output stream to use for CSV log output.
+  */
+  void computeAutomaticSimulation(int steps, ostream& outputStream, ostream &statsStream);
+
+  /**
+    Increment Time in the Subway Simulation.
+    @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling incrementTime");
+    @note ENSURE(getCurrentTime() == previous + 1, "Time wasn't incremented in incrementTime");
+  */
   void incrementTime();
 
-  int getCurrentTime();
+  void moveTramsOnce(ostream &outputStream, ostream &statsStream);
 
  private:
   Subway * _initCheck; //!use pointer to myself to verify whether I am properly initialized
@@ -104,7 +117,7 @@ class Subway {
 
   int _time;
 
-  void moveTramsOnce(ostream &outputStream, ostream &statsStream);
+
   void setInitialTime();
   void printStatsData(bool isLeaving, Tram *tram, ostream &statsStream);
 };

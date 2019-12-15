@@ -81,7 +81,7 @@ void runUserProgram() {
   errorFile.open(errorFileDirectory, std::ofstream::out | std::ofstream::trunc);
   SuccessEnum importResult = SubwaySimulationImporter::importSubway(inputFileNameDirectory.c_str(), errorFile, subway);
 
-  subway.computeAutomaticSimulation(steps, cout);
+  //subway.computeAutomaticSimulation(steps, cout, cerr);
 
   string simpleOutputFileNameDirectory = "userFiles/" + inputFileName + ".txt";
 

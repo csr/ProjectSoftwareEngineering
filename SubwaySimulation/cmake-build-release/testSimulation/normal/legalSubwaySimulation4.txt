@@ -1,5 +1,0 @@
-Tram 13 moved from station C to station A at time 103
-Tram 9 moved from station D to station E at time 180
-Tram 7 moved from station F to station H at time 266
-Tram 13 moved from station A to station C at time 369
-Tram 9 moved from station E to station D at time 420

@@ -369,13 +369,13 @@ SuccessEnum SubwaySimulationImporter::importSubway(const char *inputFileName, st
         } else {
           // Check if there aren't trams already parsed with the same line to avoid duplicates
           // The count would be 1 if the element is indeed present in the map.
-          if (trams.count(make_pair(tram->getLine(), tram->getNumber()))) {
+          if (trams.count(make_pair(tram->getLine(), tram->getVehicle()))) {
             // We found a duplicate. Exit early.
             errStream << "XML IMPORT ABORTED: found duplicate tram with line " << tram->getLine() << endl;
             return ImportAborted;
           } else {
             // First time we're seeing a tram with this line. Add this to our map.
-            trams[make_pair(tram->getLine(), tram->getNumber())] = tram;
+            trams[make_pair(tram->getLine(), tram->getVehicle())] = tram;
             tramsArray.push_back(tram);
           }
         }
