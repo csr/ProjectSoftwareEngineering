@@ -115,7 +115,7 @@ void Tram::leave() {
     REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
     setCurrentCapacity(GenerateRandomNumber(this->getCurrentCapacity(), this->getMaxCapacity()));
     setTurnover();
-    cout << "New Distance" << calculateDistance() << endl;
+//    cout << "New Distance" << calculateDistance() << endl;
     setDistance(calculateDistance());
     setWaiting(60);
     this->getCurrentStation()->getTrack(this->getLine())->setOccupied(false);
