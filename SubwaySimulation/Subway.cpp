@@ -108,16 +108,21 @@ void Subway::reset() {
   ENSURE(this->getStationsCount() == 0, "Stations map must be cleared");
 }
 
-void Subway::computeAutomaticSimulation(int steps, ostream &outputStream) {
+void Subway::computeAutomaticSimulation(int steps, ostream &outputStream, ostream& statsFile) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
   REQUIRE(steps >= 0, "Number of steps must be positive");
   while (getCurrentTime() < steps) {
-    this->moveTramsOnce(outputStream);
+    this->moveTramsOnce(outputStream, statsFile);
     incrementTime();
   }
 }
 
-void Subway::moveTramsOnce(ostream &outputStream) {
+void Subway::printStatsData(bool isLeaving, Tram *tram, ostream &statsStream) {
+    int time = getCurrentTime();
+    statsStream << time << "," << tram->getLine();
+}
+
+void Subway::moveTramsOnce(ostream &outputStream, ostream& statsFile) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling moveTramsOnce");
 
   for (auto tram : this->_tramsArray) {
@@ -130,6 +135,7 @@ void Subway::moveTramsOnce(ostream &outputStream) {
             if (tram->trackFree()) {
                 //Leave a station
                 tram->leave();
+                printStatsData(true, tram, statsFile);
                 //this->collectStatisticalData(statisticalFile);
             }
         }else {
@@ -140,9 +146,9 @@ void Subway::moveTramsOnce(ostream &outputStream) {
       tram->decreaseDistance();
       tram->arrive();
       string currentStationName = tram->getCurrentStation()->getName();
-      cout << "Tram " << tram->getLine() << " moved from station " << previousStationName <<
+      outputStream << "Tram " << tram->getLine() << " moved from station " << previousStationName <<
                    " to station " << currentStationName << " at time " << getCurrentTime() << endl;
-
+      printStatsData(false, tram, statsFile);
       //this->collectStatisticalData(statisticalFile);
     }else
       tram->decreaseDistance();
@@ -152,12 +158,7 @@ void Subway::moveTramsOnce(ostream &outputStream) {
 
 }
 
-void Subway::collectStatisticalData(string fileName) {
-  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling collectStatisticalData");
-  //ofstream fileStream(fileName);
-  //fileStream <<
-  //fileStream.close();
-}
+
 
 int Subway::getCurrentTime(){
     REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTime");
