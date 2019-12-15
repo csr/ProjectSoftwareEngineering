@@ -1,0 +1,93 @@
+<!--Station at the end is missing name-->
+<!--Station at the end has no tracks-->
+<!--Station at the end is missing type-->
+<STATION>
+    <name>A</name>
+    <type>stop</type>
+    <TRACK>
+        <track>12</track>
+        <next>B</next>
+        <previous>C</previous>
+    </TRACK>
+    <TRACK>
+        <track>21</track>
+        <next>C</next>
+        <previous>B</previous>
+    </TRACK>
+</STATION>
+<STATION>
+    <name>B</name>
+    <type>stop</type>
+    <TRACK>
+        <track>12</track>
+        <next>C</next>
+        <previous>A</previous>
+    </TRACK>
+    <TRACK>
+        <track>21</track>
+        <next>A</next>
+        <previous>C</previous>
+    </TRACK>
+</STATION>
+<STATION>
+    <name>C</name>
+    <type>station</type>
+    <TRACK>
+        <track>12</track>
+        <next>A</next>
+        <previous>B</previous>
+    </TRACK>
+    <TRACK>
+        <track>21</track>
+        <next>B</next>
+        <previous>A</previous>
+    </TRACK>
+</STATION>
+<TRAM>
+    <line>12</line>
+    <vehicle>20</vehicle>
+    <type>PCC</type>
+    <startStation>A</startStation>
+</TRAM>
+<TRAM>
+    <line>21</line>
+    <vehicle>1</vehicle>
+    <type>Albatross</type>
+    <startStation>C</startStation>
+</TRAM>
+
+<!--Missing name-->
+<STATION>
+    <type>stop</type>
+    <TRACK>
+        <track>12</track>
+        <next>B</next>
+        <previous>C</previous>
+    </TRACK>
+    <TRACK>
+        <track>21</track>
+        <next>C</next>
+        <previous>B</previous>
+    </TRACK>
+</STATION>
+
+<!--Missing track-->
+<STATION>
+    <name>NoTracks</name>
+    <type>stop</type>
+</STATION>
+
+<!--Missing type-->
+<STATION>
+    <name>NoName</name>
+    <TRACK>
+        <track>12</track>
+        <next>B</next>
+        <previous>C</previous>
+    </TRACK>
+    <TRACK>
+        <track>21</track>
+        <next>C</next>
+        <previous>B</previous>
+    </TRACK>
+</STATION>

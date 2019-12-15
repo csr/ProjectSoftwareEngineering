@@ -1,0 +1,4 @@
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/CMakeFiles/debug.dir
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/CMakeFiles/rebuild_cache.dir
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/CMakeFiles/edit_cache.dir
+/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/cmake-build-release/CMakeFiles/release.dir

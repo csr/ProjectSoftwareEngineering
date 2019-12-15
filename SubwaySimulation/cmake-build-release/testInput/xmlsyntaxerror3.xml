@@ -1,0 +1,7 @@
+<!--The opening tag of name has a slash-->
+<STATION>
+    </name>A</name>
+    <next>B</next>
+    <previous>C</previous>
+    <track>12</track>
+</STATION>

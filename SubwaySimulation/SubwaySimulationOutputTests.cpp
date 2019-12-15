@@ -32,6 +32,7 @@ TEST_F(SubwaySimulationOutputTests, LegalSubwaysOutput) {
   string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
 
   while (FileExists(fileName)) {
+    cout << "Parsing legal subway with name: " << fileName << endl;
     string temporaryOutput = "testOutput/temporaryOutput.txt";
     outputContainerFile.open(temporaryOutput);
 

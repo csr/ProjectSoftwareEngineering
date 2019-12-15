@@ -1,0 +1,1 @@
+Qui devi mettere l'output della simulazione di legalSubway4.txt

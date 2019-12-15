@@ -1,0 +1,2 @@
+Users can use this directory to input their XML files to use as an input for the simulation.
+Run the release target to get started.
