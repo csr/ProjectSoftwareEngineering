@@ -27,6 +27,8 @@ Tram::Tram(int line, TramType type, string startStation, int number) {
   setSpeed();
   setDistance(0);
   setWaiting(0);
+  setTurnover();
+
   ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
   ENSURE(startStation == getCurrentStationName(), "Start station wasn't set correctly in constructor");
   ENSURE(type == getType(), "Type wasn't set correctly in constructor");
@@ -97,25 +99,25 @@ void Tram::setNumber(int number) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setTrack");
   _number = number;
   ENSURE(number == getVehicle(), "Tram vehicleNumber was not set correctly");
+  ENSURE(number >= 0, "Vehicle number can't be negative");
 }
 
 void Tram::arrive(){
-    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
+    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling arrive");
     Station* currentStation = this->getCurrentStation();
     Track *track = currentStation->getTrack(this->getLine());
     Station* nextStation = getNextStation();
     this->setCurrentStation(nextStation);
     this->getCurrentStation()->getTrack(this->getLine())->setOccupied(true);
-
-    ENSURE(this->getCurrentStation()->getTrack(this->getLine())->isCurrentlyOccupied(), "Tram doesn't arrive in the next station");
     setCurrentCapacity(GenerateRandomNumber(0, this->getCurrentCapacity()));
-    setTurnover();
+    ENSURE(this->getCurrentStation()->getTrack(this->getLine())->isCurrentlyOccupied(), "Tram doesn't arrive in the next station");
+
+
 }
 void Tram::leave() {
-    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
+    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling leave");
     setCurrentCapacity(GenerateRandomNumber(this->getCurrentCapacity(), this->getMaxCapacity()));
     setTurnover();
-//    cout << "New Distance" << calculateDistance() << endl;
     setDistance(calculateDistance());
     setWaiting(60);
     this->getCurrentStation()->getTrack(this->getLine())->setOccupied(false);
@@ -126,7 +128,7 @@ void Tram::setCurrentCapacity(int number) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
   _currentCapacity = number;
   ENSURE(getCurrentCapacity() <= getMaxCapacity(), "Tram currentCapacity is greater than maximum capacity");
-  ENSURE(number == getCurrentCapacity(), "Tram currentCapacity was not set correctly");
+ENSURE(number == getCurrentCapacity(), "Tram currentCapacity was not set correctly");
 }
 
 int Tram::getTurnover() {
@@ -136,7 +138,9 @@ int Tram::getTurnover() {
 
 void Tram::setTurnover() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setTurnover");
-  _turnover = 2 * getCurrentCapacity();
+  int previous = getTurnover();
+  _turnover += 2 * getCurrentCapacity();
+  ENSURE(getTurnover() == previous + 2 * getCurrentCapacity(), "Tram doesn't initialize in a good way turnover attribute");
 }
 
 void Tram::setSpeed() {
@@ -160,7 +164,7 @@ int Tram::getDistance() {
 
 int Tram::calculateDistance() {
     REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling calculateDistance");
-    int distance = 7200 / _speed;
+    int distance = 7200 / getSpeed();
     if(this->getType() == Albatross){
         distance++;
         ENSURE(distance >= 0, "Distance can not be negative");
@@ -170,6 +174,7 @@ int Tram::calculateDistance() {
             elem = elem->getTrack(this->getLine())->getNext();
         }
     }
+    ENSURE(distance > 0, "Distance can't be negative or null");
     return distance;
 }
 void Tram::setDistance(int distance) {
@@ -224,6 +229,7 @@ void Tram::decreaseWaiting() {
 }
 
 Station* Tram::getNextStation(){
+    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getNextStation");
     Station* next = this->getCurrentStation()->getTrack(this->getLine())->getNext();
     if (this->getType() == Albatross){
         while(next->getType() == TypeStop){
@@ -231,4 +237,5 @@ Station* Tram::getNextStation(){
         }
     }
     return next;
+
 }

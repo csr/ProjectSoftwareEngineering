@@ -95,7 +95,7 @@ class Subway {
     @param outputStream Output stream to use for simulation log output.
     @param statsStream Output stream to use for CSV log output.
   */
-  void computeAutomaticSimulation(int steps, ostream& outputStream, ostream &statsStream);
+  void computeAutomaticSimulation(int steps, ostream& outputStream, ostream& statsFile);
 
   /**
     Increment Time in the Subway Simulation.
@@ -104,9 +104,16 @@ class Subway {
   */
   void incrementTime();
 
+
+  /**
+   * Made one second movement of each tram in a subway network
+   * @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling moveTramsOnce");
+   * @param outputStream: stream of Output file
+   * @param statsStream:streams of CSV file
+   */
   void moveTramsOnce(ostream &outputStream, ostream &statsStream);
 
- private:
+private:
   Subway * _initCheck; //!use pointer to myself to verify whether I am properly initialized
 
   vector<Station*> _stationsArray;
@@ -117,9 +124,9 @@ class Subway {
 
   int _time;
 
-
   void setInitialTime();
   void printStatsData(bool isLeaving, Tram *tram, ostream &statsStream);
+
 };
 
 #endif

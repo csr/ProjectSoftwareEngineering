@@ -7,6 +7,7 @@
 //============================================================================
 
 #include <iostream>
+#include <fstream>
 
 #include "Station.h"
 #include "Tram.h"
@@ -108,15 +109,6 @@ void Subway::reset() {
   ENSURE(this->getStationsCount() == 0, "Stations map must be cleared");
 }
 
-void Subway::computeAutomaticSimulation(int steps, ostream &outputStream, ostream& statsFile) {
-  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
-  REQUIRE(steps >= 0, "Number of steps must be positive");
-  while (getCurrentTime() < steps) {
-    this->moveTramsOnce(outputStream, statsFile);
-    incrementTime();
-  }
-}
-
 void Subway::printStatsData(bool isLeaving, Tram *tram, ostream &statsStream) {
     int time = getCurrentTime();
     statsStream << time << "," << tram->getLine();
@@ -124,7 +116,7 @@ void Subway::printStatsData(bool isLeaving, Tram *tram, ostream &statsStream) {
 
 void Subway::moveTramsOnce(ostream &outputStream, ostream& statsFile) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling moveTramsOnce");
-
+  outputStream.flush();
   for (auto tram : this->_tramsArray) {
     Station *currentStation = tram->getCurrentStation();
     string previousStationName = currentStation->getName();
@@ -136,7 +128,7 @@ void Subway::moveTramsOnce(ostream &outputStream, ostream& statsFile) {
                 //Leave a station
                 tram->leave();
                 printStatsData(true, tram, statsFile);
-                //this->collectStatisticalData(statisticalFile);
+
             }
         }else {
             tram->decreaseWaiting();
@@ -149,7 +141,6 @@ void Subway::moveTramsOnce(ostream &outputStream, ostream& statsFile) {
       outputStream << "Tram " << tram->getLine() << " moved from station " << previousStationName <<
                    " to station " << currentStationName << " at time " << getCurrentTime() << endl;
       printStatsData(false, tram, statsFile);
-      //this->collectStatisticalData(statisticalFile);
     }else
       tram->decreaseDistance();
 
@@ -183,3 +174,15 @@ vector<Tram*> Subway::getTrams(){
     REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTracks");
     return _tramsArray;
 }
+
+void Subway::computeAutomaticSimulation(int steps, ostream &outputStream, ostream& statsFile) {
+    REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
+    REQUIRE(steps >= 0, "Number of steps must be positive");
+    while (getCurrentTime() < steps) {
+        this->moveTramsOnce(outputStream, statsFile);
+        incrementTime();
+    }
+    setInitialTime();
+    ENSURE(getCurrentTime() <= steps, "Automatic Simulation doesn't halted after n steps");
+}
+
