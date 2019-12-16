@@ -66,7 +66,7 @@ int getNumberOfSimulationSteps() {
 }
 
 void runUserProgram() {
-  ofstream errorFile, simpleOutputFile;
+  ofstream errorFile, simpleOutputFile, statsFile;
 
   string inputFileName = getInputFileName();
   string errorFileDirectory = "userFiles/temporaryError.txt";
@@ -76,12 +76,14 @@ void runUserProgram() {
   cout << "Importing file with name " << inputFileName << "..." << endl;
   string inputFileNameDirectory = "userFiles/" + inputFileName + ".xml";
   string simulationFileNameDirectory = "userFiles/" + inputFileName + ".txt";
+  string statsFileNameDirectory = "userFiles/" + inputFileName + "Stats.csv";
+  statsFile.open(statsFileNameDirectory);
 
   Subway subway = Subway();
   errorFile.open(errorFileDirectory, std::ofstream::out | std::ofstream::trunc);
   SuccessEnum importResult = SubwaySimulationImporter::importSubway(inputFileNameDirectory.c_str(), errorFile, subway);
 
-  //subway.computeAutomaticSimulation(steps, cout, cerr);
+  subway.computeAutomaticSimulation(steps, cout, statsFile);
 
   string simpleOutputFileNameDirectory = "userFiles/" + inputFileName + ".txt";
 
@@ -94,8 +96,10 @@ void runUserProgram() {
 
   if (importResult == Success) {
     cout << "Import successful. I saved the simple output in " << simpleOutputFileNameDirectory << endl;
+    cout << "I've also saved the CSV file in " << statsFileNameDirectory << endl;
   } else if (importResult == PartialImport) {
     cout << "Import semi-successful. I saved the simple output in " << simpleOutputFileNameDirectory << endl;
+    cout << "I've also saved the CSV file in " << statsFileNameDirectory << endl;
     cout << "Error(s) printed in " << errorFileDirectory << endl;
   }
 

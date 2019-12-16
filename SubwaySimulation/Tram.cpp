@@ -12,10 +12,10 @@
 
 Tram::Tram(int line, TramType type, string startStation, int number) {
   _initCheck = this;
-  setLine(line);
-  setCurrentStationName(startStation);
+  _line = line;
   _type = type;
-  setNumber(number);
+  _number = number;
+  setCurrentStationName(startStation);
 
   if(this->_type == Albatross) {
     _maxCapacity = 72;
@@ -94,14 +94,6 @@ int Tram::getDistance() {
   return _distance;
 }
 
-
-void Tram::setLine(int line) {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
-  _line = line;
-  ENSURE(ValidIntegerAttribute(getLine()), "Tram line can't be negative");
-  ENSURE(line == getLine(), "Tram line was not set correctly");
-}
-
 void Tram::setCurrentStation(Station *station) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
   _currentStation = station;
@@ -114,12 +106,6 @@ void Tram::setCurrentStationName(string currentStation) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getStartStation");
   _currentStationName = currentStation;
   ENSURE(getCurrentStationName() == currentStation, "Tram start station name was not set correctly");
-}
-
-void Tram::setNumber(int number) {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setTrack");
-  _number = number;
-  ENSURE(number == getVehicle(), "Tram vehicleNumber was not set correctly");
 }
 
 void Tram::arrive(){

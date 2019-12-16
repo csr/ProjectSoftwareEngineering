@@ -40,5 +40,7 @@ bool IsStringNumber(std::string string);
 
 std::string ToString(int i);
 
+std::string ConvertSecondsToTimeString(int input_seconds);
+
 // Closing of the ``header guard''.
 #endif

@@ -28,9 +28,6 @@ class Station {
 
   bool properlyInitialized();
 
-  void setName(string name);
-
-
   void setTracks(unordered_map<int, Track*> tracks);
 
   string getName();

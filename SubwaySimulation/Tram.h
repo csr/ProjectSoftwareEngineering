@@ -108,15 +108,6 @@ class Tram {
   int getDistance();
 
 /**
-  Setter for the line of the Tram.
-  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
-  @note ENSURE(ValidIntegerAttribute(getLine()), "Tram line can't be negative");
-  @note ENSURE(line == getLine(), "Tram line was not set correctly");
-  @param line Line of the Tram.
-*/
-  void setLine(int line);
-
-/**
   Setter for the current start Station name.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
   @note ENSURE(ValidStringAttribute(getCurrentStation()), "Tram current station must be valid");
@@ -132,8 +123,6 @@ class Tram {
   ENSURE(startStation == getStartStationName(), "Tram start station name was not set correctly");
 */
   void setCurrentStationName(string startStation);
-
-  void setNumber(int number);
 
   void setCurrentCapacity(int number);
 

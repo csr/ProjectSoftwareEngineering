@@ -24,9 +24,10 @@ class Subway {
 
 /**
   Constructor for the Subway class. This creates an empty simulation.\n
-  @note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
-  @note ENSURE(getTramsCount() == 0, "default constructor should return build empty subway");
-  @note ENSURE(getStationsCount() == 0, "default constructor should return build empty subway");
+  @note ENSURE(getTramsCount() == 0, "Trams count must be initially zero");
+  @note ENSURE(getStationsCount() == 0, "Stations count must be initially zero");
+  @note ENSURE(getCurrentTime() == 0, "Current time must be initially zero");
+  @note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized");
   @returns Empty Subway.
 */
   Subway();
@@ -43,13 +44,9 @@ class Subway {
   @note ENSURE(ValidIntegerAttribute(size), "Trams count can't be negative");
   @returns Number of trams.
 */
-    int getTramsCount();
+  int getTramsCount();
 
-
-    int getCurrentTime();
-
-
-
+  int getCurrentTime();
 
   /**
   Getter that returns number of stations in the Subway simulation.
@@ -78,23 +75,23 @@ class Subway {
 
 
 
-    /**
-        Empties the contents of the Subway simulation.
-        @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling reset");
-        @note ENSURE(this->getTramsCount() == 0, "Trams array must be cleared");
-        @note ENSURE(this->getStationsCount() == 0, "Stations map must be cleared");
-      */
+  /**
+      Empties the contents of the Subway simulation.
+      @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling reset");
+      @note ENSURE(this->getTramsCount() == 0, "Trams array must be cleared");
+      @note ENSURE(this->getStationsCount() == 0, "Stations map must be cleared");
+    */
   void reset();
 
-    /**
-    Computes the Subway simulation for a given number of steps.
-    @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
-    @note REQUIRE(steps > 0, "Number of steps must be greater than zero");
-    @note  ENSURE(getCurrentTime() <= steps, "Compute Automatic Simulation doesn't halt after n steps");
-    @param steps Number of steps to compute.
-    @param outputStream Output stream to use for simulation log output.
-    @param statsStream Output stream to use for CSV log output.
-  */
+  /**
+  Computes the Subway simulation for a given number of steps.
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
+  @note REQUIRE(steps > 0, "Number of steps must be greater than zero");
+  @note  ENSURE(getCurrentTime() <= steps, "Compute Automatic Simulation doesn't halt after n steps");
+  @param steps Number of steps to compute.
+  @param outputStream Output stream to use for simulation log output.
+  @param statsStream Output stream to use for CSV log output.
+*/
   void computeAutomaticSimulation(int steps, ostream& outputStream, ostream &statsStream);
 
   /**
@@ -102,8 +99,6 @@ class Subway {
     @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling incrementTime");
     @note ENSURE(getCurrentTime() == previous + 1, "Time wasn't incremented in incrementTime");
   */
-  void incrementTime();
-
   void moveTramsOnce(ostream &outputStream, ostream &statsStream);
 
  private:
@@ -117,8 +112,7 @@ class Subway {
 
   int _time;
 
-
-  void setInitialTime();
+  void incrementTime();
   void printStatsData(bool isLeaving, Tram *tram, ostream &statsStream);
 };
 

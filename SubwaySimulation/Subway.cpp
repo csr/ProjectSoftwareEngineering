@@ -21,10 +21,11 @@ Subway::Subway() {
 
   // Import empty station and tram arrays
   importData({}, {});
-  setInitialTime();
+  _time = 0;
+  ENSURE(getTramsCount() == 0, "Trams count must be initially zero");
+  ENSURE(getStationsCount() == 0, "Stations count must be initially zero");
+  ENSURE(getCurrentTime() == 0, "Current time must be initially zero");
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
-  ENSURE(getTramsCount() == 0, "default constructor should return build empty subway");
-  ENSURE(getStationsCount() == 0, "default constructor should return build empty subway");
 }
 
 bool Subway::properlyInitialized() {
@@ -111,6 +112,9 @@ void Subway::reset() {
 void Subway::computeAutomaticSimulation(int steps, ostream &outputStream, ostream& statsFile) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
   REQUIRE(steps >= 0, "Number of steps must be positive");
+
+  statsFile << "Time,Vehicle,Line,Action,Station,Turnover,Capacity" << endl;
+
   while (getCurrentTime() < steps) {
     this->moveTramsOnce(outputStream, statsFile);
     incrementTime();
@@ -118,8 +122,21 @@ void Subway::computeAutomaticSimulation(int steps, ostream &outputStream, ostrea
 }
 
 void Subway::printStatsData(bool isLeaving, Tram *tram, ostream &statsStream) {
-    int time = getCurrentTime();
-    statsStream << time << "," << tram->getLine();
+  int time = getCurrentTime();
+  string arrivingLeavingStr = isLeaving ? "Leaving" : "Arriving";
+  Station *currentStation = tram->getCurrentStation();
+  string stationName = currentStation->getName();
+  int turnover = tram->getTurnover();
+  int currentCapacity = tram->getCurrentCapacity();
+
+  statsStream << ConvertSecondsToTimeString(time) << ","
+              << tram->getVehicle() << ","
+              << tram->getLine() << ","
+              << arrivingLeavingStr << ","
+              << stationName << ","
+              << ToString(turnover) << ","
+              << ToString(currentCapacity)
+              << endl;
 }
 
 void Subway::moveTramsOnce(ostream &outputStream, ostream& statsFile) {
@@ -129,20 +146,20 @@ void Subway::moveTramsOnce(ostream &outputStream, ostream& statsFile) {
     Station *currentStation = tram->getCurrentStation();
     string previousStationName = currentStation->getName();
     if (tram->getDistance() == 0) {
-        if(tram->getWaiting() == 0) {
+      if(tram->getWaiting() == 0) {
 
-            Track *track = currentStation->getTrack(tram->getVehicle());
-            if (tram->trackFree()) {
-                //Leave a station
-                tram->leave();
-                printStatsData(true, tram, statsFile);
-                //this->collectStatisticalData(statisticalFile);
-            }
-        }else {
-            tram->decreaseWaiting();
+        Track *track = currentStation->getTrack(tram->getVehicle());
+        if (tram->trackFree()) {
+          //Leave a station
+          tram->leave();
+          printStatsData(true, tram, statsFile);
+          //this->collectStatisticalData(statisticalFile);
         }
+      }else {
+        tram->decreaseWaiting();
+      }
     } else if(tram->getDistance() == 1) {
-        //Arrive in a Station
+      //Arrive in a Station
       tram->decreaseDistance();
       tram->arrive();
       string currentStationName = tram->getCurrentStation()->getName();
@@ -160,26 +177,18 @@ void Subway::moveTramsOnce(ostream &outputStream, ostream& statsFile) {
 
 
 
-int Subway::getCurrentTime(){
-    REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTime");
-    ENSURE(_time >= 0, "Time can't be negative");
-    return _time;
+int Subway::getCurrentTime() {
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTime");
+  ENSURE(_time >= 0, "Time can't be negative");
+  return _time;
 }
 
-void Subway::setInitialTime(){
-    REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling setInitialTime");
-    _time = 0;
-    ENSURE(_time == 0, "Time wasn't set to 0");
-}
-
-void Subway::incrementTime(){
-    REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling incrementTime");
-    int previous = getCurrentTime();
-    _time++;
-    ENSURE(getCurrentTime() == previous + 1, "Time wasn't incremented in incrementTime");
+void Subway::incrementTime() {
+  int previous = getCurrentTime();
+  _time++;
 }
 
 vector<Tram*> Subway::getTrams(){
-    REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTracks");
-    return _tramsArray;
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTracks");
+  return _tramsArray;
 }

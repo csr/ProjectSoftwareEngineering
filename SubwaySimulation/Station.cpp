@@ -15,7 +15,7 @@ using namespace std;
 
 Station::Station(string name, StationType type, unordered_map<int, Track*> tracks) {
   _initCheck = this;
-  setName(name);
+  _name = name;
   _type = type;
   setTracks(tracks);
   for(auto track: getTracksArray()){
@@ -27,15 +27,6 @@ Station::Station(string name, StationType type, unordered_map<int, Track*> track
 bool Station::properlyInitialized() {
   return _initCheck == this;
 }
-
-void Station::setName(string name) {
-  REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setName");
-  _name = name;
-  ENSURE(ValidStringAttribute(getName()), "Station name must be valid");
-  ENSURE(getName() == name, "Station name was not set correctly");
-}
-
-
 
 void Station::setTracks(unordered_map<int, Track*> tracks) {
   REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setTracks");
