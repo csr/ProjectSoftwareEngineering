@@ -261,31 +261,35 @@ TEST_F(SubwaySimulationMovingTests, SubwayTurnoverSimulation) {
     EXPECT_TRUE(fileCounter == 5);
 }
 */
-//TEST_F(SubwaySimulationMovingTests, SubwayCSVSimulation) {
-//  ASSERT_TRUE(DirectoryExists("testInput"));
-//  ASSERT_TRUE(DirectoryExists("testCSV"));
-//
-//  ofstream myfile;
-//  ofstream statsFile;
-//  ofstream outputStream("testSimulation/temporaryOutput.txt");
-//  SuccessEnum importResult;
-//  int fileCounter = 1;
-//  string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
-//  statsFile.open("testCSV/temporaryOutput.txt");
-//
-//  while (FileExists (fileName)) {
-//    cout << "Parsing file name: " << fileName << endl;
-//    myfile.open("testInput/zzzError.txt");
-//    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
-//    myfile.close();
-//    EXPECT_TRUE((importResult == Success));
-//
-//    subway_.computeAutomaticSimulation(5000, outputStream, statsFile);
-//
-//    statsFile << "Hey there!" << endl;
-//
-//    fileCounter = fileCounter + 1;
-//    fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
-//  };
-//  EXPECT_TRUE(fileCounter == 5);
-//}
+TEST_F(SubwaySimulationMovingTests, SubwayCSVSimulation) {
+  ASSERT_TRUE(DirectoryExists("testInput"));
+  ASSERT_TRUE(DirectoryExists("testCSV"));
+
+  ofstream errorFile;
+  ofstream statsFile;
+  ofstream outputFile;
+  SuccessEnum importResult;
+  int fileCounter = 1;
+  string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+
+  string temporaryStatsName = "testCSV/temporaryOutput.csv";
+
+  while (fileCounter < 5) {
+    errorFile.open("testCSV/errorFile.txt");
+    statsFile.open(temporaryStatsName);
+
+    cout << "Parsing file name: " << fileName << endl;
+
+    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), outputFile, subway_);
+    EXPECT_TRUE((importResult == Success));
+
+    subway_.computeAutomaticSimulation(5000, outputFile, statsFile);
+
+    string expectedOutputFileName = "testCSV/expectedCSVOutput" + ToString(fileCounter) + ".csv";
+    EXPECT_TRUE(FileCompare(temporaryStatsName, expectedOutputFileName));
+
+    fileCounter = fileCounter + 1;
+    fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+  };
+  EXPECT_TRUE(fileCounter == 5);
+}
