@@ -147,13 +147,11 @@ void Subway::moveTramsOnce(ostream &outputStream, ostream& statsFile) {
     string previousStationName = currentStation->getName();
     if (tram->getDistance() == 0) {
       if(tram->getWaiting() == 0) {
-
         Track *track = currentStation->getTrack(tram->getVehicle());
         if (tram->trackFree()) {
           //Leave a station
           tram->leave();
           printStatsData(true, tram, statsFile);
-          //this->collectStatisticalData(statisticalFile);
         }
       }else {
         tram->decreaseWaiting();
@@ -164,15 +162,12 @@ void Subway::moveTramsOnce(ostream &outputStream, ostream& statsFile) {
       tram->arrive();
       string currentStationName = tram->getCurrentStation()->getName();
       outputStream << "Tram " << tram->getLine() << " moved from station " << previousStationName <<
-                   " to station " << currentStationName << " at time " << getCurrentTime() << endl;
+                   " to station " << currentStationName << " at time " << ConvertSecondsToTimeString(getCurrentTime()) << endl;
       printStatsData(false, tram, statsFile);
-      //this->collectStatisticalData(statisticalFile);
-    }else
+    } else {
       tram->decreaseDistance();
-
-
+    }
   }
-
 }
 
 

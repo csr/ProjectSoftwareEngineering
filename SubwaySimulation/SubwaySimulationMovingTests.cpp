@@ -86,22 +86,23 @@ TEST_F(SubwaySimulationMovingTests, SubwaySimpleAutomaticSimulation) {
     string temporaryOutputFileName = "testSimulation/temporaryOutput.txt";
     temporaryOutputFile.open(temporaryOutputFileName);
     errorFile.open("testSimulation/errorFile.txt");
+    statsFile.open("testSimulation/temporaryStats.txt");
+
+    cout << "Parsing file with name: " << fileName << endl;
 
     importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), errorFile, subway_);
     EXPECT_TRUE(importResult == Success);
     subway_.computeAutomaticSimulation(5000, temporaryOutputFile, statsFile);
 
     string expectedOutputFileName = "testSimulation/expectedSimulationOutput" + ToString(fileCounter) + ".txt";
-    EXPECT_TRUE(FileCompare(expectedOutputFileName, temporaryOutputFileName));
+    EXPECT_TRUE(FileCompare(temporaryOutputFileName, expectedOutputFileName));
 
     fileCounter++;
     fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+    temporaryOutputFile.close();
   }
 
-  temporaryOutputFile.close();
-  errorFile.close();
-
-  EXPECT_TRUE(fileCounter == 5);
+//  EXPECT_TRUE(fileCounter == 5);
 }
 /*
 TEST_F(SubwaySimulationMovingTests, SubwayNormalAutomaticSimulation) {
