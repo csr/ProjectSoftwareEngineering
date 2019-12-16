@@ -115,9 +115,30 @@ bool ValidStringAttribute(string string) {
 }
 
 int GenerateRandomNumber(int a, int b) {
-  // Setting seed
-  srand(time(nullptr));
+  srand(123456789); // seed = 1
   if (a == b)
       return a;
   return rand() % (b - a) + a;
+}
+
+string ConvertSecondsToTimeString(int input_seconds) {
+  string outputStr = "";
+
+  // Add 12 hours as offset
+  int input_seconds_offset = 43200 + input_seconds;
+
+  time_t seconds(input_seconds_offset);
+  tm *p = gmtime(&seconds);
+
+  string oldHours = ToString(p->tm_hour);
+  std::string paddedHours = std::string(2 - oldHours.length(), '0') + oldHours;
+
+  string oldMinutes = ToString(p->tm_min);
+  std::string paddedMinutes = std::string(2 - oldMinutes.length(), '0') + oldMinutes;
+
+  string oldSeconds = ToString(p->tm_sec);
+  std::string paddedSeconds = std::string(2 - oldSeconds.length(), '0') + oldSeconds;
+
+  outputStr += paddedHours + ":" + paddedMinutes + ":" + paddedSeconds;
+  return outputStr;
 }

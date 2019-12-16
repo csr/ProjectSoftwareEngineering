@@ -20,20 +20,27 @@ class Tram {
 
 /**
  Constructs a Tram class with line, capacity, speed, and start Station name.
- @note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
  @note ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
- @note ENSURE(capacity == getCapacity(), "Capacity wasn't set correctly in constructor");
- @note ENSURE(speed = getSpeed(), "Speed wasn't set correctly in constructor");
- @note ENSURE(startStation = getStartStationName(), "Start station wasn't set correctly in constructor");
+ @note ENSURE(type == getType(), "Type wasn't set correctly in constructor");
+ @note ENSURE(startStation == getCurrentStationName(), "Start station wasn't set correctly in constructor");
+ @note ENSURE(number == getNumber(), "Number wasn't set correctly in constructor");
+ @note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
  @param line Line of the Tram.
  @param type Type of the Tram.
+<<<<<<< HEAD
  @param startStation Start Station of the Tram.
  @param number Number of Vehicle of the Tram
  @returns An instance of Tram
+=======
+ @param startStation Start station of the Tram.
+ @param number Tram number.
+ @returns An instance of Tram.
+>>>>>>> c1ced59c2309cd6c487b76772db759a297145a97
 */
   Tram(int line, TramType type, string startStation, int number);
 
   bool properlyInitialized();
+
 /**
   Getter for the line of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getLine");
@@ -110,14 +117,6 @@ class Tram {
    * @return Next station of the Tram to set as a new current Station
    */
   Station* getNextStation();
-/**
-  Setter for the line of the Tram.
-  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLine");
-  @note ENSURE(ValidIntegerAttribute(getLine()), "Tram line can't be negative");
-  @note ENSURE(line == getLine(), "Tram line was not set correctly");
-  @param line Line of the Tram.
-*/
-  void setLine(int line);
 
 /**
   Setter for the current Station.
@@ -138,21 +137,13 @@ class Tram {
 
 
   /**
-   * Setter for Vehicle Number of Tram
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setNumber");
-   * @note ENSURE(number == getVehicle(), "Tram vehicleNumber was not set correctly");
-   * @note ENSURE(number >= 0, "Vehicle number can't be negative");
-   * @param number: number of Vehicle
-   */
-  void setNumber(int number);
-
-  /**
    * Setter for currentCapacity attribute of Tram
    * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentCapacity");
    * @note ENSURE(getCurrentCapacity() <= getMaxCapacity(), "Tram currentCapacity is greater than maximum capacity");
    * @note ENSURE(number == getCurrentCapacity(), "Tram currentCapacity was not set correctly");
    * @param number: number of current passengers on Tram
    */
+
   void setCurrentCapacity(int number);
 
   /**

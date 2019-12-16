@@ -36,32 +36,20 @@ TEST_F(SubwaySimulationDomainTests, DefaultConstructor) {
 /**
 Tests getter/setter of Station.
 */
-//TEST_F(SubwaySimulationDomainTests, StationConstructor) {
-//  string name = "AntwerpenCentraal", next = "AntwerpenBerchem", previous = "Roosendaal";
-//  int track = 23;
-//  Station station = Station(name, next, previous, track);
-//  EXPECT_TRUE(station.properlyInitialized());
-//
-//  // Test getters
-//  EXPECT_EQ(name, station.getName());
-//  EXPECT_EQ(next, station.getNextName());
-//  EXPECT_EQ(previous, station.getPreviousName());
-//  EXPECT_EQ(track, station.getTrack());
-//
-//  string newName = "MilanoCentrale", newNext = "MilanoGaribaldi", newPrevious = "MilanoCadorna";
-//  int newTrack = 54;
-//
-//  // Test setters
-//  station.setName(newName);
-//  station.setNextName(newNext);
-//  station.setPreviousName(newPrevious);
-//  station.setTrack(newTrack);
-//
-//  EXPECT_EQ(newName, station.getName());
-//  EXPECT_EQ(newNext, station.getNextName());
-//  EXPECT_EQ(newPrevious, station.getPreviousName());
-//  EXPECT_EQ(newTrack, station.getTrack());
-//}
+TEST_F(SubwaySimulationDomainTests, EmptyStationConstructor) {
+  string name = "AntwerpenCentraal";
+  StationType type = TypeStop;
+
+  // Test constructor
+  Station station = Station(name, type, {});
+
+  EXPECT_TRUE(station.properlyInitialized());
+
+  // Test getters
+  EXPECT_EQ(name, station.getName());
+  EXPECT_EQ(station.getTracksArray().size(), 0);
+  EXPECT_EQ(station.getType(), type);
+}
 
 /**
 Tests getter/setter of Tram.

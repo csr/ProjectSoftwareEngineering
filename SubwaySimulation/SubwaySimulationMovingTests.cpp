@@ -28,6 +28,7 @@ class SubwaySimulationMovingTests: public ::testing::Test {
   Subway subway_;
 };
 
+
 TEST_F(SubwaySimulationMovingTests, MovingTram) {
 ////if directory doesn't exist then no need in proceeding with the test
     ASSERT_TRUE(DirectoryExists("testInput"));
@@ -69,14 +70,11 @@ TEST_F(SubwaySimulationMovingTests, MovingTram) {
 
     EXPECT_TRUE(fileCounter == 5);
 }
-//
-
 
 //Tests Subway simulation with one step.
-//
 TEST_F(SubwaySimulationMovingTests, SubwaySimpleAutomaticSimulation) {
-    ASSERT_TRUE(DirectoryExists("testInput"));
-    ASSERT_TRUE(DirectoryExists("testSimulation"));
+  ASSERT_TRUE(DirectoryExists("testInput"));
+  ASSERT_TRUE(DirectoryExists("testSimulation"));
 
     ofstream statsFile;
     SuccessEnum importResult;
@@ -89,6 +87,7 @@ TEST_F(SubwaySimulationMovingTests, SubwaySimpleAutomaticSimulation) {
 
         string fileString = "testSimulation/temporaryOutput" + ToString(fileCounter) + ".txt";
         outputFile.open(fileString);
+
 
         // The outputContainerFile will be passed as the "error" file to the import subway
         // If the import result is Success, there should be NO error output (an empty error file means everything was ok)
@@ -104,11 +103,10 @@ TEST_F(SubwaySimulationMovingTests, SubwaySimpleAutomaticSimulation) {
         EXPECT_TRUE(FileCompare(fileString, expectedOutputFilename));
         fileCounter = fileCounter + 1;
         fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
-
     }
-
     EXPECT_TRUE(fileCounter == 5);
 }
+
 
 TEST_F(SubwaySimulationMovingTests, SubwayPassengersSimulation) {
     ASSERT_TRUE(DirectoryExists("testInput"));
@@ -173,24 +171,28 @@ TEST_F(SubwaySimulationMovingTests, SubwayCSVSimulation) {
   ASSERT_TRUE(DirectoryExists("testInput"));
   ASSERT_TRUE(DirectoryExists("testCSV"));
 
-  ofstream myfile;
+  ofstream errorFile;
   ofstream statsFile;
-  ofstream outputStream("testSimulation/temporaryOutput.txt");
+  ofstream outputFile;
   SuccessEnum importResult;
   int fileCounter = 1;
   string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
-  statsFile.open("testCSV/temporaryOutput.txt");
 
-  while (FileExists (fileName)) {
+  string temporaryStatsName = "testCSV/temporaryOutput.csv";
+
+  while (fileCounter < 5) {
+    errorFile.open("testCSV/errorFile.txt");
+    statsFile.open(temporaryStatsName);
+
     cout << "Parsing file name: " << fileName << endl;
-    myfile.open("testInput/zzzError.txt");
-    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), myfile, subway_);
-    myfile.close();
+
+    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), outputFile, subway_);
     EXPECT_TRUE((importResult == Success));
 
-    subway_.computeAutomaticSimulation(5000, outputStream, statsFile);
+    subway_.computeAutomaticSimulation(5000, outputFile, statsFile);
 
-    statsFile << "Hey there!" << endl;
+    string expectedOutputFileName = "testCSV/expectedCSVOutput" + ToString(fileCounter) + ".csv";
+    EXPECT_TRUE(FileCompare(temporaryStatsName, expectedOutputFileName));
 
     fileCounter = fileCounter + 1;
     fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";

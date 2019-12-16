@@ -1,0 +1,39 @@
+<STATION>
+    <name>A</name>
+    <TRACK>
+        <next>B</next>
+        <previous>C</previous>
+        <track>13</track>
+    </TRACK>
+    <type>station</type>
+</STATION>
+<STATION>
+    <name>B</name>
+    <TRACK>
+        <next>C</next>
+        <previous>A</previous>
+        <track>13</track>
+    </TRACK>
+    <type>stop</type>
+</STATION>
+<STATION>
+    <name>C</name>
+    <TRACK>
+        <next>A</next>
+        <previous>B</previous>
+        <track>13</track>
+    </TRACK>
+    <type>station</type>
+</STATION>
+<TRAM>
+    <line>13</line>
+    <vehicle>1</vehicle>
+    <type>Albatross</type>
+    <startStation>C</startStation>
+</TRAM>
+<TRAM>
+   <line>13</line>
+   <vehicle>2</vehicle>
+   <type>PCC</type>
+   <startStation>B</startStation>
+</TRAM>
