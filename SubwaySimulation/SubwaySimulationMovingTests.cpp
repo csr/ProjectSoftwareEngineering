@@ -88,7 +88,9 @@ TEST_F(SubwaySimulationMovingTests, SubwaySimpleAutomaticSimulation) {
     errorFile.open("testSimulation/errorFile.txt");
     statsFile.open("testSimulation/temporaryStats.txt");
 
-    cout << "Parsing file with name: " << fileName << endl;
+    if (!temporaryOutputFile || !errorFile || !statsFile) {
+      cerr << "Unable to open temporaryOutputFile, errorFile or statsFile" << endl;
+    }
 
     importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), errorFile, subway_);
     EXPECT_TRUE(importResult == Success);
@@ -99,7 +101,14 @@ TEST_F(SubwaySimulationMovingTests, SubwaySimpleAutomaticSimulation) {
 
     fileCounter++;
     fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
+
     temporaryOutputFile.close();
+    errorFile.close();
+    statsFile.close();
+
+    if (temporaryOutputFile.fail()) {
+      cerr << "FAILED" << endl;
+    }
   }
 
 //  EXPECT_TRUE(fileCounter == 5);

@@ -21,7 +21,7 @@ Subway::Subway() {
 
   // Import empty station and tram arrays
   importData({}, {});
-  _time = 0;
+  resetCurrentTime();
   ENSURE(getTramsCount() == 0, "Trams count must be initially zero");
   ENSURE(getStationsCount() == 0, "Stations count must be initially zero");
   ENSURE(getCurrentTime() == 0, "Current time must be initially zero");
@@ -113,6 +113,8 @@ void Subway::computeAutomaticSimulation(int steps, ostream &outputStream, ostrea
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
   REQUIRE(steps >= 0, "Number of steps must be positive");
 
+  resetCurrentTime();
+
   statsFile << "Time,Vehicle,Line,Action,Station,Turnover,Capacity" << endl;
 
   while (getCurrentTime() < steps) {
@@ -170,7 +172,9 @@ void Subway::moveTramsOnce(ostream &outputStream, ostream& statsFile) {
   }
 }
 
-
+void Subway::resetCurrentTime() {
+  _time = 0;
+}
 
 int Subway::getCurrentTime() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTime");

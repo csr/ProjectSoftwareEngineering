@@ -113,6 +113,7 @@ class Subway {
   int _time;
 
   void incrementTime();
+  void resetCurrentTime();
   void printStatsData(bool isLeaving, Tram *tram, ostream &statsStream);
 };
 
