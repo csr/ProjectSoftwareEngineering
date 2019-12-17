@@ -148,10 +148,10 @@ class Tram {
 
   /**
    * Setter for turnover attribute of Tram
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setTurnover");
+   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling updateTurnover");
    * @note ENSURE(getTurnover() == 2 * getCurrentCapacity(), "Tram doesn't initialize in a good way turnover attribute");
    */
-  void setTurnover();
+  void updateTurnover();
 
   /**
    * Setter for speed attribute of Tram
@@ -224,10 +224,6 @@ class Tram {
    * @note ENSURE(this->getWaiting() == (previous - 1), "Tram doesn't decrease waiting time");
    */
   void decreaseWaiting();
-
-
-
-
 
  private:
   Tram* _initCheck;
