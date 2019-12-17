@@ -28,8 +28,10 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../gtest/include"
   "../testInput"
   "../testOutput"
+  "../testGraphicalOutput"
   "../testSimulation"
   "../userFiles"
+  "../testCSV"
   )
 
 # Targets to which this target links.

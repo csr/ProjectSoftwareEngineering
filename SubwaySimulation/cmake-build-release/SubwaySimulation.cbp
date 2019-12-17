@@ -27,8 +27,10 @@
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testGraphicalOutput"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testSimulation"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/userFiles"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testCSV"/>
 					<Add directory="/opt/intel/compilers_and_libraries_2019.5.281/mac/mkl/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -54,8 +56,10 @@
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testGraphicalOutput"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testSimulation"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/userFiles"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testCSV"/>
 					<Add directory="/opt/intel/compilers_and_libraries_2019.5.281/mac/mkl/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -101,8 +105,10 @@
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testGraphicalOutput"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testSimulation"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/userFiles"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testCSV"/>
 					<Add directory="/opt/intel/compilers_and_libraries_2019.5.281/mac/mkl/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -128,8 +134,10 @@
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testGraphicalOutput"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testSimulation"/>
 					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/userFiles"/>
+					<Add directory="/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testCSV"/>
 					<Add directory="/opt/intel/compilers_and_libraries_2019.5.281/mac/mkl/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>

@@ -6,5 +6,5 @@ CXX_FLAGS = -Werror -O2 -O3 -DNDEBUG -isysroot /Library/Developer/CommandLineToo
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testSimulation -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/userFiles 
+CXX_INCLUDES = -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/gtest/include -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testInput -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testOutput -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testGraphicalOutput -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testSimulation -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/userFiles -I/Users/cesaredecal/workspace/ProjectSoftwareEngineering/SubwaySimulation/testCSV 
 
