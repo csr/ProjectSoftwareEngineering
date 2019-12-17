@@ -34,8 +34,18 @@ class Subway {
 
   bool properlyInitialized();
 
+ /**
+   * Getter for a vector of Station of the Subway
+   * @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStations");
+   * @return Array of Station
+   */
   vector<Station*> getStations();
 
+ /**
+   * Getter for a vector of Tram of the Subway
+   * @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTracks");
+   * @return
+   */
   vector<Tram*> getTrams();
 
 /**
@@ -46,6 +56,12 @@ class Subway {
 */
   int getTramsCount();
 
+ /**
+   * Getter for current time
+   * @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTime");
+   * @note ENSURE(_time >= 0, "Time can't be negative");
+   * @return time related to Subway
+   */
   int getCurrentTime();
 
   /**
