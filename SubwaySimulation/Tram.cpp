@@ -120,9 +120,6 @@ void Tram::arrive() {
 
   int randomNumber = GenerateRandomNumber(0, this->getCurrentCapacity());
   setCurrentCapacity(getCurrentCapacity()-randomNumber);
-//  cout << "ARRIVING. Current cap: " << ToString(this->getCurrentCapacity())
-//       << " max cap: " << ToString(getMaxCapacity())
-//       << ", random decrease: " << ToString(randomNumber) << endl;
 
   ENSURE(this->getCurrentStation()->getTrack(this->getLine())->isCurrentlyOccupied(), "Tram doesn't arrive in the next station");
 }
@@ -130,13 +127,8 @@ void Tram::arrive() {
 void Tram::leave() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling leave");
 
-  int randomIncrease = GenerateRandomNumber(this->getCurrentCapacity(), this->getMaxCapacity());
-
-//  cout << "LEAVING. Current cap: " << ToString(this->getCurrentCapacity())
-//       << " max cap: " << ToString(getMaxCapacity())
-//       << ", random increase: " << ToString(randomIncrease) << endl;
-
-  setCurrentCapacity(randomIncrease);
+  int randomIncrease = GenerateRandomNumber(0, getMaxCapacity() - getCurrentCapacity());
+  setCurrentCapacity(getCurrentCapacity() + randomIncrease);
 
   updateTurnover();
   setDistance(calculateDistance());
@@ -150,7 +142,7 @@ void Tram::setCurrentCapacity(int number) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling move");
   _currentCapacity = number;
   ENSURE(getCurrentCapacity() <= getMaxCapacity(), "Tram currentCapacity can't be greater than maximum capacity");
-//  ENSURE(getCurrentCapacity() >= 0, "Tram currentCapacity must be positive");
+  ENSURE(getCurrentCapacity() >= 0, "Tram currentCapacity must be positive");
   ENSURE(number == getCurrentCapacity(), "Tram currentCapacity was not set correctly");
 }
 
