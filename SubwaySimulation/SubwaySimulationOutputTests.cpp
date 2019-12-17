@@ -67,13 +67,10 @@ TEST_F(SubwaySimulationOutputTests, GraphicalOutput) {
   string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
 
   while (FileExists(fileName)) {
-    cout << "Parsing file with name: " << fileName << endl;
-
     string expectedOutputFilename = "testGraphicalOutput/expectedOutput" + ToString(fileCounter) + ".txt";
 
     string temporaryOutputFileName = "testGraphicalOutput/temporaryOutput.txt";
     outputContainerFile.open(temporaryOutputFileName);
-    cout << "Parsing legal subway with name: " << fileName << endl;
 
     // The outputContainerFile will be passed as the "error" file to the import subway
     // If the import result is Success, there should be NO error output (an empty error file means everything was ok)
