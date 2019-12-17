@@ -13,6 +13,7 @@ using namespace std;
 #include "Tram.h"
 #include "SubwaySimulationUtils.h"
 #include "SubwaySimulationImporter.h"
+#include "SubwaySimulationExporter.h"
 
 class SubwaySimulationOutputTests: public ::testing::Test {
  protected:
@@ -38,12 +39,14 @@ TEST_F(SubwaySimulationOutputTests, LegalSubwaysOutput) {
 
     // The outputContainerFile will be passed as the "error" file to the import subway
     // If the import result is Success, there should be NO error output (an empty error file means everything was ok)
+
     importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), outputContainerFile, subway_);
 
     EXPECT_TRUE(importResult == Success);
 
-    // The outputContainerFile will also be used to dump the contents of subway_.toString()
-    outputContainerFile << subway_.toString();
+    SubwaySimulationExporter exporter = SubwaySimulationExporter(&subway_);
+
+    outputContainerFile << exporter.simpleOutput();
     outputContainerFile.close();
 
     string expectedOutputFilename = "testOutput/legalSubwayOutput" + ToString(fileCounter) + ".txt";
@@ -78,8 +81,9 @@ TEST_F(SubwaySimulationOutputTests, GraphicalOutput) {
 
     EXPECT_TRUE(importResult == Success);
 
-    // The outputContainerFile will also be used to dump the contents of subway_.toString()
-    outputContainerFile << subway_.graficalOutput();
+    SubwaySimulationExporter exporter = SubwaySimulationExporter(&subway_);
+    outputContainerFile << exporter.graficalOutput();
+
     outputContainerFile.close();
 
     EXPECT_TRUE(FileCompare(expectedOutputFilename, temporaryOutputFileName));
@@ -89,41 +93,3 @@ TEST_F(SubwaySimulationOutputTests, GraphicalOutput) {
   };
   EXPECT_TRUE(fileCounter == 5);
 }
-
-//TEST_F(SubwaySimulationOutputTests, PartialSubwaysOutput) {
-//  //if directory doesn't exist then no need in proceeding with the test
-//  ASSERT_TRUE(DirectoryExists("testInput"));
-//  ASSERT_TRUE(DirectoryExists("testOutput"));
-//
-//  ofstream outputContainerFile;
-//  ofstream errorFile;
-//
-//  SuccessEnum importResult;
-//  int fileCounter = 1;
-//  string fileName = "testInput/partialSubway" + ToString(fileCounter) + ".xml";
-//
-//  while (FileExists(fileName)) {
-//    string expectedOutputFile = "testInput/partialSubwayOutput" + ToString(fileCounter) + ".xml";
-//    outputContainerFile.open("testOutput/temporaryOutput.txt");
-//    errorFile.open("testOutput/zzzError.txt");
-//
-//    // The outputContainerFile will be passed as the "error" file to the import subway
-//    // If the import result is Success, there should be NO error output (an empty error file means everything was ok)
-//    importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), errorFile, subway_);
-//
-//    EXPECT_TRUE(importResult == PartialImport);
-//
-//    // The outputContainerFile will also be used to dump the contents of subway_.toString()
-//    outputContainerFile << subway_.toString();
-//    outputContainerFile.close();
-//    errorFile.close();
-//
-//    string expectedOutputFilename = "testOutput/partialSubwayOutput" + ToString(fileCounter) + ".txt";
-//    EXPECT_TRUE(FileCompare(expectedOutputFilename, "testOutput/temporaryOutput.txt"));
-//
-//    fileCounter = fileCounter + 1;
-//    fileName = "testInput/partialSubway" + ToString(fileCounter) + ".xml";
-//  };
-//
-//  EXPECT_TRUE(fileCounter == 3);
-//}

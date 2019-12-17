@@ -12,8 +12,27 @@ using namespace std;
 
 class SubwaySimulationExporter {
  public:
-  void graficalOutput(string fileName, Subway& subway);
-  void simpleOutput(string  fileName, Subway& subway);
+  SubwaySimulationExporter(Subway *subway);
+
+  bool properlyInitialized();
+
+  /**
+     Generates a string representation of the Subway network.
+      @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling toString");
+     @returns String representation of Subway.
+   */
+  string simpleOutput();
+
+  /**
+    Generates a graphic string representation of the Subway network.
+    @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling toString");
+    @returns String graphical representation of Subway.
+  */
+  string graficalOutput();
+
+ private:
+  SubwaySimulationExporter * _initCheck; //!use pointer to myself to verify whether I am properly initialized
+  Subway* _subway;
 };
 
 #endif

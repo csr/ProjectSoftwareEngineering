@@ -67,21 +67,6 @@ class Subway {
   void importData(vector<Station*> stations, vector<Tram*> trams);
 
   /**
-    Generates a string representation of the Subway network.
-     @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling toString");
-    @returns String representation of Subway.
-  */
-  string toString();
-
-  /**
-    Generates a graphic string representation of the Subway network.
-    @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling toString");
-    @returns String graphical representation of Subway.
-  */
-
-  string graficalOutput();
-
-  /**
       Empties the contents of the Subway simulation.
       @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling reset");
       @note ENSURE(this->getTramsCount() == 0, "Trams array must be cleared");
