@@ -149,9 +149,10 @@ class Tram {
   /**
    * Setter for turnover attribute of Tram
    * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling updateTurnover");
-   * @note ENSURE(getTurnover() == 2 * getCurrentCapacity(), "Tram doesn't initialize in a good way turnover attribute");
+   * @note REQUIRE(newPassengers > 0, "Number of passengers must be greater than zero");
+   * @note ENSURE(getTurnover() == getTurnover() + 2 * newPassengers, "Tram doesn't initialize in a good way turnover attribute");
    */
-  void updateTurnover();
+  void updateTurnover(int newPassengers);
 
   /**
    * Setter for speed attribute of Tram

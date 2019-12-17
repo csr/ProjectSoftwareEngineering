@@ -71,7 +71,7 @@ TEST_F(SubwaySimulationMovingTests, SubwayAutomaticSimulation) {
     }
   }
 
-//  EXPECT_TRUE(fileCounter == 5);
+  EXPECT_TRUE(fileCounter == 5);
 }
 
 TEST_F(SubwaySimulationMovingTests, SubwayCSVSimulation) {
@@ -87,11 +87,11 @@ TEST_F(SubwaySimulationMovingTests, SubwayCSVSimulation) {
 
   string temporaryStatsName = "testCSV/temporaryOutput.csv";
 
-  while (fileCounter < 2) {
+  while (fileCounter < 5) {
     errorFile.open("testCSV/errorFile.txt");
     statsFile.open(temporaryStatsName);
 
-    cout << "Parsing file name: " << fileName << endl;
+//    cout << "Parsing file name: " << fileName << endl;
 
     importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), outputFile, subway_);
     EXPECT_TRUE((importResult == Success));

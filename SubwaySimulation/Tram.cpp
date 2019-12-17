@@ -130,7 +130,7 @@ void Tram::leave() {
   int randomIncrease = GenerateRandomNumber(0, getMaxCapacity() - getCurrentCapacity());
   setCurrentCapacity(getCurrentCapacity() + randomIncrease);
 
-  updateTurnover();
+  updateTurnover(randomIncrease);
   setDistance(calculateDistance());
   setWaiting(60);
   this->getCurrentStation()->getTrack(this->getLine())->setOccupied(false);
@@ -146,11 +146,12 @@ void Tram::setCurrentCapacity(int number) {
   ENSURE(number == getCurrentCapacity(), "Tram currentCapacity was not set correctly");
 }
 
-void Tram::updateTurnover() {
+void Tram::updateTurnover(int newPassengers) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling updateTurnover");
-  int previous = getTurnover();
-  _turnover += 2 * getCurrentCapacity();
-  ENSURE(getTurnover() == previous + 2 * getCurrentCapacity(), "Tram doesn't initialize in a good way turnover attribute");
+  REQUIRE(newPassengers > 0, "Number of passengers must be greater than zero");
+  int previousTurnover = getTurnover();
+  _turnover += 2 * newPassengers;
+  ENSURE(getTurnover() == previousTurnover + 2 * newPassengers, "Tram doesn't initialize in a good way turnover attribute");
 }
 
 void Tram::setSpeed() {
