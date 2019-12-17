@@ -66,7 +66,7 @@ int getNumberOfSimulationSteps() {
 }
 
 void runUserProgram() {
-  ofstream errorFile, simpleOutputFile, statsFile;
+  ofstream errorFile, simpleOutputFile, statsFile, graphicalOutputFile;
 
   string inputFileName = getInputFileName();
   string errorFileDirectory = "userFiles/temporaryError.txt";
@@ -77,11 +77,16 @@ void runUserProgram() {
   string inputFileNameDirectory = "userFiles/" + inputFileName + ".xml";
   string simulationFileNameDirectory = "userFiles/" + inputFileName + ".txt";
   string statsFileNameDirectory = "userFiles/" + inputFileName + "Stats.csv";
+  string graphicalOutputFileNameDirectory = "userFiles/" + inputFileName + "GraphicalOutput.txt";
   statsFile.open(statsFileNameDirectory);
+  graphicalOutputFile.open(graphicalOutputFileNameDirectory);
 
   Subway subway = Subway();
   errorFile.open(errorFileDirectory, std::ofstream::out | std::ofstream::trunc);
   SuccessEnum importResult = SubwaySimulationImporter::importSubway(inputFileNameDirectory.c_str(), errorFile, subway);
+
+  graphicalOutputFile << "Before simulation:" << endl;
+  graphicalOutputFile << subway.graficalOutput() << endl;
 
   subway.computeAutomaticSimulation(steps, cout, statsFile);
 
@@ -90,6 +95,9 @@ void runUserProgram() {
   if (importResult == Success || importResult == PartialImport) {
     simpleOutputFile.open(simpleOutputFileNameDirectory.c_str());
     simpleOutputFile << subway.toString();
+
+    graphicalOutputFile << "After simulation:" << endl;
+    graphicalOutputFile << subway.graficalOutput();
   } else {
     cout << "Couldn't import file. Error printed in " << errorFileDirectory << endl;
   }

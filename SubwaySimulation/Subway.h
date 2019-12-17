@@ -73,7 +73,13 @@ class Subway {
   */
   string toString();
 
+  /**
+    Generates a graphic string representation of the Subway network.
+    @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling toString");
+    @returns String graphical representation of Subway.
+  */
 
+  string graficalOutput();
 
   /**
       Empties the contents of the Subway simulation.
