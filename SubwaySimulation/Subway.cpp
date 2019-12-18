@@ -49,8 +49,8 @@ void Subway::importData(vector<Station *> stations, vector<Tram *> trams) {
     int track = tram->getLine();
     tram->getCurrentStation()->getTrack(track)->setOccupied(true);
   }
-  ENSURE(this->getTramsCount() >= 0, "Trams number are negative");
-  ENSURE(this->getStationsCount() >= 0, "Stations number are negative");
+  ENSURE(this->getTramsCount() >= 0, "Trams count must be zero or positive");
+  ENSURE(this->getStationsCount() >= 0, "Stations count must be zero or positive");
 }
 
 int Subway::getTramsCount() {
@@ -84,7 +84,7 @@ void Subway::reset() {
 
 void Subway::computeAutomaticSimulation(int steps, ostream &outputStream, ostream& statsStream) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
-  REQUIRE(steps >= 0, "Number of steps must be positive");
+  REQUIRE(ValidIntegerAttribute(steps), "Number of steps must be positive");
 
   resetCurrentTime();
 
@@ -94,6 +94,8 @@ void Subway::computeAutomaticSimulation(int steps, ostream &outputStream, ostrea
     this->moveTramsOnce(outputStream, statsStream);
     incrementTime();
   }
+
+  ENSURE(getCurrentTime() == steps, "Time must be equal to number of steps");
 }
 
 void Subway::printStatsData(bool isLeaving, Tram *tram, ostream &statsStream) {
@@ -151,7 +153,6 @@ void Subway::resetCurrentTime() {
 
 int Subway::getCurrentTime() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTime");
-  ENSURE(_time >= 0, "Time can't be negative");
   return _time;
 }
 

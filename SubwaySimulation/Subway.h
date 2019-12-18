@@ -21,9 +21,8 @@ using namespace std;
 
 class Subway {
  public:
-
 /**
-  Constructor for the Subway class. This creates an empty simulation.\n
+  Constructor for the Subway class. This creates an empty simulation.
   @note ENSURE(getTramsCount() == 0, "Trams count must be initially zero");
   @note ENSURE(getStationsCount() == 0, "Stations count must be initially zero");
   @note ENSURE(getCurrentTime() == 0, "Current time must be initially zero");
@@ -34,83 +33,71 @@ class Subway {
 
   bool properlyInitialized();
 
- /**
-   * Getter for a vector of Station of the Subway
-   * @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStations");
-   * @return Array of Station
-   */
+/**
+  Getter for a vector of Station of the Subway
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStations");
+  @return Array of Station
+*/
   vector<Station*> getStations();
 
- /**
-   * Getter for a vector of Tram of the Subway
-   * @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTracks");
-   * @return
-   */
+/**
+  Getter for a vector of Tram of the Subway
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTracks");
+  @return Vector of trams
+*/
   vector<Tram*> getTrams();
 
 /**
   Getter that returns number of trams in the Subway simulation.
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
-  @note ENSURE(ValidIntegerAttribute(size), "Trams count can't be negative");
-  @returns Number of trams.
+  @return Number of trams.
 */
   int getTramsCount();
 
- /**
-   * Getter for current time
-   * @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTime");
-   * @note ENSURE(_time >= 0, "Time can't be negative");
-   * @return time related to Subway
-   */
+/**
+  Getter for current time
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getCurrentTime");
+  @return time related to the simulation
+*/
   int getCurrentTime();
 
-  /**
+/**
   Getter that returns number of stations in the Subway simulation.
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
-  @note ENSURE(ValidIntegerAttribute(size), "Stations count can't be negative");
-  @returns Number of stations.
+  @return Number of stations.
 */
   int getStationsCount();
 
-  /**
-    Imports stations and trams into the Subway simulation.
-    @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling importData");
-    @note ENSURE(this->getTramsCount() >= 0, "Trams number are negative");
-    @note ENSURE(this->getStationsCount() >= 0, "Stations number are negative");
-    @param stations Vector of stations.
-    @param trams Vector of trams.
-  */
+/**
+  Imports stations and trams into the Subway simulation.
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling importData");
+  @note ENSURE(this->getTramsCount() >= 0, "Trams count must be zero or positive");
+  @note ENSURE(this->getStationsCount() >= 0, "Stations count must be zero or positive");
+  @param stations Vector of stations.
+  @param trams Vector of trams.
+*/
   void importData(vector<Station*> stations, vector<Tram*> trams);
 
-  /**
-      Empties the contents of the Subway simulation.
-      @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling reset");
-      @note ENSURE(this->getTramsCount() == 0, "Trams array must be cleared");
-      @note ENSURE(this->getStationsCount() == 0, "Stations map must be cleared");
-    */
+/**
+  Empties the contents of the Subway simulation.
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling reset");
+  @note ENSURE(this->getTramsCount() == 0, "Trams array must be cleared");
+  @note ENSURE(this->getStationsCount() == 0, "Stations map must be cleared");
+*/
   void reset();
 
-    /**
-    Computes the Subway simulation for a given number of steps.
-    @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
-    @note REQUIRE(steps > 0, "Number of steps must be greater than zero");
-    @note  ENSURE(getCurrentTime() <= steps, "Compute Automatic Simulation doesn't halt after n steps");
-    @param steps Number of steps to compute.
-    @param outputStream Output stream to use for simulation log output.
-    @param statsStream Output stream to use for CSV log output.
-  */
+/**
+  Computes the Subway simulation for a given number of steps.
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling computeAutomaticSimulation");
+  @note REQUIRE(ValidIntegerAttribute(steps), "Number of steps must be positive");
+  @note ENSURE(getCurrentTime() == steps, "Time must be equal to number of steps");
+  @param steps Number of steps to compute.
+  @param outputStream Output stream to use for simulation log output.
+  @param statsStream Output stream to use for CSV log output.
+*/
   void computeAutomaticSimulation(int steps, ostream& outputStream, ostream& statsStream);
 
-  /**
-   * Made one second movement of each tram in a subway network
-   * @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling moveTramsOnce");
-   * @param outputStream: stream of Output file
-   * @param statsStream:streams of CSV file
-   */
-
-  void moveTramsOnce(ostream &outputStream, ostream &statsStream);
-
-private:
+ private:
   Subway * _initCheck; //!use pointer to myself to verify whether I am properly initialized
 
   vector<Station*> _stationsArray;
@@ -121,10 +108,10 @@ private:
 
   int _time;
 
-  void resetCurrentTime();
-
+  void moveTramsOnce(ostream &outputStream, ostream &statsStream);
   void printStatsData(bool isLeaving, Tram *tram, ostream &statsStream);
   void incrementTime();
+  void resetCurrentTime();
 };
 
 #endif
