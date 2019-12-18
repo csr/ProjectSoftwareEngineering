@@ -27,10 +27,11 @@ class Station {
  
  /**
      * Constructs a Station class with name, type, track.
-     *@note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+     * @note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
      * @param name
      * @param type
      * @param tracks
+     * @return an instance of Station
      */
   Station(string name, StationType type, unordered_map<int, Track*> tracks);
 
