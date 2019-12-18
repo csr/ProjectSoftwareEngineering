@@ -30,7 +30,6 @@ TEST_F(SubwaySimulationDomainTests, DefaultConstructor) {
 
   // verify post-condition
   EXPECT_EQ(0, subway_.getStationsCount());
-  EXPECT_EQ(0, subway_.getTramsCount());
 }
 
 /**

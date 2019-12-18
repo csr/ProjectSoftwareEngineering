@@ -23,7 +23,6 @@ Subway::Subway() {
   // Import empty station and tram arrays
   importData({}, {});
   resetCurrentTime();
-  ENSURE(getTramsCount() == 0, "Trams count must be initially zero");
   ENSURE(getStationsCount() == 0, "Stations count must be initially zero");
   ENSURE(getCurrentTime() == 0, "Current time must be initially zero");
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
@@ -43,21 +42,7 @@ void Subway::importData(vector<Station *> stations, vector<Tram *> trams) {
     _stationsMap[station->getName()] = station;
   }
 
-  // Fill trams map
-  for (auto tram : _tramsArray) {
-    _tramsMap[make_pair(tram->getLine(), tram->getVehicle())] = tram;
-    int track = tram->getLine();
-    tram->getCurrentStation()->getTrack(track)->setOccupied(true);
-  }
-  ENSURE(this->getTramsCount() >= 0, "Trams count must be zero or positive");
   ENSURE(this->getStationsCount() >= 0, "Stations count must be zero or positive");
-}
-
-int Subway::getTramsCount() {
-  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
-  unsigned long size = _tramsMap.size();
-  ENSURE(ValidIntegerAttribute(size), "Trams count can't be negative");
-  return size;
 }
 
 int Subway::getStationsCount() {
@@ -77,8 +62,6 @@ void Subway::reset() {
   _stationsArray.clear();
   _tramsArray.clear();
   _stationsMap.clear();
-  _tramsMap.clear();
-  ENSURE(this->getTramsCount() == 0, "Trams array must be cleared");
   ENSURE(this->getStationsCount() == 0, "Stations map must be cleared");
 }
 
