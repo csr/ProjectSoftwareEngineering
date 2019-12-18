@@ -53,79 +53,65 @@ TEST_F(SubwaySimulationDomainTests, EmptyStationConstructor) {
 /**
 Tests getter/setter of Tram.
 */
-//TEST_F(SubwaySimulationDomainTests, TramConstructor) {
-////  Tram(int line, int capacity, int speed, string startStation)
-//  int line = 12;
-//  int albatrossCapacity = 72, albatrossSpeed = 70;
-//
-//  string startStation = "AntwerpenCentraal";
-//  Tram tram = Tram(line, Albatross, startStation);
-//
-//  // Test getters
-//  EXPECT_EQ(line, tram.getLine());
-//  EXPECT_EQ(albatrossCapacity, tram.getCapacity());
-//  EXPECT_EQ(albatrossSpeed, tram.getSpeed());
-//  EXPECT_EQ(startStation, tram.getStartStationName());
-//
-//  int newLine = 11;
-//  string newStartStation = "AntwerpenBerchem";
-//
-//  // Test setters
-//  tram.setLine(newLine);
-////  tram.setCapacity(newCapacity);
-////  tram.setSpeed(newSpeed);
-//  tram.setStartStationName(newStartStation);
-//
-//  EXPECT_EQ(newLine, tram.getLine());
-////  EXPECT_EQ(newCapacity, tram.getCapacity());
-////  EXPECT_EQ(newSpeed, tram.getSpeed());
-//  EXPECT_EQ(newStartStation, tram.getStartStationName());
-//}
+TEST_F(SubwaySimulationDomainTests, TramConstructor) {
+//  Tram(int line, int capacity, int speed, string startStation)
+
+
+  int line = 12, vehicle = 1;
+  string stationName = "Antwerpen";
+
+  // Test tram types
+  Tram albatrossTram = Tram(line, Albatross, stationName, vehicle);
+  Tram pccTram = Tram(line, PCC, stationName, vehicle);
+
+  int albatrossCapacity = 72, albatrossSpeed = 70;
+
+  EXPECT_EQ(albatrossCapacity, albatrossTram.getMaxCapacity());
+  EXPECT_EQ(albatrossSpeed, albatrossTram.getSpeed());
+
+  int pccCapacity = 16, pccSpeed = 40;
+  EXPECT_EQ(pccCapacity, pccTram.getMaxCapacity());
+  EXPECT_EQ(pccSpeed, pccTram.getSpeed());
+
+  // Test getters
+  EXPECT_EQ(Albatross, albatrossTram.getType());
+  EXPECT_EQ(PCC, pccTram.getType());
+  EXPECT_EQ(line, albatrossTram.getLine());
+  EXPECT_EQ(vehicle, albatrossTram.getVehicle());
+
+  // Initial capacity should be zero
+  EXPECT_EQ(0, albatrossTram.getCurrentCapacity());
+}
 
 /**
 Tests Subway reset method.
 */
 TEST_F(SubwaySimulationDomainTests, SubwayReset) {
-//  Station *station1 = new Station("A", "B", "C", 34);
-//  Station *station2 = new Station("C", "D", "E", 334);
-//  Tram *tram = new Tram(2, Albatross, "A");
-//
-//  subway_.importData({station1, station2}, {tram});
-//  EXPECT_EQ(2, subway_.getStationsCount());
-//  EXPECT_EQ(1, subway_.getTramsCount());
-//
-//  subway_.reset();
-//
-//  EXPECT_EQ(0, subway_.getStationsCount());
-//  EXPECT_EQ(0, subway_.getTramsCount());
+  Station *station = new Station("AntwerpenCentraal", TypeStation, {});
+  Tram *tram = new Tram(10, Albatross, "AntwerpenCentraal", 20);
+
+  subway_.importData({station}, {tram});
+
+  EXPECT_EQ(1, subway_.getStationsCount());
+  EXPECT_EQ(1, subway_.getTramsCount());
+
+  subway_.reset();
+
+  EXPECT_EQ(0, subway_.getStationsCount());
+  EXPECT_EQ(0, subway_.getTramsCount());
 }
 
 /**
 Verify whether unsatisfied pre-conditions indeed trigger failures
 */
 TEST_F(SubwaySimulationDomainTests, ContractViolations) {
-//  int negativeValue = -20;
-//
-//  Station newStation = Station("A", "B", "C", 12);
-//  Tram newTram = Tram(10, PCC, "A");
-//
-//  vector<string> invalidStrings = {"", ".", " ", "-", "*", "Antwerpen Centraal"};
-//
-//  std::vector<std::string>::iterator it;
-//
-//  it = invalidStrings.begin();
-//  for (it = invalidStrings.begin(); it < invalidStrings.end(); it++) {
-//    string currentString = *it;
-////    EXPECT_DEATH(newStation.setName(currentString), "Station name must be valid");
-////    EXPECT_DEATH(newStation.setPreviousName(currentString), "Previous station name must be valid");
-////    EXPECT_DEATH(newStation.setNextName(currentString), "Next station name must be valid");
-////    EXPECT_DEATH(newTram.setCurrentStationName(currentString), "Tram current station must be valid");
-////    EXPECT_DEATH(newTram.setStartStationName(currentString), "Tram start station must be valid");
-//  }
-//
-//  // Test negative numbers
-//  EXPECT_DEATH(newStation.setTrack(negativeValue), "Station track number can't be negative");
-////  EXPECT_DEATH(newTram.setSpeed(negativeValue), "Tram speed can't be negative");
-////  EXPECT_DEATH(newTram.setCapacity(negativeValue), "Tram capacity can't be negative");
-//  EXPECT_DEATH(newTram.setLine(negativeValue), "Tram line can't be negative");
+  vector<string> invalidStrings = {"", ".", " ", "-", "*", "Antwerpen Centraal"};
+
+  std::vector<std::string>::iterator it;
+
+  it = invalidStrings.begin();
+  for (it = invalidStrings.begin(); it < invalidStrings.end(); it++) {
+    string currentString = *it;
+    Station newStation = Station(currentString, TypeStation, {});
+  }
 }
