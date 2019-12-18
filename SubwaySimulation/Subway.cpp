@@ -7,7 +7,6 @@
 //============================================================================
 
 #include <iostream>
-#include <fstream>
 
 #include "Station.h"
 #include "Tram.h"
@@ -80,52 +79,10 @@ void Subway::computeAutomaticSimulation(int steps, ostream &outputStream, ostrea
   ENSURE(getCurrentTime() == steps, "Time must be equal to number of steps");
 }
 
-void Subway::printStatsData(bool isLeaving, Tram *tram, ostream &statsStream) {
-  int time = getCurrentTime();
-  string arrivingLeavingStr = isLeaving ? "Leaving" : "Arriving";
-  Station *currentStation = tram->getCurrentStation();
-  string stationName = currentStation->getName();
-  int turnover = tram->getTurnover();
-  int currentCapacity = tram->getCurrentCapacity();
-
-  statsStream << ConvertSecondsToTimeString(time) << ","
-              << tram->getVehicle() << ","
-              << tram->getLine() << ","
-              << arrivingLeavingStr << ","
-              << stationName << ","
-              << ToString(turnover) << ","
-              << ToString(currentCapacity)
-              << endl;
-}
-
 void Subway::moveTramsOnce(ostream &outputStream, ostream& statsFile) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling moveTramsOnce");
-  outputStream.flush();
   for (auto tram : this->_tramsArray) {
-    Station *currentStation = tram->getCurrentStation();
-    string previousStationName = currentStation->getName();
-    if (tram->getDistance() == 0) {
-      if(tram->getWaiting() == 0) {
-        Track *track = currentStation->getTrack(tram->getVehicle());
-        if (tram->trackFree()) {
-          //Leave a station
-          tram->leave();
-          printStatsData(true, tram, statsFile);
-        }
-      }else {
-        tram->decreaseWaiting();
-      }
-    } else if(tram->getDistance() == 1) {
-      //Arrive in a Station
-      tram->decreaseDistance();
-      tram->arrive();
-      string currentStationName = tram->getCurrentStation()->getName();
-      outputStream << "Tram " << tram->getLine() << " moved from station " << previousStationName <<
-                   " to station " << currentStationName << " at time " << ConvertSecondsToTimeString(getCurrentTime()) << endl;
-      printStatsData(false, tram, statsFile);
-    }else {
-      tram->decreaseDistance();
-    }
+    tram->move(getCurrentTime(), outputStream, statsFile);
   }
 }
 

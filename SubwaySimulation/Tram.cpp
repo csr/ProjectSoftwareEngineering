@@ -6,6 +6,8 @@
 // Description : Subway simulation in C++
 //============================================================================
 
+#include <iostream>
+
 #include "Tram.h"
 #include "DesignByContract.h"
 #include "SubwaySimulationUtils.h"
@@ -18,14 +20,11 @@ Tram::Tram(int line, TramType type, string startStation, int number) {
   _turnover = 0;
   setCurrentStationName(startStation);
 
-  if(this->_type == Albatross) {
-    _maxCapacity = 72;
-  } else if (this->_type == PCC) {
-    _maxCapacity = 16;
-  }
-
+  setMaximumCapacity();
   setCurrentCapacity(0);
   setSpeed();
+
+
   setDistance(0);
   setWaiting(0);
 
@@ -38,6 +37,33 @@ Tram::Tram(int line, TramType type, string startStation, int number) {
 
 bool Tram::properlyInitialized() {
   return _initCheck == this;
+}
+
+void Tram::move(int time, ostream &outputStream, ostream &statsFile) {
+  Station *currentStation = getCurrentStation();
+  string previousStationName = currentStation->getName();
+  if (getDistance() == 0) {
+    if(getWaiting() == 0) {
+      Track *track = currentStation->getTrack(getVehicle());
+      if (trackFree()) {
+        //Leave a station
+        leave();
+        printStatsData(time, true, statsFile);
+      }
+    } else {
+      decreaseWaiting();
+    }
+  } else if(getDistance() == 1) {
+    //Arrive in a Station
+    decreaseDistance();
+    arrive();
+    string currentStationName = getCurrentStation()->getName();
+    outputStream << "Tram " << getLine() << " moved from station " << previousStationName <<
+                 " to station " << currentStationName << " at time " << ConvertSecondsToTimeString(time) << endl;
+    printStatsData(time, false, statsFile);
+  } else {
+    decreaseDistance();
+  }
 }
 
 int Tram::getLine() {
@@ -146,6 +172,14 @@ void Tram::setCurrentCapacity(int number) {
   ENSURE(number == getCurrentCapacity(), "Tram currentCapacity was not set correctly");
 }
 
+void Tram::setMaximumCapacity() {
+  if (this->_type == Albatross) {
+    _maxCapacity = 72;
+  } else if (this->_type == PCC) {
+    _maxCapacity = 16;
+  }
+}
+
 void Tram::updateTurnover(int newPassengers) {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling updateTurnover");
   REQUIRE(newPassengers > 0, "Number of passengers must be greater than zero");
@@ -234,5 +268,21 @@ Station* Tram::getNextStation(){
     }
   }
   return next;
+}
 
+void Tram::printStatsData(int time, bool isLeaving, ostream &statsStream) {
+  string arrivingLeavingStr = isLeaving ? "Leaving" : "Arriving";
+  Station *currentStation = getCurrentStation();
+  string stationName = currentStation->getName();
+  int turnover = getTurnover();
+  int currentCapacity = getCurrentCapacity();
+
+  statsStream << ConvertSecondsToTimeString(time) << ","
+              << getVehicle() << ","
+              << getLine() << ","
+              << arrivingLeavingStr << ","
+              << stationName << ","
+              << ToString(turnover) << ","
+              << ToString(currentCapacity)
+              << endl;
 }

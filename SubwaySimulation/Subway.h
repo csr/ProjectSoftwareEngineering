@@ -15,7 +15,6 @@ using namespace std;
 #include "Station.h"
 #include "SubwaySimulationUtils.h"
 #include "Tram.h"
-#include <unordered_map>
 #include <map>
 #include <vector>
 
@@ -105,7 +104,6 @@ class Subway {
   vector<Tram*> _tramsArray;
 
   void moveTramsOnce(ostream &outputStream, ostream &statsStream);
-  void printStatsData(bool isLeaving, Tram *tram, ostream &statsStream);
   void incrementTime();
   void resetCurrentTime();
 };

@@ -8,7 +8,7 @@
 
 #ifndef UNTITLED_TRAM_H
 #define UNTITLED_TRAM_H
-#include <string>
+
 #include "Station.h"
 
 using namespace std;
@@ -27,15 +27,9 @@ class Tram {
  @note ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
  @param line Line of the Tram.
  @param type Type of the Tram.
-<<<<<<< HEAD
  @param startStation Start Station of the Tram.
  @param number Number of Vehicle of the Tram
  @returns An instance of Tram
-=======
- @param startStation Start station of the Tram.
- @param number Tram number.
- @returns An instance of Tram.
->>>>>>> c1ced59c2309cd6c487b76772db759a297145a97
 */
   Tram(int line, TramType type, string startStation, int number);
 
@@ -76,47 +70,33 @@ class Tram {
 */
   Station* getCurrentStation();
 
-  /**
-   * Getter for the current Station name of the Tram.
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStationName");
-   * @return Current Station Name the tram is at.
-   */
+/**
+  Getter for the current Station name of the Tram.
+  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentStationName");
+  @return Current Station Name the tram is at.
+*/
   string getCurrentStationName();
 
-  /**
-   * Getter for the type of the Tram.
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getType");
-   * @return Type of the tram
-   */
+/**
+  Getter for the type of the Tram.
+  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getType");
+  @return Type of the tram
+*/
   TramType getType();
 
-  /**
-   * Getter for the number of Vehicle of Tram
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getVehicle");
-   * @return Vehicle number of the tram
-   */
+/**
+  Getter for the number of Vehicle of Tram
+  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getVehicle");
+  @return Vehicle number of the tram
+*/
   int getVehicle();
 
-  /**
-   * Getter for the waiting time in a station of Tram
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getWaiting");
-   * @return Waiting number of the Tram
-   */
-  int getWaiting();
-
-  /**
-   * Getter for the Turnover of the Tram.
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getTurnover");
-   * @return Turnover number of the Tram
-   */
+/**
+  Getter for the Turnover of the Tram.
+  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getTurnover");
+  @return Turnover number of the Tram
+*/
   int getTurnover();
-
-  /**
-   * Getter for the next station of the Tram
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getNextStation");
-   * @return Next station of the Tram to set as a new current Station
-   */
-  Station* getNextStation();
 
 /**
   Setter for the current Station.
@@ -135,7 +115,6 @@ class Tram {
    */
   void setCurrentStationName(string station);
 
-
   /**
    * Setter for currentCapacity attribute of Tram
    * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentCapacity");
@@ -143,94 +122,23 @@ class Tram {
    * @note ENSURE(number == getCurrentCapacity(), "Tram currentCapacity was not set correctly");
    * @param number: number of current passengers on Tram
    */
-
   void setCurrentCapacity(int number);
 
   /**
-   * Setter for turnover attribute of Tram
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling updateTurnover");
-   * @note REQUIRE(newPassengers > 0, "Number of passengers must be greater than zero");
-   * @note ENSURE(getTurnover() == getTurnover() + 2 * newPassengers, "Tram doesn't initialize in a good way turnover attribute");
-   */
-  void updateTurnover(int newPassengers);
+ * Moves the tram.
+ * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentCapacity");
+ * @note ENSURE(ValidIntegerAttribute(time), "Time must be zero or positive");
+ * @param simulation time
+ * @param outputStream Output Stream
+ * @param statsFile CSV file
+ */
 
-  /**
-   * Setter for speed attribute of Tram
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
-   * @note ENSURE(getTurnover() == previous + 2 * getCurrentCapacity(), "Tram doesn't initialize in a good way turnover attribute");
-   */
-  void setSpeed();
-
-  /**
-   * Setter for Waiting attribute of Tram
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setWaiting");
-   * @note ENSURE(this->getWaiting() == number && number >= 0, "Tram does't set waiting time");
-   * @param number: number of waiting tick
-   */
-  void setWaiting(int number);
-
-  /**
-   * Setter for Distance attribute of Tram
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setDistance");
-   * @note ENSURE(distance == this->getDistance(), "Distance wasn't set");
-   * @param distance: number of distance
-   */
-  void setDistance(int distance);
-
-  /**
-   * Leave action that makes a tram start to move to next Station
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling leave");
-   * @note ENSURE(!this->getCurrentStation()->getTrack(this->getLine())->isCurrentlyOccupied(), "Tram doesn't leave the station");
-   */
-  void leave();
-
-  /**
-   * Arrive action that makes a tram to arrive to next Station
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling arrive");
-   * @note ENSURE(this->getCurrentStation()->getTrack(this->getLine())->isCurrentlyOccupied(), "Tram doesn't arrive in the station");
-   */
-  void arrive();
-
-  /**
-   * Calculate distance from current station to next station.
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling calculateDistance");
-   * @note ENSURE(distance > 0, "Distance can't be negative or null");
-   */
-  int calculateDistance();
-
-  /**
-   * Estabilish if the track is free and a tram can move
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling trackFree");
-   * @return answer
-   */
-  bool trackFree();
-
-  /**
-   * Decrease by one the distance of a tram from the next station
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling decreaseDistance");
-   * @note ENSURE(this->getDistance() == previousDistance - 1, "Tram doesn't decrease the distance");
-   */
-  void decreaseDistance();
-
-  /**
-   * Getter for the distance attribute of Tram
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getDistance");
-   * @return distance value of the tram
-   */
-  int getDistance();
-
-  /**
-   * Decrease by one the waiting time on a station
-   * @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling decreaseWaiting");
-   * @note ENSURE(this->getWaiting() == (previous - 1), "Tram doesn't decrease waiting time");
-   */
-  void decreaseWaiting();
+  void move(int time, ostream &outputStream, ostream &statsFile);
 
  private:
   Tram* _initCheck;
   int _number;
   int _line;
-  Station* _startStation;
   Station* _currentStation;
   string _currentStationName;
   TramType _type;
@@ -241,8 +149,21 @@ class Tram {
   int _distance;
   int _waiting;
 
-  void setType(TramType type);
   void setMaximumCapacity();
+  void setSpeed();
+  int getWaiting();
+  Station* getNextStation();
+  void setWaiting(int number);
+  void setDistance(int distance);
+  void updateTurnover(int newPassengers);
+  void leave();
+  void decreaseWaiting();
+  int getDistance();
+  void decreaseDistance();
+  bool trackFree();
+  int calculateDistance();
+  void arrive();
+  void printStatsData(int time, bool isLeaving, ostream &statsStream);
 };
 
 #endif //UNTITLED_TRAM_H
