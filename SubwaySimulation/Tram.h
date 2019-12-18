@@ -147,23 +147,17 @@ class Tram {
   int _turnover;
   int _speed;
   int _distance;
-  int _waiting;
+  int _waitingTime;
 
   void setMaximumCapacity();
   void setSpeed();
-  int getWaiting();
+
   Station* getNextStation();
-  void setWaiting(int number);
-  void setDistance(int distance);
-  void updateTurnover(int newPassengers);
-  void leave();
-  void decreaseWaiting();
-  int getDistance();
-  void decreaseDistance();
   bool trackFree();
   int calculateDistance();
-  void arrive();
-  void printStatsData(int time, bool isLeaving, ostream &statsStream);
+  void arriveToStation();
+  void leaveStation();
+  void printCSVData(int time, bool isLeaving, ostream &statsStream);
 };
 
 #endif //UNTITLED_TRAM_H
