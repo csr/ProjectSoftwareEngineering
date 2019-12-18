@@ -98,11 +98,6 @@ int Tram::getVehicle() {
   return _number;
 }
 
-int Tram::getTurnover() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getTurnover");
-  return _turnover;
-}
-
 int Tram::getCurrentCapacity() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentCapacity");
   return _currentCapacity;
@@ -228,7 +223,6 @@ void Tram::printCSVData(int time, bool isLeaving, ostream &statsStream) {
   string arrivingLeavingStr = isLeaving ? "Leaving" : "Arriving";
   Station *currentStation = getCurrentStation();
   string stationName = currentStation->getName();
-  int turnover = getTurnover();
   int currentCapacity = getCurrentCapacity();
 
   statsStream << ConvertSecondsToTimeString(time) << ","
@@ -236,7 +230,7 @@ void Tram::printCSVData(int time, bool isLeaving, ostream &statsStream) {
               << getLine() << ","
               << arrivingLeavingStr << ","
               << stationName << ","
-              << ToString(turnover) << ","
+              << ToString(_turnover) << ","
               << ToString(currentCapacity)
               << endl;
 }

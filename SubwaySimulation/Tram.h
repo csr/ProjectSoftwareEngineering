@@ -92,13 +92,6 @@ class Tram {
   int getVehicle();
 
 /**
-  Getter for the Turnover of the Tram.
-  @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getTurnover");
-  @return Turnover number of the Tram
-*/
-  int getTurnover();
-
-/**
   Setter for the current Station.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
   @note ENSURE(ValidStringAttribute(getCurrentStation()), "Tram current station must be valid");
