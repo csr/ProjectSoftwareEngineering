@@ -36,19 +36,19 @@ void Subway::importData(vector<Station *> stations, vector<Tram *> trams) {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling importData");
   _stationsArray = stations;
   _tramsArray = trams;
-
-  // Fill stations map
-  for (auto station : _stationsArray) {
-    _stationsMap[station->getName()] = station;
-  }
-
   ENSURE(this->getStationsCount() >= 0, "Stations count must be zero or positive");
+  ENSURE(this->getTramsCount() >= 0, "Trams count must be zero or positive");
 }
 
 int Subway::getStationsCount() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getStationsCount");
-  unsigned long size = _stationsMap.size();
-  ENSURE(ValidIntegerAttribute(size), "Stations count can't be negative");
+  unsigned long size = _stationsArray.size();
+  return size;
+}
+
+int Subway::getTramsCount() {
+  REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
+  unsigned long size = _tramsArray.size();
   return size;
 }
 
@@ -61,7 +61,6 @@ void Subway::reset() {
   REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling reset");
   _stationsArray.clear();
   _tramsArray.clear();
-  _stationsMap.clear();
   ENSURE(this->getStationsCount() == 0, "Stations map must be cleared");
 }
 

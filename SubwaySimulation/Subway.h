@@ -62,6 +62,13 @@ class Subway {
   int getStationsCount();
 
 /**
+  Getter that returns number of trams in the Subway simulation.
+  @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling getTramsCount");
+  @return Number of stations.
+*/
+  int getTramsCount();
+
+/**
   Imports stations and trams into the Subway simulation.
   @note REQUIRE(this->properlyInitialized(), "Subway wasn't initialized when calling importData");
   @note ENSURE(this->getTramsCount() >= 0, "Trams count must be zero or positive");
@@ -93,12 +100,9 @@ class Subway {
  private:
   Subway * _initCheck; //!use pointer to myself to verify whether I am properly initialized
 
+  int _time;
   vector<Station*> _stationsArray;
   vector<Tram*> _tramsArray;
-
-  unordered_map<string, Station*> _stationsMap;
-
-  int _time;
 
   void moveTramsOnce(ostream &outputStream, ostream &statsStream);
   void printStatsData(bool isLeaving, Tram *tram, ostream &statsStream);
