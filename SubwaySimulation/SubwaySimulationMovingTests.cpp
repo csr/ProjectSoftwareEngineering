@@ -42,7 +42,6 @@ TEST_F(SubwaySimulationMovingTests, SubwayAutomaticSimulation) {
   int fileCounter = 1;
   string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
   while (FileExists(fileName)) {
-//    cout << "Parsing file with name: " << fileName << endl;
     string temporaryOutputFileName = "testSimulation/temporaryOutput.txt";
     temporaryOutputFile.open(temporaryOutputFileName);
     errorFile.open("testSimulation/errorFile.txt");
@@ -91,8 +90,6 @@ TEST_F(SubwaySimulationMovingTests, SubwayCSVSimulation) {
     errorFile.open("testCSV/errorFile.txt");
     statsFile.open(temporaryStatsName);
 
-//    cout << "Parsing file name: " << fileName << endl;
-
     importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), outputFile, subway_);
     EXPECT_TRUE((importResult == Success));
 
@@ -108,87 +105,10 @@ TEST_F(SubwaySimulationMovingTests, SubwayCSVSimulation) {
 }
 
 /*
-TEST_F(SubwaySimulationMovingTests, SubwayCollisionSimulation){
-    ASSERT_TRUE(DirectoryExists("testInput"));
-    ASSERT_TRUE(DirectoryExists("testSimulation"));
-
-    ofstream outputFile;
-    SuccessEnum importResult;
-
-    int fileCounter = 1;
-    string fileName = "testInput/collisionSubway" + ToString(fileCounter) + ".xml";
-    string temporaryOutput = "testSimulation/temporaryOutput.txt";
-
-    while(FileExists(fileName)) {
-        outputFile.open(temporaryOutput);
-
-        importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), outputFile, subway_);
-
-        EXPECT_TRUE(importResult == Success);
-        subway_.computeAutomaticSimulation(1, outputFile);
-        outputFile.close();
-
-        string expectedOutputFilename = "testSimulation/collisionSimulation" + ToString(fileCounter) + ".txt";
-        EXPECT_TRUE(FileCompare(temporaryOutput, expectedOutputFilename));
-        fileCounter++;
-        fileName = "testInput/collisionSubway" + ToString(fileCounter) + ".xml";
-    }
-    EXPECT_TRUE(fileCounter == 5);
-
+TEST_F(SubwaySimulationMovingTests, SubwayCollisionSimulation) {
 }
+TEST_F(SubwaySimulationMovingTests, SubwayPassengersSimulation) {}
 
-TEST_F(SubwaySimulationMovingTests, SubwayPassengersSimulation) {
-    ASSERT_TRUE(DirectoryExists("testInput"));
-    ASSERT_TRUE(DirectoryExists("testSimulation"));
-
-    ofstream outputFile;
-    SuccessEnum importResult;
-
-    int fileCounter = 1;
-    string fileName = "testInput/collisionSubway" + ToString(fileCounter) + ".xml";
-    string temporaryOutput = "testSimulation/temporaryOutput.txt";
-
-    while(FileExists(fileName)) {
-        outputFile.open(temporaryOutput);
-
-        importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), outputFile, subway_);
-
-        EXPECT_TRUE(importResult == Success);
-        subway_.computeAutomaticSimulation(500, outputFile);
-        outputFile.close();
-
-        string expectedOutputFilename = "testSimulation/collisionSimulation" + ToString(fileCounter) + ".txt";
-        EXPECT_TRUE(FileCompare(temporaryOutput, expectedOutputFilename));
-        fileCounter++;
-        fileName = "testInput/collisionSubway" + ToString(fileCounter) + ".xml";
-    }
-    EXPECT_TRUE(fileCounter == 5);
-}
-*/
-/*
 TEST_F(SubwaySimulationMovingTests, SubwayTurnoverSimulation) {
-    ASSERT_TRUE(DirectoryExists("testInput"));
-    ASSERT_TRUE(DirectoryExists("testSimulation"));
-
-    ofstream outputFile;
-    SuccessEnum importResult;
-
-    int fileCounter = 1;
-    string fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
-    string temporaryOutput = "testSimulation/temporaryOutput.txt";
-
-    while(FileExists(fileName)) {
-        outputFile.open(temporaryOutput);
-
-        importResult = SubwaySimulationImporter::importSubway(fileName.c_str(), outputFile, subway_);
-
-        EXPECT_TRUE(importResult == Success);
-        subway_.computeAutomaticSimulation(1, outputFile);
-        outputFile.close();
-
-        fileCounter++;
-        fileName = "testInput/legalSubway" + ToString(fileCounter) + ".xml";
-    }
-    EXPECT_TRUE(fileCounter == 5);
 }
 */
