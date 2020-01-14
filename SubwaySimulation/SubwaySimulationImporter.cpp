@@ -18,6 +18,8 @@
 #include "Tram.h"
 #include "tinyxml.h"
 #include "Track.h"
+#include "Albatros.h"
+#include "PCCTram.h"
 
 using namespace std;
 
@@ -202,7 +204,11 @@ Tram *parseTram(TiXmlElement *root, std::ostream& errStream) {
     return nullptr;
   }
 
-  return new Tram(line, type, startStation, vehicle);
+  if(type == Albatross) {
+      return new Albatros(line, startStation, vehicle);
+  }else {
+      return new PCCTram(line, startStation, vehicle);
+  }
 }
 
 // CONSISTENCY

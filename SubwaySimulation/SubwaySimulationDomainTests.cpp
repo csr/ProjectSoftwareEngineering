@@ -15,6 +15,8 @@ using namespace std;
 
 #include "Subway.h"
 #include "Station.h"
+#include "Albatros.h"
+#include "PCCTram.h"
 
 class SubwaySimulationDomainTests: public ::testing::Test {
  protected:
@@ -61,8 +63,8 @@ TEST_F(SubwaySimulationDomainTests, TramConstructor) {
   string stationName = "Antwerpen";
 
   // Test tram types
-  Tram albatrossTram = Tram(line, Albatross, stationName, vehicle);
-  Tram pccTram = Tram(line, PCC, stationName, vehicle);
+  Albatros albatrossTram = Albatros(line, stationName, vehicle);
+  PCCTram pccTram = PCCTram(line, stationName, vehicle);
 
   int albatrossCapacity = 72, albatrossSpeed = 70;
 
@@ -88,7 +90,7 @@ Tests Subway reset method.
 */
 TEST_F(SubwaySimulationDomainTests, SubwayReset) {
   Station *station = new Station("AntwerpenCentraal", TypeStation, {});
-  Tram *tram = new Tram(10, Albatross, "AntwerpenCentraal", 20);
+  Albatros *tram = new Albatros(10, "AntwerpenCentraal", 20);
 
   subway_.importData({station}, {tram});
 

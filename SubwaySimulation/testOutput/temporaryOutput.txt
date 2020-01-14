@@ -1,0 +1,48 @@
+Station A
+Track 13
+<- Station C
+-> Station B
+
+Station B
+Track 13
+<- Station A
+-> Station C
+
+Station C
+Track 13
+<- Station B
+-> Station A
+Tram with 1345237152 seats
+
+Station D
+Track 9
+<- Station E
+-> Station E
+Tram with 1345237152 seats
+
+Station E
+Track 9
+<- Station D
+-> Station D
+
+Station F
+Track 7
+<- Station I
+-> Station G
+Tram with 1345237152 seats
+
+Station G
+Track 7
+<- Station F
+-> Station H
+
+Station H
+Track 7
+<- Station G
+-> Station I
+
+Station I
+Track 7
+<- Station H
+-> Station F
+

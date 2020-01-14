@@ -22,9 +22,7 @@ Tram::Tram(int line, TramType type, string startStation, int number) {
   _distance = 0;
   setCurrentStationName(startStation);
 
-  setMaximumCapacity();
   setCurrentCapacity(0);
-  setSpeed();
 
   ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
   ENSURE(type == getType(), "Type wasn't set correctly in constructor");
@@ -68,10 +66,6 @@ int Tram::getLine() {
   return _line;
 }
 
-int Tram::getMaxCapacity() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCapacity");
-  return _maxCapacity;
-}
 
 int Tram::getSpeed() {
   REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getSpeed");
@@ -156,68 +150,6 @@ void Tram::setCurrentCapacity(int number) {
   ENSURE(number == getCurrentCapacity(), "Tram currentCapacity was not set correctly");
 }
 
-void Tram::setMaximumCapacity() {
-  if (this->_type == Albatross) {
-    _maxCapacity = 72;
-  } else if (this->_type == PCC) {
-    _maxCapacity = 16;
-  }
-}
-
-void Tram::setSpeed() {
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSpeed");
-  if(this->_type == Albatross) {
-    _speed = 70;
-  } else if (this->_type == PCC) {
-    _speed = 40;
-  }
-}
-
-int Tram::calculateDistance() {
-  int distance = 7200 / getSpeed();
-  if (this->getType() == Albatross) {
-    distance++;
-    ENSURE(distance >= 0, "Distance can not be negative");
-    Station* elem = this->getCurrentStation()->getTrack(this->getLine())->getNext();
-    while(elem->getType() == TypeStop){
-      distance += 7200 / _speed  + 1;
-      elem = elem->getTrack(this->getLine())->getNext();
-    }
-  }
-  return distance;
-}
-
-bool Tram::trackFree() {
-  int track = this->getLine();
-
-  if (this->getType() == Albatross){
-    bool answer = true;
-    Station* elem = this->getCurrentStation()->getTrack(track)->getNext();
-    while(elem->getType() == TypeStop){
-      if(elem->getTrack(track)->isCurrentlyOccupied())
-        return false;
-      elem = elem->getTrack(track)->getNext();
-
-    }
-    if (elem == this->getCurrentStation())
-      return true;
-    return !elem->getTrack(track)->isCurrentlyOccupied();
-  } else{
-    return !this->getCurrentStation()->getTrack(track)->getNext()->getTrack(track)->isCurrentlyOccupied();
-  }
-}
-
-Station* Tram::getNextStation(){
-  REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getNextStation");
-
-  Station* next = this->getCurrentStation()->getTrack(this->getLine())->getNext();
-  if (this->getType() == Albatross){
-    while(next->getType() == TypeStop){
-      next = next->getTrack(this->getLine())->getNext();
-    }
-  }
-  return next;
-}
 
 void Tram::printCSVData(int time, bool isLeaving, ostream &statsStream) {
   string arrivingLeavingStr = isLeaving ? "Leaving" : "Arriving";
