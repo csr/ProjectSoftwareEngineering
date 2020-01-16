@@ -41,14 +41,15 @@
     </TRACK>
 </STATION>
 <TRAM>
+<line>21</line>
+<vehicle>1</vehicle>
+<type>Albatross</type>
+<startStation>C</startStation>
+</TRAM>
+<TRAM>
     <line>12</line>
     <vehicle>20</vehicle>
     <type>PCC</type>
     <startStation>A</startStation>
 </TRAM>
-<TRAM>
-    <line>21</line>
-    <vehicle>1</vehicle>
-    <type>Albatross</type>
-    <startStation>C</startStation>
-</TRAM>
+

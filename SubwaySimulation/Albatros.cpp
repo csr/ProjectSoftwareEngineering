@@ -47,7 +47,13 @@ Station* Albatros::getNextStation() {
     return next;
 }
 
-int getMaxCapacity(){
+int Albatros::getMaxCapacity(){
     REQUIRE(this->properlyInitialized(), "Albatros wasn't initialized when calling getMaxCapacity");
     return _capacity;
 }
+
+int Albatros::getSpeed() {
+    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getSpeed");
+    return _speed;
+}
+

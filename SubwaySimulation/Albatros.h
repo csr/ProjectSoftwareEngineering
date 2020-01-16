@@ -11,8 +11,9 @@ class Albatros : public Tram {
         Albatros(int line, string startStation, int number);
         int calculateDistance() override;
         Station* getNextStation() override;
-        bool trackFree() override ;
+        bool trackFree() override;
         int getMaxCapacity() override;
+        int getSpeed() override;
 
     private:
         int _speed = 70;

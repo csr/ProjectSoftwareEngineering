@@ -25,7 +25,12 @@ Station* PCCTram::getNextStation() {
     return this->getCurrentStation()->getTrack(this->getLine())->getNext();
 }
 
-int getMaxCapacity(){
+int PCCTram::getMaxCapacity(){
     REQUIRE(this->properlyInitialized(), "PCC wasn't initialized when calling getMaxCapacity");
     return _capacity;
+}
+
+int PCCTram::getSpeed() {
+    REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getSpeed");
+    return _speed;
 }

@@ -49,7 +49,6 @@ class Tram {
   @returns Capacity of the Tram.
 */
   virtual int getMaxCapacity() = 0;
-
 /**
   Getter for the current capacity of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentCapacity");
@@ -62,7 +61,7 @@ class Tram {
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getSpeed");
   @returns Speed of the Tram.
 */
-  int getSpeed();
+  virtual int getSpeed() = 0;
 
 /**
   Getter for the current Station of the Tram.
@@ -137,17 +136,15 @@ class Tram {
   string _currentStationName;
   TramType _type;
   int _currentCapacity;
-  int _maxCapacity;
   int _turnover;
-  int _speed;
   int _distance;
   int _waitingTime;
 
   void setSpeed();
-
+  virtual int calculateDistance() = 0;
   virtual Station* getNextStation() = 0;
   virtual bool trackFree() = 0;
-  virtual int calculateDistance() = 0;
+
   void arriveToStation();
   void leaveStation();
 

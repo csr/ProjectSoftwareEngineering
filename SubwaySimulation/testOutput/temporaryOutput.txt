@@ -12,13 +12,13 @@ Station C
 Track 13
 <- Station B
 -> Station A
-Tram with 1345237152 seats
+Tram with 72 seats
 
 Station D
 Track 9
 <- Station E
 -> Station E
-Tram with 1345237152 seats
+Tram with 16 seats
 
 Station E
 Track 9
@@ -29,7 +29,7 @@ Station F
 Track 7
 <- Station I
 -> Station G
-Tram with 1345237152 seats
+Tram with 72 seats
 
 Station G
 Track 7

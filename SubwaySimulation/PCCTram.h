@@ -9,10 +9,12 @@
 class PCCTram : public Tram{
     public:
         PCCTram(int line, string startStation, int number);
-        int calculateDistance() override ;
-        Station* getNextStation() override ;
+        int calculateDistance() override;
+        Station* getNextStation() override;
         bool trackFree() override;
         int getMaxCapacity() override;
+        int getSpeed() override;
+
 
     private:
         int _speed = 40;
