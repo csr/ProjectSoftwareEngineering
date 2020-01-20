@@ -18,6 +18,7 @@ enum TramType {Albatross, PCC};
 class Tram {
  public:
 
+
 /**
  Constructs a Tram class with line, capacity, speed, and start Station name.
  @note ENSURE(line == getLine(), "Line wasn't set correctly in constructor");
@@ -47,8 +48,7 @@ class Tram {
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getMaxCapacity");
   @returns Capacity of the Tram.
 */
-  int getMaxCapacity();
-
+  virtual int getMaxCapacity() = 0;
 /**
   Getter for the current capacity of the Tram.
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getCurrentCapacity");
@@ -61,7 +61,7 @@ class Tram {
   @note REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getSpeed");
   @returns Speed of the Tram.
 */
-  int getSpeed();
+  virtual int getSpeed() = 0;
 
 /**
   Getter for the current Station of the Tram.
@@ -136,20 +136,18 @@ class Tram {
   string _currentStationName;
   TramType _type;
   int _currentCapacity;
-  int _maxCapacity;
   int _turnover;
-  int _speed;
   int _distance;
   int _waitingTime;
 
-  void setMaximumCapacity();
   void setSpeed();
+  virtual int calculateDistance() = 0;
+  virtual Station* getNextStation() = 0;
+  virtual bool trackFree() = 0;
 
-  Station* getNextStation();
-  bool trackFree();
-  int calculateDistance();
   void arriveToStation();
   void leaveStation();
+
   void printCSVData(int time, bool isLeaving, ostream &statsStream);
 };
 
