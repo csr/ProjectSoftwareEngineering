@@ -44,6 +44,7 @@ var NAVTREE =
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
         [ "Enumerator", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
@@ -54,9 +55,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_design_by_contract_8h.html",
-"class_ti_xml_element.html",
-"functions_func_b.html"
+"_albatross_tram_8cpp.html",
+"class_ti_xml_declaration.html#ad5f37a673f4c507fd7e550470f9cec25",
+"class_ti_xml_visitor.html#af6c6178ffa517bbdba95d70490875fff"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

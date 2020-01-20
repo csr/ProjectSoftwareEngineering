@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lastchild_593',['lastChild',['../class_ti_xml_node.html#a5b30756d21b304580d22a841ec9d61f8',1,'TiXmlNode']]],
-  ['location_594',['location',['../class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c',1,'TiXmlBase']]]
+  ['lastchild_659',['lastChild',['../class_ti_xml_node.html#a5b30756d21b304580d22a841ec9d61f8',1,'TiXmlNode']]],
+  ['location_660',['location',['../class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c',1,'TiXmlBase']]]
 ];

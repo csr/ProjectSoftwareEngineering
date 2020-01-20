@@ -109,14 +109,20 @@ $(document).ready(function(){initNavTree('class_subway_simulation_exporter.html'
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aef708845bca553dab97eb3114d104bfa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subway_simulation_exporter.html#aef708845bca553dab97eb3114d104bfa">SubwaySimulationExporter</a> (<a class="el" href="class_subway.html">Subway</a> &amp;subway, const char *outputFileName)</td></tr>
-<tr class="separator:aef708845bca553dab97eb3114d104bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a681999fdc1b30d2861f209b7274491e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subway_simulation_exporter.html#a681999fdc1b30d2861f209b7274491e1">SubwaySimulationExporter</a> (<a class="el" href="class_subway.html">Subway</a> *subway)</td></tr>
+<tr class="separator:a681999fdc1b30d2861f209b7274491e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a629c13af06c420ebe57e647f12b3fb10"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subway_simulation_exporter.html#a629c13af06c420ebe57e647f12b3fb10">properlyInitialized</a> ()</td></tr>
 <tr class="separator:a629c13af06c420ebe57e647f12b3fb10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfd11548ba67a1eb9e32f60043f705de"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subway_simulation_exporter.html#adfd11548ba67a1eb9e32f60043f705de">simpleOutput</a> ()</td></tr>
+<tr class="memdesc:adfd11548ba67a1eb9e32f60043f705de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a string representation of the <a class="el" href="class_subway.html">Subway</a> network.  <a href="class_subway_simulation_exporter.html#adfd11548ba67a1eb9e32f60043f705de">More...</a><br /></td></tr>
+<tr class="separator:adfd11548ba67a1eb9e32f60043f705de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe4ed814b8f764f9d0c204c14543778f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subway_simulation_exporter.html#abe4ed814b8f764f9d0c204c14543778f">graficalOutput</a> ()</td></tr>
+<tr class="memdesc:abe4ed814b8f764f9d0c204c14543778f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a graphic string representation of the <a class="el" href="class_subway.html">Subway</a> network.  <a href="class_subway_simulation_exporter.html#abe4ed814b8f764f9d0c204c14543778f">More...</a><br /></td></tr>
+<tr class="separator:abe4ed814b8f764f9d0c204c14543778f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aef708845bca553dab97eb3114d104bfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef708845bca553dab97eb3114d104bfa">&#9670;&nbsp;</a></span>SubwaySimulationExporter()</h2>
+<a id="a681999fdc1b30d2861f209b7274491e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a681999fdc1b30d2861f209b7274491e1">&#9670;&nbsp;</a></span>SubwaySimulationExporter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -124,19 +130,9 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">SubwaySimulationExporter::SubwaySimulationExporter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_subway.html">Subway</a> &amp;&#160;</td>
-          <td class="paramname"><em>subway</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="class_subway.html">Subway</a> *&#160;</td>
+          <td class="paramname"><em>subway</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>outputFileName</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -144,6 +140,27 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="abe4ed814b8f764f9d0c204c14543778f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe4ed814b8f764f9d0c204c14543778f">&#9670;&nbsp;</a></span>graficalOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string SubwaySimulationExporter::graficalOutput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates a graphic string representation of the <a class="el" href="class_subway.html">Subway</a> network. </p>
+<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_subway_simulation_exporter.html#a629c13af06c420ebe57e647f12b3fb10">properlyInitialized()</a>, "Subway wasn't initialized when calling toString"); </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>String graphical representation of <a class="el" href="class_subway.html">Subway</a>. </dd></dl>
+
+</div>
+</div>
 <a id="a629c13af06c420ebe57e647f12b3fb10"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a629c13af06c420ebe57e647f12b3fb10">&#9670;&nbsp;</a></span>properlyInitialized()</h2>
 
@@ -158,6 +175,27 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfd11548ba67a1eb9e32f60043f705de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfd11548ba67a1eb9e32f60043f705de">&#9670;&nbsp;</a></span>simpleOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string SubwaySimulationExporter::simpleOutput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates a string representation of the <a class="el" href="class_subway.html">Subway</a> network. </p>
+<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_subway_simulation_exporter.html#a629c13af06c420ebe57e647f12b3fb10">properlyInitialized()</a>, "Subway wasn't initialized when calling toString"); </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>String representation of <a class="el" href="class_subway.html">Subway</a>. </dd></dl>
 
 </div>
 </div>

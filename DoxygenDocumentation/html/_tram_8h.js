@@ -1,8 +1,8 @@
 var _tram_8h =
 [
     [ "Tram", "class_tram.html", "class_tram" ],
-    [ "TramDirection", "_tram_8h.html#a08dc55051b42fc2ed7b4d0de13c2ea73", [
-      [ "Forward", "_tram_8h.html#a08dc55051b42fc2ed7b4d0de13c2ea73ae204c9c3e62b1e9a6b60e40cd05256c5", null ],
-      [ "Backward", "_tram_8h.html#a08dc55051b42fc2ed7b4d0de13c2ea73a67e19347f85332c3bbfd61266cecbe4e", null ]
+    [ "TramType", "_tram_8h.html#a99a569ed4574fb6ca7eb4edab2a4d5e1", [
+      [ "Albatross", "_tram_8h.html#a99a569ed4574fb6ca7eb4edab2a4d5e1a3ae55305eab836185269fd941c57a7bc", null ],
+      [ "PCC", "_tram_8h.html#a99a569ed4574fb6ca7eb4edab2a4d5e1a05ccfe68d18417b823e1414c82337d34", null ]
     ] ]
 ];

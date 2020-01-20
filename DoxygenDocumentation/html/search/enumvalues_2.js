@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['importaborted_620',['ImportAborted',['../_subway_simulation_importer_8h.html#ae69e1bf070c1c339170236b3fef70a4da0fde0ebd442167df89d810c5e3a4f9de',1,'SubwaySimulationImporter.h']]],
-  ['invalidtype_621',['InvalidType',['../_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cbaa791c6b5c1e5f30ce6c7b0937e93adbbb',1,'SubwaySimulationImporter.h']]]
+  ['notset_692',['NotSet',['../_station_8h.html#ac8b7d9d794931ebfe6e3dbcec5336968af271cc6723424336df7064060973a62e',1,'Station.h']]]
 ];

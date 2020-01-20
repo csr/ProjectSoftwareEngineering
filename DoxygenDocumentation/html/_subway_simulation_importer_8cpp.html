@@ -98,7 +98,9 @@ $(document).ready(function(){initNavTree('_subway_simulation_importer_8cpp.html'
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">SubwaySimulationImporter.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -109,47 +111,118 @@ $(document).ready(function(){initNavTree('_subway_simulation_importer_8cpp.html'
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;regex&gt;</code><br />
 <code>#include &quot;<a class="el" href="_subway_simulation_importer_8h_source.html">SubwaySimulationImporter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_subway_simulation_utils_8h_source.html">SubwaySimulationUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_station_8h_source.html">Station.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_tram_8h_source.html">Tram.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="tinyxml_8h_source.html">tinyxml.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_track_8h_source.html">Track.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_albatross_tram_8h_source.html">AlbatrossTram.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_p_c_c_tram_8h_source.html">PCCTram.h</a>&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a2cfde3216b45305b4f68727e981d2cba"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#a2cfde3216b45305b4f68727e981d2cba">RootElementType</a> { <a class="el" href="_subway_simulation_importer_8cpp.html#a2cfde3216b45305b4f68727e981d2cbaa67d9ae334e9ec422f216933e07dc255b">StationT</a>, 
+<a class="el" href="_subway_simulation_importer_8cpp.html#a2cfde3216b45305b4f68727e981d2cbaa4eeb0e2904d127ec1040dcedee1cfc40">TramT</a>, 
+<a class="el" href="_subway_simulation_importer_8cpp.html#a2cfde3216b45305b4f68727e981d2cbaa0765faac08f07d3afbd59e2c5b3aa5e8">InvalidT</a>
+ }</td></tr>
+<tr class="separator:a2cfde3216b45305b4f68727e981d2cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa997a6c39d7791860ce5b0c5504bb7c2"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#aa997a6c39d7791860ce5b0c5504bb7c2">fetch_text</a> (<a class="el" href="class_ti_xml_node.html">TiXmlNode</a> *pElement, std::ostream &amp;errStream)</td></tr>
 <tr class="separator:aa997a6c39d7791860ce5b0c5504bb7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9df41845f46588cdd84743a8229ad83"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#af9df41845f46588cdd84743a8229ad83">is_letters_only</a> (string string)</td></tr>
-<tr class="separator:af9df41845f46588cdd84743a8229ad83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab28ca41269f2b32969591cc91c1e96a5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#ab28ca41269f2b32969591cc91c1e96a5">is_number</a> (std::string string)</td></tr>
-<tr class="separator:ab28ca41269f2b32969591cc91c1e96a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47145768e134d59a19227e498974e114"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_subway_simulation_importer_8cpp.html#a2cfde3216b45305b4f68727e981d2cba">RootElementType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#a47145768e134d59a19227e498974e114">determineRootElementType</a> (string rootName)</td></tr>
+<tr class="separator:a47145768e134d59a19227e498974e114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59d891c09c8b79d727a0bda7c5e07123"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_track.html">Track</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#a59d891c09c8b79d727a0bda7c5e07123">parseTrack</a> (<a class="el" href="class_ti_xml_element.html">TiXmlElement</a> *root, std::ostream &amp;errStream)</td></tr>
+<tr class="separator:a59d891c09c8b79d727a0bda7c5e07123"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9368e0c40fe50d0a03ad0db9e701cd7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_station.html">Station</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#a9368e0c40fe50d0a03ad0db9e701cd7c">parseStation</a> (<a class="el" href="class_ti_xml_element.html">TiXmlElement</a> *root, std::ostream &amp;errStream)</td></tr>
 <tr class="separator:a9368e0c40fe50d0a03ad0db9e701cd7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f1de7bb552292457867b65f9ac3a8af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tram.html">Tram</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#a0f1de7bb552292457867b65f9ac3a8af">parseTram</a> (<a class="el" href="class_ti_xml_element.html">TiXmlElement</a> *root, std::ostream &amp;errStream)</td></tr>
 <tr class="separator:a0f1de7bb552292457867b65f9ac3a8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47145768e134d59a19227e498974e114"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cba">RootElementType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#a47145768e134d59a19227e498974e114">determineRootElementType</a> (string rootName)</td></tr>
-<tr class="separator:a47145768e134d59a19227e498974e114"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af279ddbfd34c405aaee0e7f1c4ed1759"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#af279ddbfd34c405aaee0e7f1c4ed1759">find_track</a> (unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt; stations, unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt;::iterator it)</td></tr>
-<tr class="separator:af279ddbfd34c405aaee0e7f1c4ed1759"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bae32708ede0d66d03057e25376003b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#a8bae32708ede0d66d03057e25376003b">check_prev_next_track_tram</a> (unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt; stations, unordered_map&lt; int, <a class="el" href="class_tram.html">Tram</a> * &gt; trams)</td></tr>
-<tr class="separator:a8bae32708ede0d66d03057e25376003b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8df4d966aacc55ed355ab53cd949a1f6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#a8df4d966aacc55ed355ab53cd949a1f6">check_line_track</a> (unordered_map&lt; int, <a class="el" href="class_tram.html">Tram</a> * &gt; trams, unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt; stations)</td></tr>
-<tr class="separator:a8df4d966aacc55ed355ab53cd949a1f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae10858377a91d190dad840f06520a598"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#ae10858377a91d190dad840f06520a598">check_same_track</a> (int numTrack, unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt;::iterator it1, unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt;::iterator it2, bool is_ok)</td></tr>
+<tr class="separator:ae10858377a91d190dad840f06520a598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb2dc9cd5809937f326603114a9d3996"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#abb2dc9cd5809937f326603114a9d3996">check_prev_next_tracks</a> (unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt; stations)</td></tr>
+<tr class="separator:abb2dc9cd5809937f326603114a9d3996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf101a0a12a0fe26cce05c0620b0d3bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#aaf101a0a12a0fe26cce05c0620b0d3bc">check_station_tram</a> (unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt; stations, map&lt; <a class="el" href="_subway_simulation_utils_8h.html#ab3b00b11ba02a50ba43899be2fab4583">pairInt</a>, <a class="el" href="class_tram.html">Tram</a> * &gt; trams)</td></tr>
+<tr class="separator:aaf101a0a12a0fe26cce05c0620b0d3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa6177e46ae493f81331aad3a173b7296"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#aa6177e46ae493f81331aad3a173b7296">minimumStationChildrenCount</a> = 3</td></tr>
+<tr class="separator:aa6177e46ae493f81331aad3a173b7296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac37708e2a2474cb5bed4f8c720657e3c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#ac37708e2a2474cb5bed4f8c720657e3c">maxTramChildrenCount</a> = 4</td></tr>
+<tr class="separator:ac37708e2a2474cb5bed4f8c720657e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb04ad0faf7009ee89d6ed9c84f4e605"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_importer_8cpp.html#abb04ad0faf7009ee89d6ed9c84f4e605">maxTrackChildrenCount</a> = 3</td></tr>
+<tr class="separator:abb04ad0faf7009ee89d6ed9c84f4e605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a8df4d966aacc55ed355ab53cd949a1f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8df4d966aacc55ed355ab53cd949a1f6">&#9670;&nbsp;</a></span>check_line_track()</h2>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a2cfde3216b45305b4f68727e981d2cba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cfde3216b45305b4f68727e981d2cba">&#9670;&nbsp;</a></span>RootElementType</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool check_line_track </td>
+          <td class="memname">enum <a class="el" href="_subway_simulation_importer_8cpp.html#a2cfde3216b45305b4f68727e981d2cba">RootElementType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2cfde3216b45305b4f68727e981d2cbaa67d9ae334e9ec422f216933e07dc255b"></a>StationT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2cfde3216b45305b4f68727e981d2cbaa4eeb0e2904d127ec1040dcedee1cfc40"></a>TramT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2cfde3216b45305b4f68727e981d2cbaa0765faac08f07d3afbd59e2c5b3aa5e8"></a>InvalidT&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="abb2dc9cd5809937f326603114a9d3996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb2dc9cd5809937f326603114a9d3996">&#9670;&nbsp;</a></span>check_prev_next_tracks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool check_prev_next_tracks </td>
           <td>(</td>
-          <td class="paramtype">unordered_map&lt; int, <a class="el" href="class_tram.html">Tram</a> * &gt;&#160;</td>
-          <td class="paramname"><em>trams</em>, </td>
+          <td class="paramtype">unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt;&#160;</td>
+          <td class="paramname"><em>stations</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae10858377a91d190dad840f06520a598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae10858377a91d190dad840f06520a598">&#9670;&nbsp;</a></span>check_same_track()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool check_same_track </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numTrack</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt;&#160;</td>
-          <td class="paramname"><em>stations</em>&#160;</td>
+          <td class="paramtype">unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt;::iterator&#160;</td>
+          <td class="paramname"><em>it1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt;::iterator&#160;</td>
+          <td class="paramname"><em>it2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_ok</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -161,14 +234,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8bae32708ede0d66d03057e25376003b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bae32708ede0d66d03057e25376003b">&#9670;&nbsp;</a></span>check_prev_next_track_tram()</h2>
+<a id="aaf101a0a12a0fe26cce05c0620b0d3bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf101a0a12a0fe26cce05c0620b0d3bc">&#9670;&nbsp;</a></span>check_station_tram()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool check_prev_next_track_tram </td>
+          <td class="memname">bool check_station_tram </td>
           <td>(</td>
           <td class="paramtype">unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt;&#160;</td>
           <td class="paramname"><em>stations</em>, </td>
@@ -176,7 +249,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unordered_map&lt; int, <a class="el" href="class_tram.html">Tram</a> * &gt;&#160;</td>
+          <td class="paramtype">map&lt; <a class="el" href="_subway_simulation_utils_8h.html#ab3b00b11ba02a50ba43899be2fab4583">pairInt</a>, <a class="el" href="class_tram.html">Tram</a> * &gt;&#160;</td>
           <td class="paramname"><em>trams</em>&#160;</td>
         </tr>
         <tr>
@@ -196,7 +269,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_subway_simulation_importer_8h.html#a2cfde3216b45305b4f68727e981d2cba">RootElementType</a> determineRootElementType </td>
+          <td class="memname"><a class="el" href="_subway_simulation_importer_8cpp.html#a2cfde3216b45305b4f68727e981d2cba">RootElementType</a> determineRootElementType </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>rootName</em></td><td>)</td>
@@ -235,23 +308,23 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af279ddbfd34c405aaee0e7f1c4ed1759"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af279ddbfd34c405aaee0e7f1c4ed1759">&#9670;&nbsp;</a></span>find_track()</h2>
+<a id="a9368e0c40fe50d0a03ad0db9e701cd7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9368e0c40fe50d0a03ad0db9e701cd7c">&#9670;&nbsp;</a></span>parseStation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int find_track </td>
+          <td class="memname"><a class="el" href="class_station.html">Station</a>* parseStation </td>
           <td>(</td>
-          <td class="paramtype">unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt;&#160;</td>
-          <td class="paramname"><em>stations</em>, </td>
+          <td class="paramtype"><a class="el" href="class_ti_xml_element.html">TiXmlElement</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unordered_map&lt; string, <a class="el" href="class_station.html">Station</a> * &gt;::iterator&#160;</td>
-          <td class="paramname"><em>it</em>&#160;</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>errStream</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -263,50 +336,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af9df41845f46588cdd84743a8229ad83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9df41845f46588cdd84743a8229ad83">&#9670;&nbsp;</a></span>is_letters_only()</h2>
+<a id="a59d891c09c8b79d727a0bda7c5e07123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59d891c09c8b79d727a0bda7c5e07123">&#9670;&nbsp;</a></span>parseTrack()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool is_letters_only </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>string</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab28ca41269f2b32969591cc91c1e96a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab28ca41269f2b32969591cc91c1e96a5">&#9670;&nbsp;</a></span>is_number()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool is_number </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>string</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9368e0c40fe50d0a03ad0db9e701cd7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9368e0c40fe50d0a03ad0db9e701cd7c">&#9670;&nbsp;</a></span>parseStation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_station.html">Station</a>* parseStation </td>
+          <td class="memname"><a class="el" href="class_track.html">Track</a>* parseTrack </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_ti_xml_element.html">TiXmlElement</a> *&#160;</td>
           <td class="paramname"><em>root</em>, </td>
@@ -349,6 +386,49 @@ Functions</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="abb04ad0faf7009ee89d6ed9c84f4e605"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb04ad0faf7009ee89d6ed9c84f4e605">&#9670;&nbsp;</a></span>maxTrackChildrenCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int maxTrackChildrenCount = 3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac37708e2a2474cb5bed4f8c720657e3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac37708e2a2474cb5bed4f8c720657e3c">&#9670;&nbsp;</a></span>maxTramChildrenCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int maxTramChildrenCount = 4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa6177e46ae493f81331aad3a173b7296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6177e46ae493f81331aad3a173b7296">&#9670;&nbsp;</a></span>minimumStationChildrenCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int minimumStationChildrenCount = 3</td>
         </tr>
       </table>
 </div><div class="memdoc">

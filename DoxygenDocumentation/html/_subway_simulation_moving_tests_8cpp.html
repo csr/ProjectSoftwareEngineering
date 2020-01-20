@@ -104,10 +104,11 @@ $(document).ready(function(){initNavTree('_subway_simulation_moving_tests_8cpp.h
 <div class="title">SubwaySimulationMovingTests.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;fstream&gt;</code><br />
+<div class="textblock"><code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;sys/stat.h&gt;</code><br />
 <code>#include &lt;gtest/gtest.h&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &quot;<a class="el" href="_subway_8h_source.html">Subway.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_tram_8h_source.html">Tram.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_subway_simulation_utils_8h_source.html">SubwaySimulationUtils.h</a>&quot;</code><br />
@@ -120,19 +121,14 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad8260b0a9c6459943830345bad0bfe85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_moving_tests_8cpp.html#ad8260b0a9c6459943830345bad0bfe85">TEST_F</a> (<a class="el" href="class_subway_simulation_moving_tests.html">SubwaySimulationMovingTests</a>, MovingTram)</td></tr>
-<tr class="separator:ad8260b0a9c6459943830345bad0bfe85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dcbd196a1d140b2d872c128f0fddbdc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_moving_tests_8cpp.html#a6dcbd196a1d140b2d872c128f0fddbdc">TEST_F</a> (<a class="el" href="class_subway_simulation_moving_tests.html">SubwaySimulationMovingTests</a>, AutomaticSimulation)</td></tr>
-<tr class="separator:a6dcbd196a1d140b2d872c128f0fddbdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee2ed317ec16d42e110989a6a00d7058"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_moving_tests_8cpp.html#aee2ed317ec16d42e110989a6a00d7058">TEST_F</a> (<a class="el" href="class_subway_simulation_moving_tests.html">SubwaySimulationMovingTests</a>, SubwaySimpleSimulation)</td></tr>
-<tr class="memdesc:aee2ed317ec16d42e110989a6a00d7058"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests <a class="el" href="class_subway.html">Subway</a> simulation with one step.  <a href="_subway_simulation_moving_tests_8cpp.html#aee2ed317ec16d42e110989a6a00d7058">More...</a><br /></td></tr>
-<tr class="separator:aee2ed317ec16d42e110989a6a00d7058"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4caacecab2f195a1923761228963ffdf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_moving_tests_8cpp.html#a4caacecab2f195a1923761228963ffdf">TEST_F</a> (<a class="el" href="class_subway_simulation_moving_tests.html">SubwaySimulationMovingTests</a>, SubwayMultipleTramsSimulation)</td></tr>
-<tr class="separator:a4caacecab2f195a1923761228963ffdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2858e454c32c749abb9df82cbc4931a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_moving_tests_8cpp.html#a2858e454c32c749abb9df82cbc4931a8">TEST_F</a> (<a class="el" href="class_subway_simulation_moving_tests.html">SubwaySimulationMovingTests</a>, SubwayAutomaticSimulation)</td></tr>
+<tr class="separator:a2858e454c32c749abb9df82cbc4931a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94ec70405082bb9e804c8c8db314d701"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_subway_simulation_moving_tests_8cpp.html#a94ec70405082bb9e804c8c8db314d701">TEST_F</a> (<a class="el" href="class_subway_simulation_moving_tests.html">SubwaySimulationMovingTests</a>, SubwayCSVSimulation)</td></tr>
+<tr class="separator:a94ec70405082bb9e804c8c8db314d701"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a6dcbd196a1d140b2d872c128f0fddbdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dcbd196a1d140b2d872c128f0fddbdc">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[1/4]</span></h2>
+<a id="a2858e454c32c749abb9df82cbc4931a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2858e454c32c749abb9df82cbc4931a8">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,7 +142,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">AutomaticSimulation&#160;</td>
+          <td class="paramtype">SubwayAutomaticSimulation&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -159,8 +155,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad8260b0a9c6459943830345bad0bfe85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8260b0a9c6459943830345bad0bfe85">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[2/4]</span></h2>
+<a id="a94ec70405082bb9e804c8c8db314d701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94ec70405082bb9e804c8c8db314d701">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +170,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">MovingTram&#160;</td>
+          <td class="paramtype">SubwayCSVSimulation&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -184,64 +180,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4caacecab2f195a1923761228963ffdf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4caacecab2f195a1923761228963ffdf">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">TEST_F </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_subway_simulation_moving_tests.html">SubwaySimulationMovingTests</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SubwayMultipleTramsSimulation&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aee2ed317ec16d42e110989a6a00d7058"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee2ed317ec16d42e110989a6a00d7058">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">TEST_F </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_subway_simulation_moving_tests.html">SubwaySimulationMovingTests</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SubwaySimpleSimulation&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Tests <a class="el" href="class_subway.html">Subway</a> simulation with one step. </p>
 
 </div>
 </div>

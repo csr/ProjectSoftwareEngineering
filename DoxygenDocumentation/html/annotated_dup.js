@@ -1,8 +1,11 @@
 var annotated_dup =
 [
+    [ "AlbatrossTram", "class_albatross_tram.html", "class_albatross_tram" ],
+    [ "PCCTram", "class_p_c_c_tram.html", "class_p_c_c_tram" ],
     [ "Station", "class_station.html", "class_station" ],
     [ "Subway", "class_subway.html", "class_subway" ],
     [ "SubwaySimulationDomainTests", "class_subway_simulation_domain_tests.html", "class_subway_simulation_domain_tests" ],
+    [ "SubwaySimulationExporter", "class_subway_simulation_exporter.html", "class_subway_simulation_exporter" ],
     [ "SubwaySimulationImporter", "class_subway_simulation_importer.html", null ],
     [ "SubwaySimulationInputTests", "class_subway_simulation_input_tests.html", "class_subway_simulation_input_tests" ],
     [ "SubwaySimulationMovingTests", "class_subway_simulation_moving_tests.html", "class_subway_simulation_moving_tests" ],
@@ -24,5 +27,6 @@ var annotated_dup =
     [ "TiXmlText", "class_ti_xml_text.html", "class_ti_xml_text" ],
     [ "TiXmlUnknown", "class_ti_xml_unknown.html", "class_ti_xml_unknown" ],
     [ "TiXmlVisitor", "class_ti_xml_visitor.html", "class_ti_xml_visitor" ],
+    [ "Track", "class_track.html", "class_track" ],
     [ "Tram", "class_tram.html", "class_tram" ]
 ];

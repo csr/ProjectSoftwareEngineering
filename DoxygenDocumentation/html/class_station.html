@@ -109,39 +109,32 @@ $(document).ready(function(){initNavTree('class_station.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4cd76667fd24aaec8f01f139d5364249"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a4cd76667fd24aaec8f01f139d5364249">Station</a> (string name, string nextStation, string previousStation, int track)</td></tr>
-<tr class="memdesc:a4cd76667fd24aaec8f01f139d5364249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_station.html">Station</a> class with name, next station, previous station, and track.  <a href="class_station.html#a4cd76667fd24aaec8f01f139d5364249">More...</a><br /></td></tr>
-<tr class="separator:a4cd76667fd24aaec8f01f139d5364249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8de295cdfbaa0948d0a28da55b20560"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#aa8de295cdfbaa0948d0a28da55b20560">Station</a> (string name, <a class="el" href="_station_8h.html#ac8b7d9d794931ebfe6e3dbcec5336968">StationType</a> type, unordered_map&lt; int, <a class="el" href="class_track.html">Track</a> * &gt; tracks)</td></tr>
+<tr class="memdesc:aa8de295cdfbaa0948d0a28da55b20560"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_station.html">Station</a> class with name, type, track.  <a href="class_station.html#aa8de295cdfbaa0948d0a28da55b20560">More...</a><br /></td></tr>
+<tr class="separator:aa8de295cdfbaa0948d0a28da55b20560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab182a50a2992afe0df4412f7de4b73d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized</a> ()</td></tr>
 <tr class="separator:aab182a50a2992afe0df4412f7de4b73d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a9a78789707aab721ade5e60889a51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#af1a9a78789707aab721ade5e60889a51">setTracks</a> (unordered_map&lt; int, <a class="el" href="class_track.html">Track</a> * &gt; tracks)</td></tr>
+<tr class="memdesc:af1a9a78789707aab721ade5e60889a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the tracks of the <a class="el" href="class_station.html">Station</a>.  <a href="class_station.html#af1a9a78789707aab721ade5e60889a51">More...</a><br /></td></tr>
+<tr class="separator:af1a9a78789707aab721ade5e60889a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2863c0eebeedd65a7be47004dc729465"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a2863c0eebeedd65a7be47004dc729465">getName</a> ()</td></tr>
-<tr class="memdesc:a2863c0eebeedd65a7be47004dc729465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="class_station.html">Station</a> name.  <a href="class_station.html#a2863c0eebeedd65a7be47004dc729465">More...</a><br /></td></tr>
+<tr class="memdesc:a2863c0eebeedd65a7be47004dc729465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the name of the <a class="el" href="class_station.html">Station</a>.  <a href="class_station.html#a2863c0eebeedd65a7be47004dc729465">More...</a><br /></td></tr>
 <tr class="separator:a2863c0eebeedd65a7be47004dc729465"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43f08fc7fd06633c227837c0ef506c93"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a43f08fc7fd06633c227837c0ef506c93">getNext</a> ()</td></tr>
-<tr class="memdesc:a43f08fc7fd06633c227837c0ef506c93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next <a class="el" href="class_station.html">Station</a> name.  <a href="class_station.html#a43f08fc7fd06633c227837c0ef506c93">More...</a><br /></td></tr>
-<tr class="separator:a43f08fc7fd06633c227837c0ef506c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae18b26db1d3ba92531d0b2d6331b332a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#ae18b26db1d3ba92531d0b2d6331b332a">getPrevious</a> ()</td></tr>
-<tr class="memdesc:ae18b26db1d3ba92531d0b2d6331b332a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter that returns the previous <a class="el" href="class_station.html">Station</a> name.  <a href="class_station.html#ae18b26db1d3ba92531d0b2d6331b332a">More...</a><br /></td></tr>
-<tr class="separator:ae18b26db1d3ba92531d0b2d6331b332a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16f9d4cebc49e77ab5a1c4f63e8fcd5a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a16f9d4cebc49e77ab5a1c4f63e8fcd5a">getTrack</a> ()</td></tr>
-<tr class="memdesc:a16f9d4cebc49e77ab5a1c4f63e8fcd5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_station.html">Station</a> track number.  <a href="class_station.html#a16f9d4cebc49e77ab5a1c4f63e8fcd5a">More...</a><br /></td></tr>
-<tr class="separator:a16f9d4cebc49e77ab5a1c4f63e8fcd5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e41c9f0a2a6f702d2323fd9a7a8acdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a6e41c9f0a2a6f702d2323fd9a7a8acdf">setName</a> (string name)</td></tr>
-<tr class="memdesc:a6e41c9f0a2a6f702d2323fd9a7a8acdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for <a class="el" href="class_station.html">Station</a> name.  <a href="class_station.html#a6e41c9f0a2a6f702d2323fd9a7a8acdf">More...</a><br /></td></tr>
-<tr class="separator:a6e41c9f0a2a6f702d2323fd9a7a8acdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5bfa2ad277d59830ab2746ef2681efe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#ae5bfa2ad277d59830ab2746ef2681efe">setNext</a> (string next)</td></tr>
-<tr class="memdesc:ae5bfa2ad277d59830ab2746ef2681efe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for next <a class="el" href="class_station.html">Station</a> name.  <a href="class_station.html#ae5bfa2ad277d59830ab2746ef2681efe">More...</a><br /></td></tr>
-<tr class="separator:ae5bfa2ad277d59830ab2746ef2681efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeea52808750672bf2b7747b3c6397737"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#aeea52808750672bf2b7747b3c6397737">setPrevious</a> (string previous)</td></tr>
-<tr class="memdesc:aeea52808750672bf2b7747b3c6397737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for previous <a class="el" href="class_station.html">Station</a> name.  <a href="class_station.html#aeea52808750672bf2b7747b3c6397737">More...</a><br /></td></tr>
-<tr class="separator:aeea52808750672bf2b7747b3c6397737"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43508576183f6344e882a2a545725887"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a43508576183f6344e882a2a545725887">setTrack</a> (int track)</td></tr>
-<tr class="memdesc:a43508576183f6344e882a2a545725887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for <a class="el" href="class_station.html">Station</a> track.  <a href="class_station.html#a43508576183f6344e882a2a545725887">More...</a><br /></td></tr>
-<tr class="separator:a43508576183f6344e882a2a545725887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5c780ccce6357874a5ef5704569d7da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_station_8h.html#ac8b7d9d794931ebfe6e3dbcec5336968">StationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#ad5c780ccce6357874a5ef5704569d7da">getType</a> ()</td></tr>
+<tr class="separator:ad5c780ccce6357874a5ef5704569d7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba28bdda28277b8df91d34c120d00cd2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_track.html">Track</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#aba28bdda28277b8df91d34c120d00cd2">getTrack</a> (int number)</td></tr>
+<tr class="memdesc:aba28bdda28277b8df91d34c120d00cd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the <a class="el" href="class_track.html">Track</a> of the <a class="el" href="class_station.html">Station</a> with number equal to number.  <a href="class_station.html#aba28bdda28277b8df91d34c120d00cd2">More...</a><br /></td></tr>
+<tr class="separator:aba28bdda28277b8df91d34c120d00cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d6f41119842b221b6ba2027679e445e"><td class="memItemLeft" align="right" valign="top">unordered_map&lt; int, <a class="el" href="class_track.html">Track</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a9d6f41119842b221b6ba2027679e445e">getTracks</a> ()</td></tr>
+<tr class="memdesc:a9d6f41119842b221b6ba2027679e445e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for all the Tracks of the <a class="el" href="class_station.html">Station</a>.  <a href="class_station.html#a9d6f41119842b221b6ba2027679e445e">More...</a><br /></td></tr>
+<tr class="separator:a9d6f41119842b221b6ba2027679e445e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae89cfb2329f69eafef492e1f261028f4"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_track.html">Track</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#ae89cfb2329f69eafef492e1f261028f4">getTracksArray</a> ()</td></tr>
+<tr class="memdesc:ae89cfb2329f69eafef492e1f261028f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for all the Tracks of the <a class="el" href="class_station.html">Station</a>.  <a href="class_station.html#ae89cfb2329f69eafef492e1f261028f4">More...</a><br /></td></tr>
+<tr class="separator:ae89cfb2329f69eafef492e1f261028f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4cd76667fd24aaec8f01f139d5364249"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cd76667fd24aaec8f01f139d5364249">&#9670;&nbsp;</a></span>Station()</h2>
+<a id="aa8de295cdfbaa0948d0a28da55b20560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8de295cdfbaa0948d0a28da55b20560">&#9670;&nbsp;</a></span>Station()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,20 +148,14 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>nextStation</em>, </td>
+          <td class="paramtype"><a class="el" href="_station_8h.html#ac8b7d9d794931ebfe6e3dbcec5336968">StationType</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>previousStation</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>track</em>&#160;</td>
+          <td class="paramtype">unordered_map&lt; int, <a class="el" href="class_track.html">Track</a> * &gt;&#160;</td>
+          <td class="paramname"><em>tracks</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -178,17 +165,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="class_station.html">Station</a> class with name, next station, previous station, and track. </p>
+<p>Constructs a <a class="el" href="class_station.html">Station</a> class with name, type, track. </p>
 <dl class="section note"><dt>Note</dt><dd>ENSURE(<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "constructor must end in properlyInitialized state"); </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td><a class="el" href="class_station.html">Station</a> name. </td></tr>
-    <tr><td class="paramname">next</td><td>Name of the next <a class="el" href="class_station.html">Station</a>. </td></tr>
-    <tr><td class="paramname">previous</td><td>Name of the previous <a class="el" href="class_station.html">Station</a>. </td></tr>
-    <tr><td class="paramname">track</td><td><a class="el" href="class_station.html">Station</a> track number. </td></tr>
+    <tr><td class="paramname">name</td><td></td></tr>
+    <tr><td class="paramname">type</td><td></td></tr>
+    <tr><td class="paramname">tracks</td><td></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>an instance of <a class="el" href="class_station.html">Station</a> </dd></dl>
 
 </div>
 </div>
@@ -208,72 +195,98 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the <a class="el" href="class_station.html">Station</a> name. </p>
+<p>Getter for the name of the <a class="el" href="class_station.html">Station</a>. </p>
 <dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getName"); </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>Name of <a class="el" href="class_station.html">Station</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Name of the <a class="el" href="class_station.html">Station</a> </dd></dl>
 
 </div>
 </div>
-<a id="a43f08fc7fd06633c227837c0ef506c93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43f08fc7fd06633c227837c0ef506c93">&#9670;&nbsp;</a></span>getNext()</h2>
+<a id="aba28bdda28277b8df91d34c120d00cd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba28bdda28277b8df91d34c120d00cd2">&#9670;&nbsp;</a></span>getTrack()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string Station::getNext </td>
+          <td class="memname"><a class="el" href="class_track.html">Track</a> * Station::getTrack </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the next <a class="el" href="class_station.html">Station</a> name. </p>
-<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getNext"); </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>Name of next <a class="el" href="class_station.html">Station</a>. </dd></dl>
-
-</div>
-</div>
-<a id="ae18b26db1d3ba92531d0b2d6331b332a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae18b26db1d3ba92531d0b2d6331b332a">&#9670;&nbsp;</a></span>getPrevious()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Station::getPrevious </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Getter that returns the previous <a class="el" href="class_station.html">Station</a> name. </p>
-<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getPrevious"); </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>Name of previous <a class="el" href="class_station.html">Station</a>. </dd></dl>
-
-</div>
-</div>
-<a id="a16f9d4cebc49e77ab5a1c4f63e8fcd5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16f9d4cebc49e77ab5a1c4f63e8fcd5a">&#9670;&nbsp;</a></span>getTrack()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Station::getTrack </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Getter for <a class="el" href="class_station.html">Station</a> track number. </p>
+<p>Getter for the <a class="el" href="class_track.html">Track</a> of the <a class="el" href="class_station.html">Station</a> with number equal to number. </p>
 <dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getTrack"); </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_station.html">Station</a> track number. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>of the required track of the <a class="el" href="class_station.html">Station</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_track.html">Track</a> of the <a class="el" href="class_station.html">Station</a> corresponding to number </dd></dl>
+
+</div>
+</div>
+<a id="a9d6f41119842b221b6ba2027679e445e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d6f41119842b221b6ba2027679e445e">&#9670;&nbsp;</a></span>getTracks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unordered_map&lt; int, <a class="el" href="class_track.html">Track</a> * &gt; Station::getTracks </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for all the Tracks of the <a class="el" href="class_station.html">Station</a>. </p>
+<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getTracks"); </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>map of Tracks of the <a class="el" href="class_station.html">Station</a> </dd></dl>
+
+</div>
+</div>
+<a id="ae89cfb2329f69eafef492e1f261028f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae89cfb2329f69eafef492e1f261028f4">&#9670;&nbsp;</a></span>getTracksArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="class_track.html">Track</a> * &gt; Station::getTracksArray </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for all the Tracks of the <a class="el" href="class_station.html">Station</a>. </p>
+<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getTracksArray"); </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>vector of Tracks of the <a class="el" href="class_station.html">Station</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad5c780ccce6357874a5ef5704569d7da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5c780ccce6357874a5ef5704569d7da">&#9670;&nbsp;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_station_8h.html#ac8b7d9d794931ebfe6e3dbcec5336968">StationType</a> Station::getType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling getType"); </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Type of the <a class="el" href="class_station.html">Station</a> </dd></dl>
 
 </div>
 </div>
@@ -294,119 +307,27 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6e41c9f0a2a6f702d2323fd9a7a8acdf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e41c9f0a2a6f702d2323fd9a7a8acdf">&#9670;&nbsp;</a></span>setName()</h2>
+<a id="af1a9a78789707aab721ade5e60889a51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1a9a78789707aab721ade5e60889a51">&#9670;&nbsp;</a></span>setTracks()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Station::setName </td>
+          <td class="memname">void Station::setTracks </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramtype">unordered_map&lt; int, <a class="el" href="class_track.html">Track</a> * &gt;&#160;</td>
+          <td class="paramname"><em>tracks</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Setter for <a class="el" href="class_station.html">Station</a> name. </p>
-<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling setName"); </dd>
-<dd>
-ENSURE(validStringAttribute(getName()), "Station name can't be empty"); </dd></dl>
+<p>Setter for the tracks of the <a class="el" href="class_station.html">Station</a>. </p>
+<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling setTracks"); ENSURE(tracks == <a class="el" href="class_station.html#a9d6f41119842b221b6ba2027679e445e" title="Getter for all the Tracks of the Station.">getTracks()</a>, "Station tracks weren't set correctly"); </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>Name of <a class="el" href="class_station.html">Station</a> name. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ae5bfa2ad277d59830ab2746ef2681efe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5bfa2ad277d59830ab2746ef2681efe">&#9670;&nbsp;</a></span>setNext()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Station::setNext </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>next</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Setter for next <a class="el" href="class_station.html">Station</a> name. </p>
-<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling setNext");<br  />
-</dd>
-<dd>
-ENSURE(validStringAttribute(getNext()), "Next station name can't be empty"); </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">next</td><td>Name of next <a class="el" href="class_station.html">Station</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aeea52808750672bf2b7747b3c6397737"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeea52808750672bf2b7747b3c6397737">&#9670;&nbsp;</a></span>setPrevious()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Station::setPrevious </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>previous</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Setter for previous <a class="el" href="class_station.html">Station</a> name. </p>
-<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling setPrevious");<br  />
-</dd>
-<dd>
-ENSURE(validStringAttribute(getPrevious()), "Previous station name can't be empty"); </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">previous</td><td>Name of previous <a class="el" href="class_station.html">Station</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a43508576183f6344e882a2a545725887"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43508576183f6344e882a2a545725887">&#9670;&nbsp;</a></span>setTrack()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Station::setTrack </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>track</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Setter for <a class="el" href="class_station.html">Station</a> track. </p>
-<dl class="section note"><dt>Note</dt><dd>REQUIRE(this-&gt;<a class="el" href="class_station.html#aab182a50a2992afe0df4412f7de4b73d">properlyInitialized()</a>, "Station wasn't initialized when calling setTrack");<br  />
-</dd>
-<dd>
-ENSURE(validIntegerAttribute(getTrack()), "Station track number can't be negative"); </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">track</td><td><a class="el" href="class_station.html">Station</a> track. </td></tr>
+    <tr><td class="paramname">tracks</td><td>of the <a class="el" href="class_station.html">Station</a> </td></tr>
   </table>
   </dd>
 </dl>
