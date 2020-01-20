@@ -47,10 +47,8 @@
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/gtest-linux/include"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
-					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testGraphicalOutput"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testSimulation"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/userFiles"/>
-					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testCSV"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -f &quot;/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/Makefile&quot;  VERBOSE=1 release"/>
@@ -69,10 +67,8 @@
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/gtest-linux/include"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
-					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testGraphicalOutput"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testSimulation"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/userFiles"/>
-					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testCSV"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -f &quot;/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/Makefile&quot;  VERBOSE=1 release/fast"/>
@@ -91,10 +87,8 @@
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/gtest-linux/include"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
-					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testGraphicalOutput"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testSimulation"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/userFiles"/>
-					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testCSV"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -f &quot;/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/Makefile&quot;  VERBOSE=1 debug"/>
@@ -113,10 +107,8 @@
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/gtest-linux/include"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testInput"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testOutput"/>
-					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testGraphicalOutput"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testSimulation"/>
 					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/userFiles"/>
-					<Add directory="/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/testCSV"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -f &quot;/home/bigboss98/Università/ProjectSoftwareEngineering/SubwaySimulation/Makefile&quot;  VERBOSE=1 debug/fast"/>

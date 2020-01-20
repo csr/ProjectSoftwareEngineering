@@ -1,26 +1,26 @@
 Station A
-Track 21
-<- Station B
--> Station C
 Track 12
 <- Station C
 -> Station B
 Tram with 16 seats
+Track 21
+<- Station B
+-> Station C
 
 Station B
-Track 21
-<- Station C
--> Station A
 Track 12
 <- Station A
 -> Station C
+Track 21
+<- Station C
+-> Station A
 
 Station C
+Track 12
+<- Station B
+-> Station A
 Track 21
 <- Station A
 -> Station B
 Tram with 72 seats
-Track 12
-<- Station B
--> Station A
 

@@ -16,10 +16,10 @@ else()
 endif()
 
 # Set source files for RELEASE target
-set(RELEASE_SOURCE_FILES Albatros.cpp PCCTram.cpp tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Station.cpp Tram.cpp SubwaySimulationImporter.cpp SubwaySimulationMain.cpp SubwaySimulationUtils.cpp SubwaySimulationExporter.cpp Track.cpp)
+set(RELEASE_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp Subway.cpp Station.cpp Tram.cpp SubwaySimulationImporter.cpp SubwaySimulationMain.cpp SubwaySimulationUtils.cpp SubwaySimulationExporter.cpp Track.cpp)
 
 # Set source files for DEBUG target
-set(DEBUG_SOURCE_FILES Albatros.cpp PCCTram.cpp tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp SubwaySimulationTests.cpp SubwaySimulationDomainTests.cpp Subway.cpp Station.cpp Tram.cpp SubwaySimulationDomainTests.cpp SubwaySimulationImporter.cpp SubwaySimulationInputTests.cpp SubwaySimulationUtils.cpp SubwaySimulationOutputTests.cpp SubwaySimulationMovingTests.cpp SubwaySimulationExporter.cpp Track.cpp)
+set(DEBUG_SOURCE_FILES tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp SubwaySimulationTests.cpp SubwaySimulationDomainTests.cpp Subway.cpp Station.cpp Tram.cpp SubwaySimulationDomainTests.cpp SubwaySimulationImporter.cpp SubwaySimulationInputTests.cpp SubwaySimulationUtils.cpp SubwaySimulationOutputTests.cpp SubwaySimulationMovingTests.cpp SubwaySimulationExporter.cpp Track.cpp)
 
 # Create RELEASE target
 add_executable(release ${RELEASE_SOURCE_FILES})
